@@ -13,7 +13,7 @@ window:
   startup_mode: Windowed
 scrolling:
   history: 10000
-background_opacity: 0.95
+background_opacity: 0.9
 dynamic_title: true
 
 # Font config
@@ -96,15 +96,15 @@ colors:
 # Key_bindings (to make it feel like iTerm and not have to press
 # the prefix key all the damn time)
 key_bindings:
-  - { key: Backslash, mods: Command, chars: "\x18\x7c" } # Split vertical pane
-  - { key: Minus, mods: Command, chars: "\x18\x2d" } # Split horizontal pane
+  - { key: Backslash, mods: Command|Shift, chars: "\x18\x7c" } # Split vertical pane
+  - { key: Minus, mods: Command|Shift, chars: "\x18\x2d" } # Split horizontal pane
   - { key: W, mods: Command, chars: "\x18\x78" } # Close pane/tab
   - { key: H, mods: Command, chars: "\x18\x68" } # Switch to left pane
   - { key: J, mods: Command, chars: "\x18\x6a" } # Switch to bottom pane
   - { key: K, mods: Command, chars: "\x18\x6b" } # Switch to top pane
   - { key: L, mods: Command, chars: "\x18\x6c" } # Switch to right pane
   - { key: T, mods: Command, chars: "\x18\x63" } # Open new tab
-  - { key: Key1, mods: Command, chars: "\x18\x31" }
+  - { key: Key1, mods: Command, chars: "\x18\x31" } # Switch to Window x
   - { key: Key2, mods: Command, chars: "\x18\x32" }
   - { key: Key3, mods: Command, chars: "\x18\x33" }
   - { key: Key4, mods: Command, chars: "\x18\x34" }
@@ -113,7 +113,8 @@ key_bindings:
   - { key: Key7, mods: Command, chars: "\x18\x37" }
   - { key: Key8, mods: Command, chars: "\x18\x38" }
   - { key: Key9, mods: Command, chars: "\x18\x39" }
-  - { key: Left, mods: Command, chars: "\x18\x48" }
+  - { key: Left, mods: Command, chars: "\x18\x48" } # Resize panes
   - { key: Down, mods: Command, chars: "\x18\x4a" }
   - { key: Up, mods: Command, chars: "\x18\x4b" }
   - { key: Right, mods: Command, chars: "\x18\x4c" }
+  - { key: N, mods: Command, action: SpawnNewInstance }

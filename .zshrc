@@ -13,6 +13,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ---------- Exports ----------
+# Language
+export LANG=en_US.UTF-8
+# Editor
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='nvim'
+fi
 # JAVA Home path (using Java 8)
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 # Path
@@ -24,12 +32,17 @@ export JAVA_14_HOME=$(/usr/libexec/java_home -v14)
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 # Solr
 export SOLR_HOME="/usr/local/Cellar/solr/8.5.2/server/solr"
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # ---------- Themes ----------
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # ---------- Aliases ----------
+# General usage
+alias clr='clear'
 # nvim
 alias v='nvim'
 alias vi='nvim'
@@ -42,10 +55,7 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 # Solr
 alias solr="/usr/local/Cellar/solr/8.5.2/bin/solr"
 
-# zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-### FZF stuff:
+# ---------- FZF stuff ----------
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
 # --hidden: Search hidden files and folders
@@ -53,22 +63,19 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+# ---------- p10k ----------
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+# ---------- Plugins ----------
+plugins=(git colored-man-pages)
+# oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# ---------- NVM ----------
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# zsh-autosuggestions (with homebrew)
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-syntax-highlighting (with homebrew)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -121,15 +128,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

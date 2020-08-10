@@ -1,0 +1,12 @@
+{
+  "python.jediEnabled": false,
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "languageserver": {
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    }
+  }
+}
+
