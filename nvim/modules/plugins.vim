@@ -16,10 +16,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
 "Syntax
     Plug 'dense-analysis/ale'
-    Plug 'sheerun/vim-polyglot'
+    "Plug 'sheerun/vim-polyglot'
     Plug 'jiangmiao/auto-pairs'
     Plug 'preservim/nerdcommenter'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Vim-be-good
     Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+"Efficiency
+    "Plug 'vim-python/python-syntax'
+
 call plug#end()

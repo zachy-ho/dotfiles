@@ -54,7 +54,7 @@ inoremap <silent><expr> <Tab>
     \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " Confirm completion with <CR>
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 " ----- FZF/Rg remaps -----
 nnoremap ff :Files
 nnoremap fr :ProjectFiles

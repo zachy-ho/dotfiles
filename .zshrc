@@ -47,6 +47,8 @@ alias clr='clear'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+# neofetch
+alias neofetch='neofetch --backend kitty --source $HOME/Documents/MyDocuments/Photos/AndyDrawing.jpg'
 # tmux
 alias tm='tmux'
 # Java

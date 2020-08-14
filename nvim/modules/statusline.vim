@@ -4,7 +4,7 @@ let g:currentmode = {
             \ 'n' : 'NORMAL',
             \ 'v' : 'VISUAL',
             \ 'V' : 'V-Line',
-            \ ''  : 'V-Block',
+            \ ''  : 'V-Block',
             \ 'i' : 'INSERT',
             \ 'R' : 'REPLACE',
             \ 'Rv': 'V-Replace',
