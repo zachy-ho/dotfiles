@@ -1,4 +1,4 @@
-# Zachary Ho's dotfiles
+# NOODLZ's dotfiles
 
 This is a folder of all the dotfiles I am using.
 
