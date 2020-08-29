@@ -33,3 +33,5 @@ augroup remember_folds
     autocmd BufWinLeave ?* if index(btToIgnore, &buftype) < 0 |mkview 1
     autocmd BufWinEnter ?* silent! loadview 1
 augroup END
+
+"autocmd BufNewFile,BufRead *.tsx, set filetype=typescript.tsx

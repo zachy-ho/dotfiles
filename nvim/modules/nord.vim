@@ -5,5 +5,5 @@ let g:nord_underline = 1
 
 augroup nord-theme-overrides
   autocmd!
-  autocmd ColorScheme nord highlight Comment ctermfg=8
+  autocmd ColorScheme nord highlight Comment ctermfg=242
 augroup END
