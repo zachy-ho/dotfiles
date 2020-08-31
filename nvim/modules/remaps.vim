@@ -36,7 +36,8 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 " ----- Fugitive remaps -----
-nnoremap <silent> <leader>g\ :Gdiffsplit<CR>
+nnoremap <silent> <leader>fh :diffget //2<CR>
+nnoremap <silent> <leader>fl :diffget //3<CR>
 " ----- Goyo & Limelight toggle -----
 nnoremap <leader>m :Goyo <bar> :Limelight!! <bar> hi! Normal ctermbg=NONE guibg=NONE<CR>
 " ----- Coc.nvim remaps -----

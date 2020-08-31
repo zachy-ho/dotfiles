@@ -1,4 +1,5 @@
 {
+  "diagnostic.displayByAle": true,
   "python.jediEnabled": false,
   "coc.preferences.formatOnSaveFiletypes": ["*"],
   "languageserver": {
@@ -9,4 +10,3 @@
     }
   }
 }
-

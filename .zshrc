@@ -24,23 +24,21 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
    export EDITOR='nvim'
 fi
-# JAVA Home path (using Java 8)
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+# JAVA Home path
+export JAVA_HOME=$(/usr/libexec/java_home -v 14)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Path
 export PATH=$HOME/bin:/usr/local/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/zachyho/.oh-my-zsh"
-# JAVA
-export JAVA_14_HOME=$(/usr/libexec/java_home -v14)
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 # Solr (8.6.0)
 export SOLR_HOME="/usr/local/Cellar/solr/8.6.0/server/solr"
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # ZSH Update Frequency
-export UPDATE_ZSH_DAYS=2
+export UPDATE_ZSH_DAYS=7
 # FZF command
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
