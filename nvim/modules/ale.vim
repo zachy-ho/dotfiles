@@ -1,5 +1,6 @@
 let g:ale_linters = {
             \ 'python': ['prospector'],
+            \ 'vue': ['prettier'],
             \ 'typescript': ['tsserver', 'tslint'],
             \ 'java': ['javac'],
             \ 'markdown': ['prettier']

@@ -15,13 +15,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-fugitive'
 "Syntax
+    Plug 'sheerun/vim-polyglot'
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'mattn/emmet-vim'
     Plug 'leafgarland/typescript-vim'
-    Plug 'peitalin/vim-jsx-typescript'
+    " Plug 'peitalin/vim-jsx-typescript'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-surround'
     Plug 'preservim/nerdcommenter'
 "Vim-be-good
-    Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+    " Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 
 call plug#end()

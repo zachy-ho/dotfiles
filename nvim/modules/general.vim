@@ -9,6 +9,7 @@ set foldmethod=manual
 set noshowmode
 set relativenumber
 set noerrorbells
+set textwidth=0
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -22,16 +23,8 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set nohlsearch
 set cursorline
 set lazyredraw
 set updatetime=50
 let mapleader = " "
-
-augroup remember_folds
-    autocmd!
-    let btToIgnore = ['terminal']
-    autocmd BufWinLeave ?* if index(btToIgnore, &buftype) < 0 |mkview 1
-    autocmd BufWinEnter ?* silent! loadview 1
-augroup END
-
-"autocmd BufNewFile,BufRead *.tsx, set filetype=typescript.tsx

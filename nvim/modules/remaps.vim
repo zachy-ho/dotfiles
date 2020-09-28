@@ -46,6 +46,7 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gt <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gp :call CocActionAsync('doHover')<CR>
 nmap <silent> <leader>rn <Plug>(coc-rename)
 " ----- Coc.nvim completion -----
 " Trigger completion with <tab>
@@ -57,6 +58,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " Confirm completion with <CR>
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 " ----- FZF/Rg remaps -----
-nnoremap ff :Files
-nnoremap fr :ProjectFiles
-nnoremap <leader>rg :Find
+nnoremap ff :Files<CR>
+nnoremap fr :ProjectFiles<CR>
+nnoremap <leader>rg :Find<CR>
