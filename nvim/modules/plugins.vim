@@ -20,7 +20,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mattn/emmet-vim'
     Plug 'leafgarland/typescript-vim'
-    " Plug 'peitalin/vim-jsx-typescript'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
     Plug 'preservim/nerdcommenter'

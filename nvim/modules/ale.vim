@@ -1,12 +1,15 @@
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 let g:ale_linters = {
             \ 'python': ['prospector'],
             \ 'vue': ['prettier'],
-            \ 'typescript': ['tsserver', 'tslint'],
+            \ 'typescript': ['tsserver', 'tslint', 'eslint'],
             \ 'java': ['javac'],
             \ 'markdown': ['prettier']
             \ }
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'],
-                    \ 'typescript': ['prettier']}
+                    \ 'javascript': ['eslint'],
+                    \ 'typescript': ['prettier'],}
 let g:ale_fix_on_save = 1
 
 " Use with coc.nvim

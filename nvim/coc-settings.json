@@ -3,6 +3,8 @@
   "python.jediEnabled": false,
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact"],
   "languageserver": {
     "dockerfile": {
       "command": "docker-langserver",
