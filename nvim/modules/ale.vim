@@ -3,6 +3,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_linters = {
             \ 'python': ['prospector'],
             \ 'vue': ['prettier'],
+            \ 'javascript': ['eslint'],
             \ 'typescript': ['tsserver', 'tslint', 'eslint'],
             \ 'java': ['javac'],
             \ 'markdown': ['prettier']

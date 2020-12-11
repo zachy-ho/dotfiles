@@ -28,3 +28,4 @@ set cursorline
 set lazyredraw
 set updatetime=50
 let mapleader = " "
+runtime macros/matchit.vim
