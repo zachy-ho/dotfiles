@@ -6,9 +6,8 @@ let g:currentmode = {
             \ 'V' : 'V-Line',
             \ ''  : 'V-Block',
             \ 'i' : 'INSERT',
-            \ 'r' : 'REPLACE',
+            \ 'R' : 'REPLACE',
             \ 's' : 'SELECT',
-            \ 'Rv': 'V-Replace',
             \ 'c' : 'COMMAND',
             \ 't' : 'FZF',
             \}

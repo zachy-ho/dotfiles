@@ -5,12 +5,14 @@ let g:ale_linters = {
             \ 'vue': ['prettier'],
             \ 'javascript': ['eslint'],
             \ 'typescript': ['tsserver', 'tslint', 'eslint'],
+            \ 'css': ['prettier'],
             \ 'java': ['javac'],
             \ 'markdown': ['prettier']
             \ }
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'],
                     \ 'javascript': ['eslint'],
-                    \ 'typescript': ['prettier'],}
+                    \ 'typescript': ['prettier'],
+                    \ 'css': ['prettier']}
 let g:ale_fix_on_save = 1
 
 " Use with coc.nvim

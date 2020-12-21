@@ -2,7 +2,7 @@
   "diagnostic.displayByAle": true,
   "python.jediEnabled": false,
   "coc.preferences.hoverTarget": "float",
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.formatOnSaveFiletypes": ["python", "css"],
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": ["javascript", "javascriptreact"],
   "languageserver": {
