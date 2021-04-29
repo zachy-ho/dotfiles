@@ -8,6 +8,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set foldmethod=manual
 set noshowmode
 set relativenumber
+set nu
+set scrolloff=12
 set noerrorbells
 set textwidth=0
 set tabstop=4 softtabstop=4
@@ -15,9 +17,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set autoindent
-set nu
 set nowrap
 set smartcase
+set ignorecase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -25,6 +27,7 @@ set undofile
 set incsearch
 set nohlsearch
 set cursorline
+set colorcolumn=80
 set lazyredraw
 set updatetime=50
 let mapleader = " "

@@ -28,7 +28,7 @@ fi
 export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Path
-export PATH=$HOME/bin:/usr/local/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
+export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
@@ -46,6 +46,8 @@ export UPDATE_ZSH_DAYS=7
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+MPI_DIR=/user/local/openmpi
+export LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH
 
 # ---------- Aliases ----------
 # General usage
@@ -54,6 +56,8 @@ alias clr='clear'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+# lazygit
+alias lg='lazygit'
 # neofetch
 alias neofetch='neofetch --backend kitty --source $HOME/Documents/MyDocuments/Photos/AndyDrawing.jpg'
 # Java

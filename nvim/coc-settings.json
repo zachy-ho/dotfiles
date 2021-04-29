@@ -2,9 +2,10 @@
   "diagnostic.displayByAle": true,
   "python.jediEnabled": false,
   "coc.preferences.hoverTarget": "float",
-  "coc.preferences.formatOnSaveFiletypes": ["python", "css"],
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Enabled": true,
+  "coc.preferences.formatOnSaveFiletypes": ["python", "html", "css", "scss"],
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "javascriptreact"],
   "languageserver": {
     "dockerfile": {
       "command": "docker-langserver",

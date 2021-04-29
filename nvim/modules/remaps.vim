@@ -58,6 +58,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " Confirm completion with <CR>
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 " ----- FZF/Rg remaps -----
-nnoremap ff :Files<CR>
-nnoremap fr :ProjectFiles<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fr :ProjectFiles<CR>
 nnoremap <leader>rg :Find<CR>
