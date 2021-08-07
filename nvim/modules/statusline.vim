@@ -14,17 +14,17 @@ let g:currentmode = {
 
 " Left side
 set statusline=
-set statusline+=%#CtrlPMode2#
+set statusline+=%#GruvboxGreen#
 set statusline+=\ %{toupper(g:currentmode[mode()]).'\ '}
-set statusline+=%#CtrlPMode1#
+set statusline+=%#GruvboxBg4#
 set statusline+=%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':''}
-set statusline+=%#StatusLineNC#
+set statusline+=%#GruvboxBg4#
 set statusline+=\ %M
 set statusline+=%y
 set statusline+=\%t
 " Right side
 set statusline+=%=
-set statusline+=%#TabLineSel#
+set statusline+=%#GruvboxBg4#
 set statusline+=\ %c:%l/%L
 set statusline+=\ %{'\\'}
 set statusline+=\ %p%%

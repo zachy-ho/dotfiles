@@ -28,7 +28,8 @@ fi
 export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Path
-export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
+# export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
+export PATH=/Users/zachyho/opt/GNAT/2019/bin:/user/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
@@ -63,6 +64,8 @@ alias neofetch='neofetch --backend kitty --source $HOME/Documents/MyDocuments/Ph
 # Java
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java14='export JAVA_HOME=$JAVA_14_HOME'
+# SSH
+alias ssh='TERM=xterm-256color ssh'
 
 # ---------- Plugins ----------
 plugins=(git colored-man-pages)
