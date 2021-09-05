@@ -1,3 +1,4 @@
+"To convert to Lua
 source $HOME/.config/nvim/modules/general.vim
 source $HOME/.config/nvim/modules/autocmds.vim
 source $HOME/.config/nvim/modules/ale.vim

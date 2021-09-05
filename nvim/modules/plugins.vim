@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jremmen/vim-ripgrep'
     Plug 'mbbill/undotree'
     Plug 'preservim/nerdtree'
+    "To replace with telescope after learning Lua
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-fugitive'
@@ -24,7 +25,5 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
     Plug 'preservim/nerdcommenter'
-"Vim-be-good
-    " Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 
 call plug#end()
