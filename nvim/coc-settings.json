@@ -12,5 +12,6 @@
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
     }
-  }
+  },
+  "Lua.diagnostics.globals": ["vim"]
 }

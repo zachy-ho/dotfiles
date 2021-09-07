@@ -24,6 +24,9 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+" Creating splits
+nnoremap <leader>wl : wincmd v<CR>
+nnoremap <leader>wj : wincmd s<CR>
 " Moving between panes
 nnoremap <leader>h : wincmd h<CR>
 nnoremap <leader>j : wincmd j<CR>
