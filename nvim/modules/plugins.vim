@@ -3,7 +3,9 @@ call plug#begin('~/.vim/plugged')
 "Colors
     Plug 'morhetz/gruvbox'
     Plug 'arcticicestudio/nord-vim'
-    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    Plug 'marko-cerovac/material.nvim'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Cool things
     Plug 'ryanoasis/vim-devicons'
     Plug 'junegunn/goyo.vim'

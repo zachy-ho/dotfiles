@@ -26,7 +26,7 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 " Creating splits
 nnoremap <leader>wl : wincmd v<CR>
-nnoremap <leader>wj : wincmd s<CR>
+nnoremap <leader>wj : wincmd s
 " Moving between panes
 nnoremap <leader>h : wincmd h<CR>
 nnoremap <leader>j : wincmd j<CR>
@@ -64,3 +64,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fr :ProjectFiles<CR>
 nnoremap <leader>rg :Find<CR>
+
+" Toggle Material theme style
+nnoremap <leader>tt :lua require('material.functions').toggle_style()<CR>

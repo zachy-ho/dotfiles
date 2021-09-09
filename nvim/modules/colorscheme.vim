@@ -4,7 +4,7 @@ colorscheme gruvbox
 set background=dark
 " Nord
 " colorscheme nord
-" Material
+" Material - kaicataldo
 " Choices - default, palenight, ocean, lighter, darker,
 " default-community, palenight-community, ocean-community, lighter-community,
 " darker-community
@@ -14,7 +14,10 @@ set background=dark
 " if (has('termguicolors'))
     " set termguicolors
 " endif
-" Have opaque bg with Alacritty
+" Material - Marko Cerovac
+" colorscheme material
+" let g:material_style = 'oceanic'
+" Have opaque bg with Kitty
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! ColorColumn ctermbg=8
