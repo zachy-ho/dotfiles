@@ -1,0 +1,6 @@
+# Create a new directory and cd into it in one call
+
+mcd() {
+    mkdir -p -- "$1" && 
+    cd -- "$1"
+}
