@@ -14,6 +14,7 @@ for function in ~/.config/zsh/functions/.*; do
 done
 
 # ---------- Themes ----------
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ---------- Exports ----------
 # Language
@@ -29,13 +30,11 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Path
 # export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
-export PATH=/Users/zachyho/opt/GNAT/2019/bin:/user/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
+export PATH=$HOME/opt/GNAT/2019/bin:/user/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/zachyho/.oh-my-zsh"
-# Solr (8.6.0)
-export SOLR_HOME="/usr/local/Cellar/solr/8.6.0/server/solr"
+export ZSH="$HOME/.oh-my-zsh"
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # ZSH Update Frequency
@@ -68,15 +67,13 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 alias ssh='TERM=xterm-256color ssh'
 
 # ---------- Plugins ----------
-plugins=(git colored-man-pages)
+plugins=(
+   git colored-man-pages
+   zsh-autosuggestions
+   zsh-syntax-highlighting
+)
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-# zsh-autosuggestions (with homebrew)
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# zsh-syntax-highlighting (with homebrew)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# p10k theme
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # ---------- General settings ----------
 HYPHEN_INSENSITIVE="true"
