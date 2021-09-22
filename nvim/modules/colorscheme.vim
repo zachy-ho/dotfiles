@@ -1,7 +1,6 @@
 " ---------- Color scheme ----------
 " Gruvbox
 colorscheme gruvbox
-set background=dark
 " Nord
 " colorscheme nord
 " Material - kaicataldo

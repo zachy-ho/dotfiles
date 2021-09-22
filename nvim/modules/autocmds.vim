@@ -1,9 +1,9 @@
-augroup remember_folds
-    autocmd!
-    let btToIgnore = ['terminal']
-    autocmd BufWinLeave ?* if index(btToIgnore, &buftype) < 0 |mkview 1
-    autocmd BufWinEnter ?* silent! loadview 1
-augroup END
+" augroup remember_folds
+    " autocmd!
+    " let btToIgnore = ['terminal']
+    " autocmd BufWinLeave ?* if index(btToIgnore, &buftype) < 0 |mkview 1
+    " autocmd BufWinEnter ?* silent! loadview 1
+" augroup END
 
 augroup set_react_filetypes
     autocmd!

@@ -22,13 +22,15 @@ set statusline+=%#GruvboxBg4#
 set statusline+=\ %M
 set statusline+=%y
 set statusline+=\%t
+set statusline+=%{'\ \|\ '}
+set statusline+=%{nvim_treesitter#statusline(90)}
 " Right side
 set statusline+=%=
 set statusline+=%#GruvboxBg4#
 set statusline+=\ %c:%l/%L
-set statusline+=\ %{'\\'}
+set statusline+=\ %{'\'}
 set statusline+=\ %p%%
-set statusline+=\ %{'\\'}
+set statusline+=\ %{'\'}
 set statusline+=\ [%n]
 
 " Cool symbols!

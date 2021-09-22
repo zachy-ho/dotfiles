@@ -30,7 +30,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Path
 # export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
-export PATH=$HOME/opt/GNAT/2019/bin:/user/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
+export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
@@ -53,9 +53,9 @@ export LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH
 # General usage
 alias clr='clear'
 # nvim
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+alias v='nvim-nightly.sh'
+# Nightly build. Script is under '/usr/local/bin'
+alias vi='nvim-nightly.sh'
 # lazygit
 alias lg='lazygit'
 # neofetch
@@ -65,6 +65,10 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java14='export JAVA_HOME=$JAVA_14_HOME'
 # SSH
 alias ssh='TERM=xterm-256color ssh'
+# Navigating to dotfiles
+alias nrc='cd $HOME/.config/nvim && v'
+alias krc='cd $HOME/.config/kitty && v'
+alias zrc='cd $HOME/.config/zsh && v'
 
 # ---------- Plugins ----------
 plugins=(
@@ -93,3 +97,6 @@ COMPLETION_WAITING_DOTS="true"
 # p10k
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.config/dotfiles/zsh/.p10k.zsh.
+[[ ! -f ~/.config/dotfiles/zsh/.p10k.zsh ]] || source ~/.config/dotfiles/zsh/.p10k.zsh

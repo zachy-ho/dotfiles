@@ -32,6 +32,9 @@ nnoremap <leader>h : wincmd h<CR>
 nnoremap <leader>j : wincmd j<CR>
 nnoremap <leader>k : wincmd k<CR>
 nnoremap <leader>l : wincmd l<CR>
+" Vim tabs
+nnoremap <leader>ct :tabclose
+nnoremap <leader>ot :tabnew
 " Tools-toggles
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -65,5 +68,5 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fr :ProjectFiles<CR>
 nnoremap <leader>rg :Find<CR>
 
-" Toggle Material theme style
-nnoremap <leader>tt :lua require('material.functions').toggle_style()<CR>
+" Source init.vim
+nnoremap <leader>rsn :source $HOME/.config/nvim/init.vim<CR>

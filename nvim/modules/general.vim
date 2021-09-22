@@ -1,5 +1,4 @@
 " ---------- Basic settings ----------
-syntax on
 " Other sets
 set foldmethod=manual
 set noshowmode
@@ -7,9 +6,9 @@ set relativenumber
 set nu
 set scrolloff=8
 set noerrorbells
-set textwidth=80
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set textwidth=100
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set formatoptions+=t
 set expandtab
 set smartindent
@@ -24,7 +23,7 @@ set undofile
 set incsearch
 set nohlsearch
 set cursorline
-set colorcolumn=80
+set colorcolumn=100
 set lazyredraw
 set updatetime=50
 let mapleader = " "

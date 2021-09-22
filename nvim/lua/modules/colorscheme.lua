@@ -1,17 +1,17 @@
---> Color scheme settings <--
+-- > Color scheme settings <--
 
 -- Gruvbox
-vim.cmd([[
-    colorscheme gruvbox
-    set background=dark
-]])
+-- vim.cmd([[
+    -- colorscheme gruvbox
+    -- set background=dark
+-- )
 
 -- To have opaque bg with Kitty
-vim.cmd([[
-    hi! Normal ctermbg=NONE guibg=NONE
-    hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-    hi! ColorColumn ctermbg=8
-]])
+-- vim.cmd([[
+    -- hi! Normal ctermbg=NONE guibg=NONE
+    -- hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+    -- hi! ColorColumn ctermbg=8
+-- )
 
 -- [[
 -- **Nord

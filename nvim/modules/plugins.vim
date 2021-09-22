@@ -11,10 +11,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
 "Tools
-    Plug 'jremmen/vim-ripgrep'
+    " Plug 'jremmen/vim-ripgrep'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'mbbill/undotree'
     Plug 'preservim/nerdtree'
     "To replace with telescope after learning Lua
+    Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-fugitive'
