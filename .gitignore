@@ -1,4 +1,5 @@
 .gitconfig
 .ideavimrc
 **/.zcompdump*
-**/.netrwhist
+zsh/.zsh_history
+nvim/.netrwhist
