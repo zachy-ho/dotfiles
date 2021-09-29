@@ -37,6 +37,7 @@ export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platfo
 export ZSH="$HOME/.oh-my-zsh"
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # ZSH Update Frequency
 export UPDATE_ZSH_DAYS=7
 # FZF command

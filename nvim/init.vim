@@ -13,4 +13,5 @@ source $HOME/.config/nvim/modules/goyo.vim
 source $HOME/.config/nvim/modules/limelight.vim
 source $HOME/.config/nvim/modules/nord.vim
 source $HOME/.config/nvim/modules/remaps.vim
+source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/nvim-treesitter.vim
