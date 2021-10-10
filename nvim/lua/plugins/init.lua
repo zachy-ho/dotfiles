@@ -2,10 +2,13 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-       'morhetz/gruvbox',
-       'arcticicestudio/nord-vim',
+       -- 'morhetz/gruvbox',
+       -- 'arcticicestudio/nord-vim',
        'EdenEast/nightfox.nvim',
-       'marko-cerovac/material.nvim',
+       -- 'marko-cerovac/material.nvim',
+       config = function()
+           require 'plugins/colorscheme'
+        end
     }
 
     -- Nerdtree syntax highlight

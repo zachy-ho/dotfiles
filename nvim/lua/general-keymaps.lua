@@ -3,7 +3,7 @@ local map = utils.map
 
 -- Map leader key
 map('n', '<SPACE>', '<Nop')
-vim.g.mapleader = '<Space>'
+vim.g.mapleader = ' '
 
 -- Remove arrow keys
 map({'n', 'i'}, '<Up>', '<Nop')
