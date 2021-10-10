@@ -40,7 +40,7 @@ o.foldmethod = 'manual'
 o.backup = false
 o.writebackup = false
 o.swapfile = false
-o.undodir = '~/.vim/undodir'
+vim.opt.undodir = vim.fn.stdpath('config') .. '/undo'
 o.undofile = true
 
 -- Lazy redraw and update time

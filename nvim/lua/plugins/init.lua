@@ -1,18 +1,6 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-end
-
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
-
 return require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
+
     use {
        'morhetz/gruvbox',
        'arcticicestudio/nord-vim',
@@ -31,7 +19,7 @@ return require('packer').startup(function(use)
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
       config = function()
-          require 'treesitter'
+          require 'plugins/treesitter'
         end
     }
 
@@ -39,7 +27,7 @@ return require('packer').startup(function(use)
     use {
         'mbbill/undotree',
         config = function()
-          require 'undotree'
+          require 'plugins/undotree'
         end
     }
 
@@ -47,7 +35,7 @@ return require('packer').startup(function(use)
     use {
         'preservim/nerdtree',
         config = function()
-          require 'nerdtree'
+          require 'plugins/nerdtree'
         end
 
     }
@@ -55,10 +43,9 @@ return require('packer').startup(function(use)
     -- FZF
     use {
       '/usr/local/opt/fzf',
-      'junegunn/fzf',
       'junegunn/fzf.vim',
         config = function()
-          require 'fzf'
+          require 'plugins/fzf'
         end
     }
 
@@ -66,7 +53,7 @@ return require('packer').startup(function(use)
     use {
         'tpope/vim-fugitive',
         config = function()
-          require 'fugitive'
+          require 'plugins/fugitive'
         end
     }
 
@@ -74,7 +61,7 @@ return require('packer').startup(function(use)
     use {
       'dense-analysis/ale',
         config = function()
-          require 'ale'
+          require 'plugins/ale'
         end
     }
 
@@ -83,7 +70,7 @@ return require('packer').startup(function(use)
       'neoclide/coc.nvim',
       branch = 'release',
         config = function()
-          require 'coc'
+          require 'plugins/coc'
         end
     }
 
@@ -91,7 +78,7 @@ return require('packer').startup(function(use)
     use {
         'mattn/emmet-vim',
         config = function()
-          require 'emmet'
+          require 'plugins/emmet'
         end
     }
 
@@ -105,14 +92,10 @@ return require('packer').startup(function(use)
     use {
         'preservim/nerdcommenter',
         config = function()
-          require 'nerdcommenter'
+          require 'plugins/nerdcommenter'
         end
     }
 
     -- Canva dprint
     use 'Canva/dprint-vim-plugin'
-
-    if packer_bootstrap then
-        require('packer').sync()
-    end
 end)
