@@ -2,14 +2,17 @@ local utils = require 'utils'
 local map = utils.map
 
 -- Map leader key
-map('n', '<SPACE>', '<Nop')
+map('n', '<SPACE>', '<Nop>')
 vim.g.mapleader = ' '
 
+-- Re-source init.lua
+map('n', '<leader>rsn', ':source $HOME/.config/nvim/init.lua<CR>')
+
 -- Remove arrow keys
-map({'n', 'i'}, '<Up>', '<Nop')
-map({'n', 'i'}, '<Down>', '<Nop')
-map({'n', 'i'}, '<Left>', '<Nop')
-map({'n', 'i'}, '<Right>', '<Nop')
+map({'n', 'i'}, '<Up>', '<Nop>')
+map({'n', 'i'}, '<Down>', '<Nop>')
+map({'n', 'i'}, '<Left>', '<Nop>')
+map({'n', 'i'}, '<Right>', '<Nop>')
 
 -- Path of current file
 map('n', '<leader>pp', '1<C-g>')
