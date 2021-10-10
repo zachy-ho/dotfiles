@@ -8,10 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Cool things
     Plug 'ryanoasis/vim-devicons'
-    Plug 'junegunn/goyo.vim'
-    Plug 'junegunn/limelight.vim'
 "Tools
-    " Plug 'jremmen/vim-ripgrep'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'mbbill/undotree'
     Plug 'preservim/nerdtree'
@@ -21,7 +18,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-fugitive'
 "Syntax
-    Plug 'sheerun/vim-polyglot'
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mattn/emmet-vim'
@@ -29,5 +25,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
     Plug 'preservim/nerdcommenter'
+    Plug 'Canva/dprint-vim-plugin'
 
 call plug#end()
