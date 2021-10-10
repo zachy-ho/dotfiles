@@ -22,12 +22,12 @@ o.textwidth = 0
 o.wrap = true
 
 -- Line numbers, highlights, searches and case
-o.colorcolumn = 100
+o.colorcolumn = '100'
 o.cursorline = true
 o.ignorecase = true
 o.incsearch = true
 o.hlsearch = false
-o.noshowmode = true
+o.showmode = false
 o.number = true
 o.relativenumber = true
 o.scrolloff = 8

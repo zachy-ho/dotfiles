@@ -4,19 +4,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
+
 return require('packer').startup(function(use)
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
-
-return require('packer').startup(function()
     use {
        'morhetz/gruvbox',
        'arcticicestudio/nord-vim',
@@ -34,37 +30,70 @@ return require('packer').startup(function()
     use {
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
+      config = function()
+          require 'treesitter'
+        end
     }
 
     -- Undotree
-    use 'mbbill/undotree'
+    use {
+        'mbbill/undotree',
+        config = function()
+          require 'undotree'
+        end
+    }
 
     -- Nerdtree
-    use 'preservim/nerdtree'
+    use {
+        'preservim/nerdtree',
+        config = function()
+          require 'nerdtree'
+        end
+
+    }
 
     -- FZF
     use {
       '/usr/local/opt/fzf',
       'junegunn/fzf',
-      'junegunn/fzf.vim'
+      'junegunn/fzf.vim',
+        config = function()
+          require 'fzf'
+        end
     }
 
     -- Fugitive
-    use 'tpope/vim-fugitive'
+    use {
+        'tpope/vim-fugitive',
+        config = function()
+          require 'fugitive'
+        end
+    }
 
     -- ALE
     use {
-      'dense-analysis/ale'
+      'dense-analysis/ale',
+        config = function()
+          require 'ale'
+        end
     }
 
     -- Coc.nvim
     use {
       'neoclide/coc.nvim',
-      branch = 'release'
+      branch = 'release',
+        config = function()
+          require 'coc'
+        end
     }
 
     -- Emmet
-    use { 'mattn/emmet-vim' }
+    use {
+        'mattn/emmet-vim',
+        config = function()
+          require 'emmet'
+        end
+    }
 
     -- Auto pairs
     use 'jiangmiao/auto-pairs'
@@ -73,8 +102,17 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
 
     -- Nerdcommenter
-    use { 'preservim/nerdcommenter' }
+    use {
+        'preservim/nerdcommenter',
+        config = function()
+          require 'nerdcommenter'
+        end
+    }
 
     -- Canva dprint
     use 'Canva/dprint-vim-plugin'
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
