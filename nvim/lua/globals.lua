@@ -19,7 +19,7 @@ o.smartindent = true
 o.softtabstop = 4
 o.tabstop = 4
 o.textwidth = 0
-o.wrap = true
+o.wrap = false
 
 -- Line numbers, highlights, searches and case
 o.colorcolumn = '100'

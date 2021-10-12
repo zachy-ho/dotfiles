@@ -35,6 +35,8 @@ export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$PAT
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# Path to NVIM Home
+export NVIM_HOME=$HOME/.config/nvim
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -70,6 +72,10 @@ alias ssh='TERM=xterm-256color ssh'
 alias nrc='cd $HOME/.config/nvim && v'
 alias krc='cd $HOME/.config/kitty && v'
 alias zrc='cd $HOME/.config/zsh && v'
+# git (inspired by oh-my-zsh aliases)
+alias gacmsg='git add . && git commit -m'
+# Canva dprint
+alias dp='$HOME/work/canva/tools/dprint/dprint fmt'
 
 # ---------- Plugins ----------
 plugins=(

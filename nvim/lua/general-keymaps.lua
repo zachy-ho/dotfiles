@@ -6,7 +6,7 @@ map('n', '<SPACE>', '<Nop>')
 vim.g.mapleader = ' '
 
 -- Re-source init.lua
-map('n', '<leader>rsn', ':source $HOME/.config/nvim/init.lua<CR>')
+map('n', '<leader>rsn', ':source $HOME/.config/nvim/resource-nvim.lua<CR>')
 
 -- Remove arrow keys
 map({'n', 'i'}, '<Up>', '<Nop>')
@@ -16,7 +16,8 @@ map({'n', 'i'}, '<Right>', '<Nop>')
 
 -- Path of current file
 map('n', '<leader>pp', '1<C-g>')
-map('n', '<leader>cp', ':let @+= expand("%p")<CR>')
+map('n', '<leader>cp', ':let @+= expand("%:p")<CR>')
+map('n', '<leader>ch', ':let @+= expand("%:p:h")<CR>')
 
 -- Moving lines
 map('n', '<C-j>', ':m .+1<CR>==')

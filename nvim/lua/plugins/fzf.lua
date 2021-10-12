@@ -22,9 +22,14 @@ vim.cmd([[
     return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
     endfunction
     command! ProjectFiles execute 'Files' s:find_git_root()
-]])
 
-vim.cmd([[
+    lua << EOF
+    function _G.check_back_space()
+        local col = vim.api.nvim_win_get_cursor(0)[2]
+        return (col == 0 or vim.api.nvim_get_current_line():sub(col, col):match('%s')) and true
+    end
+    EOF
+
     function! s:show_documentation()
       if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -37,19 +42,22 @@ vim.cmd([[
 
     inoremap <silent><expr> <Tab>
         \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<Tab>" :
+        \ v:lua.check_back_space() ? "\<Tab>" :
         \ coc#refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 ]])
 
-map('n', '<leader>ff', ':Files<CR>')
-map('n', '<leader>fg', ':ProjectFiles<CR>')
-map('n', '<leader>fr', ':let @+= expand("%:p:h") <bar> :Files ')
-map('n', '<leader>rg', ':Find<CR>')
-
 -- Creates a box in the middle for fzf instaed of having it small at the
 -- bottom
-vim.g.fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+vim.cmd([[
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+]])
+
 vim.cmd([[
     let $FZF_DEFAULT_OPTS = '--reverse'
 ]])
+
+map('n', '<leader>ff', ':Files<CR>')
+map('n', '<leader>fg', ':ProjectFiles<CR>')
+map('n', '<leader>fr', ':let @+=expand("%:p:h") <bar> :Files ')
+map('n', '<leader>rg', ':Find<CR>')

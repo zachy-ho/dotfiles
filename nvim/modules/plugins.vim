@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Cool things
     Plug 'ryanoasis/vim-devicons'
+    Plug 'mhinz/vim-startify'
 "Tools
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'mbbill/undotree'

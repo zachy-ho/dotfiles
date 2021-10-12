@@ -1,13 +1,21 @@
+vim.cmd([[
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost $NVIM_HOME/lua/plugins/init.lua source $NVIM_HOME/resource-nvim.lua | PackerCompile
+augroup end
+]])
+
+-- NOTE: individual plugin files have to be resourced by themselves for changes to take place
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-       -- 'morhetz/gruvbox',
-       -- 'arcticicestudio/nord-vim',
-       'EdenEast/nightfox.nvim',
-       -- 'marko-cerovac/material.nvim',
-       config = function()
-           require 'plugins/colorscheme'
+        -- 'morhetz/gruvbox',
+        -- 'arcticicestudio/nord-vim',
+        'EdenEast/nightfox.nvim',
+        -- 'marko-cerovac/material.nvim',
+        config = function()
+            require 'plugins/colorscheme'
         end
     }
 
@@ -19,10 +27,10 @@ return require('packer').startup(function(use)
 
     -- Treesitter
     use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate',
-      config = function()
-          require 'plugins/treesitter'
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function()
+            require 'plugins/treesitter'
         end
     }
 
@@ -30,7 +38,7 @@ return require('packer').startup(function(use)
     use {
         'mbbill/undotree',
         config = function()
-          require 'plugins/undotree'
+            require 'plugins/undotree'
         end
     }
 
@@ -38,17 +46,18 @@ return require('packer').startup(function(use)
     use {
         'preservim/nerdtree',
         config = function()
-          require 'plugins/nerdtree'
+            require 'plugins/nerdtree'
         end
 
     }
 
     -- FZF
     use {
-      '/usr/local/opt/fzf',
-      'junegunn/fzf.vim',
+        '/usr/local/opt/fzf',
+        'junegunn/fzf',
+        'junegunn/fzf.vim',
         config = function()
-          require 'plugins/fzf'
+            require 'plugins/fzf'
         end
     }
 
@@ -56,24 +65,24 @@ return require('packer').startup(function(use)
     use {
         'tpope/vim-fugitive',
         config = function()
-          require 'plugins/fugitive'
+            require 'plugins/fugitive'
         end
     }
 
     -- ALE
     use {
-      'dense-analysis/ale',
+        'dense-analysis/ale',
         config = function()
-          require 'plugins/ale'
+            require 'plugins/ale'
         end
     }
 
     -- Coc.nvim
     use {
-      'neoclide/coc.nvim',
-      branch = 'release',
+        'neoclide/coc.nvim',
+        branch = 'release',
         config = function()
-          require 'plugins/coc'
+            require 'plugins/coc'
         end
     }
 
@@ -81,7 +90,7 @@ return require('packer').startup(function(use)
     use {
         'mattn/emmet-vim',
         config = function()
-          require 'plugins/emmet'
+            require 'plugins/emmet'
         end
     }
 
@@ -95,8 +104,13 @@ return require('packer').startup(function(use)
     use {
         'preservim/nerdcommenter',
         config = function()
-          require 'plugins/nerdcommenter'
+            require 'plugins/nerdcommenter'
         end
+    }
+
+    -- Startify
+    use {
+        'mhinz/vim-startify',
     }
 
     -- Canva dprint
