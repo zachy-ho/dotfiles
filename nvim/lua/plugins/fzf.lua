@@ -30,16 +30,6 @@ vim.cmd([[
     end
     EOF
 
-    function! s:show_documentation()
-      if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-      elseif (coc#rpc#ready())
-        call CocActionAsync('doHover')
-      else
-        execute '!' . &keywordprg . " " . expand('<cword>')
-      endif
-    endfunction
-
     inoremap <silent><expr> <Tab>
         \ pumvisible() ? "\<C-n>" :
         \ v:lua.check_back_space() ? "\<Tab>" :
@@ -57,7 +47,6 @@ vim.cmd([[
     let $FZF_DEFAULT_OPTS = '--reverse'
 ]])
 
-map('n', '<leader>ff', ':Files<CR>')
-map('n', '<leader>fg', ':ProjectFiles<CR>')
-map('n', '<leader>fr', ':let @+=expand("%:p:h") <bar> :Files ')
-map('n', '<leader>rg', ':Find<CR>')
+map('n', '<leader>ff', ':Files ', { noremap = true })
+map('n', '<leader>fg', ':ProjectFiles<CR>', { noremap = true })
+map('n', '<leader>rg', ':Find<CR>', { noremap = true })

@@ -24,13 +24,22 @@ vim.cmd([[
     endfunction
 
     command! -nargs=+ CocSplitIfNotOpen :call SplitIfNotOpen(<f-args>)
+
 ]])
+-- function! s:show_documentation()
+-- if (index(['vim','help'], &filetype) >= 0)
+-- execute 'h '.expand('<cword>')
+-- elseif (coc#rpc#ready())
+-- call CocActionAsync('doHover')
+-- else
+-- execute '!' . &keywordprg . " " . expand('<cword>')
+-- endif
+-- endfunction
 
 -- Coc.nvim
-map('n', '<leader>gd', ':call CocAction("jumpDefinition")<CR>')
-map('n', '<leader>gt', '<Plug>(coc-type-definition)')
-map('n', '<leader>gi', ':call CocAction("jumpImplementation")<CR>')
-map('n', '<leader>gr', '<Plug>(coc-references)')
-map('n', '<leader>gp', '<Plug>(coc-action-doHover)')
-map('n', '<leader>rn', '<plug>(coc-rename)')
-map('n', 'K', ':call <SID>show_documentation()<CR>')
+map('n', '<leader>gd', ':call CocAction("jumpDefinition")<CR>', { noremap = false })
+map('n', '<leader>gt', '<Plug>(coc-type-definition)', { noremap = false })
+map('n', '<leader>gi', ':call CocAction("jumpImplementation")<CR>', { noremap = false })
+map('n', '<leader>gr', '<Plug>(coc-references)', { noremap = false })
+map('n', '<leader>rn', '<Plug>(coc-rename)', { noremap = false })
+-- map('n', 'K', ':call <SID>show_documentation()<CR>', { noremap = false })

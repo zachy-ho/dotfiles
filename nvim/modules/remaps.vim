@@ -16,9 +16,13 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 " Print full path of current file
-nnoremap <leader>pp 1<C-g>
+nnoremap <leader>pf 1<C-g>
+" Clipboard copy
+nnoremap <leader>y "*y
+vnoremap <leader>y "*y
 " Copy path of current file
-nnoremap <leader>cp :let @+= expand("%:p:h")<CR>
+nnoremap <leader>pc :let @+= expand("%:p")<CR>
+nnoremap <leader>ph :let @+= expand("%:p:h")<CR>
 " Moving lines up and down
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -41,11 +45,11 @@ nnoremap <leader>K : wincmd K<CR>
 nnoremap <leader>L : wincmd L<CR>
 nnoremap <leader>x : wincmd x<CR>
 " Vim tabs
-noremap <leader>ct :tabclose
-nnoremap <leader>ot :tabnew
+noremap <leader>tc :tabclose
+nnoremap <leader>tn :tabnew
 " Tools-toggles
 nnoremap <leader>u :UndotreeToggle<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle
 " Resizing
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>

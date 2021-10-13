@@ -14,10 +14,13 @@ map({'n', 'i'}, '<Down>', '<Nop>')
 map({'n', 'i'}, '<Left>', '<Nop>')
 map({'n', 'i'}, '<Right>', '<Nop>')
 
+-- Clipboard copy
+map({'n', 'v'}, '<leader>y', '"*y')
+
 -- Path of current file
-map('n', '<leader>pp', '1<C-g>')
-map('n', '<leader>cp', ':let @+= expand("%:p")<CR>')
-map('n', '<leader>ch', ':let @+= expand("%:p:h")<CR>')
+map('n', '<leader>pf', '1<C-g>')
+map('n', '<leader>pc', ':let @+= expand("%:p")<CR>')
+map('n', '<leader>ph', ':let @+= expand("%:p:h")<CR>')
 
 -- Moving lines
 map('n', '<C-j>', ':m .+1<CR>==')
