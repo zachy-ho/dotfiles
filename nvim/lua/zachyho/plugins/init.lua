@@ -34,6 +34,11 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Native-lsp
+    use {
+        'neovim/nvim-lspconfig'
+    }
+
     -- Undotree
     use {
         'mbbill/undotree',

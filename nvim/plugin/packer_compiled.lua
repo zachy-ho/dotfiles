@@ -115,6 +115,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
   ["nvim-treesitter"] = {
     config = { "\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/treesitter\frequire\0" },
     loaded = true,
@@ -153,22 +157,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nerdtree
-time([[Config for nerdtree]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins/nerdtree\frequire\0", "config", "nerdtree")
-time([[Config for nerdtree]], false)
--- Config for: coc.nvim
-time([[Config for coc.nvim]], true)
-try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins/coc\frequire\0", "config", "coc.nvim")
-time([[Config for coc.nvim]], false)
--- Config for: nightfox.nvim
-time([[Config for nightfox.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/colorscheme\frequire\0", "config", "nightfox.nvim")
-time([[Config for nightfox.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/treesitter\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
 -- Config for: undotree
 time([[Config for undotree]], true)
 try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins/undotree\frequire\0", "config", "undotree")
@@ -181,14 +169,30 @@ time([[Config for ale]], false)
 time([[Config for nerdcommenter]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins/nerdcommenter\frequire\0", "config", "nerdcommenter")
 time([[Config for nerdcommenter]], false)
--- Config for: emmet-vim
-time([[Config for emmet-vim]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/emmet\frequire\0", "config", "emmet-vim")
-time([[Config for emmet-vim]], false)
 -- Config for: vim-fugitive
 time([[Config for vim-fugitive]], true)
 try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins/fugitive\frequire\0", "config", "vim-fugitive")
 time([[Config for vim-fugitive]], false)
+-- Config for: nerdtree
+time([[Config for nerdtree]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins/nerdtree\frequire\0", "config", "nerdtree")
+time([[Config for nerdtree]], false)
+-- Config for: coc.nvim
+time([[Config for coc.nvim]], true)
+try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins/coc\frequire\0", "config", "coc.nvim")
+time([[Config for coc.nvim]], false)
+-- Config for: nightfox.nvim
+time([[Config for nightfox.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/colorscheme\frequire\0", "config", "nightfox.nvim")
+time([[Config for nightfox.nvim]], false)
+-- Config for: emmet-vim
+time([[Config for emmet-vim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/emmet\frequire\0", "config", "emmet-vim")
+time([[Config for emmet-vim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 if should_profile then save_profiles() end
 
 end)
