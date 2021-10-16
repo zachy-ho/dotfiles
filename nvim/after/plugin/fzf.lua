@@ -1,4 +1,4 @@
-local utils = require 'utils'
+local utils = require 'zachyho.utils'
 local map = utils.map
 
 ---------- FZF settings ----------
@@ -15,20 +15,22 @@ local map = utils.map
 -- Fzf find from current directory
 
 -- For fzf to search from project/git root
+--
+-- function! s:find_git_root()
+-- return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+-- endfunction
+-- command! ProjectFiles execute 'Files' s:find_git_root()
+--
+-- lua << EOF
+-- function _G.check_back_space()
+-- local col = vim.api.nvim_win_get_cursor(0)[2]
+-- return (col == 0 or vim.api.nvim_get_current_line():sub(col, col):match('%s')) and true
+-- end
+-- EOF
 vim.cmd([[
     command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-    function! s:find_git_root()
-    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-    endfunction
-    command! ProjectFiles execute 'Files' s:find_git_root()
 
-    lua << EOF
-    function _G.check_back_space()
-        local col = vim.api.nvim_win_get_cursor(0)[2]
-        return (col == 0 or vim.api.nvim_get_current_line():sub(col, col):match('%s')) and true
-    end
-    EOF
 
     inoremap <silent><expr> <Tab>
         \ pumvisible() ? "\<C-n>" :

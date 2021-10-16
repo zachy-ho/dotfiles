@@ -1,4 +1,4 @@
-local utils = require 'utils'
+local utils = require 'zachyho.utils'
 local map = utils.map
 
 -- Map leader key

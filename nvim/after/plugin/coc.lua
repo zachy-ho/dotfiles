@@ -1,4 +1,4 @@
-local utils = require 'utils'
+local utils = require 'zachyho.utils'
 local map = utils.map
 -- Make a new split if the destination file is not already open
 -- Stolen from: https://ramgo.li/posts/coc.nvim_split_if_not_open/

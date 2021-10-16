@@ -1,8 +1,7 @@
 -- > General options and settings <--
 
 local g = vim.g
-local o = vim.o
-local cmd = vim.api.nvim_command
+local opt = vim.opt
 
 
 -- Mapping leader to <SPACE>
@@ -12,40 +11,40 @@ vim.api.nvim_set_keymap('n', ' ', '', {noremap = true})
 g.mapleader = ' '
 
 -- Tabs, indents, wraps
-o.autoindent = true
-o.expandtab = true
-o.shiftwidth = 4
-o.smartindent = true
-o.softtabstop = 4
-o.tabstop = 4
-o.textwidth = 0
-o.wrap = false
+opt.autoindent = true
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.smartindent = true
+opt.softtabstop = 4
+opt.tabstop = 4
+opt.textwidth = 0
+opt.wrap = false
 
 -- Line numbers, highlights, searches and case
-o.colorcolumn = '100'
-o.cursorline = true
-o.ignorecase = true
-o.incsearch = true
-o.hlsearch = false
-o.showmode = false
-o.number = true
-o.relativenumber = true
-o.scrolloff = 8
-o.smartcase = true
+opt.colorcolumn = '100'
+opt.cursorline = true
+opt.ignorecase = true
+opt.incsearch = true
+opt.hlsearch = false
+opt.showmode = false
+opt.number = true
+opt.relativenumber = true
+opt.scrolloff = 8
+opt.smartcase = true
 
 -- Folds
-o.foldmethod = 'manual'
+opt.foldmethod = 'manual'
 
 -- Backups
-o.backup = false
-o.writebackup = false
-o.swapfile = false
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
 vim.opt.undodir = vim.fn.stdpath('config') .. '/undo'
-o.undofile = true
+opt.undofile = true
 
 -- Lazy redraw and update time
-o.lazyredraw = true
-o.updatetime = 50
+opt.lazyredraw = true
+opt.updatetime = 50
 
 -- Errorbells
-o.errorbells = false
+opt.errorbells = false

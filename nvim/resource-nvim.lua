@@ -1,4 +1,4 @@
-vim.cmd('source $NVIM_HOME/lua/general-keymaps.lua')
-vim.cmd('source $NVIM_HOME/lua/autocommands.lua')
-vim.cmd('source $NVIM_HOME/lua/plugins/init.lua')
-vim.cmd('source $NVIM_HOME/lua/statusline.lua')
+vim.cmd('source $NVIM_HOME/lua/zachyho/general-keymaps.lua')
+vim.cmd('source $NVIM_HOME/lua/zachyho/autocommands.lua')
+-- vim.cmd('source $NVIM_HOME/lua/zachyho/plugins.lua')
+vim.cmd('source $NVIM_HOME/lua/zachyho/statusline.lua')
