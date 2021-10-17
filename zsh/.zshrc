@@ -107,3 +107,5 @@ COMPLETION_WAITING_DOTS="true"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/.config/dotfiles/zsh/.p10k.zsh ]] || source ~/.config/dotfiles/zsh/.p10k.zsh
+
+alias luamake=/Users/zacharyho/.language_servers/lua-language-server/3rd/luamake/luamake
