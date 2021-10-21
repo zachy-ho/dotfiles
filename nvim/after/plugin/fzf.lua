@@ -30,13 +30,6 @@ local map = utils.map
 vim.cmd([[
     command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-
-
-    inoremap <silent><expr> <Tab>
-        \ pumvisible() ? "\<C-n>" :
-        \ v:lua.check_back_space() ? "\<Tab>" :
-        \ coc#refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 ]])
 
 -- Creates a box in the middle for fzf instaed of having it small at the

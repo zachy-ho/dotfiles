@@ -1,9 +1,10 @@
 require 'zachyho.globals'
 require 'zachyho.general-keymaps'
 
--- Exclude for now. Might not even need it anymore
--- require 'zachyho.autocommands'
 require 'zachyho.plugins'
+
+-- Neovim native lsp
+require 'zachyho.lsp'
 
 -- Require statusline after plugins since it uses fugitive
 require 'zachyho.statusline'

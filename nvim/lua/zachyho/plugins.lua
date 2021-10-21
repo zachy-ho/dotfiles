@@ -1,7 +1,7 @@
 vim.cmd([[
 augroup packer_user_config
-autocmd!
-autocmd BufWritePost $NVIM_HOME/lua/zachyho/plugins/init.lua source $NVIM_HOME/resource-nvim.lua | PackerCompile
+    autocmd!
+    autocmd BufWritePost $NVIM_HOME/lua/zachyho/plugins/init.lua source $NVIM_HOME/resource-nvim.lua | PackerCompile
 augroup end
 ]])
 
@@ -34,6 +34,20 @@ return require('packer').startup(function(use)
         'neovim/nvim-lspconfig'
     }
 
+    -- Cmp
+    use {
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-nvim-lua'
+    }
+
+    -- Vsnip
+    use {
+        'hrsh7th/vim-vsnip'
+    }
+
     -- Undotree
     use {
         'mbbill/undotree',
@@ -57,15 +71,15 @@ return require('packer').startup(function(use)
     }
 
     -- ALE
-    use {
-        'dense-analysis/ale',
-    }
+    -- use {
+        -- 'dense-analysis/ale',
+    -- }
 
     -- Coc.nvim
-    use {
-        'neoclide/coc.nvim',
-        branch = 'release',
-    }
+    -- use {
+        -- 'neoclide/coc.nvim',
+        -- branch = 'release',
+    -- }
 
     -- Emmet
     use {
@@ -86,6 +100,11 @@ return require('packer').startup(function(use)
     -- Startify
     use {
         'mhinz/vim-startify',
+    }
+
+    -- Auto Session
+    use {
+        'rmagatti/auto-session',
     }
 
     -- Canva dprint

@@ -1,3 +1,4 @@
+-- Most things in this file are stolen from TJ Devries config!
 local has_lsp, lspconfig = pcall(require, "lspconfig")
 if not has_lsp then
     return
@@ -16,20 +17,22 @@ local custom_attach = function(client, bufnr)
 
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+    -- Not really used often (yet), keep most for now doe
+    -- buf_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
     buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 end
 
@@ -45,27 +48,24 @@ else
     print("Unsupported system for sumneko")
 end
 
-local sumneko_root_path = vim.fn.stdpath('cache')..'/Users/zacharyho/.language_servers/lua-language-server'
-local sumneko_binary = sumneko_root_path..("/Users/zacharyho/.language_servers/lua-language-server/bin/"..system_name.."/lua-language-server")
+local sumneko_root_path = '/Users/zacharyho/.language_servers/lua-language-server'
+local sumneko_binary = sumneko_root_path..("/bin/"..system_name.."/lua-language-server")
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- Sumneko-lua (END)
---
-local html_cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
-html_cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
+custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
+custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
     bashls = true,
-    cssls = {
-        capabilities = html_cssls_capabilities
-    },
+    cssls = true,
     dockerls = true,
-    html = {
-        capabilities = html_cssls_capabilities
-    },
+    html = true,
     jsonls = {
         commands = {
             Format = {
@@ -101,7 +101,16 @@ local servers = {
             }
         }
     },
-    tsserver = true,
+    tsserver = {
+        filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.jsx"
+        }
+    },
     vimls = true,
     yamlls = true
 
@@ -119,9 +128,10 @@ local setup_server = function(server, config)
 
     config = vim.tbl_deep_extend("keep", {
         on_attach = custom_attach,
+        capabilities = custom_capabilities,
         flags = {
             debounce_text_changes = 50,
-        },
+        }
     }, config)
 
     lspconfig[server].setup(config)

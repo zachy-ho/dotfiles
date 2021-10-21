@@ -1,8 +1,7 @@
 TODOs:
-[] Install needed LSPs
-[] Configure each LSP's settings
-[] Remove unneeded plugins (e.g. Coc)
-[] Double-check all keymaps
+[] Install Telescope?
+[] Install Auto Session
+[] Read ShaDa doc in nvim
 
 Extra LSPs:
 [] EFM

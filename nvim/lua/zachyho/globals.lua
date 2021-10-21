@@ -32,6 +32,10 @@ opt.relativenumber = true
 opt.scrolloff = 8
 opt.smartcase = true
 
+-- Splitting
+opt.splitright = true
+opt.splitbelow = true
+
 -- Folds
 opt.foldmethod = 'manual'
 
@@ -44,7 +48,6 @@ opt.undofile = true
 
 -- Lazy redraw and update time
 opt.lazyredraw = true
-opt.updatetime = 50
 
 -- Errorbells
 opt.errorbells = false

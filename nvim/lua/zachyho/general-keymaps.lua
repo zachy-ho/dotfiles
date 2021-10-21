@@ -31,8 +31,8 @@ map('v', '<C-j>', ":m '>+1<CR>gv=gv")
 map('v', '<C-k>', ":m '<-2<CR>gv=gv")
 
 -- Creating splits
-map('n', '<leader>wl', ': wincmd v<CR>')
-map('n', '<leader>wj', ': wincmd s<CR>')
+map('n', '<leader>sl', ': wincmd v<CR>')
+map('n', '<leader>sj', ': wincmd s<CR>')
 
 -- Moving between panes
 map('n', '<leader>h', ': wincmd h<CR>')
@@ -46,6 +46,11 @@ map('n', '<leader>J', ': wincmd J<CR>')
 map('n', '<leader>K', ': wincmd K<CR>')
 map('n', '<leader>L', ': wincmd L<CR>')
 map('n', '<leader>x', ': wincmd x<CR>')
+
+-- Center screen after n/N
+map('n', 'n', 'nzz', { noremap = false })
+map('n', 'N', 'Nzz', { noremap = false })
+
 
 -- Vim tabs
 map('n', '<leader>tc', ':tabclose')
