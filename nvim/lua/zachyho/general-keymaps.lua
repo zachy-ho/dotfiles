@@ -8,6 +8,9 @@ vim.g.mapleader = ' '
 -- Re-source init.lua
 map('n', '<leader>rsn', ':source $HOME/.config/nvim/resource-nvim.lua<CR>')
 
+-- Save and execute current file (stolen from TJ Devries)
+map('n', '<leader><leader>x', ':call zachyho#save_and_exec()<CR>')
+
 -- Remove arrow keys
 map({'n', 'i'}, '<Up>', '<Nop>')
 map({'n', 'i'}, '<Down>', '<Nop>')
@@ -17,6 +20,10 @@ map({'n', 'i'}, '<Right>', '<Nop>')
 -- Clipboard copy
 map({'n', 'v'}, '<leader>y', '"*y')
 
+-- Quickfix and location lists
+map('n', ',ln', ':lnext')
+-- map('n', ',')
+
 -- Path of current file
 map('n', '<leader>pf', '1<C-g>')
 map('n', '<leader>pc', ':let @+= expand("%:p")<CR>')
@@ -25,8 +32,6 @@ map('n', '<leader>ph', ':let @+= expand("%:p:h")<CR>')
 -- Moving lines
 map('n', '<C-j>', ':m .+1<CR>==')
 map('n', '<C-k>', ':m .-2<CR>==')
-map('i', '<C-j>', '<Esc> :m .+1<CR>==gi')
-map('i', '<C-k>', '<Esc> :m .-2<CR>==gi')
 map('v', '<C-j>', ":m '>+1<CR>gv=gv")
 map('v', '<C-k>', ":m '<-2<CR>gv=gv")
 

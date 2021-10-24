@@ -5,7 +5,6 @@ augroup packer_user_config
 augroup end
 ]])
 
--- NOTE: individual plugin files have to be resourced by themselves for changes to take place
 return require('packer').startup(function(use)
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
@@ -20,9 +19,6 @@ return require('packer').startup(function(use)
     -- Nerdtree syntax highlight
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-    -- Vim devicons
-    use 'ryanoasis/vim-devicons'
-
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -30,9 +26,24 @@ return require('packer').startup(function(use)
     }
 
     -- Native-lsp
-    use {
-        'neovim/nvim-lspconfig'
-    }
+    use 'neovim/nvim-lspconfig'
+
+    -- Nvim devicons (can't be fucked configuring this cos it doesn't work for me yet)
+    -- use 'kyazdani42/nvim-web-devicons'
+    use 'ryanoasis/vim-devicons'
+
+    -- Trouble (doesn't work for some reason??)
+    -- use {
+      -- "folke/trouble.nvim",
+      -- -- requires = "kyazdani42/nvim-web-devicons",
+      -- config = function()
+        -- require("trouble").setup {
+          -- -- your configuration comes here
+          -- -- or leave it empty to use the default settings
+          -- -- refer to the configuration section below
+        -- }
+      -- end
+    -- }
 
     -- Cmp
     use {
@@ -45,18 +56,15 @@ return require('packer').startup(function(use)
 
     -- Vsnip
     use {
-        'hrsh7th/vim-vsnip'
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/vim-vsnip-integ'
     }
 
     -- Undotree
-    use {
-        'mbbill/undotree',
-    }
+    use 'mbbill/undotree'
 
     -- Nerdtree
-    use {
-        'preservim/nerdtree',
-    }
+    use 'preservim/nerdtree'
 
     -- FZF
     use {
@@ -66,24 +74,18 @@ return require('packer').startup(function(use)
     }
 
     -- Fugitive
-    use {
-        'tpope/vim-fugitive',
-    }
-
-    -- ALE
-    -- use {
-        -- 'dense-analysis/ale',
-    -- }
-
-    -- Coc.nvim
-    -- use {
-        -- 'neoclide/coc.nvim',
-        -- branch = 'release',
-    -- }
+    use 'tpope/vim-fugitive'
 
     -- Emmet
     use {
         'mattn/emmet-vim',
+        setup = function()
+            vim.g.user_emmet_install_global = 0
+            vim.g.user_emmet_leader_key = '<C-z>'
+            vim.cmd([[
+                autocmd FileType html,css EmmetInstall
+            ]])
+        end
     }
 
     -- Auto pairs
@@ -93,19 +95,13 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
 
     -- Nerdcommenter
-    use {
-        'preservim/nerdcommenter',
-    }
+    use 'preservim/nerdcommenter'
 
     -- Startify
-    use {
-        'mhinz/vim-startify',
-    }
+    use 'mhinz/vim-startify'
 
     -- Auto Session
-    use {
-        'rmagatti/auto-session',
-    }
+    use 'rmagatti/auto-session'
 
     -- Canva dprint
     use 'Canva/dprint-vim-plugin'

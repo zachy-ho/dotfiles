@@ -99,7 +99,8 @@ _G.packer_plugins = {
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    needs_bufread = false,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/opt/emmet-vim"
   },
   fzf = {
     loaded = true,
@@ -164,10 +165,21 @@ _G.packer_plugins = {
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Setup for: emmet-vim
+time([[Setup for emmet-vim]], true)
+try_loadstring("\27LJ\2\n¿\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0'\1\4\0=\1\3\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0H                autocmd FileType html,css EmmetInstall\n            \bcmd\n<C-z>\26user_emmet_leader_key\30user_emmet_install_global\6g\bvim\0", "setup", "emmet-vim")
+time([[Setup for emmet-vim]], false)
+time([[packadd for emmet-vim]], true)
+vim.cmd [[packadd emmet-vim]]
+time([[packadd for emmet-vim]], false)
 if should_profile then save_profiles() end
 
 end)

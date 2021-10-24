@@ -1,4 +1,4 @@
-require 'zachyho.globals'
+require 'zachyho.options'
 require 'zachyho.general-keymaps'
 
 require 'zachyho.plugins'
