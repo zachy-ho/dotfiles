@@ -20,8 +20,13 @@ map({'n', 'i'}, '<Right>', '<Nop>')
 -- Clipboard copy
 map({'n', 'v'}, '<leader>y', '"*y')
 
--- Quickfix and location lists
+-- Quickfix and location lists (use ',' as secondary leader key for these items)
+map('n', ',ll', ':lwindow')
 map('n', ',ln', ':lnext')
+map('n', ',lp', ':lprev')
+map('n', ',qf', ':cwindow')
+map('n', ',qn', ':cnext')
+map('n', ',qp', ':cprev')
 -- map('n', ',')
 
 -- Path of current file

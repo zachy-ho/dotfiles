@@ -29,7 +29,7 @@ local custom_attach = function(_, bufnr)
     buf_set_keymap('n', ',ds', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
     buf_set_keymap('n', ',dp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ',dn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', ',dl', [[ <cmd>lua vim.lsp.diagnostic.set_loclist({open_loclist=true})<CR>]], opts)
+    buf_set_keymap('n', ',dl', [[ <cmd>lua vim.lsp.diagnostic.set_loclist({open_loclist=true})<CR> <bar> :setlocal wrap<CR>]], opts)
 
     -- Not really used often (yet)
     -- buf_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
