@@ -1,3 +1,4 @@
+-- This doesn't really work lmao
 vim.cmd([[
 augroup packer_user_config
     autocmd!
@@ -6,9 +7,11 @@ augroup end
 ]])
 
 return require('packer').startup({ function(use)
+
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
+    -- Color schemes
     use {
         -- 'morhetz/gruvbox',
         -- 'arcticicestudio/nord-vim',
@@ -16,35 +19,34 @@ return require('packer').startup({ function(use)
         -- 'marko-cerovac/material.nvim',
     }
 
-    -- Hexokinase
+    -- Hexokinase: Previews color whenever color (e.g. hex) is used
     use {
         'RRethy/vim-hexokinase',
         run = 'make hexokinase'
     }
 
-    -- Nerdtree syntax highlight
+    -- Nerdtree-syntax-highlight: To identify filetypes in Nerdtree
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-    -- Popup
+    -- Popup: Only here for Harpoon for now
     use 'nvim-lua/popup.nvim'
 
-    -- Treesitter
+    -- Treesitter: Just for syntax highlighting only for now
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
     }
 
-    -- Plenary
+    -- Plenary: Needed for one of the plugins below I don't remember which
     use 'nvim-lua/plenary.nvim'
 
-    -- Native-lsp
+    -- Native-lsp: Neovim native Language Server Protocols
     use 'neovim/nvim-lspconfig'
 
-    -- Nvim devicons (can't be fucked configuring this cos it doesn't work for me yet)
-    -- use 'kyazdani42/nvim-web-devicons'
+    -- Vim devicons: Gives me pretty icons in Nerdtree
     use 'ryanoasis/vim-devicons'
 
-    -- Cmp
+    -- Cmp: Completion engine
     use {
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
@@ -53,33 +55,33 @@ return require('packer').startup({ function(use)
         'hrsh7th/cmp-nvim-lua'
     }
 
-    -- Vsnip and snippets
+    -- Vsnip and snippets: Snippets for fast coding
     use {
         'hrsh7th/vim-vsnip',
         'hrsh7th/vim-vsnip-integ',
         'rafamadriz/friendly-snippets'
     }
 
-    -- Undotree
+    -- Undotree: Undo and redo
     use 'mbbill/undotree'
 
-    -- Nerdtree
+    -- Nerdtree: Tree-style navigator
     use 'preservim/nerdtree'
 
-    -- FZF
+    -- FZF: Fuzzy finder
     use {
         '/usr/local/opt/fzf',
         'junegunn/fzf',
         'junegunn/fzf.vim',
     }
 
-    -- Grepper (until I find a way to do this with FZF.vim's Rg)
+    -- Grepper: Makes grepping shit and putting them in quickfix lists so easy
     use 'mhinz/vim-grepper'
 
-    -- Fugitive
+    -- Fugitive: Git operations within vim
     use 'tpope/vim-fugitive'
 
-    -- Emmet
+    -- Emmet: HTML templating?
     use {
         'mattn/emmet-vim',
         setup = function()
@@ -91,25 +93,25 @@ return require('packer').startup({ function(use)
         end,
     }
 
-    -- Auto pairs
+    -- Autopairs: For pairs like '', "", (), {}, []
     use 'windwp/nvim-autopairs'
 
-    -- Surround
+    -- Surround: Whenever I want to surround something with pairs
     use 'tpope/vim-surround'
 
-    -- Easy align
+    -- Easy align: Aligning things to look pretty
     use 'junegunn/vim-easy-align'
 
-    -- Nerdcommenter
+    -- Nerdcommenter: Commenting shortcuts
     use 'preservim/nerdcommenter'
 
-    -- Auto Session
+    -- Auto Session: Saves and restores vim sessions
     use 'rmagatti/auto-session'
 
-    -- Harpoon
+    -- Harpoon: File marking to jump back and forth more quickly
     use 'ThePrimeagen/harpoon'
 
-    -- Org mode
+    -- Org mode: My organizer/todo tool
     use {
         'kristijanhusak/orgmode.nvim',
         branch = 'tree-sitter',
@@ -120,13 +122,13 @@ return require('packer').startup({ function(use)
     use 'akinsho/org-bullets.nvim'
     use 'lukas-reineke/headlines.nvim'
 
-    -- Markdown-preview
+    -- Markdown-preview: self-explanatory
     use {
         'iamcco/markdown-preview.nvim',
         run = 'cd app && yarn install'
     }
 
-    -- Canva dprint
+    -- Canva dprint: Formatting for work
     use 'Canva/dprint-vim-plugin'
 end,
 config = {
