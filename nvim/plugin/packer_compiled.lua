@@ -110,6 +110,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/harpoon"
@@ -122,6 +126,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
   },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/material.nvim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nerdcommenter"
@@ -133,6 +141,10 @@ _G.packer_plugins = {
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
+  },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -169,6 +181,14 @@ _G.packer_plugins = {
   ["popup.nvim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/rose-pine"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/sonokai"
   },
   undotree = {
     loaded = true,

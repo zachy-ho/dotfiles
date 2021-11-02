@@ -13,10 +13,20 @@ return require('packer').startup({ function(use)
 
     -- Color schemes
     use {
-        -- 'morhetz/gruvbox',
-        -- 'arcticicestudio/nord-vim',
+        -- I don't really wanna use these anymore, might delete soon
+        'morhetz/gruvbox',
+        'arcticicestudio/nord-vim',
+
+        -- Getting old
         'EdenEast/nightfox.nvim',
-        -- 'marko-cerovac/material.nvim',
+        'marko-cerovac/material.nvim',
+
+        -- Currently liking
+        {
+            'rose-pine/neovim',
+            as = 'rose-pine'
+        },
+        'sainnhe/sonokai'
     }
 
     -- Hexokinase: Previews color whenever color (e.g. hex) is used

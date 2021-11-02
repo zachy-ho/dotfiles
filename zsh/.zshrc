@@ -74,6 +74,8 @@ alias nrc='cd $HOME/.config/nvim && v'
 alias krc='cd $HOME/.config/kitty && v'
 alias zrc='cd $HOME/.config/zsh && v'
 alias orgs='cd $HOME/zachyho-codes/zachyho-orgs && v'
+# Set Kitty colors
+alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
 # git (inspired by oh-my-zsh aliases)
 alias gacmsg='git add . && git commit -m'
 # Canva dprint
