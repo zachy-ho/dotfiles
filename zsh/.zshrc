@@ -56,9 +56,10 @@ export LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH
 # General usage
 alias clr='clear'
 # nvim
-alias v='nvim-nightly.sh'
+alias v='nvim'
+alias vi='nvim'
 # Nightly build. Script is under '/usr/local/bin'
-alias vi='nvim-nightly.sh'
+alias vn='nvim-nightly.sh'
 # lazygit
 alias lg='lazygit'
 # neofetch
@@ -68,10 +69,11 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java14='export JAVA_HOME=$JAVA_14_HOME'
 # SSH
 alias ssh='TERM=xterm-256color ssh'
-# Navigating to dotfiles
+# Navigating to dotfiles, and regularly-used directories
 alias nrc='cd $HOME/.config/nvim && v'
 alias krc='cd $HOME/.config/kitty && v'
 alias zrc='cd $HOME/.config/zsh && v'
+alias orgs='cd $HOME/zachyho-codes/zachyho-orgs && v'
 # git (inspired by oh-my-zsh aliases)
 alias gacmsg='git add . && git commit -m'
 # Canva dprint
@@ -100,6 +102,9 @@ COMPLETION_WAITING_DOTS="true"
 # ---------- Executables ----------
 # Load NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Eval direv
+eval "$(direnv hook $SHELL)"
 
 # p10k
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.

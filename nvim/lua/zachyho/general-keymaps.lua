@@ -21,13 +21,12 @@ map({'n', 'i'}, '<Right>', '<Nop>')
 map({'n', 'v'}, '<leader>y', '"*y')
 
 -- Quickfix and location lists (use ',' as secondary leader key for these items)
-map('n', ',ll', ':lwindow')
-map('n', ',ln', ':lnext')
-map('n', ',lp', ':lprev')
-map('n', ',qf', ':cwindow')
-map('n', ',qn', ':cnext')
-map('n', ',qp', ':cprev')
--- map('n', ',')
+map('n', ',ll', ':lwindow<CR>')
+map('n', ',ln', ':lnext<CR>')
+map('n', ',lp', ':lprev<CR>')
+map('n', ',qf', ':cwindow<CR>')
+map('n', ',qn', ':cnext<CR>')
+map('n', ',qp', ':cprev<CR>')
 
 -- Path of current file
 map('n', '<leader>pf', '1<C-g>')
@@ -41,14 +40,14 @@ map('v', '<C-j>', ":m '>+1<CR>gv=gv")
 map('v', '<C-k>', ":m '<-2<CR>gv=gv")
 
 -- Creating splits
-map('n', '<leader>sl', ': wincmd v<CR>')
-map('n', '<leader>sj', ': wincmd s<CR>')
+map('n', '<leader>sv', ':vsplit<CR>')
+map('n', '<leader>sh', ':split<CR>')
 
 -- Moving between panes
-map('n', '<leader>h', ': wincmd h<CR>')
-map('n', '<leader>j', ': wincmd j<CR>')
-map('n', '<leader>k', ': wincmd k<CR>')
-map('n', '<leader>l', ': wincmd l<CR>')
+map('n', '<leader>wh', ': wincmd h<CR>')
+map('n', '<leader>wj', ': wincmd j<CR>')
+map('n', '<leader>wk', ': wincmd k<CR>')
+map('n', '<leader>wl', ': wincmd l<CR>')
 
 -- Moving panes
 map('n', '<leader>H', ': wincmd H<CR>')
@@ -63,8 +62,14 @@ map('n', 'N', 'Nzz', { noremap = false })
 
 
 -- Vim tabs
-map('n', '<leader>tc', ':tabclose')
-map('n', '<leader>tn', ':tabnew')
+map('n', '<leader>tc', ':tabclose ')
+map('n', '<leader>tn', ':tabnew ')
+map('n', '<leader>ts', ':tab split<CR>')
 
-map('n', '<leader>-', ':vertical resize -5<CR>')
-map('n', '<leader>=', ':vertical resize +5<CR>')
+map('n', '<leader>=-', ':vertical resize -5<CR>')
+map('n', '<leader>==', ':vertical resize +5<CR>')
+map('n', '<leader>--', ':resize -5<CR>')
+map('n', '<leader>-=', ':resize +5<CR>')
+
+-- Ex mode
+map('c', '<C-k>', '<Up>', { noremap = false })

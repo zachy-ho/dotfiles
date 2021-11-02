@@ -69,10 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/auto-pairs"
-  },
   ["auto-session"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/auto-session"
@@ -102,6 +98,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/opt/emmet-vim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/friendly-snippets"
+  },
   fzf = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf"
@@ -109,6 +109,18 @@ _G.packer_plugins = {
   ["fzf.vim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/harpoon"
+  },
+  ["headlines.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/headlines.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -122,6 +134,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-cmp"
@@ -134,9 +150,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["org-bullets.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/org-bullets.nvim"
+  },
+  ["orgmode.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/orgmode.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   undotree = {
     loaded = true,
@@ -146,17 +178,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
+  ["vim-easy-align"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-easy-align"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
+  ["vim-grepper"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-grepper"
+  },
+  ["vim-hexokinase"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-hexokinase"
+  },
   ["vim-nerdtree-syntax-highlight"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -175,7 +215,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Setup for: emmet-vim
 time([[Setup for emmet-vim]], true)
-try_loadstring("\27LJ\2\n¿\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0'\1\4\0=\1\3\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0H                autocmd FileType html,css EmmetInstall\n            \bcmd\n<C-z>\26user_emmet_leader_key\30user_emmet_install_global\6g\bvim\0", "setup", "emmet-vim")
+try_loadstring("\27LJ\2\nõ\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0'\1\4\0=\1\3\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0~                autocmd FileType html,css,typescriptreact,javascriptreact,typescript,javascript EmmetInstall\n            \bcmd\n<C-s>\26user_emmet_leader_key\30user_emmet_install_global\6g\bvim\0", "setup", "emmet-vim")
 time([[Setup for emmet-vim]], false)
 time([[packadd for emmet-vim]], true)
 vim.cmd [[packadd emmet-vim]]

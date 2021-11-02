@@ -12,6 +12,7 @@ cmp.setup({
         -- Read :h ins-completion first
         -- ['<Tab>'] = function(fallback)
             -- if cmp.visible() then
+            -- if cmp.visible() then
                 -- cmp.select_next_item()
             -- else
                 -- fallback()
@@ -28,11 +29,7 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true })
-
-    },
-    completion = {
-        keyword_length = 3,
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
         -- Neovim builtin LSP client
@@ -45,5 +42,7 @@ cmp.setup({
         { name = 'path' },
         -- Buffer words
         { name = 'buffer' },
+        -- Orgmode
+        { name = 'orgmode' }
     },
 })

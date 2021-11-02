@@ -1,11 +1,11 @@
 vim.cmd([[
 augroup packer_user_config
     autocmd!
-    autocmd BufWritePost $NVIM_HOME/lua/zachyho/plugins/init.lua source $NVIM_HOME/resource-nvim.lua | PackerCompile
+    autocmd BufWritePost $NVIM_HOME/lua/zachyho/plugins/init.lua source <afile> | PackerSync
 augroup end
 ]])
 
-return require('packer').startup(function(use)
+return require('packer').startup({ function(use)
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
@@ -16,8 +16,17 @@ return require('packer').startup(function(use)
         -- 'marko-cerovac/material.nvim',
     }
 
+    -- Hexokinase
+    use {
+        'RRethy/vim-hexokinase',
+        run = 'make hexokinase'
+    }
+
     -- Nerdtree syntax highlight
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    -- Popup
+    use 'nvim-lua/popup.nvim'
 
     -- Treesitter
     use {
@@ -25,25 +34,15 @@ return require('packer').startup(function(use)
         run = ':TSUpdate',
     }
 
+    -- Plenary
+    use 'nvim-lua/plenary.nvim'
+
     -- Native-lsp
     use 'neovim/nvim-lspconfig'
 
     -- Nvim devicons (can't be fucked configuring this cos it doesn't work for me yet)
     -- use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
-
-    -- Trouble (doesn't work for some reason??)
-    -- use {
-      -- "folke/trouble.nvim",
-      -- -- requires = "kyazdani42/nvim-web-devicons",
-      -- config = function()
-        -- require("trouble").setup {
-          -- -- your configuration comes here
-          -- -- or leave it empty to use the default settings
-          -- -- refer to the configuration section below
-        -- }
-      -- end
-    -- }
 
     -- Cmp
     use {
@@ -54,10 +53,11 @@ return require('packer').startup(function(use)
         'hrsh7th/cmp-nvim-lua'
     }
 
-    -- Vsnip
+    -- Vsnip and snippets
     use {
         'hrsh7th/vim-vsnip',
-        'hrsh7th/vim-vsnip-integ'
+        'hrsh7th/vim-vsnip-integ',
+        'rafamadriz/friendly-snippets'
     }
 
     -- Undotree
@@ -73,6 +73,9 @@ return require('packer').startup(function(use)
         'junegunn/fzf.vim',
     }
 
+    -- Grepper (until I find a way to do this with FZF.vim's Rg)
+    use 'mhinz/vim-grepper'
+
     -- Fugitive
     use 'tpope/vim-fugitive'
 
@@ -81,28 +84,53 @@ return require('packer').startup(function(use)
         'mattn/emmet-vim',
         setup = function()
             vim.g.user_emmet_install_global = 0
-            vim.g.user_emmet_leader_key = '<C-z>'
+            vim.g.user_emmet_leader_key = '<C-s>'
             vim.cmd([[
-                autocmd FileType html,css EmmetInstall
+                autocmd FileType html,css,typescriptreact,javascriptreact,typescript,javascript EmmetInstall
             ]])
-        end
+        end,
     }
 
     -- Auto pairs
-    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs'
 
     -- Surround
     use 'tpope/vim-surround'
 
+    -- Easy align
+    use 'junegunn/vim-easy-align'
+
     -- Nerdcommenter
     use 'preservim/nerdcommenter'
-
-    -- Startify
-    use 'mhinz/vim-startify'
 
     -- Auto Session
     use 'rmagatti/auto-session'
 
+    -- Harpoon
+    use 'ThePrimeagen/harpoon'
+
+    -- Org mode
+    use {
+        'kristijanhusak/orgmode.nvim',
+        branch = 'tree-sitter',
+        requires = 'nvim-treesitter/nvim-treesitter'
+    }
+
+    -- Orgmode-stuff
+    use 'akinsho/org-bullets.nvim'
+    use 'lukas-reineke/headlines.nvim'
+
+    -- Markdown-preview
+    use {
+        'iamcco/markdown-preview.nvim',
+        run = 'cd app && yarn install'
+    }
+
     -- Canva dprint
     use 'Canva/dprint-vim-plugin'
-end)
+end,
+config = {
+    display = {
+        open_fn = require('packer.util').float
+        }
+}})
