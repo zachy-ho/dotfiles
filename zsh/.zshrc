@@ -34,7 +34,7 @@ export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$PAT
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export OH_MY_ZSH="$HOME/.oh-my-zsh"
 # Path to NVIM Home
 export NVIM_HOME=$HOME/.config/nvim
 # NVM
@@ -53,33 +53,7 @@ MPI_DIR=/user/local/openmpi
 export LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH
 
 # ---------- Aliases ----------
-# General usage
-alias clr='clear'
-# nvim
-alias v='nvim'
-alias vi='nvim'
-# Nightly build. Script is under '/usr/local/bin'
-alias vn='nvim-nightly.sh'
-# lazygit
-alias lg='lazygit'
-# neofetch
-alias neofetch='neofetch --backend kitty --source $HOME/Documents/MyDocuments/Photos/AndyDrawing.jpg'
-# Java
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java14='export JAVA_HOME=$JAVA_14_HOME'
-# SSH
-alias ssh='TERM=xterm-256color ssh'
-# Navigating to dotfiles, and regularly-used directories
-alias nrc='cd $HOME/.config/nvim && v'
-alias krc='cd $HOME/.config/kitty && v'
-alias zrc='cd $HOME/.config/zsh && v'
-alias orgs='cd $HOME/zachyho-codes/zachyho-orgs && v'
-# Set Kitty colors
-alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
-# git (inspired by oh-my-zsh aliases)
-alias gacmsg='git add . && git commit -m'
-# Canva dprint
-alias dp='$HOME/work/canva/tools/dprint/dprint fmt'
+[ -f $HOME/.config/zsh/.aliasesrc ] && source $HOME/.config/zsh/.aliasesrc
 
 # ---------- Plugins ----------
 plugins=(
@@ -88,7 +62,7 @@ plugins=(
    zsh-syntax-highlighting
 )
 # oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+source $OH_MY_ZSH/oh-my-zsh.sh
 
 # ---------- General settings ----------
 HYPHEN_INSENSITIVE="true"
@@ -116,3 +90,6 @@ eval "$(direnv hook $SHELL)"
 [[ ! -f ~/.config/dotfiles/zsh/.p10k.zsh ]] || source ~/.config/dotfiles/zsh/.p10k.zsh
 
 alias luamake=/Users/zacharyho/.language_servers/lua-language-server/3rd/luamake/luamake
+
+# Work things
+[ -f $HOME/.config/zsh/.canvathingsrc ] && source $HOME/.config/zsh/.canvathingsrc

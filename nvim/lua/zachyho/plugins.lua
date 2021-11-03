@@ -38,6 +38,9 @@ return require('packer').startup({ function(use)
     -- Nerdtree-syntax-highlight: To identify filetypes in Nerdtree
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+    -- Lspkind: Cute logos for LSP
+    use 'onsails/lspkind-nvim'
+
     -- Popup: Only here for Harpoon for now
     use 'nvim-lua/popup.nvim'
 
@@ -115,8 +118,14 @@ return require('packer').startup({ function(use)
     -- Nerdcommenter: Commenting shortcuts
     use 'preservim/nerdcommenter'
 
-    -- Auto Session: Saves and restores vim sessions
-    use 'rmagatti/auto-session'
+    -- Startify: Cool start screen and session saving
+    use {
+        'mhinz/vim-startify',
+        cmd = { 'SLoad', 'SSave' }
+    }
+
+    -- Auto Session: Saves and restores vim sessions (breaks autopairs and lsp)
+    -- use 'rmagatti/auto-session'
 
     -- Harpoon: File marking to jump back and forth more quickly
     use 'ThePrimeagen/harpoon'

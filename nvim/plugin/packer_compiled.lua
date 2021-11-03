@@ -69,166 +69,211 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["auto-session"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/auto-session"
-  },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["dprint-vim-plugin"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/dprint-vim-plugin"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/dprint-vim-plugin",
+    url = "https://github.com/Canva/dprint-vim-plugin"
   },
   ["emmet-vim"] = {
     loaded = true,
     needs_bufread = false,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/opt/emmet-vim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/opt/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/friendly-snippets"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   fzf = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "/usr/local/opt/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   gruvbox = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   harpoon = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/harpoon"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["headlines.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/headlines.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/headlines.nvim",
+    url = "https://github.com/lukas-reineke/headlines.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["material.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/material.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   nerdcommenter = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
   },
   nerdtree = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nerdtree"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
   },
   ["nightfox.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nord-vim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nord-vim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["org-bullets.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/org-bullets.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/org-bullets.nvim",
+    url = "https://github.com/akinsho/org-bullets.nvim"
   },
   ["orgmode.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/orgmode.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/orgmode.nvim",
+    url = "https://github.com/kristijanhusak/orgmode.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["rose-pine"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/rose-pine"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   sonokai = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/sonokai"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   },
   undotree = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/undotree"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-devicons"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-easy-align"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-easy-align"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-grepper"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-grepper"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-grepper",
+    url = "https://github.com/mhinz/vim-grepper"
   },
   ["vim-hexokinase"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-hexokinase"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-hexokinase",
+    url = "https://github.com/RRethy/vim-hexokinase"
   },
   ["vim-nerdtree-syntax-highlight"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 

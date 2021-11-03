@@ -1,4 +1,8 @@
 -- Most things in this file are stolen from TJ Devries config!
+
+-- Lspkind
+require('lspkind').init()
+
 local has_lsp, lspconfig = pcall(require, "lspconfig")
 if not has_lsp then
     return
@@ -110,6 +114,12 @@ local servers = {
 
 }
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 local setup_server = function(server, config)
     if not config then

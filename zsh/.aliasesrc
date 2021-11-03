@@ -1,0 +1,25 @@
+# General usage
+alias clr='clear'
+# nvim
+alias v='nvim'
+alias vi='nvim'
+# Nightly build. Script is under '/usr/local/bin'
+alias vn='nvim-nightly.sh'
+# lazygit
+alias lg='lazygit'
+# neofetch
+alias neofetch='neofetch --backend kitty --source $HOME/Documents/MyDocuments/Photos/AndyDrawing.jpg'
+# Java
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java14='export JAVA_HOME=$JAVA_14_HOME'
+# SSH
+alias ssh='TERM=xterm-256color ssh'
+# Navigating to dotfiles, and regularly-used directories
+alias nrc='cd $HOME/.config/nvim && v'
+alias krc='cd $HOME/.config/kitty && v'
+alias zrc='cd $HOME/.config/zsh && v'
+alias orgs='cd $HOME/zachyho-codes/zachyho-orgs && v'
+# Set Kitty colors
+alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
+# git (inspired by oh-my-zsh aliases)
+alias gacmsg='git add . && git commit -m'
