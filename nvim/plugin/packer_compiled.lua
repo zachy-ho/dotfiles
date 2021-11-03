@@ -256,8 +256,11 @@ _G.packer_plugins = {
     url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
   },
   ["vim-startify"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-startify",
+    commands = { "SLoad", "SSave" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/opt/vim-startify",
     url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
@@ -285,6 +288,13 @@ time([[Setup for emmet-vim]], false)
 time([[packadd for emmet-vim]], true)
 vim.cmd [[packadd emmet-vim]]
 time([[packadd for emmet-vim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SSave lua require("packer.load")({'vim-startify'}, { cmd = "SSave", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SLoad lua require("packer.load")({'vim-startify'}, { cmd = "SLoad", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)
