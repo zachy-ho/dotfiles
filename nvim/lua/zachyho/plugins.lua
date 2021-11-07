@@ -124,9 +124,6 @@ return require('packer').startup({ function(use)
         cmd = { 'SLoad', 'SSave' }
     }
 
-    -- Auto Session: Saves and restores vim sessions (breaks autopairs and lsp)
-    -- use 'rmagatti/auto-session'
-
     -- Harpoon: File marking to jump back and forth more quickly
     use 'ThePrimeagen/harpoon'
 
@@ -146,6 +143,9 @@ return require('packer').startup({ function(use)
         'iamcco/markdown-preview.nvim',
         run = 'cd app && yarn install'
     }
+
+    -- Prettier
+    use 'prettier/vim-prettier'
 
     -- Canva dprint: Formatting for work
     use 'Canva/dprint-vim-plugin'
