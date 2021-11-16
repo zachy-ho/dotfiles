@@ -72,7 +72,6 @@ require('orgmode').setup({
     -- }
 })
 
-
 -- Org bullets
 require('org-bullets').setup({
     symbols = { "◉", "○", "✸", "✿" }

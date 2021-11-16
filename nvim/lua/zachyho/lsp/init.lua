@@ -1,4 +1,5 @@
 -- Most things in this file are stolen from TJ Devries config!
+-- Also this guy's one looks tidy af: https://github.com/martinsione/dotfiles/tree/master/src/.config/nvim
 
 -- Lspkind
 require('lspkind').init()
@@ -27,7 +28,7 @@ local custom_attach = function(_, bufnr)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', ',rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', ',gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', ',f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    buf_set_keymap('n', ',fm', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
     -- Diagnostics
     buf_set_keymap('n', ',ds', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
@@ -68,10 +69,41 @@ local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
 
+local eslint = {
+    lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
+    lintIgnoreExitCode = true,
+    lintStdin = true,
+    lintFormats = { '%f:%l:%c: %m' },
+    formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}',
+    formatStdin = true
+}
+
 local servers = {
     bashls = true,
     cssls = true,
     dockerls = true,
+    efm = {
+        init_options = { documentFormatting = true },
+        settings = {
+            rootMarkers = { '.git/' },
+            languages = {
+                javascript = { eslint },
+                javascriptreact = { eslint },
+                ['javascript.jsx'] = { eslint },
+                typescript = { eslint },
+                typescriptreact= { eslint },
+                ['typescript.tsx'] = { eslint },
+            }
+        },
+        filetypes = {
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+        }
+    },
     html = true,
     java_language_server = {
         cmd = { '~/.language_servers/java-language-server/dist/lang_server_mac.sh' }
@@ -117,11 +149,11 @@ local servers = {
 
 }
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local diagnostic_signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+for type, icon in pairs(diagnostic_signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
 local setup_server = function(server, config)
