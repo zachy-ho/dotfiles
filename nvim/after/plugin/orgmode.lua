@@ -27,7 +27,49 @@ require('orgmode').setup({
     },
     org_archive_location = '#+ARCHIVE: ~/zachyho-codes/zachyho-orgs/archive/%s_archive::',
     org_hide_emphasis_markers = false,
-    org_deadline_warning_days = 7,
+    org_deadline_warning_days = 0,
+    org_agenda_skip_scheduled_if_done = true,
+    org_agenda_skip_deadline_if_done = true,
+    -- Wait till this is tested first. Or if you have time, test it yourself and contribute at:
+    -- https://github.com/kristijanhusak/orgmode.nvim/issues/49
+    -- Don't do this if you don't have time though. Just keep an eye out for updates
+    -- notifications = {
+        -- enabled = false,
+        -- cron_enabled = true,
+        -- repeater_reminder_time = false,
+        -- deadline_warning_reminder_time = false,
+        -- reminder_time = 10,
+        -- deadline_reminder = true,
+        -- scheduled_reminder = true,
+        -- notifier = function(tasks)
+          -- local result = {}
+          -- for _, task in ipairs(tasks) do
+            -- require('orgmode.utils').concat(result, {
+              -- string.format('# %s (%s)', task.category, task.humanized_duration),
+              -- string.format('%s %s %s', string.rep('*', task.level), task.todo, task.title),
+              -- string.format('%s: <%s>', task.type, task.time:to_string())
+            -- })
+          -- end
+          -- if not vim.tbl_isempty(result) then
+            -- require('orgmode.notifications.notification_popup'):new({ content = result })
+          -- end
+        -- end,
+        -- cron_notifier = function(tasks)
+          -- for _, task in ipairs(tasks) do
+            -- local title = string.format('%s (%s)', task.category, task.humanized_duration)
+            -- local subtitle = string.format('%s %s %s', string.rep('*', task.level), task.todo, task.title)
+            -- local date = string.format('%s: %s', task.type, task.time:to_string())
+            -- -- Linux
+            -- if vim.fn.executable('notify-send') == 1 then
+              -- vim.loop.spawn('notify-send', { args = { string.format('%s\n%s\n%s', title, subtitle, date) }})
+            -- end
+            -- -- MacOS
+            -- if vim.fn.executable('terminal-notifier') == 1 then
+              -- vim.loop.spawn('terminal-notifier', { args = { '-title', title, '-subtitle', subtitle, '-message', date }})
+            -- end
+          -- end
+        -- end
+    -- }
 })
 
 

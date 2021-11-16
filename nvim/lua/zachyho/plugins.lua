@@ -44,6 +44,12 @@ return require('packer').startup({ function(use)
     -- Popup: Only here for Harpoon for now
     use 'nvim-lua/popup.nvim'
 
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
     -- Treesitter: Just for syntax highlighting only for now
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -127,10 +133,15 @@ return require('packer').startup({ function(use)
     -- Harpoon: File marking to jump back and forth more quickly
     use 'ThePrimeagen/harpoon'
 
+    -- Git worktree
+    use {
+        'ThePrimeagen/git-worktree.nvim',
+        requires = 'nvim-telescope/telescope.nvim',
+    }
+
     -- Org mode: My organizer/todo tool
     use {
         'kristijanhusak/orgmode.nvim',
-        branch = 'tree-sitter',
         requires = 'nvim-treesitter/nvim-treesitter'
     }
 

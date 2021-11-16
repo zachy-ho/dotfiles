@@ -73,6 +73,9 @@ local servers = {
     cssls = true,
     dockerls = true,
     html = true,
+    java_language_server = {
+        cmd = { '~/.language_servers/java-language-server/dist/lang_server_mac.sh' }
+    },
     jsonls = {
         commands = {
             Format = {

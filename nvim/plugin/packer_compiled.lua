@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
+    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -219,6 +224,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/sonokai",
     url = "https://github.com/sainnhe/sonokai"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   undotree = {
     loaded = true,

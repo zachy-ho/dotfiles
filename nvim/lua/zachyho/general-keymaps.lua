@@ -21,12 +21,12 @@ map({'n', 'i'}, '<Right>', '<Nop>')
 map({'n', 'v'}, '<leader>y', '"*y')
 
 -- Quickfix and location lists (use ',' as secondary leader key for these items)
-map('n', ',ll', ':lwindow<CR>')
-map('n', ',ln', ':lnext<CR>')
-map('n', ',lp', ':lprev<CR>')
-map('n', ',qf', ':cwindow<CR>')
-map('n', ',qn', ':cnext<CR>')
-map('n', ',qp', ':cprev<CR>')
+map('n', '<leader>ll', ':lwindow<CR>')
+map('n', '<leader>ln', ':lnext<CR>')
+map('n', '<leader>lp', ':lprev<CR>')
+map('n', '<leader>qf', ':cwindow<CR>')
+map('n', '<leader>qn', ':cnext<CR>')
+map('n', '<leader>qp', ':cprev<CR>')
 
 -- Path of current file
 map('n', '<leader>pf', '1<C-g>')
@@ -34,36 +34,34 @@ map('n', '<leader>pc', ':let @+= expand("%:p")<CR>')
 map('n', '<leader>ph', ':let @+= expand("%:p:h")<CR>')
 
 -- Moving lines
-map('n', '<C-j>', ':m .+1<CR>==')
-map('n', '<C-k>', ':m .-2<CR>==')
-map('v', '<C-j>', ":m '>+1<CR>gv=gv")
-map('v', '<C-k>', ":m '<-2<CR>gv=gv")
+map('n', '<C-j>', ':m .+1<CR>==', { silent = true })
+map('n', '<C-k>', ':m .-2<CR>==', { silent = true })
+map('v', '<C-j>', ":m '>+1<CR>gv=gv", { silent = true })
+map('v', '<C-k>', ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Creating splits
-map('n', '<leader>sv', ':vsplit<CR>')
-map('n', '<leader>sh', ':split<CR>')
+map('n', '<leader>sv', ':vsplit<CR>', { silent = true })
+map('n', '<leader>sh', ':split<CR>', { silent = true })
 
 -- Moving between panes
-map('n', '<leader>wh', ': wincmd h<CR>')
-map('n', '<leader>wj', ': wincmd j<CR>')
-map('n', '<leader>wk', ': wincmd k<CR>')
-map('n', '<leader>wl', ': wincmd l<CR>')
+map('n', '<leader>wh', ': wincmd h<CR>', { silent = true })
+map('n', '<leader>wj', ': wincmd j<CR>', { silent = true })
+map('n', '<leader>wk', ': wincmd k<CR>', { silent = true })
+map('n', '<leader>wl', ': wincmd l<CR>', { silent = true })
 
 -- Moving panes
-map('n', '<leader>H', ': wincmd H<CR>')
-map('n', '<leader>J', ': wincmd J<CR>')
-map('n', '<leader>K', ': wincmd K<CR>')
-map('n', '<leader>L', ': wincmd L<CR>')
-map('n', '<leader>x', ': wincmd x<CR>')
+map('n', '<leader>H', ': wincmd H<CR>', { silent = true })
+map('n', '<leader>J', ': wincmd J<CR>', { silent = true })
+map('n', '<leader>K', ': wincmd K<CR>', { silent = true })
+map('n', '<leader>L', ': wincmd L<CR>', { silent = true })
+map('n', '<leader>x', ': wincmd x<CR>', { silent = true })
 
 -- Center screen after n/N
 map('n', 'n', 'nzz', { noremap = false })
 map('n', 'N', 'Nzz', { noremap = false })
 
-
 -- Vim tabs
 map('n', '<leader>tc', ':tabclose ')
-map('n', '<leader>tn', ':tabnew ')
 map('n', '<leader>ts', ':tab split<CR>')
 
 map('n', '<leader>=-', ':vertical resize -5<CR>')
