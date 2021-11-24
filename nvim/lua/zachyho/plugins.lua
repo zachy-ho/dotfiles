@@ -11,6 +11,9 @@ return require('packer').startup({ function(use)
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
+    -- Vimwiki
+    use 'vimwiki/vimwiki'
+
     -- Color schemes
     use {
         -- I don't really wanna use these anymore, might delete soon
@@ -139,14 +142,7 @@ return require('packer').startup({ function(use)
         requires = 'nvim-telescope/telescope.nvim',
     }
 
-    -- Org mode: My organizer/todo tool
-    use {
-        'kristijanhusak/orgmode.nvim',
-        requires = 'nvim-treesitter/nvim-treesitter'
-    }
-
-    -- Orgmode-stuff
-    use 'akinsho/org-bullets.nvim'
+    -- Headlines highlighting
     use 'lukas-reineke/headlines.nvim'
 
     -- Markdown-preview: self-explanatory

@@ -1,6 +1,7 @@
 -- Look HERE if having trouble with <CR> with nvim-cmp
 local autopairs = require'nvim-autopairs'
 local Rule = require'nvim-autopairs.rule'
+local cond = require('nvim-autopairs.conds')
 
 autopairs.setup({
     enable_check_bracket_line = false,
@@ -13,8 +14,14 @@ autopairs.add_rules({
     Rule(' ', ' ')
         :with_pair(function (opts)
             local pair = opts.line:sub(opts.col - 1, opts.col)
-            return vim.tbl_contains({ '()', '[]', '{}' }, pair)
+            return vim.tbl_contains({ '()', '{}' }, pair)
+        end)
+        :with_pair(cond.not_filetypes({'wiki', 'md'}))
+        :with_pair(function (opts)
+            local pair = opts.line:sub(opts.col - 1, opts.col)
+            return vim.tbl_contains({ '[]' }, pair)
         end),
+    -- Disable adding spaces between square brackets for wiki and md filetypes
     Rule('( ', ' )')
         :with_pair(function() return false end)
         :with_move(function(opts)

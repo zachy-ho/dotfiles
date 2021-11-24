@@ -105,9 +105,7 @@ local servers = {
         }
     },
     html = true,
-    java_language_server = {
-        cmd = { '~/.language_servers/java-language-server/dist/lang_server_mac.sh' }
-    },
+    jdtls = true,
     jsonls = {
         commands = {
             Format = {
@@ -153,7 +151,7 @@ local diagnostic_signs = { Error = " ", Warning = " ", Hint = " ", Info
 
 for type, icon in pairs(diagnostic_signs) do
   local hl = "LspDiagnosticsSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 local setup_server = function(server, config)

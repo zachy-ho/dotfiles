@@ -26,6 +26,7 @@ else
    export EDITOR='nvim'
 fi
 # JAVA Home path
+export JDTLS_HOME=$HOME/.language_servers/jdt-language-server-latest/
 export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Path

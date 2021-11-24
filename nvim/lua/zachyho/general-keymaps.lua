@@ -44,10 +44,10 @@ map('n', '<leader>sv', ':vsplit<CR>', { silent = true })
 map('n', '<leader>sh', ':split<CR>', { silent = true })
 
 -- Moving between panes
-map('n', '<leader>wh', ': wincmd h<CR>', { silent = true })
-map('n', '<leader>wj', ': wincmd j<CR>', { silent = true })
-map('n', '<leader>wk', ': wincmd k<CR>', { silent = true })
-map('n', '<leader>wl', ': wincmd l<CR>', { silent = true })
+map('n', ',wh', ': wincmd h<CR>', { silent = true })
+map('n', ',wj', ': wincmd j<CR>', { silent = true })
+map('n', ',wk', ': wincmd k<CR>', { silent = true })
+map('n', ',wl', ': wincmd l<CR>', { silent = true })
 
 -- Moving panes
 map('n', '<leader>H', ': wincmd H<CR>', { silent = true })

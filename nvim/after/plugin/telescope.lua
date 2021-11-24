@@ -17,6 +17,15 @@ require('telescope').setup({
             }
         }
     },
+    pickers = {
+        buffers = {
+            mappings = {
+                i = {
+                    ['<C-d>'] = actions.delete_buffer
+                }
+            }
+        }
+    }
 })
 
 map('n', '<leader>tff', ':Telescope find_files<CR>')

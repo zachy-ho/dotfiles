@@ -43,8 +43,6 @@ cmp.setup({
         { name = 'path' },
         -- Buffer words
         { name = 'buffer' },
-        -- Orgmode
-        { name = 'orgmode' }
     },
     formatting = {
         format = lspkind.cmp_format({with_text = true, maxwidth = 50})

@@ -40,15 +40,15 @@ nightfox.setup({
 
 -- ----- Rose pine -----
 vim.g.rose_pine_variant = 'base'
-vim.cmd('colorscheme rose-pine')
+-- vim.cmd('colorscheme rose-pine')
 
 vim.cmd([[
     if has('termguicolors')
         set termguicolors
     endif
 
-    let g:sonokai_style = 'default'
+    let g:sonokai_style = 'andromeda'
     let g:sonokai_enable_italic = 1
 
-    " colorscheme sonokai
+    colorscheme sonokai
 ]])
