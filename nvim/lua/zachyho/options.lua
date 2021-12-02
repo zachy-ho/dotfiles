@@ -36,9 +36,7 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true
 
--- Folds
-opt.foldmethod = 'manual'
-
+-- Format options
 opt.formatoptions = opt.formatoptions
   - "a" -- Auto formatting is BAD.
   - "t" -- Don't auto format my code. I got linters for that.

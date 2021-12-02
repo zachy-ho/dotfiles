@@ -18,8 +18,8 @@ alias ssh='TERM=xterm-256color ssh'
 alias nrc='cd $HOME/.config/nvim && v'
 alias krc='cd $HOME/.config/kitty && v'
 alias zrc='cd $HOME/.config/zsh && v'
-alias orgs='cd $HOME/zachyho-codes/zachyho-orgs && v'
 alias mine='cd $HOME/zachyho-codes'
+alias mds='cd $HOME/zachyho-codes/Markdowns'
 # Sourcing rc files
 alias zs='source $HOME/.zshrc'
 # Set Kitty colors

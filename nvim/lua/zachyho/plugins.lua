@@ -12,7 +12,10 @@ return require('packer').startup({ function(use)
     use 'wbthomason/packer.nvim'
 
     -- Vimwiki
-    use 'vimwiki/vimwiki'
+    use {
+        'vimwiki/vimwiki',
+        branch = 'dev'
+    }
 
     -- Color schemes
     use {
@@ -153,9 +156,6 @@ return require('packer').startup({ function(use)
 
     -- Prettier
     use 'prettier/vim-prettier'
-
-    -- Canva dprint: Formatting for work
-    use 'Canva/dprint-vim-plugin'
 end,
 config = {
     display = {

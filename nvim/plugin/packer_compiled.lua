@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["dprint-vim-plugin"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/dprint-vim-plugin",
-    url = "https://github.com/Canva/dprint-vim-plugin"
-  },
   ["emmet-vim"] = {
     loaded = true,
     needs_bufread = false,
