@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -135,6 +135,11 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -184,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -296,8 +306,8 @@ time([[packadd for emmet-vim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SSave lua require("packer.load")({'vim-startify'}, { cmd = "SSave", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SLoad lua require("packer.load")({'vim-startify'}, { cmd = "SLoad", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SSave lua require("packer.load")({'vim-startify'}, { cmd = "SSave", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end

@@ -35,6 +35,12 @@ return require('packer').startup({ function(use)
         'sainnhe/sonokai'
     }
 
+    -- Lualine
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+
     -- Hexokinase: Previews color whenever color (e.g. hex) is used
     use {
         'RRethy/vim-hexokinase',

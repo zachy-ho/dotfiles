@@ -22,6 +22,9 @@ require('telescope').setup({
             mappings = {
                 i = {
                     ['<C-d>'] = actions.delete_buffer
+                },
+                n = {
+                    ['<C-d>'] = actions.delete_buffer
                 }
             }
         }

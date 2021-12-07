@@ -4,7 +4,7 @@ let g:vimwiki_list = [
                 \ 'path_html': '$HOME/zachyho-codes/vimwiki_html/'
                 \}]
 
-let g:vimwiki_folding = 'list'
+let g:vimwiki_folding = 'custom'
 
 :nmap ,wh <Plug>Vimwiki2HTML
 :nmap ,whh <Plug>Vimwiki2HTMLBrowse

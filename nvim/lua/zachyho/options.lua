@@ -36,6 +36,15 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true
 
+-- Folds (uses Treesitter)
+vim.cmd([[
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
+]])
+
+-- View options
+opt.viewoptions = 'cursor,folds';
+
 -- Format options
 opt.formatoptions = opt.formatoptions
   - "a" -- Auto formatting is BAD.
@@ -67,4 +76,3 @@ vim.cmd([[
         autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
     augroup END
 ]])
-
