@@ -6,7 +6,18 @@ local cond = require('nvim-autopairs.conds')
 autopairs.setup({
     enable_check_bracket_line = false,
     -- Don't add pairs if the next char is alphanumeric
-    ignored_next_char = '[%w%.]';
+    ignored_next_char = '[%w%.]',
+    fast_wrap = {
+      map = '<C-a>',
+      chars = { '{', '[', '(', '"', "'" },
+      pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
+      offset = 0, -- Offset from pattern match
+      end_key = '$',
+      keys = 'qwertyuiopzxcvbnmasdfghjkl',
+      check_comma = true,
+      highlight = 'Search',
+      highlight_grey='Comment'
+    }
 })
 
 autopairs.add_rules({

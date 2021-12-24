@@ -6,6 +6,7 @@ augroup packer_user_config
 augroup end
 ]])
 
+-- Please write this file and run ':PackerSync' after to sync shit up every time a change is made
 return require('packer').startup({ function(use)
 
     -- Packer manages itself
@@ -14,7 +15,10 @@ return require('packer').startup({ function(use)
     -- Vimwiki
     use {
         'vimwiki/vimwiki',
-        branch = 'dev'
+        branch = 'dev',
+        config = function()
+          require('zachyho.vimwiki')
+        end
     }
 
     -- Color schemes
@@ -52,9 +56,6 @@ return require('packer').startup({ function(use)
 
     -- Lspkind: Cute logos for LSP
     use 'onsails/lspkind-nvim'
-
-    -- Popup: Only here for Harpoon for now
-    use 'nvim-lua/popup.nvim'
 
     -- Telescope
     use {

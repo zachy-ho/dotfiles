@@ -33,4 +33,4 @@ require('telescope').setup({
 
 map('n', '<leader>tff', ':Telescope find_files<CR>')
 map('n', '<leader>tfg', ':Telescope live_grep<CR>')
-map('n', '<leader>tfb', ':Telescope buffers<CR>')
+map('n', '<leader>fb', ':Telescope buffers<CR>')
