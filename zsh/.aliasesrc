@@ -25,7 +25,14 @@ alias mds='cd $HOME/zachyho-codes/Markdowns'
 alias zs='source $HOME/.zshrc'
 # Set Kitty colors
 alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
-# git (inspired by oh-my-zsh aliases)
+# git
 alias gacmsg='git add . && git commit -m'
 alias gwt='git worktree'
+alias gbcleanup='cleanup_git_branches'
+# docker
 alias dockerStopAll='docker stop $(docker ps -a -q)'
+
+# functions
+function cleanup_git_branches() {
+    git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
+}
