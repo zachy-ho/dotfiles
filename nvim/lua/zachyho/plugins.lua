@@ -1,8 +1,8 @@
--- This doesn't really work lmao
+-- Automatically sources this file and runs 'PackerSync' whenever we write to this file
 vim.cmd([[
-augroup packer_user_config
+augroup Packer
     autocmd!
-    autocmd BufWritePost $NVIM_HOME/lua/zachyho/plugins/init.lua source <afile> | PackerSync
+    autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
 augroup end
 ]])
 

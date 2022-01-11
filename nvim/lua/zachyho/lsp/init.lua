@@ -14,11 +14,12 @@ vim.lsp.set_log_level("debug")
 
 -- On_attach to map keys after the language server(s) attaches to the current buffer
 local custom_attach = function(_, bufnr)
+
+    -- Partial function
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     -- Enable completion triggered by <c-x><c-o>
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc');
 
     -- Mappings
     local opts = { noremap=true, silent=true }
@@ -39,12 +40,6 @@ local custom_attach = function(_, bufnr)
     buf_set_keymap('n', ',dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ',dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', ',dl', [[ <cmd>lua vim.diagnostic.setloclist({open_loclist=true})<CR> <bar> :setlocal wrap<CR>]], opts)
-
-    -- Not really used often (yet)
-    -- buf_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 
 end
 
@@ -73,41 +68,10 @@ local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
 
-local eslint = {
-    lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
-    lintIgnoreExitCode = true,
-    lintStdin = true,
-    lintFormats = { '%f:%l:%c: %m' },
-    formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}',
-    formatStdin = true
-}
-
 local servers = {
     bashls = true,
     cssls = true,
     dockerls = true,
-    efm = {
-        init_options = { documentFormatting = true },
-        settings = {
-            rootMarkers = { '.git/' },
-            languages = {
-                javascript = { eslint },
-                javascriptreact = { eslint },
-                ['javascript.jsx'] = { eslint },
-                typescript = { eslint },
-                typescriptreact= { eslint },
-                ['typescript.tsx'] = { eslint },
-            }
-        },
-        filetypes = {
-            'javascript',
-            'javascriptreact',
-            'javascript.jsx',
-            'typescript',
-            'typescriptreact',
-            'typescript.tsx',
-        }
-    },
     html = true,
     jdtls = true,
     jsonls = {
@@ -170,9 +134,6 @@ local setup_server = function(server, config)
     config = vim.tbl_deep_extend("keep", {
         on_attach = custom_attach,
         capabilities = custom_capabilities,
-        flags = {
-            debounce_text_changes = 50,
-        }
     }, config)
 
     lspconfig[server].setup(config)
