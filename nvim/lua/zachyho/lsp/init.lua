@@ -2,12 +2,15 @@
 -- Also this guy's one looks tidy af: https://github.com/martinsione/dotfiles/tree/master/src/.config/nvim
 
 -- Lspkind
-require('lspkind').init()
 
+require('lspkind').init()
 local has_lsp, lspconfig = pcall(require, "lspconfig")
 if not has_lsp then
     return
 end
+
+-- Logging
+vim.lsp.set_log_level("debug")
 
 -- On_attach to map keys after the language server(s) attaches to the current buffer
 local custom_attach = function(_, bufnr)
@@ -32,10 +35,10 @@ local custom_attach = function(_, bufnr)
     buf_set_keymap('n', ',fm', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
     -- Diagnostics
-    buf_set_keymap('n', ',ds', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    buf_set_keymap('n', ',dp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ',dn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', ',dl', [[ <cmd>lua vim.lsp.diagnostic.set_loclist({open_loclist=true})<CR> <bar> :setlocal wrap<CR>]], opts)
+    buf_set_keymap('n', ',ds', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+    buf_set_keymap('n', ',dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    buf_set_keymap('n', ',dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    buf_set_keymap('n', ',dl', [[ <cmd>lua vim.diagnostic.setloclist({open_loclist=true})<CR> <bar> :setlocal wrap<CR>]], opts)
 
     -- Not really used often (yet)
     -- buf_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
