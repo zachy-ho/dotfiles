@@ -95,11 +95,6 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/opt/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
   fzf = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf",
@@ -273,16 +268,6 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
-  },
   vimwiki = {
     config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20zachyho.vimwiki\frequire\0" },
     loaded = true,
@@ -306,8 +291,8 @@ time([[Config for vimwiki]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SLoad lua require("packer.load")({'vim-startify'}, { cmd = "SLoad", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SSave lua require("packer.load")({'vim-startify'}, { cmd = "SSave", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SLoad lua require("packer.load")({'vim-startify'}, { cmd = "SLoad", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end

@@ -88,11 +88,11 @@ return require('packer').startup({ function(use)
     }
 
     -- Vsnip and snippets: Snippets for fast coding
-    use {
-        'hrsh7th/vim-vsnip',
-        'hrsh7th/vim-vsnip-integ',
-        'rafamadriz/friendly-snippets'
-    }
+    -- use {
+        -- 'hrsh7th/vim-vsnip',
+        -- 'hrsh7th/vim-vsnip-integ',
+        -- 'rafamadriz/friendly-snippets'
+    -- }
 
     -- Undotree: Undo and redo
     use 'mbbill/undotree'
