@@ -1,5 +1,6 @@
 -- Most things in this file are stolen from TJ Devries config!
 -- Also this guy's one looks tidy af: https://github.com/martinsione/dotfiles/tree/master/src/.config/nvim
+-- TODO: Modularize this fucking file
 
 -- Lspkind
 
@@ -64,6 +65,23 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 -- Sumneko-lua (END)
 
+-- Eslint via efm --
+-- local config = {
+    -- lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+    -- lintIgnoreExitCode = true,
+    -- lintStdin = true,
+    -- lintFormats = { "%f:%l:%c: %m" }
+-- }
+
+-- local log_path = "~/efm.log"
+
+-- local efm_languages = {
+    -- typescript = { config },
+    -- typescriptreact = { config },
+    -- javascript = { config },
+    -- javascriptreact = { config }
+-- }
+
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
@@ -72,6 +90,24 @@ local servers = {
     bashls = true,
     cssls = true,
     dockerls = true,
+    eslint = true,
+    -- efm = {
+        -- lspconfig.util.root_pattern(
+            -- ".eslintrc.cjs",
+            -- ".eslintrc.js",
+            -- ".eslintrc.yaml",
+            -- ".eslintrc.yml",
+            -- ".eslintrc.json",
+            -- "package.json"
+        -- ),
+        -- settings = {
+            -- languages = efm_languages,
+            -- log_level = 1,
+            -- log_file = log_path,
+        -- },
+        -- filetypes = vim.tbl_keys(efm_languages),
+        -- init_options = { documentFormatting = true, codeAction = true }
+    -- },
     html = true,
     jdtls = true,
     jsonls = {
