@@ -4,6 +4,7 @@ local lspkind = require('lspkind')
 vim.o.completeopt = 'menu,menuone,noselect'
 
 cmp.setup({
+    -- NOTE: A snippet engine MUST be specified (currently vsnip)
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
@@ -33,10 +34,10 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
     },
     sources = {
-        -- Neovim builtin LSP client
-        { name = 'nvim_lsp' },
         -- Vsnip
         { name = 'vsnip' },
+        -- Neovim builtin LSP client
+        { name = 'nvim_lsp' },
         -- Neovim Lua API
         { name = 'nvim_lua' },
         -- Filesystem paths
