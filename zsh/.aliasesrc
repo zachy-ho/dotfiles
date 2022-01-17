@@ -29,10 +29,16 @@ alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
 alias gacmsg='git add . && git commit -m'
 alias gwt='git worktree'
 alias gbcleanup='cleanup_git_branches'
+alias gcoub='checkout_untracked_branch'
 # docker
 alias dockerStopAll='docker stop $(docker ps -a -q)'
 
 # functions
 function cleanup_git_branches() {
     git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
+}
+
+function checkout_untracked_branch() {
+    readonly branch=${1:?"The branch must be specified."}
+    git fetch origin $branch && git checkout FETCH_HEAD
 }
