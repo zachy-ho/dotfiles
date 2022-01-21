@@ -38,6 +38,8 @@ export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platfo
 export OH_MY_ZSH="$HOME/.oh-my-zsh"
 # Path to NVIM Home
 export NVIM_HOME=$HOME/.config/dotfiles/nvim
+# Path to vimwiki Home
+export VIMWIKI=$HOME/zachyho-codes/vimwiki
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # ZSH Update Frequency
