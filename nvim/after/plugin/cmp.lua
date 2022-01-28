@@ -34,10 +34,10 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
     },
     sources = {
-        -- Vsnip
-        { name = 'vsnip' },
         -- Neovim builtin LSP client
         { name = 'nvim_lsp' },
+        -- Vsnip
+        { name = 'vsnip' },
         -- Neovim Lua API
         { name = 'nvim_lua' },
         -- Filesystem paths
