@@ -29,7 +29,6 @@ return require('packer').startup({ function(use)
 
         -- Getting old
         'EdenEast/nightfox.nvim',
-        'marko-cerovac/material.nvim',
 
         -- Currently liking
         {
@@ -67,6 +66,11 @@ return require('packer').startup({ function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
+    }
+
+    use {
+        'nvim-treesitter/playground',
+        requires = 'nvim-treesitter/nvim-treesitter'
     }
 
     -- Plenary: Needed for one of the plugins below I don't remember which

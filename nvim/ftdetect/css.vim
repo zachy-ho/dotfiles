@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.css syntax on
+" autocmd BufNewFile,BufRead *.css syntax on

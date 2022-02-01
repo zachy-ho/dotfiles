@@ -25,30 +25,30 @@
 -- ]])
 
 -- ----- Nightfox -----
-local nightfox = require('nightfox')
+-- local nightfox = require('nightfox')
 
-nightfox.setup({
-  fox = "nightfox", -- change the colorscheme to use nordfox
-  styles = {
-    comments = "italic", -- change style of comments to be italic
-    keywords = "bold", -- change style of keywords to be bold
-    functions = "italic,bold" -- styles can be a comma separated list
-  },
-})
+-- nightfox.setup({
+  -- fox = "nightfox", -- change the colorscheme to use nordfox
+  -- styles = {
+    -- comments = "italic", -- change style of comments to be italic
+    -- keywords = "bold", -- change style of keywords to be bold
+    -- functions = "italic,bold" -- styles can be a comma separated list
+  -- },
+-- })
 
 -- nightfox.load()
 
 -- ----- Rose pine -----
-vim.g.rose_pine_variant = 'base'
--- vim.cmd('colorscheme rose-pine')
+vim.g.rose_pine_variant = 'moon'
+vim.cmd('colorscheme rose-pine')
 
-vim.cmd([[
-    if has('termguicolors')
-        set termguicolors
-    endif
+-- vim.cmd([[
+    -- if has('termguicolors')
+        -- set termguicolors
+    -- endif
 
-    let g:sonokai_style = 'andromeda'
-    let g:sonokai_enable_italic = 1
+    -- let g:sonokai_style = 'andromeda'
+    -- let g:sonokai_enable_italic = 1
 
-    colorscheme sonokai
-]])
+    -- colorscheme sonokai
+-- ]])

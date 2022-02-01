@@ -20,6 +20,10 @@ map({'n', 'i'}, '<Right>', '<Nop>')
 -- Clipboard copy
 map({'n', 'v'}, '<leader>y', '"*y')
 
+-- Search and replace
+map({'n'}, '<leader>srl', ':s///g<c-b><right><right>');
+map({'n'}, '<leader>srf', ':%s///g<c-b><right><right><right>');
+
 -- Quickfix and location lists (use ',' as secondary leader key for these items)
 map('n', '<leader>ll', ':lwindow<CR>')
 map('n', '<leader>ln', ':lnext<CR>')

@@ -2,7 +2,9 @@ local map = require('zachyho.utils').map
 
 local baseWiki = {
     path = '~/zachyho-codes/vimwiki',
-    path_html = '~/zachyho-codes/vimwiki/html'
+    path_html = '~/zachyho-codes/vimwiki/html',
+    syntax = 'markdown',
+    ext = '.md'
 }
 vim.g.vimwiki_list = {baseWiki}
 
