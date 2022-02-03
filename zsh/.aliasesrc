@@ -22,10 +22,16 @@ alias zrc='cd $HOME/.config/zsh && v'
 alias mine='cd $HOME/zachyho-codes'
 alias mds='cd $HOME/zachyho-codes/Markdowns'
 # Sourcing rc files
-alias zs='source $HOME/.zshrc'
+alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 # Set Kitty colors
 alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
-# git
+# git (see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git if need more)
+alias gst='git status'
+alias ga='git add'
+alias gco='git checkout'
+alias gba='git branch -a'
+alias gl='git pull'
+alias gm='git merge'
 alias gacmsg='git add . && git commit -m'
 alias gwt='git worktree'
 alias gbcleanup='cleanup_git_branches'

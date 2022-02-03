@@ -68,10 +68,14 @@ return require('packer').startup({ function(use)
         run = ':TSUpdate',
     }
 
+    -- Treesitter-playground: For debugging?
     use {
         'nvim-treesitter/playground',
         requires = 'nvim-treesitter/nvim-treesitter'
     }
+
+    -- Treesitter rainbow brackets
+    use 'p00f/nvim-ts-rainbow'
 
     -- Plenary: Needed for one of the plugins below I don't remember which
     use 'nvim-lua/plenary.nvim'

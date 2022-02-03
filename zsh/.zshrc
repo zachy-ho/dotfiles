@@ -1,29 +1,37 @@
-# Refer to https://github.com/thoughtbot/dotfiles for a good reference
+# ---------- Antigen ----------
+# source /usr/local/share/antigen/antigen.zsh
+# antigen init $HOME/.config/dotfiles/zsh/antigen/.antigenrc
 
 # ----------p10k instant prompt ----------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# ---------- Custom functions ----------
+# ---------- Plugins ----------
+# ZSH Syntax Highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ZSH Autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# ---------- My custom functions ----------
 for function in ~/.config/zsh/functions/.*; do
     source $function
 done
 
-# ---------- Themes ----------
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ---------- Theme ----------
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # ---------- Exports ----------
 # Language
 export LANG=en_US.UTF-8
 # Editor
 if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+    export EDITOR='vim'
 else
-   export EDITOR='nvim'
+    export EDITOR='nvim'
 fi
 # JAVA Home path
 export JDTLS_HOME=$HOME/.language_servers/jdt-language-server-latest/
@@ -34,8 +42,6 @@ export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
-# Path to your oh-my-zsh installation.
-export OH_MY_ZSH="$HOME/.oh-my-zsh"
 # Path to NVIM Home
 export NVIM_HOME=$HOME/.config/dotfiles/nvim
 # Path to vimwiki Home
@@ -56,15 +62,6 @@ export LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH
 
 # ---------- Aliases ----------
 [ -f $HOME/.config/zsh/.aliasesrc ] && source $HOME/.config/zsh/.aliasesrc
-
-# ---------- Plugins ----------
-plugins=(
-   git colored-man-pages
-   zsh-autosuggestions
-   zsh-syntax-highlighting
-)
-# oh-my-zsh
-source $OH_MY_ZSH/oh-my-zsh.sh
 
 # ---------- General settings ----------
 HYPHEN_INSENSITIVE="true"

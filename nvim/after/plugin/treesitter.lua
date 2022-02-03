@@ -1,3 +1,38 @@
+local rainbow_colors = {
+    rose_pine = {
+        -- Red
+        '#eb6f92',
+        -- Green
+        '#31748f',
+        -- Yellow
+        '#f6c177',
+        -- Blue
+        '#9ccfd8',
+        -- Magenta
+        '#c4a7e7',
+        -- Cyan
+        '#ebbcba',
+        -- White
+        '#e0def4'
+    },
+    rose_pine_moon = {
+        -- Red
+        '#eb6f92',
+        -- Green
+        '#3e8fb0',
+        -- Yellow
+        '#f6c177',
+        -- Blue
+        '#9ccfd8',
+        -- Magenta
+        '#c4a7e7',
+        -- Cyan
+        '#ea9a97',
+        -- White
+        '#e0def4'
+    },
+}
+
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = {
@@ -25,6 +60,7 @@ require'nvim-treesitter.configs'.setup {
             scope_incremental = "grc",
         }
     },
+    -- Module: Playground
     playground = {
         enable = true,
         disable = {},
@@ -42,5 +78,12 @@ require'nvim-treesitter.configs'.setup {
             goto_node = '<cr>',
             show_help = '?',
         }
+    },
+    -- Module: Rainbow
+    rainbow = {
+        enable = true,
+        extended_mode = false,
+        max_file_lines = nil,
+        colors = rainbow_colors.rose_pine
     }
 }
