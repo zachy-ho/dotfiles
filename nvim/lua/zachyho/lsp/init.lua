@@ -89,6 +89,13 @@ custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabil
 local servers = {
     bashls = true,
     cssls = true,
+    cssmodules_ls = {
+        on_attach = function (client)
+            -- avoid accepting `go-to-definition` responses from this LSP since it brings me to
+            -- cssmodules .d.ts definition instead
+            client.resolved_capabilities.goto_definition = false
+        end,
+    },
     dockerls = true,
     eslint = true,
     -- efm = {
