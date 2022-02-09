@@ -17,10 +17,12 @@ alias ssh='TERM=xterm-256color ssh'
 # Navigating to dotfiles, and regularly-used directories
 alias dot='cd $HOME/.config/dotfiles'
 alias nrc='cd $HOME/.config/nvim && v'
-alias krc='cd $HOME/.config/kitty && v'
-alias zrc='cd $HOME/.config/zsh && v'
+alias krc='cd $HOME/.config/kitty && v kitty.conf'
+alias zrc='cd $HOME/.config/zsh && v .zshrc'
 alias mine='cd $HOME/zachyho-codes'
 alias mds='cd $HOME/zachyho-codes/Markdowns'
+# Vimwiki
+alias vwk='cd $HOME/zachyho-codes/vimwiki && v index.md'
 # Sourcing rc files
 alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 # Set Kitty colors

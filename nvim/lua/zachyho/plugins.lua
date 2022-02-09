@@ -83,6 +83,24 @@ return require('packer').startup({ function(use)
     -- Native-lsp: Neovim native Language Server Protocols
     use 'neovim/nvim-lspconfig'
 
+    -- TODO: set up for prettier formatting
+    -- Null-ls
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        -- config = function()
+            -- require("null-ls").setup()
+        -- end,
+        requires = { "nvim-lua/plenary.nvim" },
+    }
+    -- Lsp add-on for Typescript
+    use {
+        'jose-elias-alvarez/nvim-lsp-ts-utils',
+        after = {'nvim-treesitter'}
+    }
+
+    -- null-ls
+    use 'jose-elias-alvarez/null-ls.nvim'
+
     -- Vim devicons: Gives me pretty icons in Nerdtree
     use 'ryanoasis/vim-devicons'
 
@@ -155,12 +173,6 @@ return require('packer').startup({ function(use)
 
     -- Harpoon: File marking to jump back and forth more quickly
     use 'ThePrimeagen/harpoon'
-
-    -- Git worktree
-    use {
-        'ThePrimeagen/git-worktree.nvim',
-        requires = 'nvim-telescope/telescope.nvim',
-    }
 
     -- Headlines highlighting
     use 'lukas-reineke/headlines.nvim'

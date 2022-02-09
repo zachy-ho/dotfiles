@@ -65,25 +65,21 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 -- Sumneko-lua (END)
 
--- Eslint via efm --
--- local config = {
-    -- lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
-    -- lintIgnoreExitCode = true,
-    -- lintStdin = true,
-    -- lintFormats = { "%f:%l:%c: %m" }
--- }
-
--- local log_path = "~/efm.log"
-
--- local efm_languages = {
-    -- typescript = { config },
-    -- typescriptreact = { config },
-    -- javascript = { config },
-    -- javascriptreact = { config }
--- }
-
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
+custom_capabilities.textDocument.completion.completionItem.preselectSupport = true
+custom_capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+custom_capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+custom_capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+custom_capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+custom_capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+custom_capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
 
 local servers = {
@@ -92,23 +88,6 @@ local servers = {
     cssmodules_ls = true,
     dockerls = true,
     eslint = true,
-    -- efm = {
-        -- lspconfig.util.root_pattern(
-            -- ".eslintrc.cjs",
-            -- ".eslintrc.js",
-            -- ".eslintrc.yaml",
-            -- ".eslintrc.yml",
-            -- ".eslintrc.json",
-            -- "package.json"
-        -- ),
-        -- settings = {
-            -- languages = efm_languages,
-            -- log_level = 1,
-            -- log_file = log_path,
-        -- },
-        -- filetypes = vim.tbl_keys(efm_languages),
-        -- init_options = { documentFormatting = true, codeAction = true }
-    -- },
     html = true,
     jdtls = true,
     jsonls = {
@@ -147,6 +126,28 @@ local servers = {
         }
     },
     tsserver = true,
+    -- tsserver = {
+        -- on_attach = function(client, bufnr)
+            -- client.resolved_capabilities.document_formatting = false
+            -- client.resolved_capabilities.document_range_formatting = false
+
+            -- require('nvim-lsp-ts-utils').setup {
+                -- debug = false,
+                -- disable_commands = false,
+                -- enable_import_on_completion = true,
+                -- import_all_timeout = 5000, -- ms
+                -- always_organize_imports = true,
+
+                -- -- parentheses completion
+                -- complete_parens = false,
+                -- signature_help_in_parens = false,
+
+                -- -- update imports on file move
+                -- update_imports_on_move = true,
+                -- require_confirmation_on_move = true,
+            -- }
+        -- end
+    -- },
     vimls = true,
     yamlls = true
 

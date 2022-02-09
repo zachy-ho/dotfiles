@@ -6,4 +6,3 @@ require 'zachyho.plugins'
 
 -- Neovim native lsp
 require 'zachyho.lsp'
-
