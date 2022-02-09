@@ -82,6 +82,10 @@ custom_capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
 
+local tsserver_handlers = {
+    ['textDocument/publishDiagnostics'] = function() end
+}
+
 local servers = {
     bashls = true,
     cssls = true,
@@ -125,11 +129,11 @@ local servers = {
             }
         }
     },
-    tsserver = true,
-    -- tsserver = {
-        -- on_attach = function(client, bufnr)
-            -- client.resolved_capabilities.document_formatting = false
-            -- client.resolved_capabilities.document_range_formatting = false
+    tsserver = {
+        handlers = tsserver_handlers,
+        on_attach = function(client, bufnr)
+            client.resolved_capabilities.document_formatting = false
+            client.resolved_capabilities.document_range_formatting = false
 
             -- require('nvim-lsp-ts-utils').setup {
                 -- debug = false,
@@ -146,8 +150,8 @@ local servers = {
                 -- update_imports_on_move = true,
                 -- require_confirmation_on_move = true,
             -- }
-        -- end
-    -- },
+        end
+    },
     vimls = true,
     yamlls = true
 
