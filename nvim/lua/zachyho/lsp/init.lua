@@ -1,9 +1,6 @@
--- Most things in this file are stolen from TJ Devries config!
 -- Also this guy's one looks tidy af: https://github.com/martinsione/dotfiles/tree/master/src/.config/nvim
--- TODO: Modularize this fucking file
 
 -- Lspkind
-
 require('lspkind').init()
 local has_lsp, lspconfig = pcall(require, "lspconfig")
 if not has_lsp then
@@ -14,7 +11,7 @@ end
 vim.lsp.set_log_level("debug")
 
 -- On_attach to map keys after the language server(s) attaches to the current buffer
-local custom_attach = function(_, bufnr)
+local common_attach = function(_, bufnr)
 
     -- Partial function
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -65,22 +62,44 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 -- Sumneko-lua (END)
 
-local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
-custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
-custom_capabilities.textDocument.completion.completionItem.preselectSupport = true
-custom_capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-custom_capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-custom_capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-custom_capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-custom_capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-custom_capabilities.textDocument.completion.completionItem.resolveSupport = {
+local common_capabilities = vim.lsp.protocol.make_client_capabilities()
+common_capabilities.textDocument.completion.completionItem.snippetSupport = true
+common_capabilities.textDocument.completion.completionItem.preselectSupport = true
+common_capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+common_capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+common_capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+common_capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+common_capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+common_capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {
     'documentation',
     'detail',
     'additionalTextEdits',
   }
 }
-custom_capabilities = require('cmp_nvim_lsp').update_capabilities(custom_capabilities)
+common_capabilities = require('cmp_nvim_lsp').update_capabilities(common_capabilities)
+
+local border = {
+    {"╭", "FloatBorder"},
+    {"─", "FloatBorder"},
+    {"╮", "FloatBorder"},
+    {"│", "FloatBorder"},
+    {"╯", "FloatBorder"},
+    {"─", "FloatBorder"},
+    {"╰", "FloatBorder"},
+    {"│", "FloatBorder"},
+}
+
+local common_handlers = {
+    ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+    ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = {
+        prefix = "■ ",
+        spacing = 4,
+      },
+    }),
+}
 
 local tsserver_handlers = {
     ['textDocument/publishDiagnostics'] = function() end
@@ -130,7 +149,7 @@ local servers = {
         }
     },
     tsserver = {
-        handlers = tsserver_handlers,
+        -- handlers = tsserver_handlers,
         on_attach = function(client, bufnr)
             client.resolved_capabilities.document_formatting = false
             client.resolved_capabilities.document_range_formatting = false
@@ -142,14 +161,18 @@ local servers = {
                 -- import_all_timeout = 5000, -- ms
                 -- always_organize_imports = true,
 
-                -- -- parentheses completion
-                -- complete_parens = false,
-                -- signature_help_in_parens = false,
+                -- -- -- parentheses completion
+                -- -- complete_parens = false,
+                -- -- signature_help_in_parens = false,
 
                 -- -- update imports on file move
                 -- update_imports_on_move = true,
                 -- require_confirmation_on_move = true,
+
+                -- -- filter diagnostics
+                -- filter_out_diagnostics_by_severity = { "hint" },
             -- }
+            common_attach(client, bufnr);
         end
     },
     vimls = true,
@@ -173,9 +196,10 @@ local setup_server = function(server, config)
         config = {}
     end
 
-    config = vim.tbl_deep_extend("keep", {
-        on_attach = custom_attach,
-        capabilities = custom_capabilities,
+    config = vim.tbl_deep_extend("force", {
+        on_attach = common_attach,
+        capabilities = common_capabilities,
+        handlers = common_handlers,
     }, config)
 
     lspconfig[server].setup(config)

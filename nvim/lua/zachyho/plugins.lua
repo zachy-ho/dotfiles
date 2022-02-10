@@ -44,6 +44,12 @@ return require('packer').startup({ function(use)
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
+    -- Barbar
+    use {
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
+
     -- Hexokinase: Previews color whenever color (e.g. hex) is used
     use {
         'RRethy/vim-hexokinase',
@@ -81,7 +87,11 @@ return require('packer').startup({ function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- Native-lsp: Neovim native Language Server Protocols
-    use 'neovim/nvim-lspconfig'
+    -- Nvim-lsp-installer
+    use {
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer',
+    }
 
     -- TODO: set up for prettier formatting
     -- Null-ls
