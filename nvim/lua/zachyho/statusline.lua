@@ -1,3 +1,4 @@
+-- (Old) Custom statusline. Not using this atm. Am using lualine instead
 vim.cmd([[
     let g:currentmode = {
                 \ 'n' : 'NORMAL',

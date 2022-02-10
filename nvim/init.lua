@@ -1,10 +1,14 @@
-require 'zachyho.utils'
+-- Contains globals like `map()`. This should be first since a lot of other files need the `map()` function
+require("zachyho.utils")
 
-require 'zachyho.options'
+-- Global options and settings
+require("zachyho.options")
 
-require 'zachyho.general-keymaps'
+-- General key bindings
+require("zachyho.general-keymaps")
 
-require 'zachyho.plugins'
+-- Packer plugins
+require("zachyho.plugins")
 
--- Neovim native lsp
-require 'zachyho.lsp'
+-- Set up Language Server Protocols (LSPs)
+require("zachyho.lsp")
