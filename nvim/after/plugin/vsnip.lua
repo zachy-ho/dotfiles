@@ -1,5 +1,3 @@
-local map = require('zachyho.utils').map
-
 -- Expand
 map({'i', 's'}, '<expr> <C-j>', "vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'", { noremap = false })
 

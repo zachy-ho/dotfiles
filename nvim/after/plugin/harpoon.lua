@@ -1,6 +1,3 @@
-local utils = require('zachyho.utils')
-local map = utils.map
-
 -- Telescope support
 require("telescope").load_extension('harpoon')
 

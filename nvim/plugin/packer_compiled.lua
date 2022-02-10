@@ -135,6 +135,11 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/headlines.nvim",
     url = "https://github.com/lukas-reineke/headlines.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -321,7 +326,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Setup for: emmet-vim
 time([[Setup for emmet-vim]], true)
-try_loadstring("\27LJ\2\nõ\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0'\1\4\0=\1\3\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0~                autocmd FileType html,css,typescriptreact,javascriptreact,typescript,javascript EmmetInstall\n            \bcmd\n<C-s>\26user_emmet_leader_key\30user_emmet_install_global\6g\bvim\0", "setup", "emmet-vim")
+try_loadstring("\27LJ\2\nú\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0'\1\4\0=\1\3\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0‚\1                autocmd FileType html,css,typescriptreact,javascriptreact,typescript,javascript EmmetInstall\n                \bcmd\n<C-s>\26user_emmet_leader_key\30user_emmet_install_global\6g\bvim\0", "setup", "emmet-vim")
 time([[Setup for emmet-vim]], false)
 time([[packadd for emmet-vim]], true)
 vim.cmd [[packadd emmet-vim]]

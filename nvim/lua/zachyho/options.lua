@@ -3,7 +3,6 @@
 local g = vim.g
 local opt = vim.opt
 
-
 -- Mapping leader to <SPACE>
 -- [[ Firstly, non-recursive map <SPACE> to No-op because it is mapped to right
 -- by default ]]

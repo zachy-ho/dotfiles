@@ -1,5 +1,3 @@
-local map = require('zachyho.utils').map
-
 local ok, actions = pcall(require, 'telescope.actions')
 if not ok then
     return

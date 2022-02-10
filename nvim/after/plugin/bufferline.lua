@@ -1,5 +1,3 @@
-local map = require('zachyho.utils').map
-
 vim.opt.termguicolors = true
 vim.cmd([[set mouse+=a]])
 

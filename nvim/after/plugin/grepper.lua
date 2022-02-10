@@ -1,5 +1,3 @@
-local map = require('zachyho.utils').map
-
 -- Must initialize g:grepper with default values
 vim.cmd([[
     runtime plugin/grepper.vim

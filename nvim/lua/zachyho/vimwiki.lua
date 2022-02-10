@@ -1,5 +1,3 @@
-local map = require('zachyho.utils').map
-
 local baseWiki = {
     path = '~/zachyho-codes/vimwiki',
     path_html = '~/zachyho-codes/vimwiki/html',

@@ -1,8 +1,8 @@
 -- Automatically sources this file and runs 'PackerSync' whenever we write to this file
 vim.cmd([[
 augroup Packer
-    autocmd!
-    autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
+autocmd!
+autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
 augroup end
 ]])
 
@@ -17,31 +17,29 @@ return require('packer').startup({ function(use)
         'vimwiki/vimwiki',
         branch = 'dev',
         config = function()
-          require('zachyho.vimwiki')
+            require('zachyho.vimwiki')
         end
     }
 
     -- Color schemes
     use {
-        -- I don't really wanna use these anymore, might delete soon
         'morhetz/gruvbox',
         'arcticicestudio/nord-vim',
-
-        -- Getting old
         'EdenEast/nightfox.nvim',
-
-        -- Currently liking
-        {
+        'sainnhe/sonokai',
+    {
             'rose-pine/neovim',
             as = 'rose-pine'
-        },
-        'sainnhe/sonokai'
+        }
     }
 
     -- Lualine
     use {
-      'nvim-lualine/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        'nvim-lualine/lualine.nvim',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+            opt = true
+        }
     }
 
     -- Bufferline
@@ -49,12 +47,6 @@ return require('packer').startup({ function(use)
         'akinsho/bufferline.nvim',
         requires = 'kyazdani42/nvim-web-devicons'
     }
-
-    -- Barbar
-    -- use {
-      -- 'romgrk/barbar.nvim',
-      -- requires = {'kyazdani42/nvim-web-devicons'}
-    -- }
 
     -- Hexokinase: Previews color whenever color (e.g. hex) is used
     use {
@@ -67,6 +59,11 @@ return require('packer').startup({ function(use)
 
     -- Lspkind: Cute logos for LSP
     use 'onsails/lspkind-nvim'
+
+    -- Lsp-Signature
+    use {
+        "ray-x/lsp_signature.nvim",
+    }
 
     -- Telescope
     use {
@@ -99,12 +96,11 @@ return require('packer').startup({ function(use)
         'williamboman/nvim-lsp-installer',
     }
 
-    -- TODO: set up for prettier formatting
     -- Null-ls
     use {
         "jose-elias-alvarez/null-ls.nvim",
         -- config = function()
-            -- require("null-ls").setup()
+        -- require("null-ls").setup()
         -- end,
         requires = { "nvim-lua/plenary.nvim" },
     }
@@ -134,14 +130,13 @@ return require('packer').startup({ function(use)
         'hrsh7th/cmp-vsnip',
         'hrsh7th/vim-vsnip',
         'hrsh7th/vim-vsnip-integ',
+        'rafamadriz/friendly-snippets'
     }
-
-    use 'rafamadriz/friendly-snippets'
 
     -- Undotree: Undo and redo
     use 'mbbill/undotree'
 
-    -- Nerdtree: Tree-style navigator
+    -- NERDTree: Tree-style navigator
     use 'preservim/nerdtree'
 
     -- FZF: Fuzzy finder
@@ -157,7 +152,7 @@ return require('packer').startup({ function(use)
     -- Fugitive: Git operations within vim
     use 'tpope/vim-fugitive'
 
-    -- Emmet: HTML templating?
+    -- Emmet: HTML templating
     use {
         'mattn/emmet-vim',
         setup = function()
@@ -165,7 +160,7 @@ return require('packer').startup({ function(use)
             vim.g.user_emmet_leader_key = '<C-s>'
             vim.cmd([[
                 autocmd FileType html,css,typescriptreact,javascriptreact,typescript,javascript EmmetInstall
-            ]])
+                ]])
         end,
     }
 
@@ -202,8 +197,8 @@ return require('packer').startup({ function(use)
     -- Prettier
     use 'prettier/vim-prettier'
 end,
-config = {
-    display = {
-        open_fn = require('packer.util').float
+    config = {
+        display = {
+            open_fn = require('packer.util').float
         }
-}})
+    }})

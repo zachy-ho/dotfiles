@@ -54,8 +54,6 @@ let $FZF_DEFAULT_OPTS = '--reverse'
 
 " Mapping keymaps
 lua << EOF
-local utils = require 'zachyho.utils'
-local map = utils.map
 map('n', '<leader>ff', ':Files<CR>', { noremap = true })
 map('n', '<leader>fr', ':ProjectFiles<CR>', { noremap = true })
 map('n', '<leader>fg', ':GFiles<CR>', { noremap = true })

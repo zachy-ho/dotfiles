@@ -1,6 +1,3 @@
-local utils = require 'zachyho.utils'
-local map = utils.map
-
 -- Map leader key
 map('n', '<SPACE>', '<Nop>')
 vim.g.mapleader = ' '

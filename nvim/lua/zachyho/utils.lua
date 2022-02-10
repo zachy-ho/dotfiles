@@ -1,11 +1,19 @@
--- Stolen from wbthomason dotfiles
 local map_key = vim.api.nvim_set_keymap
 
-local function map(modes, lhs, rhs, opts)
+function _G.map(modes, lhs, rhs, opts)
     opts = opts or {}
     opts.noremap = opts.noremap == nil and true or opts.noremap
     if type(modes) == 'string' then modes = {modes} end
     for _, mode in ipairs(modes) do map_key(mode, lhs, rhs, opts) end
 end
 
-return { map = map }
+function _G.safe_require(module)
+  local ok, result = pcall(require, module)
+  if not ok then
+    vim.notify(string.format('Error requiring: %s', module), vim.log.levels.ERROR)
+    return ok
+  end
+  return result
+end
+
+

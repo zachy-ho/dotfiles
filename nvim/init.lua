@@ -1,3 +1,5 @@
+require 'zachyho.utils'
+
 require 'zachyho.options'
 
 require 'zachyho.general-keymaps'
