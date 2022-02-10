@@ -44,11 +44,17 @@ return require('packer').startup({ function(use)
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
-    -- Barbar
+    -- Bufferline
     use {
-      'romgrk/barbar.nvim',
-      requires = {'kyazdani42/nvim-web-devicons'}
+        'akinsho/bufferline.nvim',
+        requires = 'kyazdani42/nvim-web-devicons'
     }
+
+    -- Barbar
+    -- use {
+      -- 'romgrk/barbar.nvim',
+      -- requires = {'kyazdani42/nvim-web-devicons'}
+    -- }
 
     -- Hexokinase: Previews color whenever color (e.g. hex) is used
     use {

@@ -34,7 +34,7 @@ opt.smartcase = true
 
 -- Splitting
 opt.splitright = true
-opt.splitbelow = true
+opt.splitbelow = false
 
 -- Folds (uses Treesitter)
 vim.cmd([[
