@@ -124,7 +124,7 @@ function M.enable_format_on_save()
 	vim.cmd([[
         augroup format_on_save
             au!
-            au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 2000)
+            au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 5000)
         augroup end
     ]])
 end

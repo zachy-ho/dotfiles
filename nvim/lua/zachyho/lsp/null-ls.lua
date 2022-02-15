@@ -15,10 +15,20 @@ M.setup = function()
 				prefer_local = "node_modules/.bin",
 			}),
 			-- formatting.prettier.with({
-			-- only_local = "node_modules/.bin"
+			-- only_local = "node_modules/.bin",
 			-- }),
 			formatting.stylua,
 		},
+		-- on_attach = function(client)
+		-- if client.resolved_capabilities.document_formatting then
+		-- vim.cmd([[
+		-- augroup LspFormatting
+		-- autocmd! * <buffer>
+		-- autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+		-- augroup END
+		-- ]])
+		-- end
+		-- end,
 	})
 end
 

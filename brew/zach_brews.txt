@@ -9,12 +9,16 @@ boost
 brotli
 c-ares
 ca-certificates
+cloudflared
 cmake
 coreutils
 curl
 double-conversion
 efm-langserver
+fb303
+fbthrift
 fd
+fizz
 fmt
 folly
 fzf
@@ -37,6 +41,7 @@ libev
 libevent
 libidn2
 libnghttp2
+libsodium
 libssh2
 libtermkey
 libtool
@@ -78,10 +83,12 @@ shellcheck
 six
 snappy
 sqlite
+stylua
 terminal-notifier
 tree
 tree-sitter
 unibilium
+wangle
 watchman
 xz
 yarn

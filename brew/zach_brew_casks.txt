@@ -1,0 +1,15 @@
+adoptopenjdk8
+android-sdk
+chromedriver
+docker
+font-hack-nerd-font
+font-iosevka
+intellij-idea
+keycastr
+mobile-tools
+sde
+vagrant
+vagrant-manager
+virtualbox
+virtualbox@6.1.18
+zulu11
