@@ -74,4 +74,17 @@ vim.cmd([[
         autocmd!
         autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
     augroup END
+
+]])
+
+-- Augroup for custom highlights have to be set before colorscheme is set
+vim.cmd([[
+    function! MyHighlights() abort
+        highlight Folded ctermbg=4 guibg=#607887
+    endfunction
+
+    augroup MyColors
+        autocmd!
+        autocmd ColorScheme * call MyHighlights()
+    augroup END
 ]])
