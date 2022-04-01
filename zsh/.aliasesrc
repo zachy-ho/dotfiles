@@ -20,7 +20,7 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 alias ssh='TERM=xterm-256color ssh'
 # Navigating to dotfiles, and regularly-used directories
 alias dot='cd $HOME/.config/dotfiles'
-alias nrc='cd $HOME/.config/nvim && v'
+alias nrc='cd $HOME/.config/nvim && v init.lua'
 alias krc='cd $HOME/.config/kitty && v kitty.conf'
 alias zrc='cd $HOME/.config/zsh && v .zshrc'
 alias mine='cd $HOME/zachyho-gits'
@@ -38,6 +38,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gl='git pull'
+alias glr='git pull --rebase'
 alias gp='git push'
 alias gm='git merge'
 alias gacmsg='git add . && git commit -m'
@@ -56,3 +57,6 @@ function checkout_untracked_branch() {
     readonly branch=${1:?"The branch must be specified."}
     git fetch origin $branch && git checkout FETCH_HEAD
 }
+
+# thefuck
+eval "$(thefuck --alias fk)"

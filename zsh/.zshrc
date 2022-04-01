@@ -1,8 +1,4 @@
-# ---------- Antigen ----------
-# source /usr/local/share/antigen/antigen.zsh
-# antigen init $HOME/.config/dotfiles/zsh/antigen/.antigenrc
-
-# ----------p10k instant prompt ----------
+# --------- p10k instant prompt ----------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -24,7 +20,7 @@ done
 # ---------- Theme ----------
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-# ---------- Exports ----------
+# ---------- Var Exports ----------
 # Language
 export LANG=en_US.UTF-8
 # Editor
@@ -90,5 +86,5 @@ eval "$(direnv hook $SHELL)"
 
 alias luamake=/Users/zacharyho/.language_servers/lua-language-server/3rd/luamake/luamake
 
-# Work things
+# ---------- Work things ----------
 [ -f $HOME/.config/zsh/.canvathingsrc ] && source $HOME/.config/zsh/.canvathingsrc

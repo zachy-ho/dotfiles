@@ -54,6 +54,9 @@ return require("packer").startup({
 			run = "make hexokinase",
 		})
 
+		-- Indent guides
+		use("glepnir/indent-guides.nvim")
+
 		-- Nerdtree-syntax-highlight: To identify filetypes in Nerdtree
 		use("tiagofumo/vim-nerdtree-syntax-highlight")
 

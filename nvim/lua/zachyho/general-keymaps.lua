@@ -5,6 +5,9 @@ vim.g.mapleader = " "
 -- Re-source init.lua
 map("n", "<leader>rsn", ":source $HOME/.config/nvim/resource-nvim.lua<CR>")
 
+-- Open init.lua from anywhere
+map("n", "<leader>nrc", ":e $HOME/.config/nvim/init.lua<CR>:lcd $HOME/.config/nvim<CR>")
+
 -- Save and execute current file (stolen from TJ Devries)
 map("n", "<leader><leader>x", ":call zachyho#save_and_exec()<CR>")
 

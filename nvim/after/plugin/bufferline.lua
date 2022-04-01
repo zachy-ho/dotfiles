@@ -6,7 +6,7 @@ require("bufferline").setup({
 		offsets = {
 			{
 				filetype = "nerdtree",
-				text = "ur doin' gr8 m8",
+				text = "Treeth",
 				-- highlight = 'Directory',
 				text_align = "center",
 			},
