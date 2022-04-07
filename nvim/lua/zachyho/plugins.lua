@@ -48,6 +48,12 @@ return require("packer").startup({
 			requires = "kyazdani42/nvim-web-devicons",
 		})
 
+		-- Goyo && Limelight for focus work
+		use({
+			"junegunn/goyo.vim",
+			"junegunn/limelight.vim",
+		})
+
 		-- Hexokinase: Previews color whenever color (e.g. hex) is used
 		use({
 			"RRethy/vim-hexokinase",
