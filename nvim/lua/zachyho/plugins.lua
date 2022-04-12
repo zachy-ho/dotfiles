@@ -159,7 +159,13 @@ return require("packer").startup({
 		use("mhinz/vim-grepper")
 
 		-- Fugitive: Git operations within vim
-		use("tpope/vim-fugitive")
+		-- Rhubarb: To make GBrowse from Fugitive work
+		use({
+			"tpope/vim-fugitive",
+			requires = {
+				"tpope/vim-rhubarb",
+			},
+		})
 
 		-- Emmet: HTML templating
 		use({
