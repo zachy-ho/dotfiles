@@ -18,6 +18,8 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java14='export JAVA_HOME=$JAVA_14_HOME'
 # SSH
 alias ssh='TERM=xterm-256color ssh'
+# Brew
+alias brup='brew update && brew upgrade'
 # Navigating to dotfiles, and regularly-used directories
 alias dot='cd $HOME/.config/dotfiles'
 alias nrc='cd $HOME/.config/nvim && v init.lua'
