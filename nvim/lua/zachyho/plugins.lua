@@ -80,6 +80,11 @@ return require("packer").startup({
 			requires = { { "nvim-lua/plenary.nvim" } },
 		})
 
+		-- telescope-fzf-native for better sorting performance
+		use({
+			"nvim-telescope/telescope-fzf-native.nvim",
+			run = "make",
+		})
 		-- Treesitter: Just for syntax highlighting only for now
 		use({
 			"nvim-treesitter/nvim-treesitter",

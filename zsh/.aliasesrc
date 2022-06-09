@@ -20,6 +20,8 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 alias ssh='TERM=xterm-256color ssh'
 # Brew
 alias brup='brew update && brew upgrade'
+# NVM
+alias n='nvm use'
 # Navigating to dotfiles, and regularly-used directories
 alias dot='cd $HOME/.config/dotfiles'
 alias nrc='cd $HOME/.config/nvim && v init.lua'
@@ -44,7 +46,7 @@ alias glr='git pull --rebase'
 alias gp='git push'
 alias gpsu='git push --set-upstream'
 alias gm='git merge'
-alias gacmsg='git add . && git commit -m'
+alias gacm='git add . && git commit -m'
 alias gwt='git worktree'
 alias gbcleanup='cleanup_git_branches'
 alias gcoub='checkout_untracked_branch'

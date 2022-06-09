@@ -31,11 +31,13 @@ else
 fi
 # JAVA Home path
 export JDTLS_HOME=$HOME/.language_servers/jdt-language-server-latest/
-export JAVA_HOME=$(/usr/libexec/java_home -v 14)
-export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+# Nix path
+export NIX_HOME=$HOME/.nix-profile
 # Path
 # export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
-export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$PATH
+export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$NIX_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to NVIM Home
