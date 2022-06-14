@@ -1,5 +1,5 @@
 adoptopenjdk8
-android-sdk
+android-commandlinetools
 chromedriver
 docker
 font-hack-nerd-font
@@ -8,6 +8,8 @@ intellij-idea
 keycastr
 mobile-tools
 sde
+stats
+temurin
 vagrant
 vagrant-manager
 virtualbox
