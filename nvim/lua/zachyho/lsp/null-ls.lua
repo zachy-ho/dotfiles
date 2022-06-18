@@ -27,9 +27,9 @@ M.setup = function()
 			diagnostics.eslint_d.with({
 				prefer_local = "node_modules/.bin",
 			}),
-			-- formatting.prettier.with({
-			-- only_local = "node_modules/.bin",
-			-- }),
+			formatting.prettier.with({
+				only_local = "node_modules/.bin",
+			}),
 			formatting.stylua,
 		},
 	})

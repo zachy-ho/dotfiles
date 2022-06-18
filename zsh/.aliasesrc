@@ -55,7 +55,7 @@ alias dockerStopAll='docker stop $(docker ps -a -q)'
 
 # functions
 function cleanup_git_branches() {
-    git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
+    git remote prune origin && git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
 }
 
 function checkout_untracked_branch() {
