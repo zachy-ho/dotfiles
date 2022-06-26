@@ -1,3 +1,6 @@
+# Uncomment the line below and the last line in this file for performance profiling
+# zmodload zsh/zprof
+
 # --------- p10k instant prompt ----------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -9,7 +12,7 @@ fi
 # ---------- Plugins ----------
 # ZSH Syntax Highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# ZSH Autosuggestions
+# ZSH Autosuggestion
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ---------- My custom functions ----------
@@ -44,8 +47,6 @@ export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platfo
 export NVIM_HOME=$HOME/.config/dotfiles/nvim
 # Path to vimwiki Home
 export VIMWIKI=$HOME/zachyho-codes/vimwiki
-# NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # ZSH Update Frequency
 export UPDATE_ZSH_DAYS=7
 # FZF command
@@ -66,23 +67,14 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# User configuration
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # ---------- Executables ----------
-# Load NVM
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# Automatically run `fnm use` when in a directory containing .node-version or .nvmrc file
+eval "$(fnm env --use-on-cd)"
 
 # Eval direv
 eval "$(direnv hook $SHELL)"
 
 # p10k
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
 # To customize prompt, run `p10k configure` or edit ~/.config/dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/.config/dotfiles/zsh/.p10k.zsh ]] || source ~/.config/dotfiles/zsh/.p10k.zsh
 
@@ -90,3 +82,18 @@ alias luamake=/Users/zacharyho/.language_servers/lua-language-server/3rd/luamake
 
 # ---------- Work things ----------
 [ -f $HOME/.config/zsh/.canvathingsrc ] && source $HOME/.config/zsh/.canvathingsrc
+
+# ---------- Graveyard start ----------
+# NVM (Not used anymore. Now using fnm for node version management)
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# User configuration
+# export MANPATH="/usr/local/man:$MANPATH"
+# ---------- Graveyard end ----------
+
+# Uncomment the line below and the first line in this file for performance profiling
+# zprof

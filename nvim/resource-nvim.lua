@@ -1,5 +1,0 @@
-vim.cmd('source $NVIM_HOME/lua/zachyho/general-keymaps.lua')
-vim.cmd('source $NVIM_HOME/lua/zachyho/options.lua')
-vim.cmd('source $NVIM_HOME/lua/zachyho/plugins.lua')
-vim.cmd('source $NVIM_HOME/lua/zachyho/lsp/init.lua')
-vim.cmd('source $NVIM_HOME/lua/zachyho/statusline.lua')

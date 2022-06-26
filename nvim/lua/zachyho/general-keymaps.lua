@@ -2,9 +2,6 @@
 map("n", "<SPACE>", "<Nop>")
 vim.g.mapleader = " "
 
--- Re-source init.lua
-map("n", "<leader>rsn", ":source $HOME/.config/nvim/resource-nvim.lua<CR>")
-
 -- Open init.lua from anywhere
 map("n", "<leader>nrc", ":e $HOME/.config/nvim/init.lua<CR>:lcd $HOME/.config/nvim<CR>")
 
