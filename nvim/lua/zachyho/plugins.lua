@@ -1,9 +1,9 @@
 -- Automatically sources this file and runs 'PackerSync' whenever we write to this file
 vim.cmd([[
-augroup Packer
-autocmd!
-autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
-augroup end
+    augroup Packer
+    autocmd!
+    autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
+    augroup end
 ]])
 
 -- Please write this file and run ':PackerSync' after to sync shit up every time a change is made
@@ -207,6 +207,12 @@ return require("packer").startup({
 
 		-- Headlines highlighting
 		use("lukas-reineke/headlines.nvim")
+
+		-- Glow (Markdown preview inside neovim)
+		use({
+			"ellisonleao/glow.nvim",
+			branch = "main",
+		})
 
 		-- Markdown-preview: self-explanatory
 		use({

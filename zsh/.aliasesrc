@@ -30,7 +30,7 @@ alias zrc='cd $HOME/.config/zsh && v .zshrc'
 alias mine='cd $HOME/zachyho-gits'
 alias mds='mine && cd Markdowns'
 # Vimwiki
-alias vwk='mine && cd vimwiki && v index.md'
+alias vw='mine && cd vimwiki && v index.md'
 # Sourcing rc files
 alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 # Set Kitty colors

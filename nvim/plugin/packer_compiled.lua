@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["goyo.vim"] = {
     loaded = true,
     path = "/Users/zacharyho/.local/share/nvim/site/pack/packer/start/goyo.vim",

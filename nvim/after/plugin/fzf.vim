@@ -54,9 +54,10 @@ let $FZF_DEFAULT_OPTS = '--reverse'
 
 " Mapping keymaps
 lua << EOF
-map('n', '<leader>ff', ':Files<CR>', { noremap = true })
-map('n', '<leader>fr', ':ProjectFiles<CR>', { noremap = true })
-map('n', '<leader>fg', ':GFiles<CR>', { noremap = true })
-map('n', '<leader>rg', ':RgWithOpts ""', { noremap = true })
+map('n', '<leader>ff', ':Files<CR>')
+map('n', '<leader>fr', ':ProjectFiles<CR>')
+map('n', '<leader>fg', ':GFiles<CR>')
+map('n', '<leader>rg', ':RgWithOpts ""')
+map('n', '<leader>gt', ':Rg ::<left>')
 -- map('n', '<leader>fb', ':Buffers<CR>', { noremap = true })
 EOF
