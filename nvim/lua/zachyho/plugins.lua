@@ -108,7 +108,8 @@ return require("packer").startup({
 		-- Nvim-lsp-installer
 		use({
 			"neovim/nvim-lspconfig",
-			"williamboman/nvim-lsp-installer",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 		})
 
 		-- Null-ls
@@ -119,10 +120,9 @@ return require("packer").startup({
 			-- end,
 			requires = { "nvim-lua/plenary.nvim" },
 		})
-		-- Lsp add-on for Typescript
+		-- Typescript LSP add-on
 		use({
-			"jose-elias-alvarez/nvim-lsp-ts-utils",
-			after = { "nvim-treesitter" },
+			"jose-elias-alvarez/typescript.nvim",
 		})
 
 		-- null-ls

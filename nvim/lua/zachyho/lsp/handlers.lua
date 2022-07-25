@@ -139,6 +139,7 @@ function M.toggle_format_on_save()
 	end
 end
 
+-- TODO fix this bugged command
 vim.cmd([[command! LspToggleAutoFormat execute 'lua require("modules.config.lsp.handlers").toggle_format_on_save()']])
 
 return M

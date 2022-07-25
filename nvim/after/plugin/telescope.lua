@@ -1,10 +1,10 @@
-local telescope_ok, telescope = pcall(require, "telescope")
-if not telescope_ok then
+local telescope = safe_require("telescope")
+if not telescope then
 	return
 end
 
-local actions_ok, actions = pcall(require, "telescope.actions")
-if not actions_ok then
+local actions = safe_require("telescope.actions")
+if not actions then
 	return
 end
 

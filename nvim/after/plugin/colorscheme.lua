@@ -19,8 +19,8 @@
 
 -- ----- Nightfox -----
 -- Setup
-local nightfox_ok, nightfox = pcall(require, "nightfox")
-if nightfox_ok then
+local nightfox = safe_require("nightfox")
+if nightfox then
 	nightfox.setup({
 		options = {
 			styles = {
@@ -30,8 +30,6 @@ if nightfox_ok then
 			},
 		},
 	})
-else
-	print("nightfox not installed")
 end
 
 -- Set
@@ -57,12 +55,10 @@ vim.g.rose_pine_variant = "moon"
 -- colorscheme sonokai
 -- ]])
 
--- ----- Gruvbox -----
+-- ----- One Dark -----
 -- Setup
-local onedark_ok, onedark = pcall(require, "onedark")
-if onedark_ok then
+local onedark = safe_require("onedark")
+if onedark then
 	onedark.setup()
-else
-	print("onedark not installed")
 end
 -- Set
