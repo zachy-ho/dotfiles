@@ -79,10 +79,10 @@ function M.on_attach(client, bufnr)
 	buf_map(",dl", [[ <cmd>lua vim.diagnostic.setloclist({open_loclist=true})<CR> <bar> :setlocal wrap<CR>]])
 
 	-- Attach lsp-signature to every server
-	local lsp_signature = safe_require("lsp_signature")
-	if lsp_signature then
-		lsp_signature.on_attach()
-	end
+	-- local lsp_signature = safe_require("lsp_signature")
+	-- if lsp_signature then
+	-- lsp_signature.on_attach()
+	-- end
 
 	-- Let null-ls do all formatting
 	if client.name ~= "null-ls" then
