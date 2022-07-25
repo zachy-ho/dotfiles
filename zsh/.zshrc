@@ -15,7 +15,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ZSH Autosuggestion
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## ZSH Autocomplete
-source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # ---------- My custom functions ----------
 for function in ~/.config/zsh/functions/.*; do

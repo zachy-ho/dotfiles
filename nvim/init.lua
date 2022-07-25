@@ -6,7 +6,7 @@ require("zachyho.utils")
 require("zachyho.options")
 
 -- General key bindings
-require("zachyho.general-keymaps")
+require("zachyho.general_keymaps")
 
 -- Packer plugins
 require("zachyho.plugins")

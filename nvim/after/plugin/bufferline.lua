@@ -1,18 +1,18 @@
 vim.opt.termguicolors = true
 
-require("bufferline").setup({
-	options = {
-		diagnostics = "nvim_lsp",
-		offsets = {
-			{
-				filetype = "nerdtree",
-				text = "Treeth",
-				-- highlight = 'Directory',
-				text_align = "center",
-			},
-		},
-	},
-})
+-- require("bufferline").setup({
+-- options = {
+-- diagnostics = "nvim_lsp",
+-- offsets = {
+-- {
+-- filetype = "nerdtree",
+-- text = "Treeth",
+-- -- highlight = 'Directory',
+-- text_align = "center",
+-- },
+-- },
+-- },
+-- })
 
 map("n", "<leader>bp", ":BufferLineCyclePrev<CR>")
 map("n", "<leader>bn", ":BufferLineCycleNext<CR>")

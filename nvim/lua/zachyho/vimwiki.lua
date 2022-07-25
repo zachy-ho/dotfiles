@@ -4,10 +4,18 @@ local baseWiki = {
 	syntax = "markdown",
 	ext = ".md",
 }
+local notesWiki = {
+	path = "~/zachyho-gits/vimwiki/notes",
+	syntax = "markdown",
+	ext = ".md",
+	auto_generate_links = 1,
+}
 
-vim.g.vimwiki_list = { baseWiki }
+vim.g.vimwiki_list = { baseWiki, notesWiki }
 
 vim.g.vimwiki_folding = "expr"
 
-map("n", "<leader>wh", "<Plug>Vimwiki2HTML")
-map("n", "<leader>whh", "<Plug>Vimwiki2HTMLBrowse")
+-- Removing default vimwiki keymaps that clash with personal keymaps
+vim.g.vimwiki_key_mappings = {
+	html = 0,
+}

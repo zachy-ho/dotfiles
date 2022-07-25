@@ -1,10 +1,10 @@
 -- Automatically sources this file and runs 'PackerSync' whenever we write to this file
-vim.cmd([[
-    augroup Packer
-    autocmd!
-    autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
-    augroup end
-]])
+-- vim.cmd([[
+-- augroup Packer
+-- autocmd!
+-- autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
+-- augroup end
+-- ]])
 
 -- Please write this file and run ':PackerSync' after to sync shit up every time a change is made
 return require("packer").startup({
@@ -27,6 +27,7 @@ return require("packer").startup({
 			"arcticicestudio/nord-vim",
 			"EdenEast/nightfox.nvim",
 			"sainnhe/sonokai",
+			"monsonjeremy/onedark.nvim",
 			{
 				"rose-pine/neovim",
 				as = "rose-pine",
@@ -70,9 +71,9 @@ return require("packer").startup({
 		use("onsails/lspkind-nvim")
 
 		-- Lsp-Signature
-		use({
-			"ray-x/lsp_signature.nvim",
-		})
+		-- use({
+		-- "ray-x/lsp_signature.nvim",
+		-- })
 
 		-- Telescope
 		use({
@@ -85,7 +86,7 @@ return require("packer").startup({
 			"nvim-telescope/telescope-fzf-native.nvim",
 			run = "make",
 		})
-		-- Treesitter: Just for syntax highlighting only for now
+		-- Treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
@@ -100,7 +101,7 @@ return require("packer").startup({
 		-- Treesitter rainbow brackets
 		use("p00f/nvim-ts-rainbow")
 
-		-- Plenary: Needed for one of the plugins below I don't remember which
+		-- Plenary
 		use("nvim-lua/plenary.nvim")
 
 		-- Native-lsp: Neovim native Language Server Protocols
@@ -196,23 +197,11 @@ return require("packer").startup({
 		-- Nerdcommenter: Commenting shortcuts
 		use("preservim/nerdcommenter")
 
-		-- Startify: Cool start screen and session saving
-		use({
-			"mhinz/vim-startify",
-			cmd = { "SLoad", "SSave" },
-		})
-
 		-- Harpoon: File marking to jump back and forth more quickly
 		use("ThePrimeagen/harpoon")
 
 		-- Headlines highlighting
 		use("lukas-reineke/headlines.nvim")
-
-		-- Glow (Markdown preview inside neovim)
-		use({
-			"ellisonleao/glow.nvim",
-			branch = "main",
-		})
 
 		-- Markdown-preview: self-explanatory
 		use({
