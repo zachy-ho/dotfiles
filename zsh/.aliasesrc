@@ -45,6 +45,7 @@ alias gl='git pull'
 alias glr='git pull --rebase'
 alias gp='git push'
 alias gpsu='git push --set-upstream'
+alias gpsuo='git push --set-upstream origin $(git branch --show-current)'
 alias gm='git merge'
 alias gacm='git add . && git commit -m'
 alias gwt='git worktree'
@@ -53,7 +54,7 @@ alias gcoub='checkout_untracked_branch'
 # docker
 alias dockerStopAll='docker stop $(docker ps -a -q)'
 
-# functions
+# git functions
 function cleanup_git_branches() {
     git remote prune origin && git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
 }

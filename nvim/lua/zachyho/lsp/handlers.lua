@@ -88,15 +88,6 @@ function M.on_attach(client, bufnr)
 	if client.name ~= "null-ls" then
 		client.resolved_capabilities.document_formatting = false
 	end
-
-	-- TODO: Put this in tsserver's own on_attach
-	if client.name == "tsserver" then
-		local ts_utils = safe_require("nvim-lsp-ts-utils")
-		if ts_utils then
-			ts_utils.setup({})
-			ts_utils.setup_client(client)
-		end
-	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
