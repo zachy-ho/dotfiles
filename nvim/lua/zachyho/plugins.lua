@@ -16,22 +16,25 @@ return require("packer").startup({
 		use({
 			"vimwiki/vimwiki",
 			branch = "dev",
-			config = function()
-				require("zachyho.vimwiki")
+			setup = function()
+				-- Execute config file before loading the plugin so it knows where the wiki
+				-- directories are upon loading
+				require("zachyho.plugin_configs.vimwiki")
 			end,
+			keys = { "<leader>ww", "<leader>w<leader>w" },
 		})
 
 		-- Color schemes
 		use({
-			"morhetz/gruvbox",
-			"arcticicestudio/nord-vim",
-			"EdenEast/nightfox.nvim",
-			"sainnhe/sonokai",
+			-- "morhetz/gruvbox",
+			-- "arcticicestudio/nord-vim",
+			-- "EdenEast/nightfox.nvim",
+			-- "sainnhe/sonokai",
 			"monsonjeremy/onedark.nvim",
-			{
-				"rose-pine/neovim",
-				as = "rose-pine",
-			},
+			-- {
+			-- "rose-pine/neovim",
+			-- as = "rose-pine",
+			-- },
 		})
 
 		-- Lualine
@@ -41,39 +44,62 @@ return require("packer").startup({
 				"kyazdani42/nvim-web-devicons",
 				opt = true,
 			},
+			config = function()
+				require("zachyho.plugin_configs.lualine")
+			end,
+			event = "BufWinEnter",
 		})
 
-		-- Bufferline
-		use({
-			"akinsho/bufferline.nvim",
-			requires = "kyazdani42/nvim-web-devicons",
-		})
-
-		-- Goyo && Limelight for focus work
+		-- Goyo for Zen mode
 		use({
 			"junegunn/goyo.vim",
-			"junegunn/limelight.vim",
+			config = function()
+				require("zachyho.plugin_configs.goyo")
+			end,
+			keys = "<leader>zm",
 		})
 
 		-- Hexokinase: Previews color whenever color (e.g. hex) is used
+		local hexokinase = require("zachyho.plugin_configs.hexokinase")
 		use({
 			"RRethy/vim-hexokinase",
 			run = "make hexokinase",
+			ft = hexokinase.filetypes,
 		})
 
 		-- Indent guides
-		use("glepnir/indent-guides.nvim")
+		use({
+			"glepnir/indent-guides.nvim",
+			config = function()
+				require("zachyho.plugin_configs.indent_guides")
+			end,
+			event = "BufWinEnter",
+		})
+
+		-- Nvim-tree: Tree-style navigator
+		local nvim_tree_shortcuts = require("zachyho.plugin_configs.nvim_tree_shortcuts").as_list
+		use({
+			"kyazdani42/nvim-tree.lua",
+			tag = "nightly", -- optional, updated every week. (see issue #1193)
+			requires = {
+				"kyazdani42/nvim-web-devicons",
+			},
+			config = function()
+				require("nvim-tree").setup()
+				require("zachyho.plugin_configs.nvim_tree")
+			end,
+			keys = nvim_tree_shortcuts,
+		})
 
 		-- Nerdtree-syntax-highlight: To identify filetypes in Nerdtree
-		use("tiagofumo/vim-nerdtree-syntax-highlight")
+		-- use({
+		-- "tiagofumo/vim-nerdtree-syntax-highlight",
+		-- after = "nerdtree",
+		-- })
 
+		-- TODO continue lazy loading here
 		-- Lspkind: Cute logos for LSP
 		use("onsails/lspkind-nvim")
-
-		-- Lsp-Signature
-		-- use({
-		-- "ray-x/lsp_signature.nvim",
-		-- })
 
 		-- Telescope
 		use({
@@ -90,12 +116,6 @@ return require("packer").startup({
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
-		})
-
-		-- Treesitter-playground: For debugging?
-		use({
-			"nvim-treesitter/playground",
-			requires = "nvim-treesitter/nvim-treesitter",
 		})
 
 		-- Treesitter rainbow brackets
@@ -115,18 +135,12 @@ return require("packer").startup({
 		-- Null-ls
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
-			-- config = function()
-			-- require("null-ls").setup()
-			-- end,
 			requires = { "nvim-lua/plenary.nvim" },
 		})
 		-- Typescript LSP add-on
 		use({
 			"jose-elias-alvarez/typescript.nvim",
 		})
-
-		-- null-ls
-		use("jose-elias-alvarez/null-ls.nvim")
 
 		-- Vim devicons: Gives me pretty icons in Nerdtree
 		use("ryanoasis/vim-devicons")
@@ -140,19 +154,8 @@ return require("packer").startup({
 			"hrsh7th/cmp-nvim-lua",
 		})
 
-		-- Vsnip and snippets: Snippets for fast coding
-		use({
-			"hrsh7th/cmp-vsnip",
-			"hrsh7th/vim-vsnip",
-			"hrsh7th/vim-vsnip-integ",
-			"rafamadriz/friendly-snippets",
-		})
-
 		-- Undotree: Undo and redo
 		use("mbbill/undotree")
-
-		-- NERDTree: Tree-style navigator
-		use("preservim/nerdtree")
 
 		-- FZF: Fuzzy finder
 		use({
@@ -211,6 +214,35 @@ return require("packer").startup({
 
 		-- Prettier
 		use("prettier/vim-prettier")
+
+		----- Plugin graveyard -----
+		-- Bufferline
+		-- use({
+		-- "akinsho/bufferline.nvim",
+		-- requires = "kyazdani42/nvim-web-devicons",
+		-- })
+
+		-- Vsnip and snippets: Snippets for fast coding
+		-- use({
+		-- "hrsh7th/cmp-vsnip",
+		-- "hrsh7th/vim-vsnip",
+		-- "hrsh7th/vim-vsnip-integ",
+		-- "rafamadriz/friendly-snippets",
+		-- })
+
+		-- Limelight
+		-- use({ "junegunn/limelight.vim", })
+
+		-- Lsp-Signature
+		-- use({
+		-- "ray-x/lsp_signature.nvim",
+		-- })
+
+		-- Treesitter-playground
+		-- use({
+		-- "nvim-treesitter/playground",
+		-- requires = "nvim-treesitter/nvim-treesitter",
+		-- })
 	end,
 	config = {
 		display = {

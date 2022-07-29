@@ -1,6 +1,7 @@
 local map_key = vim.api.nvim_set_keymap
 local unmap_key = vim.api.nvim_del_keymap
 
+-- Global functions
 function _G.map(modes, lhs, rhs, opts)
 	opts = opts or {}
 	opts.noremap = opts.noremap == nil and true or opts.noremap

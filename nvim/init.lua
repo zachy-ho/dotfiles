@@ -15,3 +15,9 @@ require("zachyho.plugins")
 require("zachyho.lsp")
 
 -- Plugin configuration files in `after/plugin` are automatically sourced
+
+-- Lazy loading
+-- 1. Move plugin config into lua/zachyho
+-- 2. Set up lazy loading condition in packer plugin file
+-- 3. Require the plugin config manually
+-- 4. Test

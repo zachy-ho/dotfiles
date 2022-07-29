@@ -19,18 +19,18 @@
 
 -- ----- Nightfox -----
 -- Setup
-local nightfox = safe_require("nightfox")
-if nightfox then
-	nightfox.setup({
-		options = {
-			styles = {
-				comments = "italic", -- change style of comments to be italic
-				keywords = "bold", -- change style of keywords to be bold
-				functions = "italic,bold", -- styles can be a comma separated list
-			},
-		},
-	})
-end
+-- local nightfox = safe_require("nightfox")
+-- if nightfox then
+-- nightfox.setup({
+-- options = {
+-- styles = {
+-- comments = "italic", -- change style of comments to be italic
+-- keywords = "bold", -- change style of keywords to be bold
+-- functions = "italic,bold", -- styles can be a comma separated list
+-- },
+-- },
+-- })
+-- end
 
 -- Set
 -- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
@@ -38,11 +38,11 @@ end
 
 -- ----- Rose pine -----
 -- Setup
-vim.cmd([[
-    let g:sonokai_style = 'andromeda'
-    let g:sonokai_enable_italic = 1
-]])
-vim.g.rose_pine_variant = "moon"
+-- vim.cmd([[
+-- let g:sonokai_style = 'andromeda'
+-- let g:sonokai_enable_italic = 1
+-- ]])
+-- vim.g.rose_pine_variant = "moon"
 -- Set
 -- vim.cmd("colorscheme rose-pine")
 
