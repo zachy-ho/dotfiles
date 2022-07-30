@@ -3,16 +3,22 @@ if not lspconfig then
 	return
 end
 
-local handlers = require("zachyho.lsp.handlers")
+local handlers = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.handlers")
 
-handlers.setup()
-handlers.enable_format_on_save()
+local common_on_attach = {}
+local common_capabilities = {}
+if handlers then
+	handlers.setup()
+	handlers.enable_format_on_save()
+	common_on_attach = handlers.on_attach
+	common_capabilities = handlers.capabilities
+end
 
 -- Set up null-ls
-require("zachyho.lsp.null-ls").setup()
-
-local common_on_attach = handlers.on_attach
-local common_capabilities = handlers.capabilities
+local null_ls = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls")
+if null_ls then
+	null_ls.setup()
+end
 
 local server_configs = {
 	bashls = true,

@@ -18,7 +18,7 @@ return {
 		"onsails/lspkind-nvim",
 	},
 	config = function()
-		safe_require("zachyho.lsp")
+		safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.config")
 	end,
 	event = "BufWinEnter",
 }

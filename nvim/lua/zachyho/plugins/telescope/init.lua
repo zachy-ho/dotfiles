@@ -41,8 +41,6 @@ local telescope_config = {
 			},
 		})
 
-		telescope.load_extension("fzf")
-
 		local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
 		if keymaps then
 			local as_table = preconditions.check_exists(keymaps.as_table)
@@ -53,16 +51,22 @@ local telescope_config = {
 			map("n", as_table.jumplist, ":lua require'telescope.builtin'.jumplist{}<CR>")
 			map("n", as_table.keymaps, ":lua require'telescope.builtin'.keymaps{}<CR>")
 		end
+
+		local load_extensions = safe_require(constants.PLUGINS_DIR .. "telescope.extensions")
+		if load_extensions then
+			load_extensions({ "fzf", "harpoon" })
+		end
 	end,
 }
 
 local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
 local harpoon_keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
-local table_utils = safe_require("zachyho.table_utils")
-if keymaps and harpoon_keymaps and table_utils then
-	telescope_config.keys = table_utils.combine_lists(
-		preconditions.check_exists(keymaps.as_list),
-		preconditions.check_exists(harpoon_keymaps.as_list)
-	)
+local keys = {}
+if keymaps then
+	vim.list_extend(keys, preconditions.check_exists(keymaps.as_list))
 end
+if harpoon_keymaps then
+	table.insert(keys, preconditions.check_exists(harpoon_keymaps.as_table).toggle_telescope)
+end
+telescope_config.keys = keys
 return telescope_config

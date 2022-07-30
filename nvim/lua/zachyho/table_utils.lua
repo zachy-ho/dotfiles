@@ -20,6 +20,14 @@ local table_utils = {
 		vim.list_extend(result, list2)
 		return result
 	end,
+	has_item = function(list, item)
+		for _, v in pairs(list) do
+			if v == item then
+				return true
+			end
+		end
+		return false
+	end,
 }
 
 return table_utils

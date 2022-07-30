@@ -1,15 +1,6 @@
-return {
+local harpoon = {
 	"ThePrimeagen/harpoon",
-	requires = "nvim-telescope/telescope.nvim",
 	config = function()
-		-- Telescope support
-		local telescope = safe_require("telescope")
-		if not telescope then
-			return
-		end
-
-		telescope.load_extension("harpoon")
-
 		local keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
 		if keymaps then
 			map(
@@ -30,5 +21,6 @@ return {
 		map("n", "<leader>h5", ':lua require("harpoon.ui").nav_file(5)<CR>')
 		map("n", "<leader>h6", ':lua require("harpoon.ui").nav_file(6)<CR>')
 	end,
-	after = "telescope.nvim",
 }
+
+return harpoon

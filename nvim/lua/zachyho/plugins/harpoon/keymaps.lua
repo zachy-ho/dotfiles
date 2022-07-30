@@ -1,6 +1,7 @@
 local keymaps = {
 	as_table = {
 		toggle = "<leader>hp",
+		toggle_telescope = "<leader>ht",
 		add_file = "<leader>hm",
 	},
 }

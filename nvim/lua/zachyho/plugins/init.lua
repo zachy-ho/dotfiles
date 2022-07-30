@@ -1,4 +1,4 @@
--- Automatically sources this file and runs 'PackerSync' whenever we write to this file
+-- Autocmd: Automatically sources this file and runs 'PackerSync' whenever we write to this file
 -- vim.cmd([[
 -- augroup Packer
 -- autocmd!
@@ -7,9 +7,11 @@
 -- ]])
 
 -- If not using the autocmd above, whenever a change is made on this file:
--- 1. Write this file
--- 2. Source/execute it
--- 3. Run ':PackerSync'
+-- 1. Write this file.
+-- 2. Source/execute it.
+-- 3. Run ':PackerCompile' if not making changes to plugin installs. Run ':PackerSync' otherwise.
+-- 4. Might need to run `:PackerCompile` a second time as there could be errors the first time that
+-- would go away after a second execution.
 
 --------------- Packer & plugins ---------------
 -- Eager-loaded plugins are put at the top of the startup function
@@ -48,13 +50,17 @@ return packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "fugitive"))
 
 		-- Fzf: Fuzzy finder
-		use(safe_require(constants.PLUGINS_DIR .. "fzf"))
+		-- use(safe_require(constants.PLUGINS_DIR .. "fzf"))
 
 		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
 		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
 
 		-- Nerdcommenter: Commenting shortcuts
 		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
+
+		-- Harpoon: File marking to jump back and forth more quickly
+		use(safe_require(constants.PLUGINS_DIR .. "harpoon"))
+
 		---------- Eager-loaded plugins end ----------
 
 		---------- Lazy-loaded plugins ----------
@@ -74,7 +80,6 @@ return packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_tree"))
 
 		-- Native-lsp: Neovim native Language Server Protocols
-		-- TODO reorganise this and lsp/
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig"))
 
 		----- Cmp family -----
@@ -97,9 +102,6 @@ return packer.startup({
 		-- Telescope
 		-- TODO make telescope entire config exportable and require in harpoon loading
 		use(safe_require(constants.PLUGINS_DIR .. "telescope"))
-
-		-- Harpoon: File marking to jump back and forth more quickly
-		use(safe_require(constants.PLUGINS_DIR .. "harpoon"))
 
 		-- Treesitter
 		use(safe_require(constants.PLUGINS_DIR .. "treesitter"))
