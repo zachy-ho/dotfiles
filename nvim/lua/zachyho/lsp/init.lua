@@ -49,11 +49,6 @@ local server_configs = {
 	yamlls = true,
 }
 
-local servers = {}
-for server, _c in pairs(server_configs) do
-	table.insert(servers, server)
-end
-
 -- Mason
 local mason = safe_require("mason")
 if not mason then
@@ -76,9 +71,12 @@ if not mason_lsp then
 	return
 end
 
-mason_lsp.setup({
-	ensure_installed = servers,
-})
+local table_utils = safe_require("zachyho.table_utils")
+if table_utils then
+	mason_lsp.setup({
+		ensure_installed = table_utils.get_keys(server_configs),
+	})
+end
 
 -- Setup each server
 for server, config in pairs(server_configs) do

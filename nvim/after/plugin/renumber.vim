@@ -1,4 +1,3 @@
-
 function! Renumber() range
   let n=1
 

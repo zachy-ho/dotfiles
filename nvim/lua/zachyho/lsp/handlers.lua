@@ -50,7 +50,10 @@ M.setup = function()
 	})
 
 	-- LspKind
-	require("lspkind").init()
+	local lspkind = safe_require("lspkind")
+	if lspkind then
+		lspkind.init()
+	end
 end
 
 function M.on_attach(client, bufnr)
@@ -105,6 +108,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 		"additionalTextEdits",
 	},
 }
+
 local cmp_nvim_lsp = safe_require("cmp_nvim_lsp")
 if cmp_nvim_lsp then
 	capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
