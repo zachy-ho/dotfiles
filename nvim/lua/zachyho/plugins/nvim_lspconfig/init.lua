@@ -20,5 +20,4 @@ return {
 	config = function()
 		safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.config")
 	end,
-	event = "BufWinEnter",
 }

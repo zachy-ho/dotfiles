@@ -10,10 +10,10 @@ vim.cmd([[
 -- (e.g. adding -buffer)
 
 -- Grep with manual query
-map('n', '<leader>gq', ':Grepper -noprompt -tool rg -query ')
+map("n", "<leader>gq", ":Grepper -noprompt -tool rg -query ")
 
 -- Grep the current word
-map('n', '<leader>gw', ':Grepper -noprompt -tool rg -cword<CR>')
+map("n", "<leader>gw", ":Grepper -noprompt -tool rg -cword<CR>")
 
 -- Grep with operators
-map({ 'n', 'x' }, '<leader>gr', '<plug>(GrepperOperator)', { noremap = false})
+map({ "n", "x" }, "<leader>gr", "<plug>(GrepperOperator)", { noremap = false })

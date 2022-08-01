@@ -64,6 +64,7 @@ function M.on_attach(client, bufnr)
 	local function buf_map(lhs, rhs)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", lhs, rhs, opts)
 	end
+	print("on attached")
 
 	-- Key-bindings
 	buf_map(",gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")

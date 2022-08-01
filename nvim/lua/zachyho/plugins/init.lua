@@ -43,20 +43,17 @@ return packer.startup({
 		-- Colorscheme
 		use(safe_require(constants.PLUGINS_DIR .. "colorscheme"))
 
-		-- Indent guides
-		use(safe_require(constants.PLUGINS_DIR .. "indent_guides"))
-
 		-- Fugitive: Git operations within vim
 		use(safe_require(constants.PLUGINS_DIR .. "fugitive"))
 
 		-- Fzf: Fuzzy finder
-		-- use(safe_require(constants.PLUGINS_DIR .. "fzf"))
+		use(safe_require(constants.PLUGINS_DIR .. "fzf"))
 
 		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
 		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
 
-		-- Nerdcommenter: Commenting shortcuts
-		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
+		-- Native-lsp: Neovim native Language Server Protocols
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig"))
 
 		-- Harpoon: File marking to jump back and forth more quickly
 		use(safe_require(constants.PLUGINS_DIR .. "harpoon"))
@@ -66,6 +63,12 @@ return packer.startup({
 		---------- Lazy-loaded plugins ----------
 		-- Vimwiki
 		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
+
+		-- Nerdcommenter: Commenting shortcuts
+		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
+
+		-- Indent guides
+		use(safe_require(constants.PLUGINS_DIR .. "indent_guides"))
 
 		-- Lualine
 		use(safe_require(constants.PLUGINS_DIR .. "lualine"))
@@ -78,9 +81,6 @@ return packer.startup({
 
 		-- Nvim-tree: Tree-style navigator
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_tree"))
-
-		-- Native-lsp: Neovim native Language Server Protocols
-		use(safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig"))
 
 		----- Cmp family -----
 		-- nvim-cmp
