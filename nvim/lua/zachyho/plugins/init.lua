@@ -52,6 +52,26 @@ return packer.startup({
 		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
 		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
 
+		----- These below MUST come before nvim-lspconfig! -----
+		-- Mason: The big manager
+		use(safe_require(constants.PLUGINS_DIR .. "mason"))
+
+		-- Mason-lspconfig: The lspconfig manager
+		use(safe_require(constants.PLUGINS_DIR .. "mason_lspconfig"))
+
+		-- Typescript add-ons
+		use(safe_require(constants.PLUGINS_DIR .. "typescript"))
+
+		-- Completion source for nvim-lsp. Required in LSP handlers.
+		use(safe_require(constants.PLUGINS_DIR .. "cmp_nvim_lsp"))
+
+		-- Lspkind: Cute logos for LSP
+		use(safe_require(constants.PLUGINS_DIR .. "lspkind_nvim"))
+
+		-- Null-ls
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls"))
+		----- The above MUST come before nvim-lspconfig
+
 		-- Native-lsp: Neovim native Language Server Protocols
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig"))
 

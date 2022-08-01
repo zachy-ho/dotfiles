@@ -15,73 +15,14 @@ if handlers then
 end
 
 -- Set up null-ls
-local null_ls = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls")
+local null_ls = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls.config")
 if null_ls then
 	null_ls.setup()
 end
 
-local server_configs = {
-	bashls = true,
-	cssls = true,
-	cssmodules_ls = true,
-	dockerls = true,
-	emmet_ls = true,
-	eslint = true,
-	graphql = true,
-	html = true,
-	jdtls = true,
-	jsonls = true,
-	prismals = true,
-	pyright = true,
-	sumneko_lua = {
-		settings = {
-			Lua = {
-				diagnostics = {
-					globals = { "vim" },
-				},
-			},
-		},
-	},
-	tailwindcss = true,
-	tsserver = {
-		on_attach = function(client, bufnr)
-			client.resolved_capabilities.document_formatting = false
-			client.resolved_capabilities.document_range_formatting = false
-			-- Call the common_on_attach function whenever a server has its own on_attach
-			common_on_attach(client, bufnr)
-		end,
-	},
-	vimls = true,
-	yamlls = true,
-}
-
--- Mason
-local mason = safe_require("mason")
-if not mason then
+local server_configs = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
+if not server_configs then
 	return
-end
-
-mason.setup({
-	ui = {
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
-		},
-	},
-})
-
--- Mason lsp
-local mason_lsp = safe_require("mason-lspconfig")
-if not mason_lsp then
-	return
-end
-
-local table_utils = safe_require("zachyho.table_utils")
-if table_utils then
-	mason_lsp.setup({
-		ensure_installed = table_utils.get_keys(server_configs),
-	})
 end
 
 -- Setup each server
