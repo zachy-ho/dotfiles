@@ -9,7 +9,13 @@ local nvim_tree = {
 		if not nvim_tree then
 			return
 		end
-		nvim_tree.setup()
+
+		nvim_tree.setup({
+			view = {
+				width = 80,
+				side = "right",
+			},
+		})
 
 		local keymaps_upvalue = safe_require(constants.PLUGINS_DIR .. "nvim_tree.keymaps")
 		if keymaps_upvalue then

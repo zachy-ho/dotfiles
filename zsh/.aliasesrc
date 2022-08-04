@@ -51,6 +51,16 @@ alias gacm='git add . && git commit -m'
 alias gwt='git worktree'
 alias gbcleanup='cleanup_git_branches'
 alias gcoub='checkout_untracked_branch'
+
+# Print a link to the repo
+alias repo_link='git remote get-url origin | sed "s/.git$//"' #| sed -n ‘s_.*:\\(.*\\)\\.git_https://github.com/\\1_p’
+# Print current branch
+alias branch_name='git branch --show-current'
+# Print a link to an existing PR matching current branch
+alias pr_link='echo $(git repo_link)/compare/master...$(git branch-name)'
+# Push a new local branch to create a PR
+alias publish='git push -u origin $(git branch_name) && open $(git pr_link)'
+
 # docker
 alias dockerStopAll='docker stop $(docker ps -a -q)'
 
