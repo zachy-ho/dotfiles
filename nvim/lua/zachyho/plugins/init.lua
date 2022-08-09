@@ -153,6 +153,9 @@ return packer.startup({
 		-- Surround: Wrapping stuff in brackets and tings
 		use(safe_require(constants.PLUGINS_DIR .. "vim_surround"))
 
+		-- Dprint plugin
+		use(safe_require(constants.PLUGINS_DIR .. "dprint-vim-plugin"))
+
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
