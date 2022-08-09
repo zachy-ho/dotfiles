@@ -49,9 +49,6 @@ return packer.startup({
 		-- Fzf: Fuzzy finder
 		use(safe_require(constants.PLUGINS_DIR .. "fzf"))
 
-		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
-		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
-
 		----- These below MUST come before nvim-lspconfig! -----
 		-- Mason: The big manager
 		use(safe_require(constants.PLUGINS_DIR .. "mason"))
@@ -83,6 +80,9 @@ return packer.startup({
 		---------- Lazy-loaded plugins ----------
 		-- Vimwiki
 		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
+
+		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
+		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
 
 		-- Nerdcommenter: Commenting shortcuts
 		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
@@ -159,12 +159,6 @@ return packer.startup({
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
-		-- Bufferline
-		-- use({
-		-- "akinsho/bufferline.nvim",
-		-- requires = "kyazdani42/nvim-web-devicons",
-		-- })
-
 		-- Vsnip and snippets: Snippets for fast coding
 		-- use({
 		-- "hrsh7th/cmp-vsnip",

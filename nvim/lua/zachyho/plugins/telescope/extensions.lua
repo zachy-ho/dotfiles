@@ -5,11 +5,6 @@ return function(extensions)
 		return
 	end
 
-	local table_utils = safe_require("zachyho.table_utils")
-	if not table_utils then
-		return
-	end
-
 	if table_utils.has_item(extensions, "fzf") then
 		if safe_require("fzf") then
 			telescope.load_extension("fzf")

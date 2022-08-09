@@ -1,18 +1,15 @@
-local keymaps = {
-	prettier_sync = "<leader>prs",
-}
-
-local prettier = {
+return {
 	"prettier/vim-prettier",
 	config = function()
 		-- I don't want <leader>p to trigger this shit
 		unmap("n", "<leader>p")
+		-- Keep this and `keys` in sync
+		local keymaps_upvalue = {
+			prettier_sync = "<leader>prs",
+		}
 
-		map("n", keymaps.prettier_sync, ":Prettier<CR>")
+		map("n", keymaps_upvalue.prettier_sync, ":Prettier<CR>")
 	end,
+	-- Keep this and `keymaps_upvalue` in sync
+	keys = "<leader>prs",
 }
-local table_utils = safe_require("zachyho.table_utils")
-if table_utils then
-	prettier.keys = table_utils.get_values(keymaps)
-end
-return prettier

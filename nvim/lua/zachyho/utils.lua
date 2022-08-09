@@ -5,7 +5,6 @@ local unmap_key = vim.api.nvim_del_keymap
 
 -- Create a new keymap mapping `lhs` to `rhs`, under the specified `modes` and `opts`.
 -- `opts` by default would be {}
-
 function _G.map(modes, lhs, rhs, opts)
 	opts = opts or {}
 	opts.noremap = opts.noremap == nil and true or opts.noremap
@@ -40,14 +39,6 @@ function _G.safe_require(module)
 	return result
 end
 
--- Noop function
-function _G.noop() end
-
--- Returns an empty list
-function _G.empty_list()
-	return {}
-end
-
 ----- Preconditions -----
 _G.preconditions = {
 	-- Assert item exists (i.e. not `nil`)
@@ -64,4 +55,37 @@ _G.preconditions = {
 _G.constants = {
 	-- Directory of zachyho's custom plugin config files
 	PLUGINS_DIR = "zachyho.plugins.",
+}
+
+----- Table helpers -----
+_G.table_utils = {
+	get_keys = function(tbl)
+		local keys = {}
+		for k, _ in pairs(tbl) do
+			table.insert(keys, k)
+		end
+		return keys
+	end,
+	get_values = function(tbl)
+		local values = {}
+		for _, v in pairs(tbl) do
+			table.insert(values, v)
+		end
+		return values
+	end,
+	-- Should only be called with list-like tables
+	combine_lists = function(list1, list2)
+		local result = {}
+		vim.list_extend(result, list1)
+		vim.list_extend(result, list2)
+		return result
+	end,
+	has_item = function(list, item)
+		for _, v in pairs(list) do
+			if v == item then
+				return true
+			end
+		end
+		return false
+	end,
 }
