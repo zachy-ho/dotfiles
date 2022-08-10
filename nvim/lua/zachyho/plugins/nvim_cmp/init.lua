@@ -1,7 +1,25 @@
 return {
 	"hrsh7th/nvim-cmp",
-	requires = "nvim-lspconfig",
+	requires = {
+		"nvim-lspconfig",
+		"cmp-vsnip",
+		"vim-vsnip",
+		"vim-vsnip-integ",
+	},
+	after = {
+		"cmp-vsnip",
+		"vim-vsnip",
+		"vim-vsnip-integ",
+	},
 	config = function()
+		-- E.g. vsnip_filetypes.typescript = ['javascript'] means we can use js snippets in .ts files
+		vim.cmd([[
+            let g:vsnip_snippet_dir = expand('$HOME/.config/dotfiles/nvim/vsnip/.vsnip')
+            let g:vsnip_filetypes = {}
+            let g:vsnip_filetypes.javascriptreact = ['javascript']
+            let g:vsnip_filetypes.typescriptreact = ['typescript', 'javascript']
+            let g:vsnip_filetypes.typescript = ['javascript']
+        ]])
 		local cmp = safe_require("cmp")
 		if not cmp then
 			return

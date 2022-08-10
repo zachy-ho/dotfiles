@@ -1,0 +1,1000 @@
+v Downloads/bundle/manifest.json
+nrc
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+v
+v
+clr
+v
+v
+v
+nrc --startuptime vim.log
+v
+nrc --startuptime vim.log
+v
+nrc --startuptime vim.log
+nrc
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+nrc
+rm vim.log
+nrc --startuptime vim.log
+v
+nrc
+rm vim.log
+nrc --startuptime vim.log
+v
+nrc
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+nrc
+v
+rm vim.log
+nrc
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+nrc
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+mv after/plugin/indent_guides.lua lua/zachyho/plugin_configs/indent_guides.lua
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+dot
+lg
+gp
+krc
+echo $rtp
+echo &rtp
+echo &runtimepath
+echo runtimepath
+lua
+zrc
+cd~
+cd ~
+v
+lula
+lua
+dot
+lua
+echo $VIMRUNTIME
+echo $XDG_CONFIG_HOME
+lua
+canva
+v
+lua
+mine
+cd vimwiki
+lua
+lg
+dot
+lg
+gp
+lua
+lua
+canva
+v
+mine
+cd monikers
+v
+typescript-language-server -V
+mine
+cd monikers
+v
+npm i -g typescript
+typescript
+typescript-language-server --stdio
+typescript-language-server
+typescript-language-server stdio
+typescript-language-server --help
+typescript-language-server --stdio
+lg
+lg
+..
+lg
+nrc
+nrc
+nrc
+v
+v lua/zachyho/plugins/init.lua
+v
+v
+v
+v
+v
+nrc
+v
+nrc
+nrc
+v
+v
+nrc
+v
+nrc
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+lg
+..
+lg
+nrc
+git pr-train -p
+gba
+v
+gst
+git pr-train -p
+gco green && gl
+tools/olly/update.sh
+lua
+v
+nrc
+\:q
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+nrc
+v
+v
+rm vim.log
+nrc
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+v
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+v
+rm vim.log
+v
+rm vim.log
+nrc
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+nrc --startuptime vim.log
+nrc
+v
+nrc
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+v
+v
+rm vim.log
+v
+v
+v
+v
+v
+v
+rm vim.log
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+v
+v
+ v
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+v
+v
+v
+v
+v
+v
+v
+v
+v
+ls
+v
+v init.lua
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+rm vim.log
+nrc --startuptime vim.log
+rm vim.log
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+clr
+v
+cd lua/zachyho
+ls
+cd plugins
+ls
+mv goyo/init.lua goyo.lua
+rm -rf goyo/
+v goyo.lua
+...
+nrc
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+ v
+v
+v
+v
+nrc
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+rm vim.log
+v --startuptime vim.log
+lg
+v
+lg
+gp
+canva
+v --startuptime vim.log
+rm vim.log
+dot
+canva
+v
+v --startuptime vim.log
+rm vim.log
+gst
+git reset --hard
+gba
+gco zachyho-mf1774 && gl origin green
+gp
+gba
+gp
+ownership
+ownership whois zachy-ho
+gco green && gl
+gba
+gco zachyho-mf1774 && gm green
+cd web
+v
+gba
+gco zachyho-mf1704-chunk-to-cfe && gm green
+v
+v
+v
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v
+v --startuptime vim.log
+rm vim.log
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v src/pages/main.tsx
+v
+v src/pages/main.tsx
+rm vim.log
+v --startuptime vim.log
+v --startuptime vim.log src/pages/main.tsx
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+v
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+v
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+v
+..
+v
+gst
+gl
+cd web
+v
+git reset --hard
+v
+lg
+gpsuo
+v
+vw
+v
+v
+\:q
+v
+v
+v
+v
+v
+v
+v
+v
+v --startuptime vim.log
+rm vim.log
+v
+v
+v
+v index.md
+v
+v
+vw
+v
+v
+..
+cd docs
+gba
+cd eng-curriculum
+v package.json
+yarn dev
+yarn dev
+yarn
+yarn dev
+yarn dev
+yarn
+yarn dev
+v package.json
+yarn build
+yarn dev
+v package.json
+v package.json
+yarn dev
+clr
+yarn dev
+yarn dev
+yarn build
+yarn dev
+yarn dev
+lg
+gl origin master
+lg
+gst
+gp
+yarn dev
+yarn build
+lg
+zrc
+nrc
+nrc
+\:q
+v
+v
+v
+v
+v
+v
+dot
+gacm 'added git aliases. updated nvim tree' && gp
+canva
+git fetch origin tajp-ErrorService-FixingComponentTagging && gco FETCH_HEAD
+cd web
+yarn test src/services/errors
+yarn test src/services/errors
+git switch -
+canva
+branch_name
+zs
+branch_name
+repo_link
+zs
+repo_link
+zs
+repo_link
+gcoub hayden/mf-1778
+cd web
+v
+v
+v
+v
+v
+canva
+v
+gba
+git switch -
+gba
+git reset --hard && git switch -
+cd web
+v
+gcoub hayden/mf-1778
+v
+yarn storybook:single src/pages/marketplace/sidebar
+canva
+..
+cd haizzz-slack-handbook-unfurler
+v
+nrc
+rg 'installFakeServices\(' src/pages/home
+rg "case 'FAKE'" src/pages/home
+...
+zrc
+nrc
+v
+v
+v
+v
+v
+v
+v
+v
+dot
+gacm 'updated nvim global utils. updated git aliases'
+gp
+nrc
+canva
+..
+cd docq
+cd docs/eng-curriculum
+v
+gl
+v
+v
+lg
+gl
+gp
+git log
+lg
+gl
+lg
+lg
+rg 'LazyNotificationCenterLoader' src/pages
+rg 'LazyNotificationCenterLoader' src/pages/marketplace
+v package.json
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v --startuptime vim.log
+rm vim.log
+v
+v package.json
+yarn test:ssr:page marketplace
+yarn
+yarn test:ssr:page marketplace
+lg
+canva
+..
+cd docs
+cd eng-curriculum
+v
+gacm 'removed stph usages and stph-specific code from consumers'
+publish
+branch_name
+zs
+publis
+publish
+zs
+cd web
+yarn test src/pages/marketplace/page_component/card_list
+yarn test src/pages/marketplace/page_component/content_row/card_list
+yarn test:update-snapshot src/pages/marketplace/page_component/content_row/card_list/card_list_preview
+yarn test:update-snapshot src/pages/marketplace/page_component/content_row/card_list/card_list_preview
+ltdp
+gacm 'fix deps' && gp
+v
+yarn test src/pages/marketplace/page_component/content_row/card_list/
+gst
+yarn fin
+yarn fin
+gacm 'removed usage of removed props' && gp
+canva
+v
+gba
+cd web
+v
+v
+gba
+git status
+gitdiff
+git diff
+git reset --hard && git switch -
+..
+gl
+cd web
+v
+gba
+..
+gco zachyho-remove-stph && gl origin green
+cd web
+v
+gco green && gl
+git reset --hard
+..
+gba
+gco green && gl
+gco -b zachyho-purge-stph-usage
+cd web
+v
+v
+eslint_d restart
+v
+v
+nrc
+v
+v
+v
+v
+v --startuptime vim.log
+rm vim.log
+dot
+gst
+gacm 'added dprint vim plugin. it works now yay' && gp]
+gacm 'added dprint vim plugin. it works now yay' && gp
+canva
+lg
+vw
+superlgtm
+v
+rg 'maybeCreateTabSwitcher' src/pages/marketplace
+rg 'TabSwitcher' src/pages/marketplace
+rg 'TabSwitcher' src/pages/home
+gacm 'added above-mentioned to refer to scripts' && gp
+...
+cd docs/eng-curriculum
+v
+yarn webpack-dev-server -e home -e marketplace -p prod
+yarn storybook:single src/pages/marketplace/page_component/page/search
+yarn webpack-dev-server -e home -e marketplace -p prod
+..
+git log
+gl origin green
+gpsuo
+..
+cd docs/eng-curriculum
+v 
+git reset --hard
+gco master && gl
+gco -b zachyho-update-ssr-state
+v
+gacm 'make ssr lifecycle doc state current' && gpsuo
+clr

@@ -103,6 +103,11 @@ return packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_tree"))
 
 		----- Cmp family -----
+		-- Vsnip and snippets
+		use(safe_require(constants.PLUGINS_DIR .. "vsnip.vim_vsnip"))
+		use(safe_require(constants.PLUGINS_DIR .. "vsnip.cmp_vsnip"))
+		use(safe_require(constants.PLUGINS_DIR .. "vsnip.vim_vsnip_integ"))
+
 		-- nvim-cmp
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_cmp"))
 
