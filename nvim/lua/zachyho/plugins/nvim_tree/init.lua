@@ -12,7 +12,7 @@ local nvim_tree = {
 
 		nvim_tree.setup({
 			view = {
-				width = 80,
+				width = 60,
 				side = "right",
 			},
 		})
