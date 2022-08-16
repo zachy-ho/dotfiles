@@ -75,6 +75,11 @@ return packer.startup({
 		-- Harpoon: File marking to jump back and forth more quickly
 		use(safe_require(constants.PLUGINS_DIR .. "harpoon"))
 
+		----- Telescope family (should be loaded in order)
+		-- Telescope
+		use(safe_require(constants.PLUGINS_DIR .. "telescope"))
+		----- Telescope family end -----
+
 		---------- Eager-loaded plugins end ----------
 
 		---------- Lazy-loaded plugins ----------
@@ -123,10 +128,6 @@ return packer.startup({
 		-- Autopairs: For pairs like '', "", (), {}, []. Works with nvim-cmp
 		use(safe_require(constants.PLUGINS_DIR .. "autopairs"))
 		----- Cmp family End -----
-
-		-- Telescope
-		-- TODO make telescope entire config exportable and require in harpoon loading
-		use(safe_require(constants.PLUGINS_DIR .. "telescope"))
 
 		-- Treesitter
 		use(safe_require(constants.PLUGINS_DIR .. "treesitter"))

@@ -5,12 +5,6 @@ return function(extensions)
 		return
 	end
 
-	if table_utils.has_item(extensions, "fzf") then
-		if safe_require("fzf") then
-			telescope.load_extension("fzf")
-		end
-	end
-
 	if table_utils.has_item(extensions, "harpoon") then
 		if safe_require("harpoon") then
 			telescope.load_extension("harpoon")

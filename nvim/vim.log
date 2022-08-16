@@ -1,0 +1,76 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.024  000.024: --- NVIM STARTING ---
+002.944  002.921: locale set
+004.333  001.388: inits 1
+004.378  000.046: window checked
+004.389  000.011: parsing arguments
+011.255  006.865: expanding arguments
+011.577  000.323: inits 2
+012.506  000.929: init highlight
+012.510  000.004: waiting for UI
+021.082  008.572: done waiting for UI
+021.116  000.034: init screen for UI
+021.175  000.059: init default mappings
+021.286  000.111: init default autocommands
+030.178  000.483  000.483: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
+032.374  000.397  000.397: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
+076.310  043.177  043.177: sourcing /Users/zacharyho/.config/nvim/init.lua
+076.432  011.089: sourcing vimrc file(s)
+079.287  000.673  000.673: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
+096.052  000.344  000.344: sourcing /Users/zacharyho/.config/nvim/ftdetect/css.vim
+097.855  000.518  000.518: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim
+103.881  024.199  023.337: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
+107.843  000.437  000.437: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
+108.052  002.138  001.701: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
+119.183  000.921  000.921: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
+119.807  000.363  000.363: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
+120.544  000.466  000.466: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
+125.758  001.035  001.035: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+126.763  005.967  004.933: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
+128.506  001.502  001.502: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
+130.269  001.496  001.496: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
+131.964  000.387  000.387: sourcing /Users/zacharyho/.local/share/nvim/rplugin.vim
+132.004  001.432  001.044: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
+132.853  000.591  000.591: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
+133.351  000.171  000.171: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
+134.018  000.378  000.378: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
+135.447  001.136  001.136: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
+136.023  000.276  000.276: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
+137.148  000.707  000.707: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
+451.022  312.542  312.542: sourcing /Users/zacharyho/.config/nvim/plugin/packer_compiled.lua
+453.481  022.090: loading rtp plugins
+459.428  002.417  002.417: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+465.318  002.923  002.923: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/fzf.vim/plugin/fzf.vim
+470.455  000.662  000.662: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+472.968  000.469  000.469: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+476.369  000.537  000.537: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+481.751  001.640  001.640: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+488.327  003.862  003.862: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-fugitive/plugin/fugitive.vim
+491.541  000.802  000.802: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/vim-rhubarb/plugin/rhubarb.vim
+493.116  026.323: loading packages
+496.152  000.713  000.713: sourcing /Users/zacharyho/.config/nvim/after/plugin/fzf.vim
+497.026  000.408  000.408: sourcing /Users/zacharyho/.config/nvim/after/plugin/renumber.vim
+498.568  000.594  000.594: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+517.611  017.174  017.174: sourcing /Users/zacharyho/.config/nvim/after/plugin/colorscheme.lua
+518.445  000.533  000.533: sourcing /Users/zacharyho/.config/nvim/after/plugin/fugitive.lua
+518.472  005.934: loading after plugins
+518.490  000.018: inits 3
+536.688  018.198: reading ShaDa
+553.170  001.245  001.245: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/opt/goyo.vim/plugin/goyo.vim
+576.925  015.765  015.765: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/opt/indent-guides.nvim/plugin/indent_guides.vim
+702.329  046.208  046.208: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/opt/nvim-treesitter/plugin/nvim-treesitter.lua
+850.398  008.853  008.853: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow/plugin/rainbow.vim
+852.055  243.297: opening buffers
+852.326  000.271: BufEnter autocommands
+852.332  000.006: editing files in windows
+854.083  000.504  000.504: sourcing /Users/zacharyho/.local/share/nvim/site/pack/packer/opt/nvim-treesitter/autoload/nvim_treesitter.vim
+855.545  002.708: VimEnter autocommands
+855.550  000.005: UIEnter autocommands
+855.553  000.003: before starting main loop
+857.506  001.953: first screen update
+857.512  000.006: --- NVIM STARTED ---

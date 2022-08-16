@@ -2,11 +2,6 @@ local telescope_config = {
 	"nvim-telescope/telescope.nvim",
 	requires = {
 		"nvim-lua/plenary.nvim",
-		-- telescope-fzf-native for better sorting performance
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			run = "make",
-		},
 	},
 	config = function()
 		local telescope = safe_require("telescope")
@@ -54,19 +49,19 @@ local telescope_config = {
 
 		local load_extensions = safe_require(constants.PLUGINS_DIR .. "telescope.extensions")
 		if load_extensions then
-			load_extensions({ "fzf", "harpoon" })
+			load_extensions({ "harpoon" })
 		end
 	end,
 }
 
-local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
-local harpoon_keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
-local keys = {}
-if keymaps then
-	vim.list_extend(keys, preconditions.check_exists(keymaps.as_list))
-end
-if harpoon_keymaps then
-	table.insert(keys, preconditions.check_exists(harpoon_keymaps.as_table).toggle_telescope)
-end
-telescope_config.keys = keys
+-- local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
+-- local harpoon_keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
+-- local keys = {}
+-- if keymaps then
+-- vim.list_extend(keys, preconditions.check_exists(keymaps.as_list))
+-- end
+-- if harpoon_keymaps then
+-- table.insert(keys, preconditions.check_exists(harpoon_keymaps.as_table).toggle_telescope)
+-- end
+-- telescope_config.keys = keys
 return telescope_config
