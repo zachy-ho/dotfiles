@@ -1,41 +1,53 @@
-# General usage
+# ----- zsh -----
+# Sourcing rc files
+alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
+# ----- zsh end -----
+
+# ----- Navigation -----
 alias clr='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-# nvim
-alias v='nvim'
-alias vi='nvim'
-# Nightly build. Script is under '/usr/local/bin'
-alias vn='nvim-nightly.sh'
-# lazygit
-alias lg='lazygit'
-# neofetch
-alias neofetch='neofetch --backend kitty --source $HOME/Documents/MyDocuments/Photos/AndyDrawing.jpg'
-# Java
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java14='export JAVA_HOME=$JAVA_14_HOME'
-# SSH
-alias ssh='TERM=xterm-256color ssh'
-# Brew
-alias brup='brew update && brew upgrade'
-# NVM
-alias n='nvm use'
-# Navigating to dotfiles, and regularly-used directories
 alias dot='cd $HOME/.config/dotfiles'
 alias nrc='cd $HOME/.config/nvim && v init.lua'
 alias krc='cd $HOME/.config/kitty && v kitty.conf'
 alias zrc='cd $HOME/.config/zsh && v .zshrc'
 alias mine='cd $HOME/zachyho-gits'
 alias mds='mine && cd Markdowns'
+# ----- Navigation end -----
+
+# ----- nvim -----
+alias v='nvim'
+alias vi='nvim'
+# Nightly build. Script is under '/usr/local/bin'
+alias vn='nvim-nightly.sh'
+# ----- nvim end -----
+
+# ----- Core tools -----
+# Brew
+alias brup='brew update && brew upgrade'
+
+# lazygit
+alias lg='lazygit'
+
 # Vimwiki
 alias vw='mine && cd vimwiki && v index.md'
-# Sourcing rc files
-alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
+
+# fzf
+alias fzb='fzf --bind "f1:execute(nvim -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+
+# SSH
+alias ssh='TERM=xterm-256color ssh'
+# ----- Core tools end -----
+
+# ----- Kitty -----
 # Set Kitty colors
 alias ksc='kitty @ set-colors --all --configured $HOME/.config/kitty/kitty.conf'
-# git (see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git if need more)
+# ----- Kitty end -----
+
+# ----- git -----
+# see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git if need more
 alias gst='git status'
 alias ga='git add'
 alias gco='git checkout'
@@ -51,19 +63,13 @@ alias gacm='git add . && git commit -m'
 alias gwt='git worktree'
 alias gbcleanup='cleanup_git_branches'
 alias gcoub='checkout_untracked_branch'
+alias gobesefuck='git repack --geometric=2 -d'
 alias repo_link='git remote get-url origin | sed "s/.git$//"' #| sed -n ‘s_.*:\\(.*\\)\\.git_https://github.com/\\1_p’
 alias branch_name='git branch --show-current'
 alias pr_link='echo $(repo_link)/compare/master...$(branch_name)'
 alias publish='git push -u origin $(branch_name) && open $(pr_link)'
 
-function clone_me() {
-    git clone $1 && cd $(basename $1 .git) && git config user.email 'zyyho97@gmail.com'
-}
-
-# docker
-alias dockerStopAll='docker stop $(docker ps -a -q)'
-
-# git functions
+# functions
 function cleanup_git_branches() {
     git remote prune origin && git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
 }
@@ -73,5 +79,16 @@ function checkout_untracked_branch() {
     git fetch origin $branch && git checkout FETCH_HEAD
 }
 
-eval "$(thefuck --alias fk)"
-# thefuck
+function clone_me() {
+    git clone $1 && cd $(basename $1 .git) && git config user.email 'zyyho97@gmail.com'
+}
+# ----- git end -----
+
+# ----- Random stuff -----
+# Java
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java14='export JAVA_HOME=$JAVA_14_HOME'
+
+# docker
+alias dockerStopAll='docker stop $(docker ps -a -q)'
+# ----- Random stuff end -----

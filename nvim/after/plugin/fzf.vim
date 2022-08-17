@@ -38,8 +38,9 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 " Grep command config
 command! -bang -nargs=* RgWithOpts
             \ call fzf#vim#grep(
-            \   'rg --sort path --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!{.git,node_modules}/*" --color "always" '. <q-args>,
+            \   'rg --sort path --column --line-number --no-heading --fixed-strings --smart-case --no-ignore --hidden --follow --glob "!{.git,node_modules}/*" --color "always" '. <q-args>,
             \   1,
+            \ fzf#vim#with_preview(),
             \   <bang>0
             \ )
 
@@ -57,7 +58,7 @@ lua << EOF
 map('n', '<leader>ff', ':Files<CR>')
 map('n', '<leader>fr', ':ProjectFiles<CR>')
 map('n', '<leader>fg', ':GFiles<CR>')
-map('n', '<leader>rg', ':RgWithOpts ""')
+map('n', '<leader>rg', ':RgWithOpts ""<left>')
 map('n', '<leader>gt', ':Rg ::<left>')
 -- map('n', '<leader>fb', ':Buffers<CR>', { noremap = true })
 EOF
