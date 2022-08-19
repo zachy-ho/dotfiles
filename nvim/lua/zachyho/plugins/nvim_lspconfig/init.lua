@@ -1,10 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
 	requires = {
-		-- Mason: The big manager
-		"williamboman/mason.nvim",
-		-- Mason-lspconfig: The lspconfig manager
-		"williamboman/mason-lspconfig.nvim",
 		-- Null-ls
 		{
 			"jose-elias-alvarez/null-ls.nvim",

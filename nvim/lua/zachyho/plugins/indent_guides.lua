@@ -14,5 +14,5 @@ return {
 			-- odd_colors = { fg = "#332b36", bg = "#2a3834" },
 		})
 	end,
-	event = "BufWinEnter",
+	event = "BufReadPost",
 }

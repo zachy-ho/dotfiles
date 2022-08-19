@@ -59,5 +59,5 @@ return {
 		end
 		require("nvim-treesitter.configs").setup(treesitter)
 	end,
-	event = "BufWinEnter",
+	event = "BufReadPre",
 }

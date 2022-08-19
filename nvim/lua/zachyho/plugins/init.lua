@@ -1,5 +1,5 @@
--- Autocmd: Automatically sources this file and runs 'PackerSync' whenever we write to this file
 -- vim.cmd([[
+-- Autocmd: Automatically sources this file and runs 'PackerSync' whenever we write to this file
 -- augroup Packer
 -- autocmd!
 -- autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
@@ -45,6 +45,7 @@ packer.startup({
 		use("dstein64/vim-startuptime")
 
 		---------- Eager-loaded plugins ----------
+
 		-- Colorscheme
 		use(safe_require(constants.PLUGINS_DIR .. "colorscheme"))
 
@@ -85,30 +86,6 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "telescope"))
 		----- Telescope family end -----
 
-		---------- Eager-loaded plugins end ----------
-
-		---------- Lazy-loaded plugins ----------
-		-- Vimwiki
-		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
-
-		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
-		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
-
-		-- Nerdcommenter: Commenting shortcuts
-		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
-
-		-- Indent guides
-		use(safe_require(constants.PLUGINS_DIR .. "indent_guides"))
-
-		-- Lualine
-		use(safe_require(constants.PLUGINS_DIR .. "lualine"))
-
-		-- Hexokinase: Previews color whenever color (e.g. hex) is used
-		use(safe_require(constants.PLUGINS_DIR .. "hexokinase"))
-
-		-- Nvim-tree: Tree-style navigator
-		use(safe_require(constants.PLUGINS_DIR .. "nvim_tree"))
-
 		----- Cmp family -----
 		-- Vsnip and snippets
 		use(safe_require(constants.PLUGINS_DIR .. "vsnip.vim_vsnip"))
@@ -130,6 +107,34 @@ packer.startup({
 		-- Autopairs: For pairs like '', "", (), {}, []. Works with nvim-cmp
 		use(safe_require(constants.PLUGINS_DIR .. "autopairs"))
 		----- Cmp family End -----
+		---------- Eager-loaded plugins end ----------
+
+		---------- Lazy-loaded plugins ----------
+		-- Vimwiki
+		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
+
+		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
+		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
+
+		-- Nerdcommenter: Commenting shortcuts
+		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
+
+		-- Indent guides
+		use(safe_require(constants.PLUGINS_DIR .. "indent_guides"))
+
+		-- Hexokinase: Previews color whenever color (e.g. hex) is used
+		use(safe_require(constants.PLUGINS_DIR .. "hexokinase"))
+
+		use({
+			"kyazdani42/nvim-web-devicons",
+			opt = true,
+		})
+
+		-- Lualine
+		use(safe_require(constants.PLUGINS_DIR .. "lualine"))
+
+		-- Nvim-tree: Tree-style navigator
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_tree"))
 
 		-- Treesitter
 		use(safe_require(constants.PLUGINS_DIR .. "treesitter"))
@@ -139,9 +144,6 @@ packer.startup({
 		if rainbow then
 			use(rainbow.plugin)
 		end
-
-		-- Undotree: Undo and redo
-		use(safe_require(constants.PLUGINS_DIR .. "undotree"))
 
 		-- Headlines highlighting
 		use(safe_require(constants.PLUGINS_DIR .. "headlines"))
@@ -159,7 +161,7 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "easy_align"))
 
 		-- Surround: Wrapping stuff in brackets and tings
-		use(safe_require(constants.PLUGINS_DIR .. "vim_surround"))
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_surround"))
 
 		-- Dprint plugin
 		use(safe_require(constants.PLUGINS_DIR .. "dprint-vim-plugin"))
@@ -167,6 +169,9 @@ packer.startup({
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
+		-- Undotree: Undo and redo
+		-- use(safe_require(constants.PLUGINS_DIR .. "undotree"))
+
 		-- Vsnip and snippets: Snippets for fast coding
 		-- use({
 		-- "hrsh7th/cmp-vsnip",

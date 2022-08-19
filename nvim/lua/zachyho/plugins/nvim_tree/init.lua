@@ -1,9 +1,7 @@
 local nvim_tree = {
 	"kyazdani42/nvim-tree.lua",
 	tag = "nightly", -- optional, updated every week. (see issue #1193)
-	requires = {
-		"kyazdani42/nvim-web-devicons",
-	},
+	requires = "kyazdani42/nvim-web-devicons",
 	config = function()
 		local nvim_tree = safe_require("nvim-tree")
 		if not nvim_tree then

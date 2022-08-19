@@ -1,15 +1,17 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	requires = {
-		"kyazdani42/nvim-web-devicons",
-		opt = true,
-	},
+	after = "onedark.nvim",
+	requires = "kyazdani42/nvim-web-devicons",
 	config = function()
-		require("lualine").setup({
+		local lualine = safe_require("lualine")
+		if not lualine then
+			return
+		end
+
+		lualine.setup({
 			options = {
 				theme = "onedark",
 			},
 		})
 	end,
-	event = "BufWinEnter",
 }
