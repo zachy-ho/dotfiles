@@ -34,10 +34,15 @@ if packer_util then
 	open_fn = packer_util.float
 end
 
-return packer.startup({
+packer.startup({
 	function(use)
 		-- Packer manages itself
 		use("wbthomason/packer.nvim")
+
+		-- Make me fast PLEASE
+		use("lewis6991/impatient.nvim")
+
+		use("dstein64/vim-startuptime")
 
 		---------- Eager-loaded plugins ----------
 		-- Colorscheme
@@ -97,9 +102,6 @@ return packer.startup({
 
 		-- Lualine
 		use(safe_require(constants.PLUGINS_DIR .. "lualine"))
-
-		-- Goyo for Zen mode
-		use(safe_require(constants.PLUGINS_DIR .. "goyo"))
 
 		-- Hexokinase: Previews color whenever color (e.g. hex) is used
 		use(safe_require(constants.PLUGINS_DIR .. "hexokinase"))
@@ -188,6 +190,10 @@ return packer.startup({
 		-- })
 	end,
 	config = {
+		profile = {
+			enable = true,
+			threshold = 1,
+		},
 		display = {
 			open_fn,
 		},

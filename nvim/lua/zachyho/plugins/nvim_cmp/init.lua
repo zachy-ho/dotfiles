@@ -83,5 +83,5 @@ return {
 			},
 		})
 	end,
-	event = "InsertEnter",
+	-- event = "InsertEnter",
 }
