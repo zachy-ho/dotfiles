@@ -23,6 +23,10 @@
 -- -> after = load after specified plugin(s) have loaded.
 ------------------------------------------------
 
+-- Need to manually set this env value to make enable Luarocks to install rocks
+-- see: https://github.com/wbthomason/packer.nvim/issues/180
+vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "12.5.1")
+
 local packer = safe_require("packer")
 if not packer then
 	return
@@ -33,6 +37,12 @@ local open_fn
 if packer_util then
 	open_fn = packer_util.float
 end
+
+packer.init({
+	luarocks = {
+		python_cmd = "python3",
+	},
+})
 
 packer.startup({
 	function(use)
@@ -45,6 +55,8 @@ packer.startup({
 		use("dstein64/vim-startuptime")
 
 		---------- Eager-loaded plugins ----------
+
+		use("nvim-lua/plenary.nvim")
 
 		-- Colorscheme
 		use(safe_require(constants.PLUGINS_DIR .. "colorscheme"))

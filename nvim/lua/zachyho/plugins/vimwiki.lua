@@ -26,5 +26,14 @@ return {
 		}
 		-- directories are upon loading
 	end,
-	keys = { "<leader>ww", "<leader>w<leader>w" },
+	config = function()
+		-- NOTE: Makes going to teuxdeux list easy, but might break shit if the file/directory doesn't exist.
+		map("n", "<leader>td", ":e ~/zachyho-gits/vimwiki/teuxdeux.md<CR>")
+	end,
+	keys = {
+		"<leader>ww",
+		"<leader>w<leader>w",
+		-- NOTE: Going straight to teuxdeux
+		"<leader>td",
+	},
 }

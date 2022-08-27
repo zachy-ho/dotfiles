@@ -13,6 +13,7 @@ return {
 		-- Lspkind: Cute logos for LSP
 		"onsails/lspkind-nvim",
 	},
+	rocks = "luafilesystem",
 	config = function()
 		safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.config")
 	end,
