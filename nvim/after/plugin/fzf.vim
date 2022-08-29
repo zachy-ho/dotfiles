@@ -35,14 +35,22 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Comm
 " Set preview window position and trigger key
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
-" Grep command config
-command! -bang -nargs=* RgWithOpts
-            \ call fzf#vim#grep(
-            \   'rg --sort path --column --line-number --no-heading --fixed-strings --smart-case --no-ignore --hidden --follow --glob "!**/.git/" --glob "!**/node_modules/" --color "always" '. <q-args>,
+" Narrows grep under a specified directory
+" Params:
+" - (1) dir: Directory to run grep in
+" - (2) query (optional): query to grep for
+command! -bang -nargs=* -complete=file RgInDir call RgInDir(<f-args>)
+function RgInDir(dir, query = '""')
+    " Put quotes around query. Required for the manual rg command, especially
+    " if query has weird characters like '<'
+    let stringified_query = '"'.a:query.'"'
+    call fzf#vim#grep(
+            \   'rg --sort path --column --line-number --no-heading --fixed-strings --smart-case --no-ignore --hidden --follow --glob "!**/.git/" --glob "!**/node_modules/" --color "always" '. stringified_query,
             \   1,
-            \ fzf#vim#with_preview(),
-            \   <bang>0
+            \ fzf#vim#with_preview({ 'dir': a:dir }),
+            \   0
             \ )
+endfunction
 
 " Find from git root
 function! s:find_git_root()
@@ -58,7 +66,7 @@ lua << EOF
 map('n', '<leader>ff', ':Files<CR>')
 map('n', '<leader>fr', ':ProjectFiles<CR>')
 map('n', '<leader>fg', ':GFiles<CR>')
-map('n', '<leader>rg', ':RgWithOpts ""<left>')
-map('n', '<leader>gt', ':Rg ::<left>')
+map('n', '<leader>rg', ':Rg ')
+map('n', '<leader>rd', ':RgInDir ')
 -- map('n', '<leader>fb', ':Buffers<CR>', { noremap = true })
 EOF
