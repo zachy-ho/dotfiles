@@ -17,6 +17,10 @@ map({ "n", "i" }, "<Right>", "<Nop>")
 -- Clipboard copy
 map({ "n", "v" }, "<leader>y", '"*y')
 
+-- In visual mode, delete the highlighted part out of existence (into the _ register) and paste,
+-- effectively keeping the pasted segment for the next paste if needed.
+map("x", "<leader>p", '"_dP')
+
 -- Search and replace
 map({ "n" }, "<leader>srl", ":s///g<c-b><right><right>")
 map({ "n" }, "<leader>srf", ":%s///g<c-b><right><right><right>")
@@ -32,7 +36,6 @@ map("n", "<leader>qp", ":cprev<CR>")
 -- Path of current file
 map("n", "<leader>pf", "1<C-g>")
 map("n", "<leader>pc", ':let @+= expand("%:p")<CR>')
-map("n", "<leader>ph", ':let @+= expand("%:p:h")<CR>')
 
 -- Moving lines
 map("n", "<C-j>", ":m .+1<CR>==", { silent = true })
@@ -72,3 +75,6 @@ map("n", "<leader>-=", ":resize +5<CR>")
 
 -- Ex mode
 map("c", "<C-k>", "<Up>", { noremap = false })
+
+-- Terminal mode
+map("t", "<leader><Esc>", "<C-\\><C-n>")
