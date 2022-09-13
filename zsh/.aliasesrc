@@ -17,11 +17,9 @@ alias mine='cd $HOME/zachyho-gits'
 alias mds='mine && cd Markdowns'
 # ----- Navigation end -----
 
-# ----- nvim -----
+# ----- nvim (nightly) -----
 alias v='nvim'
 alias vi='nvim'
-# Nightly build. Script is under '/usr/local/bin'
-alias vn='nvim-nightly.sh'
 # ----- nvim end -----
 
 # ----- Core tools -----

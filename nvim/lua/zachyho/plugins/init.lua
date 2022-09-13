@@ -178,6 +178,12 @@ packer.startup({
 		-- Dprint plugin
 		use(safe_require(constants.PLUGINS_DIR .. "dprint-vim-plugin"))
 
+		-- Obsidian
+		-- use(safe_require(constants.PLUGINS_DIR .. "obsidian"))
+
+		-- Telekasten
+		use(safe_require(constants.PLUGINS_DIR .. "telekasten"))
+
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
