@@ -25,7 +25,8 @@ return {
 		}
 	end,
 	config = function()
-		map("n", "<leader>rt", ":VimwikiRebuildTags<CR> | :VimwikiGenerateTagLinks<CR>")
+		map("n", "<leader>vrt", ":VimwikiRebuildTags!")
+		map("n", "<leader>vgt", ":VimwikiGenerateTagLinks")
 		map("n", "<leader>vst", ":VimwikiSearchTags ")
 		map("n", "<leader>vc", ":VimwikiColorize ")
 		map("n", "<leader>vtc", ":VimwikiTOC<CR>")

@@ -78,3 +78,7 @@ map("c", "<C-k>", "<Up>", { noremap = false })
 
 -- Terminal mode
 map("t", "<leader><Esc>", "<C-\\><C-n>")
+
+-- Packer
+map("n", "<leader>pkc", ":PackerCompile<CR>")
+map("n", "<leader>pks", ":PackerSync<CR>")
