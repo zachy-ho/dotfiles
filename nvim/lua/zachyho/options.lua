@@ -35,6 +35,9 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = false
 
+-- Conceal
+opt.conceallevel = 2
+
 -- Folds (uses Treesitter)
 vim.cmd([[
     set foldmethod=expr

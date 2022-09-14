@@ -15,11 +15,6 @@ return {
 		if onedark then
 			onedark.setup()
 		end
-		-- Set
-		local one_dark = safe_require("onedark")
-		if one_dark then
-			one_dark.setup()
-		end
 		--> Color scheme settings <--
 
 		-- ----- Gruvbox -----

@@ -1,36 +1,34 @@
 return {
-    "vimwiki/vimwiki",
-    branch = "dev",
-    setup = function()
-        -- Execute config file before loading the plugin so it knows where the wiki
-        local baseWiki = {
-            path = "~/zachyho-gits/vimwiki",
-            path_html = "~/zachyho-gits/vimwiki/html",
-            syntax = "markdown",
-            ext = ".md",
-        }
-        local notesWiki = {
-            path = "~/zachyho-gits/vimwiki/notes",
-            syntax = "markdown",
-            ext = ".md",
-        }
-        vim.g.vimwiki_list = { baseWiki, notesWiki }
+	"vimwiki/vimwiki",
+	branch = "dev",
+	setup = function()
+		-- Execute config file before loading the plugin so it knows where the wiki
+		local baseWiki = {
+			path = "~/zachyho-gits/vimwiki",
+			path_html = "~/zachyho-gits/vimwiki/html",
+			syntax = "markdown",
+			ext = ".md",
+		}
+		local zachtelkasten = {
+			path = "~/zachyho-gits/vimwiki/zachtelkasten",
+			path_html = "~/zachyho-gits/vimwiki/zachtelkasten/html",
+			syntax = "markdown",
+			ext = ".md",
+		}
+		vim.g.vimwiki_list = { baseWiki, zachtelkasten }
 
-        vim.g.vimwiki_folding = "expr"
+		vim.g.vimwiki_folding = "expr"
 
-        -- Removing default vimwiki keymaps that clash with personal keymaps
-        vim.g.vimwiki_key_mappings = {
-            html = 0,
-        }
-    end,
-    config = function()
-        -- NOTE: Makes going to teuxdeux list easy, but might break shit if the file/directory doesn't exist.
-        map("n", "<leader>td", ":e ~/zachyho-gits/vimwiki/teuxdeux.md<CR>")
-    end,
-    keys = {
-        "<leader>ww",
-        "<leader>w<leader>w",
-        -- NOTE: Going straight to teuxdeux
-        "<leader>td",
-    },
+		-- Removing default vimwiki keymaps that clash with personal keymaps
+		vim.g.vimwiki_key_mappings = {
+			html = 0,
+		}
+	end,
+	config = function()
+		map("n", "<leader>rt", ":VimwikiRebuildTags<CR> | :VimwikiGenerateTagLinks<CR>")
+		map("n", "<leader>vst", ":VimwikiSearchTags ")
+		map("n", "<leader>vc", ":VimwikiColorize ")
+		map("n", "<leader>vtc", ":VimwikiTOC<CR>")
+		map("n", "<leader>vbl", ":VimwikiBacklinks<CR>")
+	end,
 }

@@ -119,12 +119,14 @@ packer.startup({
 		-- Autopairs: For pairs like '', "", (), {}, []. Works with nvim-cmp
 		use(safe_require(constants.PLUGINS_DIR .. "autopairs"))
 		----- Cmp family End -----
+
+		-- Vimwiki
+		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
+		use(safe_require(constants.PLUGINS_DIR .. "vim_zettel"))
+
 		---------- Eager-loaded plugins end ----------
 
 		---------- Lazy-loaded plugins ----------
-		-- Vimwiki
-		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
-
 		-- Grepper: Makes grepping shit and putting them in quickfix lists so easy
 		use(safe_require(constants.PLUGINS_DIR .. "vim_grepper"))
 
@@ -157,9 +159,6 @@ packer.startup({
 			use(rainbow.plugin)
 		end
 
-		-- Headlines highlighting
-		use(safe_require(constants.PLUGINS_DIR .. "headlines"))
-
 		-- Markdown-preview
 		use(safe_require(constants.PLUGINS_DIR .. "markdown_preview"))
 
@@ -178,15 +177,10 @@ packer.startup({
 		-- Dprint plugin
 		use(safe_require(constants.PLUGINS_DIR .. "dprint-vim-plugin"))
 
-		-- Obsidian
-		-- use(safe_require(constants.PLUGINS_DIR .. "obsidian"))
-
-		-- Telekasten
-		use(safe_require(constants.PLUGINS_DIR .. "telekasten"))
-
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
+
 		-- Undotree: Undo and redo
 		-- use(safe_require(constants.PLUGINS_DIR .. "undotree"))
 

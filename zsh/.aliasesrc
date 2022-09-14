@@ -29,8 +29,8 @@ alias brup='brew update && brew upgrade'
 # lazygit
 alias lg='lazygit'
 
-# Vimwiki
-alias vw='mine && cd vimwiki && v index.md'
+# zachtelkasten - open todo.md
+alias zk='mine && cd zachtelkasten && v todo.md'
 
 # fzf
 alias fzb='fzf --bind "f1:execute(nvim -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
