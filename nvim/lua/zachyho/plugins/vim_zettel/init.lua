@@ -4,7 +4,8 @@ return {
 	config = function()
 		vim.cmd([[source ~/.config/nvim/lua/zachyho/plugins/vim_zettel/config.vim]])
 
-		map("n", "<leader>zn", ":ZettelNew<CR>")
+		local zettel_index = "~/zachyho-gits/vimwiki/zachtelkasten/index.md"
+		map("n", "<leader>zn", ":e " .. zettel_index .. " | " .. ":ZettelNew<CR>")
 		map("n", "<leader>zy", ":ZettelYankName<CR>")
 	end,
 }
