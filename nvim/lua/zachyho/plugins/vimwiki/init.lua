@@ -26,11 +26,14 @@ return {
 			html = 0,
 		}
 
-		vim.cmd([[
-            autocmd BufNewFile ~/zachyho-gits/vimwiki/diary/[0-9]*.md :silent %!echo "\# `date +'\%A, \%B \%d \%Y'`\n\n\#\# todo\n- [ ] my\n- [ ] todo\n- [ ] tings"
-        ]])
+		-- Boilerplate for templating diary notes
+		safe_require(constants.PLUGINS_DIR .. "vimwiki.boilerplate")
 	end,
 	config = function()
+		-- Open diary files from my non-zettel wiki to use as my daily notes
+		unmap("n", "<leader>w<leader>w")
+		map("n", "<leader>w<leader>w", ":VimwikiMakeDiaryNote 1<CR>")
+
 		map("n", "<leader>vrt", ":VimwikiRebuildTags!<CR>")
 		map("n", "<leader>vgt", ":VimwikiGenerateTagLinks<CR>")
 		map("n", "<leader>vst", ":VimwikiSearchTags ")
