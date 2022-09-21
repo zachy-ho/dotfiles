@@ -13,6 +13,9 @@ local nvim_tree = {
 				width = 60,
 				side = "right",
 			},
+			git = {
+				ignore = false,
+			},
 		})
 
 		local keymaps_upvalue = safe_require(constants.PLUGINS_DIR .. "nvim_tree.keymaps")
