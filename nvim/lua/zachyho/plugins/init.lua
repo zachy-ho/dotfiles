@@ -139,10 +139,7 @@ packer.startup({
 		-- Hexokinase: Previews color whenever color (e.g. hex) is used
 		use(safe_require(constants.PLUGINS_DIR .. "hexokinase"))
 
-		use({
-			"kyazdani42/nvim-web-devicons",
-			opt = true,
-		})
+		use({ "kyazdani42/nvim-web-devicons" })
 
 		-- Lualine
 		use(safe_require(constants.PLUGINS_DIR .. "lualine"))
@@ -151,10 +148,13 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_tree"))
 
 		-- Treesitter
-		use(safe_require(constants.PLUGINS_DIR .. "treesitter"))
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_treesitter"))
+
+		-- Treesitter
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_treesitter_context"))
 
 		-- Treesitter rainbow brackets
-		local rainbow = safe_require(constants.PLUGINS_DIR .. "treesitter.nvim_ts_rainbow")
+		local rainbow = safe_require(constants.PLUGINS_DIR .. "nvim_treesitter.nvim_ts_rainbow")
 		if rainbow then
 			use(rainbow.plugin)
 		end

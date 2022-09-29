@@ -52,6 +52,7 @@ map("n", "<leader>wh", ": wincmd h<CR>", { silent = true })
 map("n", "<leader>wj", ": wincmd j<CR>", { silent = true })
 map("n", "<leader>wk", ": wincmd k<CR>", { silent = true })
 map("n", "<leader>wl", ": wincmd l<CR>", { silent = true })
+map("n", "<leader>wo", ": wincmd o<CR>", { silent = true })
 
 -- Moving panes
 map("n", "<leader>H", ": wincmd H<CR>", { silent = true })

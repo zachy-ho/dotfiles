@@ -48,7 +48,7 @@ return {
 			},
 		}
 
-		local rainbow_colors = safe_require(constants.PLUGINS_DIR .. "treesitter.nvim_ts_rainbow")
+		local rainbow_colors = safe_require(constants.PLUGINS_DIR .. "nvim_treesitter.nvim_ts_rainbow")
 		if rainbow_colors then
 			treesitter.rainbow = {
 				enable = true,

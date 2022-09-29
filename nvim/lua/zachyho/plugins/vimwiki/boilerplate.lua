@@ -8,7 +8,7 @@ vim.cmd([[
             let date = "# " . strftime("%A, %d %B %G", localtime() + (24 * 3600))
         endif
         " Ignore all other days
-            call append(0, [date, '', '## todo', '- [ ] my',  '- [ ] tings',   '- [ ] today', '', '## growth', 'Today, I...' ])
+        call append(0, [date, '', '## todo', '- [ ] my',  '- [ ] tings',   '- [ ] today', '', '## growth', 'Today, I...' ])
     endfunction
 
     au BufNewFile ~/zachyho-gits/vimwiki/diary/*.md call VimwikiDiaryBoilerplate()
