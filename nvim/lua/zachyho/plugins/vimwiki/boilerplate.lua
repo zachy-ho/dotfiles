@@ -11,5 +11,5 @@ vim.cmd([[
         call append(0, [date, '', '## todo', '- [ ] my',  '- [ ] tings',   '- [ ] today', '', '## growth', 'Today, I...' ])
     endfunction
 
-    au BufNewFile ~/zachyho-gits/vimwiki/diary/*.md call VimwikiDiaryBoilerplate()
+    au BufNewFile ~/vimwiki/diary/*.md call VimwikiDiaryBoilerplate()
 ]])

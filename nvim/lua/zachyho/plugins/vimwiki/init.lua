@@ -2,7 +2,7 @@ return {
 	"vimwiki/vimwiki",
 	branch = "dev",
 	setup = function()
-		local wiki_path = "~/zachyho-gits/vimwiki/"
+		local wiki_path = "~/vimwiki/"
 
 		-- Execute config file before loading the plugin so it knows where the wiki
 		local baseWiki = {
