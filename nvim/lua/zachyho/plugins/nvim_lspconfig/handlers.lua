@@ -89,7 +89,7 @@ function M.on_attach(client, bufnr)
 
 	-- Let null-ls do all formatting
 	if client.name ~= "null-ls" then
-		client.server_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 end
 

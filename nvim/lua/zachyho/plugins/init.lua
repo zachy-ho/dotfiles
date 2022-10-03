@@ -175,7 +175,10 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_surround"))
 
 		-- Dprint plugin
-		use(safe_require(constants.WORK_PLUGINS_DIR .. "dprint_vim_plugin"))
+		local work_dir = constants.WORK_PLUGINS_DIR
+		if is_dir(work_dir) then
+			use(safe_require(work_dir .. "dprint_vim_plugin"))
+		end
 
 		---------- Lazy-loaded plugins end ----------
 
