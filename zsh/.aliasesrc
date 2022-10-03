@@ -3,6 +3,20 @@
 alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 # ----- zsh end -----
 
+# ----- Sync vimwiki and dotfiles -----
+function down_sync() {
+    cd ~/vimwiki && git pull # vimwiki
+    cd ~/.config/dotfiles && git pull # dotfiles
+}
+
+function up_sync() {
+    cd ~/vimwiki && git add . && git commit -m 'sync' && git push # vimwiki
+    cd ~/.config/dotfiles && git add . && git commit -m 'sync' && git push # dotfiles
+}
+
+alias dsync='down_sync'
+alias usync='up_sync'
+
 # ----- Navigation -----
 alias clr='clear'
 alias ..='cd ..'
@@ -17,7 +31,7 @@ alias pj='cd $HOME/projects'
 alias mds='mine && cd Markdowns'
 # ----- Navigation end -----
 
-# ----- nvim (nightly) -----
+# ----- nvim -----
 alias v='nvim'
 alias vi='nvim'
 # ----- nvim end -----
@@ -67,7 +81,6 @@ alias branch_name='git branch --show-current'
 alias pr_link='echo $(repo_link)/compare/master...$(branch_name)'
 alias publish='git push -u origin $(branch_name) && open $(pr_link)'
 
-# functions
 function cleanup_git_branches() {
     git remote prune origin && git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
 }
@@ -80,6 +93,7 @@ function checkout_untracked_branch() {
 function clone_me() {
     git clone $1 && cd $(basename $1 .git) && git config user.email 'zyyho97@gmail.com'
 }
+
 # ----- git end -----
 
 # ----- Random stuff -----
