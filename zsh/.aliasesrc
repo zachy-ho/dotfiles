@@ -13,7 +13,7 @@ alias dot='cd $HOME/.config/dotfiles'
 alias nrc='cd $HOME/.config/nvim && v lua/zachyho/plugins/init.lua'
 alias krc='cd $HOME/.config/kitty && v kitty.conf'
 alias zrc='cd $HOME/.config/zsh && v .zshrc'
-alias mine='cd $HOME/zachyho-gits'
+alias pj='cd $HOME/projects'
 alias mds='mine && cd Markdowns'
 # ----- Navigation end -----
 
@@ -29,8 +29,8 @@ alias brup='brew update && brew upgrade'
 # lazygit
 alias lg='lazygit'
 
-# zachtelkasten - open todo.md
-alias vw='mine && cd vimwiki && v index.md'
+# vimwiki
+alias vw='cd ~/vimwiki && v index.md'
 
 # fzf
 alias fzb='fzf --bind "f1:execute(nvim -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'

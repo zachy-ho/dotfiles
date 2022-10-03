@@ -1,0 +1,7 @@
+vim .zshrc
+brew install fnm
+p10k configure
+vim .zshrc
+brew install fnm
+p10k configure
+p10k configure

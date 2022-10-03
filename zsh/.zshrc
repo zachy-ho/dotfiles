@@ -35,8 +35,8 @@ else
     export EDITOR='nvim'
 fi
 # JAVA Home path
-export JDTLS_HOME=$HOME/.language_servers/jdt-language-server-latest/
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+# export JDTLS_HOME=$HOME/.language_servers/jdt-language-server-latest/
+# export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 # export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 # Nix path
 export NIX_HOME=$HOME/.nix-profile
@@ -73,7 +73,6 @@ COMPLETION_WAITING_DOTS="true"
 # Automatically run `fnm use` when in a directory containing .node-version or .nvmrc file
 eval "$(fnm env --use-on-cd)"
 
-# Eval direv
 eval "$(direnv hook $SHELL)"
 
 # p10k
