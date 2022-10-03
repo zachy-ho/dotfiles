@@ -89,7 +89,7 @@ function M.on_attach(client, bufnr)
 
 	-- Let null-ls do all formatting
 	if client.name ~= "null-ls" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 end
 
@@ -119,7 +119,7 @@ function M.enable_format_on_save()
 	vim.cmd([[
         augroup format_on_save
             au!
-            au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 5000)
+            au BufWritePre * lua vim.lsp.buf.format(nil, 5000)
         augroup end
     ]])
 end
