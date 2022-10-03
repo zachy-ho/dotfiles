@@ -18,7 +18,7 @@ M.setup = function()
 					group = augroup,
 					buffer = bufnr,
 					callback = function()
-						vim.lsp.buf.format()
+						vim.lsp.buf.formatting_sync()
 					end,
 				})
 			end

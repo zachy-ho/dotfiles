@@ -55,6 +55,7 @@ _G.preconditions = {
 _G.constants = {
 	-- Directory of zachyho's custom plugin config files
 	PLUGINS_DIR = "zachyho.plugins.",
+    WORK_PLUGINS_DIR = "canva.plugins."
 }
 
 ----- Table helpers -----
