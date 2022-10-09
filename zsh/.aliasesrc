@@ -28,7 +28,6 @@ alias nrc='cd $HOME/.config/nvim && v lua/zachyho/plugins/init.lua'
 alias krc='cd $HOME/.config/kitty && v kitty.conf'
 alias zrc='cd $HOME/.config/zsh && v .zshrc'
 alias pj='cd $HOME/projects'
-alias mds='mine && cd Markdowns'
 # ----- Navigation end -----
 
 # ----- nvim -----

@@ -1,0 +1,1001 @@
+rm out-profile-green.json
+rm out-profile-lazy.json
+mv profile-lazy.json profile.json
+yarn start
+mv out-profile.json out-profile-lazy.json
+mv profile.json profile-lazy.json
+yarn start
+mv profile.json profile-green.json
+mv out-profile.json out-profile-green.json
+canva
+gst
+rm -rf adrianbannister-profiler_sourcemap_loader
+..
+cd adrianbannister-profiler_sourcemap_loader
+cd sourcemaps/
+v README.md
+..
+v
+nrc
+nrc
+nrc
+canva
+cd web
+v
+v
+nrc
+git log
+lg
+git rebase -i --root
+gacm 'added test apis'
+git rebase -i --root
+git rebase --abort
+git log
+git update-ref -d 798ae694b723c2eef636c5a24f38374b938b8b78
+git update-ref -d HEAD
+git log
+gacm 'reset all my commits'
+git log
+gp
+gp --force
+yarn add firebase
+npx ts-node ./src/server/seed.ts
+npx ts-node ./src/server/seed.ts
+yarn start
+yarn
+yarn start
+yarn build
+yarn start
+yarn build
+yarn build
+yarn build
+yarn start
+yarn start
+yarn start
+yarn start
+yarn build
+yarn start
+yarn build
+yarn start
+yarn build
+yarn start
+yarn build
+yarn start
+yarn build
+yarn start
+yarn build
+yarn dev
+yarn dev
+yarn buidl
+yarn build
+yarn build
+yarn start
+npx ts-node ./src/server/seed.ts
+npx ts-node ./src/server/seed.ts
+yarn add firebase-admin --save
+yarn remove firebase
+yarn build
+npx ts-node ./src/server/seed.ts
+yarn build
+yarn start
+npx ts-node ./src/server/seed.ts
+mine
+cd monikers
+v package.json
+..
+ls
+ls -a
+ls -l
+cd remix-jokes
+v package.json
+mine
+cd jam
+v package.json
+v
+eslint_d restart
+fg
+nrc
+canva
+cd web
+v
+v test.vim
+nrc
+v
+nrc
+v
+	nrc
+nrc
+nrc
+v
+nrc
+nrc
+nrc
+nrc
+v
+nrc
+ nrc
+nrc
+v
+nrc
+nrc
+v
+nr
+v
+v
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+v
+v
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+v
+nrc
+nrc
+nrc
+nrc
+dot
+gst
+lg
+gst
+gacm 'added conceallevel for markdown and vimwiki filetypes. added boilerplate for vimwiki diary entries' && gp
+gacm 'fix merge conflict' && gp
+gacm 'removed unrelated code changes' && gp
+rg 'User is not a part of GSTAFFmarpe'
+..
+gba
+gco zachyho-hotfix-search-click
+gl origin green
+cd web/src/pages/marketplace/search/search_bar2/search_results.tsx
+v web/src/pages/marketplace/search/search_bar2/search_results.tsx
+nrc
+v
+v
+nrc
+yarn seed
+cd ~/Downloads
+ls
+ls -a
+mine
+cd jam
+yarn seed
+yarn seed
+yarn seed
+yarn seed
+yarn seed
+canva
+cd web
+v
+gacm 'sync vimwiki' && gp
+mine
+cd jam
+lg
+yarn start
+v
+yarn seed
+yarn seed
+yarn add dotenv --save
+yarn add dotenv --save
+yarn seed
+yarn seed
+yarn seed
+lg
+yarn seed
+yarn seed
+k
+yarn seed
+lg
+yarn seed
+lg
+v
+v
+canva
+vw
+vw
+v
+vw
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+yarn test:update-snapshot src/ui/nav/breadcrumb
+yarn test:update-snapshot src/pages/home/folders/breadcrumbs
+gst
+yarn test src/pages/home/folders/breadcrumbs
+yarn test:update-snapshot src/pages/home/folders/breadcrumbs
+rg 'CacheStorage'
+rg 'PrecacheStore'
+nrc
+v
+nrc
+nrc
+dot
+gst
+gacm 'vimwiki boilerplate update. nvimtree update' && gp
+vw
+v
+v
+v
+v
+v
+v
+v
+v
+v
+lg
+cd ~/Google\ Drive/My\ Drive/Tax\ things/2021-2022/facemasks
+ls
+..
+gco zachyho-overlap-toggles && gl origin green
+gp
+gba
+gl
+cd web
+v package.json
+v package.json
+yarn test:ssr:page:update-snapshots:all
+gst
+ltdp && yarn lint:css:changed:fix
+rg 'content-visibility' **/*.css
+yarn test src/ui/nav/breadcrumb
+yarn test:update-snapshot src/ui/nav/breadcrumb
+gacm 'updated snapshots, ssr snapshots. yarn lint css' && gp
+yarn test:update-snapshot src/pages/apps_directory/standalone
+yarn test:update-snapshot src/pages/apps_directory/standalone
+yarn test:ssr:page:update-snapshots:all
+gst
+gacm 'updated ssr snapshots. removed unnecessary classing' && gp
+yarn test src/pages/marketplace/page_component/page/search
+yarn test:update-snapshot src/pages/marketplace/page_component/page/search
+gacm 'update snapshot' && gp
+yarn storybook:single src/pages/marketplace/page_component/page/search
+git diff
+gacm 'updated search page stories' && gp
+gl && ltdp && yarn lint:css:changed:fix
+gst
+..
+gco green && gl && gco -b zachyho-als-fakemode
+cd web
+yarn 
+yarn webpack-dev-server -e marketplace -home
+yarn webpack-dev-server -e marketplace -e home
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+nrc
+canva
+cd web
+v
+vw
+v
+v
+v
+v
+v
+v
+v
+gst
+yarn start
+yarn build
+yarn seed
+yarn seed
+yarn build
+yarn build
+yarn build
+yarn seed
+yarn seed
+yarn seed
+yarn seed
+yarn seed
+work
+canva
+..
+git clone git@github.com:paulirish/pwmetrics.git
+cd pwmetrics
+yarn
+pwmetrics
+yarn global add pwmetrics
+..
+rm -rf pwmetrics
+canva
+cd web
+v
+v
+v
+mine
+cd jam
+v
+canva
+cd web
+vw
+v calculate-bootstrap-size.ts
+..
+;s
+ls
+cd extra-stuff
+ls
+v js-snippets.ts
+..
+mv extra-stuff helpful-scripts/
+cd helpful-scripts
+mv js-snippets.ts calculate-bootstrap-size.ts
+cd calculate-bootstrap-size.ts
+v calculate-bootstrap-size.ts
+v calculate-bootstrap-size.ts
+v ca
+v calculate-bootstrap-size.ts
+..
+cd lighthouse-reports
+ls
+rm templates_item_25related_r1.json
+ls
+yarn test:e2e marketplace chrome_perf
+yarn test:e2e marketplace chrome_perf src/pages/marketplace/features/performance_smoketest.feature
+BASE_URL=http://localhost:9090 yarn test:e2e marketplace chrome_perf src/pages/marketplace/features/performance_smoketest.feature
+canva
+cd web
+v
+..
+v
+gst
+git diff
+git stash list
+git stash
+gco green && gl && gco -b zachyho-25-templates
+deploy_to_dev marketplace-rpc
+gacm 'changed more like this templates from 10 to 25' && gpsuo
+deploy_to_dev marketplace-rpc
+gacm 'jank force add templates' && gp
+deploy_to_dev --skip-blocks-check marketplace-rpc
+cd web
+v
+..
+deploy_to_dev --skip-blocks-check marketplace-rpc
+cd web
+yarn webpack-dev-server -e marketplace -p dev
+..
+..
+cd helpful-scripts
+v run_marketplace_e2e.sh
+ls
+..
+cd helpful-scripts
+./run_marketplace_e2e.sh
+ls -l
+chmod +x run_marketplace_e2e.sh
+./run_marketplace_e2e.sh
+v run_marketplace_e2e.sh
+./run_marketplace_e2e.sh
+v run_marketplace_e2e.sh
+./run_marketplace_e2e.sh
+v run_marketplace_e2e.sh
+canva
+cd web
+../../helpful-scripts/run_marketplace_e2e.sh
+../../helpful-scripts/run_marketplace_e2e.sh 5
+yarn ts tools/performance/performance_suite_reporter/simulate.ts marketplace
+v
+canva
+cd web
+v package.json 
+canva
+cd web
+v package.json 
+nrc
+canva
+cd web
+v package.json 
+yarn add prisma --save
+yarn prisma init
+yarn prisma db pull
+yarn prisma db pull
+yarn prisma generate
+yarn prisma client
+prisma
+yarn add uuid
+yarn add @types/uuid
+yarn prisma db push
+yarn prisma db push
+yarn prisma seed
+yarn prisma generate
+yarn prisma generate
+yarn prisma db push
+yarn prisma generate
+yarn add --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+yarn add --save-dev @types/jest
+yarn add --save-dev @types/jest
+yarn add --dev @types/jest
+yarn add --dev eslint-plugin-jest
+yarn
+yarn add --dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+yarn test
+yarn test
+yarn test
+yarn test prisma
+yarn test prisma/seed.tests.ts
+yarn test prisma/seed.tests.ts
+yarn test prisma/seed.tests.ts
+yarn test prisma/seed.tests.ts
+yarn test prisma/seed.tests.ts
+yarn test prisma/seed.tests.ts
+yarn test
+yarn test prisma
+canva
+mine
+cd jam
+gst
+v
+v
+v
+eslint_d restart
+fg
+eslint_d restart
+fg
+eslint_d restart
+fg
+eslint_d restart
+fg
+v
+eslint_d restart
+fg
+rg 'standalone_web_proxy'
+nrc
+nrc
+yarn test:integration marketplace chrome --all
+gacm 'sync' && gp
+mine
+cd jam
+v
+eslint_d restart
+fg
+yarn add --dev jest-mock-extended@2.0.4
+yarn test prisma
+yarn test prisma
+yarn test prisma
+yarn add --dev @faker-js/faker
+rg 'ModelComponent<MasonryProto' src/pages/marketplace
+rg 'MasonryProto' src/pages/marketplace
+rg 'I can interact with the checkbox filter in the filters sidebar on the templates search page' src/pages/marketplace
+rg 'I see the search page filters panel' src/pages/marketplace
+rg 'I am authenticated' src/pages/marketplace
+rg 'I see the search page filters panel' src/pages/market
+rg 'I see the search page filters panel' src/pages/marketplace
+rg 'enableAppLevelSidebar' src/pages/marketplace
+rg 'createFakeMarketplaceBootstrap' src/pages/marketplace
+rg "from 'pages/marketplace/bootstrap/bootstraps'" src/pages/marketplace
+rg 'TEMPLATES_SEARCH' src/pages/marketplace
+rg 'A.A' src/pages/marketplace
+rg 'CustomEventDialogPresenter' src/pages/hoem
+rg 'CustomEventDialogPresenter' src/pages/home
+rg '**/*.feature' src/pages/marketplace
+rg '.feature$' src/pages/marketplace
+rg 'feature$' src/pages/marketplace
+rg '.*\.feature$' src/pages/marketplace
+rg -e '.*\.feature$' src/pages/marketplace
+rg -e '.*\.feature$' -r src/pages/marketplace
+grep -e '.*\.feature$' src/pages/marketplace
+grep .*\.feature$ 
+grep .feature -r src/pages/marketplace 
+fzf
+nrc
+nrc
+nrc
+canva
+cd web
+v
+v
+v
+v
+v
+fg
+v
+rg 'I see the templates search page' src/pages/marketplace
+rg 'I see the templates search page' src/pages
+rg 'I see the templates' src/pages
+rg 'I see the first card list' src/pages/marketplace
+rg 'MarketplaceStepScope' src/pages/marketplace
+rg 'MarketplacePage.create' src/pages/marketplace
+rg 'CTABanner.create' src/pages/marketplace
+rg 'Dialog.create' src/pages/marketplace
+rg 'Suggestions.create' src/pages/marketplace
+rg 'I see the search page filters panel' src/pages/marketplace
+rg 'enableAppLevelSidebar' src/pages/marketplace
+rg 'createFakeMarketplaceBootstrap' src/pages/marketplace
+rg 'installFakePageBootstrap' src/pages/marketplace
+rg "console.log('context')" src/pages/marketplace
+rg "console.log('context')"
+rg 'displaySidebarInStandalone' src/pages/marketplace
+rg 'override get isVisible' src/pages/marketplace
+rg 'createSidebar' src/pages/marketplace
+rg 'maybeInstallSidebar' src/pages/marketplace
+rg 'I see the search page filters panel' src/pages/marketplace
+rg 'FiltersPanel.creat' src/pages/marketplace
+nrc
+nrc
+nrc
+v
+nrc
+nrc
+nrc
+nrc
+nrc
+dot
+gst
+gacm 'updated emmet leader. updated vimwiki boilerplate. changed treesitter dir to nvim_treesitter/. Added nvim-treesitter-context\
+'
+gp
+mine
+cd reference-dotfiles
+ls
+ls [a
+ls -a
+cd config_manager
+ls
+git pull
+..
+cd .c
+ls -a
+cd .dotfiles
+ls
+v README.md
+git pull
+gst
+git config pull.rebase false
+git pull
+git remote
+git remote -v
+..
+rm -rf .dotfiles
+git clone git@github.com:ThePrimeagen/.dotfiles.git
+cd .dotfiles/nvim
+ls
+ls -a
+cd .config
+ls
+cd nvim
+ls
+v
+rg 'implements CanvaCodeceptJS.CodeceptJSElement'
+rg "I can't see" src/pages/marketplace
+rg "And I can't see the carousel of categories on the overview page" src/pages/marketplace
+rg "And I can't see the carousel of categories on the overview page" src/pages/
+rg "And I can't see" src/pages/
+..
+rg "And I can't see" src/pages/
+rg "And I can't see"
+cd web
+rg "I can't see" src/pages/marketplace
+rg "I can't see" src/pages
+rg "I can't see" src/
+rg "I can't see" src/
+rg "I don't see" src
+v
+v
+rg 'I can see the Public Profile page' src/pages/marketplace
+rg 'I can see the Public Profile page' src/pages
+rg 'I can see the Public Profile page' src/pages
+mds
+v canva_pr_template.md
+rg 'FakeMarketplaceService' src/pages/marketplace
+rg "from 'pages/marketplace/marketplace.entry.ts"
+rg "from 'pages/marketplace/marketplace.entry"
+rg 'import { entryPoint }'
+rg 'import \{ entryPoint \}'
+v
+eslint_d restart
+fg
+v
+v
+gst
+gacm 'removed unnecessary non-null assertion' && gl origin green && git pr-train -p
+gacm 'removed unnecessary non-null assertion' && gl origin green && yarn lint:deps:fix
+gst
+dp
+git diff
+lg
+v
+v
+gco zachyho-als-integ-tests
+gba
+gco zachyho-als-update-integ-tests
+v
+v
+v
+..
+gst
+gl origin green
+gp
+deploy_to_dev marketplace-rpc
+deploy_to_dev --skip-blocks-check marketplace-rpc
+cd web
+yarn build:page marketplace
+gst
+ltdp
+ltdp
+yarn build:page marketplace
+yarn lint:deps:fix
+yarn build:page marketplace
+yarn build:page marketplace
+yarn proxy-standalone
+yarn proxy-standalone --flavor dev --app marketplace
+gst
+git stash push -m 'profiling bootstrap deserialization'
+gba
+gco zachyho-als-fakemode && gl origin green
+git stash list
+ git stash pop "stash@{1}"
+git diff
+yarn test:integration marketplace chrome
+yarn test:integration --help
+clr
+yarn webpack-dev-server -e marketplace -e home
+gst
+..
+gba
+gco zachyho-25-templates
+yarn build:page marketplace
+cd web
+yarn build:page marketplace
+yarn proxy-standalone --flavor dev --app marketplace
+git stash list
+git stash pop
+yarn build:page marketplace
+yarn p
+yarn proxy-standalone --flavor dev --app marketplace
+gba
+gco zachyho-als-fakemode && gl origin green
+gp
+gpsuo
+gst
+gacm 'AHHHHHHHHHHHH stage' && gp
+yarn webpack-dev-server -e marketplace -e home
+ltdp
+ltdp
+yarn webpack-dev-server -e marketplace -e home
+ltdp
+yarn webpack-dev-server -e marketplace -e home
+gst
+gacm 'added sidebar feature files. Updated integration tests for templates search with vertical filters to test app-level sidebar.'
+gl origin green
+yarn
+yarn webpack-dev-server -e marketplace -e home
+yarn webpack-dev-server -e marketplace -e home
+yarn webpack-dev-server -e marketplace -e home
+yarn webpack-dev-server -e marketplace -e home
+yarn build:page home marketplace
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature 
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_unified_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_unified_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature
+gacm 'remove irrelevant code. added app-level sidebar bootstrap override to failing integration tests' && gp
+ltdp
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_unified_search_vertical_filters.feature
+gacm 'updated fake enableapplevesidebar and integration tests' && gp
+ltdp
+ltdp
+ltdp
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature
+ltdp
+ltdp
+ltdp
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature
+ltdp
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+gacm 'updated sidebar steps' && gp
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --sho
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discvoer.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_photos_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_photos_search.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_photos_search_authenticated.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_photos_item.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_photos_item.feature --show
+gacm 'updated a bunch of integration tests' && gp
+gco green && gl && gco -b zachyho-als-features
+..
+v .pr-train.yml
+cd web
+ltdp
+gacm 'fixed app-level sidebar reaction bug. added feature files for app-level sidebar. added test-only css classes.' && gpsuo
+git log
+git reset --soft HEAD~
+gst
+git restore --staged src/pages/api_redirect/README.md
+gst
+git reset --hard src/pages/api_redirect/README.md
+lg
+gst
+git log
+gacm 'fixed app-level sidebar reaction bug. added feature files for app-level sidebar. added test-only css classes.' && gp --force
+	yarn lint:deps:fix
+gacm 'added skeleton support method' && gp
+yarn lint:deps:fix
+gacm 'fixed import typo' && gp
+..
+v .pr-train.yml
+gco -b zachyho-als-update-integ-tests
+cd web
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_item_authenticated.feature --show
+git diff
+gacm 'added some more integration tests. Ill continue later' && gp
+gpsuo
+gco zachyho-als-features
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace.feature --show
+gacm 'updated tests' && git pr-train -p
+gst
+gst
+gacm 'fix merge conflicts'
+gst
+git pr-train -p
+gco zachyho-als-update-integ-tets
+gco zachyho-als-update-integ-tests
+yarn lint:deps:fix
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_discover.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_discover.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_discover.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_portfolio.feature
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_portfolio.feature --show
+yarn test:integration marketplace chrome --all
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_search.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_search_authenticated.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_item.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_search_authenticated.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_item.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_item_authenticated.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_icons_item_authenticated.feature --show
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace_unified_search_vertical_filters.feature --show
+gst
+gacm 'updated tests' && git pr-train -p
+gco zachyho-als-features
+yarn test:integration marketplace chrome src/pages/marketplace/features/marketplace.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace.feature --show
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace.feature --show
+gst
+git diff
+lg
+yarn lint:css:changed:fix
+gst
+gacm 'linting' && git pr-train -p
+yarn test:integration:watch marketplace chrome src/pages/marketplace/features/marketplace_templates_search_vertical_filters.feature --show
+gacm 'reorganize feature file steps' && gp
+gacm 'removed placeholder tests' && gp
+v package.json 
+vw
+vw
+rg 'index.' conf/webpack
+rg 'getMarketplacePage'
+rg 'getMarketplacePage' src/pages/marketplace
+mine
+cd jam
+v
+dots
+dot
+gst
+brew list --cask
+canva
+cd web
+v
+	v
+vw
+v
+gacm 'sync'
+gp
+dot
+gst
+gp
+..
+ls
+ls -a
+ls -al
+cd dotfiles
+ls
+ls -a
+cd brew
+ls
+..
+	cd brew
+ls
+v zach_brews_canvabook.txt
+brew leaves > zach_brews_canvabook.txt
+ls
+gst
+git diff
+brew casks
+brew leaves
+brew cask levaes
+brew cask leaves
+brew --cask leaves
+brew list
+brew list > zach_brews_canvabook.txt
+brew --cask lis
+brew --cask list
+brew list --cask
+brew list --cask > zach_brew_casks_canvabook.txt
+gacm 'updated brew lists' && gp
+..
+..
+ls -al
+..
+ls -a
+fzf
+cd .config/oh-my-zsh
+ls
+ls -a
+v
+..
+ls -al
+ls
+ls -a
+..
+ls -al
+cd .config
+ls
+cd dotfiles
+ls
+v README.md
+zrc
+vw
+vw
+vw
+zrc
+dot
+gl
+v README.md
+canva
+cd web
+fzf
+cd src/pages/marketplace
+fzf
+...
+..
+v
+canva
+gst
+gco green && gl
+gba
+git remote prune origin
+gbcleanup
+vw
+gst
+gl
+gacm 'dev comp setup update' && gp
+vw
+rg 'error' **/*.proto
+zs
+usync
+nrc
+rg 'import' **/*.d.ts
+rg 'import' declarations
+brup
+brup
+rg 'NonNullable' src/pages/marketplace
+rg 'NonNullable' src/pages/home
+zrc
+nrc
+nrc
+nrc
+v
+nrc
+nrc
+nrc
+nrc
+nrc
+vim
