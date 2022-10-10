@@ -74,7 +74,7 @@ end
 function _G.quiet_safe_require(module)
 	local ok, result = pcall(require, module)
 	if not ok then
-		return
+		return ok
 	end
 	return result
 end

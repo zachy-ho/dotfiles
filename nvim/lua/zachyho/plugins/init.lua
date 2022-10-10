@@ -38,11 +38,11 @@ if packer_util then
 	open_fn = packer_util.float
 end
 
--- packer.init({
--- luarocks = {
--- python_cmd = "python3",
--- },
--- })
+packer.init({
+	luarocks = {
+		python_cmd = "python3",
+	},
+})
 
 packer.startup({
 	function(use)
@@ -175,7 +175,10 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_surround"))
 
 		-- Dprint plugin
-		use(safe_require(constants.WORK_PLUGINS_DIR .. "dprint_vim_plugin"))
+		local dprint = quiet_safe_require(constants.WORK_PLUGINS_DIR .. "dprint_vim_plugin")
+		if dprint then
+			use(dprint)
+		end
 
 		---------- Lazy-loaded plugins end ----------
 
