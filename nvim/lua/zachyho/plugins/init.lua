@@ -38,11 +38,11 @@ if packer_util then
 	open_fn = packer_util.float
 end
 
-packer.init({
-	luarocks = {
-		python_cmd = "python3",
-	},
-})
+-- packer.init({
+-- luarocks = {
+-- python_cmd = "python3",
+-- },
+-- })
 
 packer.startup({
 	function(use)

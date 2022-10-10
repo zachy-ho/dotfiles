@@ -26,6 +26,8 @@ return {
 			html = 0,
 		}
 
+		map("n", "<leader>wn", "<Plug>VimwikiNextLink")
+
 		-- Boilerplate for templating diary notes
 		safe_require(constants.PLUGINS_DIR .. "vimwiki.boilerplate")
 	end,
