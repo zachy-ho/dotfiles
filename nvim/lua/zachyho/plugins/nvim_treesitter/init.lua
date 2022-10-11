@@ -3,7 +3,34 @@ return {
 	run = ":TSUpdate",
 	config = function()
 		local treesitter = {
-			-- ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+			ensure_installed = {
+				"bash",
+				"css",
+				"dockerfile",
+				"gitignore",
+				"graphql",
+				"html",
+				"http",
+				"java",
+				"javascript",
+				"jsdoc",
+				"json",
+				"json5",
+				"lua",
+				"markdown",
+				"nix",
+				"prisma",
+				"proto",
+				"python",
+				"regex",
+				"scss",
+				"sql",
+				"tsx",
+				"typescript",
+				"vim",
+				"vue",
+				"yaml",
+			}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 			highlight = {
 				enable = true, -- false will disable the whole extension
 				custom_captures = {},
