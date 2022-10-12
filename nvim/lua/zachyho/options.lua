@@ -35,6 +35,11 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = false
 
+-- Disable mouse
+vim.cmd([[
+    set mouse=
+]])
+
 -- Folds (uses Treesitter)
 vim.cmd([[
     set foldmethod=expr
