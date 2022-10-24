@@ -17,7 +17,7 @@ vim.cmd([[
             echo "Vimwiki boilerplating didn't happen for some reason"
         endif
         " Ignore all other days
-        call append(0, [date, '', '## todo', '- [ ] my', '- [ ] tings', '- [ ] today', '', '## growth', 'Today, I...' ])
+        call append(0, [date, '', '## todo', '- [ ] monkaS', '- [ ] giga', '- [ ] kekw', '', '## growth', 'Today, I...' ])
     endfunction
 
     au BufNewFile ~/vimwiki/diary/*.md call VimwikiDiaryBoilerplate()
