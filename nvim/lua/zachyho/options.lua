@@ -19,7 +19,7 @@ opt.tabstop = 4
 opt.textwidth = 0
 opt.wrap = false
 
--- Line numbers, highlights, searches and case
+-- Line numbers, highlights, searches, case, and cursor look
 opt.colorcolumn = "100"
 opt.cursorline = true
 opt.ignorecase = true
@@ -30,6 +30,7 @@ opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 4
 opt.smartcase = true
+opt.guicursor = "n-v-c-i-sm:block-nCursor,ci-ve:ver25,r-cr-o:hor20"
 
 -- Splitting
 opt.splitright = true
