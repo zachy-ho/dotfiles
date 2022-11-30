@@ -3,18 +3,24 @@ return {
 	-- "arcticicestudio/nord-vim",
 	-- "EdenEast/nightfox.nvim",
 	-- "sainnhe/sonokai",
-	-- {
-	-- "rose-pine/neovim",
-	-- as = "rose-pine",
-	-- },
+	{
+		"rose-pine/neovim",
+		as = "rose-pine",
+		config = function()
+			-- ----- Rose pine -----
+			vim.g.rose_pine_variant = "moon"
+			-- Set
+			vim.cmd("colorscheme rose-pine")
+		end,
+	},
 	"monsonjeremy/onedark.nvim",
 	config = function()
 		-- ----- One Dark -----
 		-- Setup
-		local onedark = safe_require("onedark")
-		if onedark then
-			onedark.setup()
-		end
+		-- local onedark = safe_require("onedark")
+		-- if onedark then
+		-- onedark.setup()
+		-- end
 		--> Color scheme settings <--
 
 		-- ----- Gruvbox -----
@@ -53,15 +59,11 @@ return {
 		-- nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
 		-- vim.cmd("colorscheme duskfox")
 
-		-- ----- Rose pine -----
 		-- Setup
 		-- vim.cmd([[
 		-- let g:sonokai_style = 'andromeda'
 		-- let g:sonokai_enable_italic = 1
 		-- ]])
-		vim.g.rose_pine_variant = "moon"
-		-- Set
-		vim.cmd("colorscheme rose-pine")
 
 		-- ----- Sonokai -----
 		-- Set
