@@ -1,5 +1,5 @@
--- vim.cmd([[
 -- Autocmd: Automatically sources this file and runs 'PackerSync' whenever we write to this file
+-- vim.cmd([[
 -- augroup Packer
 -- autocmd!
 -- autocmd BufWritePost ~/.config/dotfiles/nvim/lua/zachyho/plugins.lua source <afile> | PackerSync
@@ -123,6 +123,9 @@ packer.startup({
 		-- Vimwiki
 		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
 		use(safe_require(constants.PLUGINS_DIR .. "vim_zettel"))
+
+		-- true-zen: Focused (lazy-loading causes statusline to still show)
+		-- use(safe_require(constants.PLUGINS_DIR .. "true_zen"))
 
 		---------- Eager-loaded plugins end ----------
 

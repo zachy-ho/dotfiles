@@ -111,7 +111,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 local cmp_nvim_lsp = safe_require("cmp_nvim_lsp")
 if cmp_nvim_lsp then
-	capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+	capabilities = cmp_nvim_lsp.default_capabilities()
 end
 M.capabilities = capabilities
 

@@ -59,9 +59,9 @@ return {
 		-- let g:sonokai_style = 'andromeda'
 		-- let g:sonokai_enable_italic = 1
 		-- ]])
-		-- vim.g.rose_pine_variant = "moon"
+		vim.g.rose_pine_variant = "moon"
 		-- Set
-		-- vim.cmd("colorscheme rose-pine")
+		vim.cmd("colorscheme rose-pine")
 
 		-- ----- Sonokai -----
 		-- Set
