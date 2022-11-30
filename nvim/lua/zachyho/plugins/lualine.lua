@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	after = "onedark.nvim",
+	after = "tokyonight",
 	requires = "kyazdani42/nvim-web-devicons",
 	config = function()
 		local lualine = safe_require("lualine")
@@ -10,7 +10,7 @@ return {
 
 		lualine.setup({
 			options = {
-				theme = "onedark",
+				theme = "tokyonight",
 			},
 		})
 	end,
