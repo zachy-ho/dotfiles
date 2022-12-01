@@ -125,7 +125,7 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "vim_zettel"))
 
 		-- true-zen: Focused (lazy-loading causes statusline to still show)
-		-- use(safe_require(constants.PLUGINS_DIR .. "true_zen"))
+		use(safe_require(constants.PLUGINS_DIR .. "true_zen"))
 
 		---------- Eager-loaded plugins end ----------
 
