@@ -53,7 +53,7 @@ vim.cmd([[
             let date = "# <insert date here>"
         endif
         " Ignore all other days
-        call append(0, [date, '', '## todo', '- [ ] monkaS', '- [ ] giga', '- [ ] kekw', '', '## growth', 'Today, I...', '', '## rate ur day', 'mood - x/10', 'productivity - x/10', 'slep hrs - x/8', 'slep quality - x/10', 'kofefes - x'])
+        call append(0, [date, '', '## todo', '- [ ] monkaS', '- [ ] giga', '- [ ] kekw', '', '## growth', '- achieve?', '- learn?', '- feel?', '', '## rate ur day', 'mood - x/10', 'productivity - x/10', 'slep hrs - x/8', 'slep quality - x/10', 'kofefes - x'])
     endfunction
 
     au BufNewFile ~/vimwiki/diary/*.md call VimwikiDiaryBoilerplate()
