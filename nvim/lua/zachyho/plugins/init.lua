@@ -94,6 +94,9 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "harpoon"))
 
 		----- Telescope family (should be loaded in order)
+		-- Telescope-fzf-native (for sorting performance)
+		use(safe_require(constants.PLUGINS_DIR .. "telescope_fzf_native"))
+
 		-- Telescope
 		use(safe_require(constants.PLUGINS_DIR .. "telescope"))
 		----- Telescope family end -----

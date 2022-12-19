@@ -18,4 +18,8 @@ return function(extensions)
 			end
 		end
 	end
+
+	if table_utils.has_item(extensions, "fzf") then
+		telescope.load_extension("fzf")
+	end
 end

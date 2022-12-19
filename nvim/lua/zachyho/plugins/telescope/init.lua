@@ -47,21 +47,12 @@ local telescope_config = {
 			map("n", as_table.keymaps, ":lua require'telescope.builtin'.keymaps{}<CR>")
 		end
 
+		-- IMPORTANT: has to come AFTER telescope.setup
 		local load_extensions = safe_require(constants.PLUGINS_DIR .. "telescope.extensions")
 		if load_extensions then
-			load_extensions({ "harpoon" })
+			load_extensions({ "harpoon", "fzf" })
 		end
 	end,
 }
 
--- local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
--- local harpoon_keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
--- local keys = {}
--- if keymaps then
--- vim.list_extend(keys, preconditions.check_exists(keymaps.as_list))
--- end
--- if harpoon_keymaps then
--- table.insert(keys, preconditions.check_exists(harpoon_keymaps.as_table).toggle_telescope)
--- end
--- telescope_config.keys = keys
 return telescope_config
