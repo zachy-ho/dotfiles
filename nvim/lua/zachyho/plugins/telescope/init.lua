@@ -39,13 +39,14 @@ local telescope_config = {
 		local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
 		if keymaps then
 			local as_table = preconditions.check_exists(keymaps.as_table)
-			local builtin = require("telescope.builtin")
-			map("n", as_table.find_files, builtin.find_files)
-			map("n", as_table.live_grep, builtin.live_grep)
-			map("n", as_table.buffers, builtin.buffers)
-			map("n", as_table.command_history, ":lua require'telescope.builtin'.command_history{}<CR>")
-			map("n", as_table.jumplist, ":lua require'telescope.builtin'.jumplist{}<CR>")
-			map("n", as_table.keymaps, ":lua require'telescope.builtin'.keymaps{}<CR>")
+			local builtin = safe_require("telescope.builtin")
+			if builtin then
+				map("n", as_table.find_files, builtin.find_files)
+				map("n", as_table.live_grep, builtin.live_grep)
+				map("n", as_table.buffers, builtin.buffers)
+				map("n", as_table.command_history, builtin.command_history)
+				map("n", as_table.keymaps, builtin.keymaps)
+			end
 		end
 
 		-- IMPORTANT: has to come AFTER telescope.setup

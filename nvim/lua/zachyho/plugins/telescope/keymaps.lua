@@ -4,7 +4,6 @@ local keymaps = {
 		live_grep = "<leader>og",
 		buffers = "<leader>ob",
 		command_history = "<leader>oc",
-		jumplist = "<leader>oj",
 		keymaps = "<leader>okm",
 	},
 }

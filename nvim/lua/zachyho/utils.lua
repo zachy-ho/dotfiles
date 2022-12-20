@@ -1,5 +1,5 @@
-local map_key = vim.api.nvim_set_keymap
-local unmap_key = vim.api.nvim_del_keymap
+local map_key = vim.keymap.set
+local unmap_key = vim.keymap.del
 
 ----- Global functions -----
 -- Checks if a file or directory exists in the path
