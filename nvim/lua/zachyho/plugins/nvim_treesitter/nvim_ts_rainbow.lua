@@ -52,5 +52,21 @@ return {
 			-- White
 			"#798294",
 		},
+		gruvbox_material = {
+			-- Red
+			"#ea6962",
+			-- Green
+			"#a9b665",
+			-- Yellow
+			"#e78a4e",
+			-- Blue
+			"#7daea3",
+			-- Magenta
+			"#d3869b",
+			-- Cyan
+			"#89b482",
+			-- White
+			"#d4be98",
+		},
 	},
 }

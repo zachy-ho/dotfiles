@@ -79,6 +79,14 @@ function _G.quiet_safe_require(module)
 	return result
 end
 
+function _G.replaceDashWithUnderscore(s)
+	return string.gsub(s, "-", "_")
+end
+
+function _G.replaceUnderscoreWithDash(s)
+	return string.gsub(s, "_", "-")
+end
+
 ----- Preconditions -----
 _G.preconditions = {
 	-- Assert item exists (i.e. not `nil`)
@@ -96,6 +104,7 @@ _G.constants = {
 	-- Directory of zachyho's custom plugin config files
 	PLUGINS_DIR = "zachyho.plugins.",
 	WORK_PLUGINS_DIR = "canva.plugins.",
+	COLORSCHEME = nil,
 }
 
 ----- Table helpers -----
