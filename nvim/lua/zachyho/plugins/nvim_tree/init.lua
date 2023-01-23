@@ -13,6 +13,16 @@ local nvim_tree = {
 				width = 60,
 				side = "right",
 			},
+			renderer = {
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = "",
+							arrow_open = "",
+						},
+					},
+				},
+			},
 			git = {
 				ignore = false,
 			},
