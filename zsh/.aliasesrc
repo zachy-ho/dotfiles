@@ -3,14 +3,12 @@
 alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 # ----- zsh end -----
 
-# ----- Sync vimwiki and dotfiles -----
+# ----- Sync dotfiles -----
 function down_sync() {
-    cd ~/vimwiki && git pull # vimwiki
     cd ~/.config/dotfiles && git pull # dotfiles
 }
 
 function up_sync() {
-    cd ~/vimwiki && git add . && git commit -m 'sync' && git push # vimwiki
     cd ~/.config/dotfiles && git add . && git commit -m 'sync' && git push # dotfiles
 }
 

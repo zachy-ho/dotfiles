@@ -123,10 +123,6 @@ packer.startup({
 		use(safe_require(constants.PLUGINS_DIR .. "autopairs"))
 		----- Cmp family End -----
 
-		-- Vimwiki
-		use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
-		use(safe_require(constants.PLUGINS_DIR .. "vim_zettel"))
-
 		-- true-zen: Focused (lazy-loading causes statusline to still show)
 		use(safe_require(constants.PLUGINS_DIR .. "true_zen"))
 
@@ -189,6 +185,10 @@ packer.startup({
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
+
+		-- Vimwiki
+		-- use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))
+		-- use(safe_require(constants.PLUGINS_DIR .. "vim_zettel"))
 
 		-- Undotree: Undo and redo
 		-- use(safe_require(constants.PLUGINS_DIR .. "undotree"))
