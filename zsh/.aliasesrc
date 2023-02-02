@@ -5,10 +5,12 @@ alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 
 # ----- Sync dotfiles -----
 function down_sync() {
+    cd ~/projects/zachyho_wiki && git pull # wiki
     cd ~/.config/dotfiles && git pull # dotfiles
 }
 
 function up_sync() {
+    cd ~/projects/zachyho_wiki && git add . && git commit -m 'sync' && git push # wiki
     cd ~/.config/dotfiles && git add . && git commit -m 'sync' && git push # dotfiles
 }
 
@@ -39,9 +41,6 @@ alias brup='brew update && brew upgrade'
 
 # lazygit
 alias lg='lazygit'
-
-# vimwiki
-alias vw='cd ~/vimwiki && v index.md'
 
 # fzf
 alias fzb='fzf --bind "f1:execute(nvim -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
