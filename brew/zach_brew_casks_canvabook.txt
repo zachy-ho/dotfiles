@@ -5,7 +5,6 @@ docker
 font-hack-nerd-font
 font-iosevka
 intellij-idea
-keycastr
 mobile-tools
 sde
 stats
