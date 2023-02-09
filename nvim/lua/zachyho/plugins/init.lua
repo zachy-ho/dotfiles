@@ -138,9 +138,6 @@ packer.startup({
 		-- Indent guides
 		use(safe_require(constants.PLUGINS_DIR .. "indent_guides"))
 
-		-- Hexokinase: Previews color whenever color (e.g. hex) is used
-		use(safe_require(constants.PLUGINS_DIR .. "hexokinase"))
-
 		use({ "kyazdani42/nvim-web-devicons" })
 
 		-- Lualine
@@ -185,6 +182,9 @@ packer.startup({
 		---------- Lazy-loaded plugins end ----------
 
 		----- Plugin graveyard -----
+
+		-- Hexokinase: Previews color whenever color (e.g. hex) is used
+		-- use(safe_require(constants.PLUGINS_DIR .. "hexokinase"))
 
 		-- Vimwiki
 		-- use(safe_require(constants.PLUGINS_DIR .. "vimwiki"))

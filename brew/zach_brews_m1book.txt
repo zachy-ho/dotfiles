@@ -4,13 +4,9 @@ aws/tap/aws-sam-cli
 bash
 bazel
 black
-canva/packages/ideviceinstaller
-canva/packages/infra-tools
-cloudflare/cloudflare/cloudflared
 cmake
 coreutils
 curl
-direnv
 efm-langserver
 fd
 fnm

@@ -10,12 +10,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ---------- Plugins ----------
-# ZSH Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# ZSH Autosuggestion
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-## ZSH Autocomplete
-# source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+if [[ $(uname -m) == 'arm64' ]]; then
+    # ZSH Syntax Highlighting
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # ZSH Autosuggestion
+    # source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ## ZSH Autocomplete
+    source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+else
+    # ZSH Syntax Highlighting
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # ZSH Autosuggestion
+    # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ## ZSH Autocomplete
+    source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 
 # ---------- My custom functions ----------
 for function in ~/.config/zsh/functions/.*; do
@@ -23,7 +32,11 @@ for function in ~/.config/zsh/functions/.*; do
 done
 
 # ---------- Theme ----------
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+if [[ $(uname -m) == 'arm64' ]]; then
+    source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+else
+    source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # ---------- Var Exports ----------
 # Language
