@@ -111,3 +111,4 @@ alias luamake=/Users/zacharyho/.language_servers/lua-language-server/3rd/luamake
 
 # Uncomment the line below and the first line in this file for performance profiling
 # zprof
+if [ -e /Users/zachyho/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/zachyho/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

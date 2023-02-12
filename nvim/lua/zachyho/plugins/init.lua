@@ -64,6 +64,9 @@ packer.startup({
 		-- Fugitive: Git operations within vim
 		use(safe_require(constants.PLUGINS_DIR .. "fugitive"))
 
+		-- Git conflicts (because Fugitive's one is too slow for big repos)
+		use(safe_require(constants.PLUGINS_DIR .. "git_conflict"))
+
 		-- Fzf: Fuzzy finder
 		use(safe_require(constants.PLUGINS_DIR .. "fzf"))
 
