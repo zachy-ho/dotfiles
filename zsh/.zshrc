@@ -14,16 +14,16 @@ if [[ $(uname -m) == 'arm64' ]]; then
     # ZSH Syntax Highlighting
     source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     # ZSH Autosuggestion
-    # source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    ## ZSH Autocomplete
-    source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ## ZSH Autocomplete (makes zsh a bit laggy so I don't like it much)
+    # source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 else
     # ZSH Syntax Highlighting
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     # ZSH Autosuggestion
-    # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    ## ZSH Autocomplete
-    source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ## ZSH Autocomplete (makes zsh a bit laggy so I don't like it much)
+    # source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
 
 # ---------- My custom functions ----------
