@@ -2,6 +2,11 @@ return {
 	"akinsho/git-conflict.nvim",
 	tag = "v1.0.0",
 	config = function()
-		safe_require("git-conflict").setup()
+		local conflict = safe_require("git-conflict")
+		if not conflict then
+			return
+		end
+
+		conflict.setup()
 	end,
 }
