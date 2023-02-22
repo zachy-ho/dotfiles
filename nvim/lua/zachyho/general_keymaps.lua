@@ -18,7 +18,7 @@ map({ "n", "i" }, "<Right>", "<Nop>")
 map({ "n", "v" }, "<leader>y", '"*y')
 
 -- Netrw
-map({ "n" }, "<leader>ex", ":Ex<Cr>")
+map({ "n" }, "<leader>fe", ":Ex<Cr>")
 
 -- In visual mode, delete the highlighted part out of existence (into the _ register) and paste,
 -- effectively keeping the pasted segment for the next paste if needed.

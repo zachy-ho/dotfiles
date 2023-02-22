@@ -47,7 +47,10 @@ for server, config in pairs(server_configs) do
 			local lfs = safe_require("lfs")
 			if lfs then
 				-- Set the root_dir in canva/canva so there's only one tsserver client initialised
-				if string.find(lfs.currentdir(), "work/canva/") ~= nil then
+				if
+					string.find(lfs.currentdir(), "work/canva/") ~= nil
+					or string.find(lfs.currentdir(), "work/canva2/") ~= nil
+				then
 					config = vim.tbl_deep_extend("force", {
 						root_dir = lspconfig.util.root_pattern("web.bzl"),
 					}, config)
