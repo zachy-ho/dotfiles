@@ -129,6 +129,9 @@ packer.startup({
 		-- true-zen: Focused (lazy-loading causes statusline to still show)
 		use(safe_require(constants.PLUGINS_DIR .. "true_zen"))
 
+		-- smartcolumn
+		use(safe_require(constants.PLUGINS_DIR .. "smartcolumn"))
+
 		---------- Eager-loaded plugins end ----------
 
 		---------- Lazy-loaded plugins ----------
