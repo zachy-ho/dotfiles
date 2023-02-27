@@ -25,7 +25,7 @@
 
 -- Need to manually set this env value to make enable Luarocks to install rocks
 -- see: https://github.com/wbthomason/packer.nvim/issues/180
-vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "12.5.1")
+-- vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "12.5.1")
 
 local packer = safe_require("packer")
 if not packer then
