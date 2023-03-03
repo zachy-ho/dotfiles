@@ -15,4 +15,7 @@ require("zachyho.disables")
 -- Packer plugins
 require(constants.PLUGINS_DIR)
 
+-- Canva (work) stuff
+require("canva.keymaps")
+
 -- Plugin configuration files in `after/plugin` are automatically sourced
