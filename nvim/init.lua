@@ -16,6 +16,6 @@ require("zachyho.disables")
 require(constants.PLUGINS_DIR)
 
 -- Canva (work) stuff
-require("canva.keymaps")
+quiet_safe_require("canva.keymaps")
 
 -- Plugin configuration files in `after/plugin` are automatically sourced
