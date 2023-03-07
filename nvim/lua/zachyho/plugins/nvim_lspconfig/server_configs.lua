@@ -1,5 +1,6 @@
 local server_configs = {
 	bashls = true,
+	bufls = true,
 	cssls = true,
 	cssmodules_ls = true,
 	dockerls = true,
