@@ -132,6 +132,9 @@ packer.startup({
 		-- smartcolumn
 		use(safe_require(constants.PLUGINS_DIR .. "smartcolumn"))
 
+		-- Indent guides
+		use(safe_require(constants.PLUGINS_DIR .. "indent_blankline"))
+
 		---------- Eager-loaded plugins end ----------
 
 		---------- Lazy-loaded plugins ----------
@@ -140,9 +143,6 @@ packer.startup({
 
 		-- Nerdcommenter: Commenting shortcuts
 		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
-
-		-- Indent guides
-		use(safe_require(constants.PLUGINS_DIR .. "indent_guides"))
 
 		use({ "kyazdani42/nvim-web-devicons" })
 
