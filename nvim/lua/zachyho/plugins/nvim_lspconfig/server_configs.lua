@@ -36,7 +36,7 @@ local server_configs = {
 	},
 	prismals = true,
 	pyright = true,
-	tailwindcss = true,
+	-- tailwindcss = true,
 	tsserver = true,
 	vimls = true,
 	yamlls = true,
