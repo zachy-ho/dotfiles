@@ -193,14 +193,6 @@ packer.startup({
 		-- Undotree: Undo and redo
 		-- use(safe_require(constants.PLUGINS_DIR .. "undotree"))
 
-		-- Vsnip and snippets: Snippets for fast coding
-		-- use({
-		-- "hrsh7th/cmp-vsnip",
-		-- "hrsh7th/vim-vsnip",
-		-- "hrsh7th/vim-vsnip-integ",
-		-- "rafamadriz/friendly-snippets",
-		-- })
-
 		-- Limelight
 		-- use({ "junegunn/limelight.vim", })
 

@@ -48,9 +48,16 @@ return {
 			}),
 			sources = cmp.config.sources({
 				-- Neovim builtin LSP client
-				{ name = "nvim_lsp" },
+				{
+					name = "nvim_lsp",
+					entry_filter = function(entry)
+						-- Fuck snippets. They pollute my autocompletions
+						-- See :h nvim-cmp 'entry_filter'
+						return cmp.lsp.CompletionItemKind[entry:get_kind()] ~= "Snippet"
+					end,
+				},
 				-- Vsnip
-				{ name = "vsnip" },
+				-- { name = "vsnip" },
 				-- Neovim Lua API
 				{ name = "nvim_lua" },
 				-- Filesystem paths

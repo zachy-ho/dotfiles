@@ -93,25 +93,12 @@ function M.on_attach(client, bufnr)
 	end
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-	properties = {
-		"documentation",
-		"detail",
-		"additionalTextEdits",
-	},
-}
-
+local capabilities = nil
 local cmp_nvim_lsp = safe_require("cmp_nvim_lsp")
 if cmp_nvim_lsp then
-	capabilities = cmp_nvim_lsp.default_capabilities()
+	capabilities = cmp_nvim_lsp.default_capabilities({
+		snippetSupport = false,
+	})
 end
 M.capabilities = capabilities
 
