@@ -92,7 +92,7 @@ eval "$(direnv hook $SHELL)"
 # To customize prompt, run `p10k configure` or edit ~/.config/dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/.config/dotfiles/zsh/.p10k.zsh ]] || source ~/.config/dotfiles/zsh/.p10k.zsh
 
-alias luamake=/Users/zacharyho/.language_servers/lua-language-server/3rd/luamake/luamake
+alias luamake=/Users/zachyho/.language_servers/lua-language-server/3rd/luamake/luamake
 
 # ---------- Work things ----------
 [ -f $HOME/.config/zsh/.canvathingsrc ] && source $HOME/.config/zsh/.canvathingsrc
