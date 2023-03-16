@@ -63,7 +63,7 @@ return {
 				-- Filesystem paths
 				{ name = "path" },
 				-- Buffer words
-				-- { name = "buffer" },
+				{ name = "buffer" },
 			}),
 			formatting = {
 				format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }),
