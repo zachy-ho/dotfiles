@@ -79,12 +79,10 @@ return {
 		if rainbow_colors then
 			treesitter.rainbow = {
 				enable = true,
-				extended_mode = false,
-				max_file_lines = nil,
 				-- Make sure colorscheme module is required in `plugins/init.lua` first!
-				colors = preconditions.check_exists(rainbow_colors.colors)[replaceDashWithUnderscore(
-					constants.COLORSCHEME
-				)],
+				-- colors = preconditions.check_exists(rainbow_colors.colors)[replaceDashWithUnderscore(
+				-- constants.COLORSCHEME
+				-- )],
 			}
 		end
 		require("nvim-treesitter.configs").setup(treesitter)
