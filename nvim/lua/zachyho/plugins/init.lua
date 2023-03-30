@@ -135,6 +135,9 @@ packer.startup({
 		-- Indent guides
 		use(safe_require(constants.PLUGINS_DIR .. "indent_blankline"))
 
+		-- Spider (makes w, e, b more intuitive)
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_spider"))
+
 		---------- Eager-loaded plugins end ----------
 
 		---------- Lazy-loaded plugins ----------

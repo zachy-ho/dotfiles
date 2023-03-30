@@ -24,6 +24,8 @@ map({ "n" }, "<leader>fe", ":Explore<Cr>")
 -- effectively keeping the pasted segment for the next paste if needed.
 map("x", "<leader>p", '"_dP')
 
+map("n", "<leader>bd", ":bd<CR>")
+
 -- Search and replace
 map({ "n" }, "<leader>srl", ":s///g<c-b><right><right>")
 map({ "n" }, "<leader>srf", ":%s///g<c-b><right><right><right>")

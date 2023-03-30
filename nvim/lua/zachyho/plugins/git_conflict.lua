@@ -7,6 +7,11 @@ return {
 			return
 		end
 
-		conflict.setup()
+		conflict.setup({
+			highlights = {
+				incoming = "DiffAdd",
+				current = "DiffChange",
+			},
+		})
 	end,
 }
