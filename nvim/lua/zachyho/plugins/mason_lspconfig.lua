@@ -1,6 +1,6 @@
 return {
 	"williamboman/mason-lspconfig.nvim",
-	requires = "williamboman/mason.nvim",
+	dependencies = "williamboman/mason.nvim",
 	config = function()
 		-- Mason lsp
 		local mason_lsp = safe_require("mason-lspconfig")

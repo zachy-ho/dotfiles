@@ -1,6 +1,6 @@
 return {
 	"kylechui/nvim-surround",
-	tag = "*",
+	version = "*",
 	config = function()
 		local surround = safe_require("nvim-surround")
 		if not surround then

@@ -40,5 +40,4 @@ return {
             let g:vsnip_filetypes.typescript = ['javascript']
         ]])
 	end,
-	-- event = "InsertEnter",
 }

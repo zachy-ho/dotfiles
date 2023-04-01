@@ -1,5 +1,6 @@
 return {
 	"windwp/nvim-autopairs",
+	dependencies = "nvim-cmp",
 	config = function()
 		-- Look HERE if having trouble with <CR> with nvim-cmp
 		local autopairs = safe_require("nvim-autopairs")
@@ -78,5 +79,4 @@ return {
 		end
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 	end,
-	after = "nvim-cmp",
 }

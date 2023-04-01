@@ -1,4 +1,5 @@
 return {
 	"jose-elias-alvarez/null-ls.nvim",
-	requires = { "nvim-lua/plenary.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim" },
+	lazy = true, -- nvim-lspconfig will require this
 }

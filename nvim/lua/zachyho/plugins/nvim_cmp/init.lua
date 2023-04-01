@@ -1,12 +1,7 @@
 return {
 	"hrsh7th/nvim-cmp",
-	requires = {
+	dependencies = {
 		"nvim-lspconfig",
-		"cmp-vsnip",
-		"vim-vsnip",
-		"vim-vsnip-integ",
-	},
-	after = {
 		"cmp-vsnip",
 		"vim-vsnip",
 		"vim-vsnip-integ",
@@ -74,5 +69,4 @@ return {
 			},
 		})
 	end,
-	-- event = "InsertEnter",
 }

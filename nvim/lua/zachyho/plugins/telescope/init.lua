@@ -1,6 +1,7 @@
-local telescope_config = {
+-- return telescope_config
+return {
 	"nvim-telescope/telescope.nvim",
-	requires = {
+	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
 	config = function()
@@ -56,5 +57,3 @@ local telescope_config = {
 		end
 	end,
 }
-
-return telescope_config

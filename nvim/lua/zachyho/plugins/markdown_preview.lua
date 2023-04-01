@@ -1,8 +1,6 @@
 return {
 	"iamcco/markdown-preview.nvim",
-	run = "cd app && yarn install",
-	config = function()
-		map("n", "<leader>mp", "<Plug>MarkdownPreviewToggle")
-	end,
+	build = "cd app && yarn install",
 	ft = "markdown",
+	keys = { "<leader>mp", "<Plug>MarkdownPreviewToggle" },
 }

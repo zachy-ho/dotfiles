@@ -19,14 +19,18 @@ return {
 			grep_with_opts = "<leader>gr",
 		}
 		-- Grep with manual query
-		map("n", keymaps_upvalue.query, ":Grepper -noprompt -tool rg -query ")
+		-- map("n", keymaps_upvalue.query, ":Grepper -noprompt -tool rg -query ")
 
 		-- Grep the current word
-		map("n", keymaps_upvalue.grep_current_word, ":Grepper -noprompt -tool rg -cword<CR>")
+		-- map("n", keymaps_upvalue.grep_current_word, ":Grepper -noprompt -tool rg -cword<CR>")
 
 		-- Grep with operators
-		map({ "n", "x" }, keymaps_upvalue.grep_with_opts, "<plug>(GrepperOperator)", { noremap = false })
+		-- map({ "n", "x" }, keymaps_upvalue.grep_with_opts, "<plug>(GrepperOperator)", { noremap = false })
 	end,
 	-- Keep this and `keymaps_upvalue` in sync
-	keys = { "<leader>gq", "<leader>gw", "<leader>gr" },
+	keys = {
+		{ "<leader>gq", ":Grepper -noprompt -tool rg -query ", desc = "grep query" },
+		{ "<leader>gw", ":Grepper -noprompt -tool rg -cword<CR>", desc = "grep current word" },
+		{ "<leader>gr", "<plug>(GrepperOperator)", mode = { "n", "x" }, noremap = false, desc = "grep with opts" },
+	},
 }

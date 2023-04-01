@@ -1,7 +1,8 @@
 return {
 	"tpope/vim-fugitive",
-	requires = {
+	dependencies = {
 		-- Rhubarb: To make GBrowse from Fugitive work
 		"tpope/vim-rhubarb",
 	},
+	event = "VeryLazy",
 }

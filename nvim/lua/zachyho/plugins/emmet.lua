@@ -1,4 +1,4 @@
-local emmet = {
+return {
 	"mattn/emmet-vim",
 	config = function()
 		vim.g.user_emmet_install_global = 0
@@ -9,4 +9,3 @@ local emmet = {
 	end,
 	ft = { "html", "css", "typescriptreact", "javascriptreact", "typescript", "javascript" },
 }
-return emmet

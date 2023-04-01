@@ -1,6 +1,4 @@
 return {
-	plugin = {
-		"HiPhish/nvim-ts-rainbow2",
-		after = "nvim-treesitter",
-	},
+	"HiPhish/nvim-ts-rainbow2",
+	dependencies = "nvim-treesitter",
 }
