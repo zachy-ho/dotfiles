@@ -54,6 +54,10 @@ for server, config in pairs(server_configs) do
 				}, config)
 			end
 			typescript.setup({
+				cmd = { "typescript-language-server", "--stdio" },
+				init_options = {
+					maxTsServerMemory = 8192,
+				},
 				disable_commands = false,
 				debug = false,
 				server = config,
