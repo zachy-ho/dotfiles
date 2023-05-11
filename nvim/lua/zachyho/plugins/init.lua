@@ -23,7 +23,7 @@ lazy_pacman.setup({
 	safe_require(constants.PLUGINS_DIR .. "colorscheme"),
 	safe_require(constants.PLUGINS_DIR .. "nvim_web_devicons"),
 	safe_require(constants.PLUGINS_DIR .. "lualine"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_tree"),
+	-- safe_require(constants.PLUGINS_DIR .. "nvim_tree"),
 	safe_require(constants.PLUGINS_DIR .. "autopairs"),
 	safe_require(constants.PLUGINS_DIR .. "smartcolumn"),
 	safe_require(constants.PLUGINS_DIR .. "indent_blankline"),

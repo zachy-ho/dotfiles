@@ -50,14 +50,16 @@ for server, config in pairs(server_configs) do
 				or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
 			then
 				config = vim.tbl_deep_extend("force", {
+					cmd = { "typescript-language-server", "--stdio", "--log-level=4" },
+					init_options = {
+						hostInfo = "neovim",
+						maxTsServerMemory = 8192,
+					},
 					root_dir = lspconfig.util.root_pattern("web.bzl"),
 				}, config)
 			end
+			print("typesript setup")
 			typescript.setup({
-				cmd = { "typescript-language-server", "--stdio" },
-				init_options = {
-					maxTsServerMemory = 8192,
-				},
 				disable_commands = false,
 				debug = false,
 				server = config,
