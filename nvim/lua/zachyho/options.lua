@@ -86,7 +86,7 @@ vim.cmd([[
 -- Netrw
 -- This gives me relative line numbers in netrw
 vim.cmd([[
-    let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+    let g:netrw_bufsettings='noma nomod nu nowrap ro nobl'
 ]])
 
 -- Augroup for custom highlights have to be set before colorscheme is set

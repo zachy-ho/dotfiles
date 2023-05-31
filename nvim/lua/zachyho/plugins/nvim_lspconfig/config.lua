@@ -9,7 +9,7 @@ local common_on_attach = {}
 local common_capabilities = {}
 if handlers then
 	handlers.setup()
-	handlers.enable_format_on_save()
+	-- handlers.enable_format_on_save()
 	common_on_attach = handlers.on_attach
 	common_capabilities = handlers.capabilities
 end

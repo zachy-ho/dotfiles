@@ -67,8 +67,8 @@ map("n", "<leader>L", ": wincmd L<CR>", { silent = true })
 map("n", "<leader>x", ": wincmd x<CR>", { silent = true })
 
 -- Center screen after n/N
-map("n", "n", "nzz", { noremap = false })
-map("n", "N", "Nzz", { noremap = false })
+-- map("n", "n", "nzz", { noremap = false })
+-- map("n", "N", "Nzz", { noremap = false })
 
 -- Vim tabs
 map("n", "<leader>tc", ":tabclose ")
@@ -78,6 +78,7 @@ map("n", "<leader>=-", ":vertical resize -5<CR>")
 map("n", "<leader>==", ":vertical resize +5<CR>")
 map("n", "<leader>--", ":resize -5<CR>")
 map("n", "<leader>-=", ":resize +5<CR>")
+map("n", "<leader>s=", "<C-w>=")
 
 -- Ex mode
 map("c", "<C-k>", "<Up>", { noremap = false })
