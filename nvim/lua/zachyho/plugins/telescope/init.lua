@@ -40,6 +40,8 @@ return {
 		local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
 		if keymaps then
 			local as_table = preconditions.check_exists(keymaps.as_table)
+			map("n", as_table.telescope, ":Telescope<CR>")
+
 			local builtin = safe_require("telescope.builtin")
 			if builtin then
 				map("n", as_table.find_files, builtin.find_files)

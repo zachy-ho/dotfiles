@@ -58,7 +58,6 @@ for server, config in pairs(server_configs) do
 					root_dir = lspconfig.util.root_pattern("web.bzl"),
 				}, config)
 			end
-			print("typesript setup")
 			typescript.setup({
 				disable_commands = false,
 				debug = false,

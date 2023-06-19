@@ -1,5 +1,6 @@
 local keymaps = {
 	as_table = {
+		telescope = "<leader>te",
 		find_files = "<leader>of",
 		live_grep = "<leader>og",
 		buffers = "<leader>ob",

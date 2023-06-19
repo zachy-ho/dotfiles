@@ -5,32 +5,17 @@ local unmap_key = vim.keymap.del
 -- Checks if a file or directory exists in the path
 function _G.exists(file)
 	local ok, err, code = os.rename(file, file)
-	print("ok")
-	print(ok)
-	print("err")
-	print(err)
-	print("code")
-	print(code)
 	if not ok then
-		print("nope")
 		if code == 13 then
 			-- Permission denied, but it exists
 			return true
 		end
 	end
-	print("yup")
 	return ok, err
 end
 
 function _G.is_dir(path)
-	print(path)
-	print(path)
-	print(path)
 	local huh = exists(path .. "/")
-	print(huh)
-	print(huh)
-	print(huh)
-	print(huh)
 	return huh
 end
 

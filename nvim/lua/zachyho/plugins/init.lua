@@ -34,6 +34,7 @@ lazy_pacman.setup({
 	safe_require(constants.PLUGINS_DIR .. "emmet"),
 	safe_require(constants.PLUGINS_DIR .. "easy_align"),
 	safe_require(constants.PLUGINS_DIR .. "nvim_surround"),
+	safe_require(constants.PLUGINS_DIR .. "nvim_surround"),
 
 	safe_require(constants.PLUGINS_DIR .. "fugitive"),
 	safe_require(constants.PLUGINS_DIR .. "git_conflict"),
