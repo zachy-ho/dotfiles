@@ -23,7 +23,7 @@ else
     # ZSH Autosuggestion
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     ## ZSH Autocomplete (makes zsh a bit laggy so I don't like it much)
-    # source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+    source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
 
 # ---------- My custom functions ----------
