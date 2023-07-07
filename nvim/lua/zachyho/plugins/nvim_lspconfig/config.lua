@@ -17,7 +17,7 @@ end
 -- Set up null-ls
 local null_ls = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls.config")
 if null_ls then
-	null_ls.setup()
+	null_ls.setup(common_on_attach)
 end
 
 local server_configs = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
