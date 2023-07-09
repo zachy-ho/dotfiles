@@ -21,9 +21,7 @@ lazy_pacman.setup({
 	safe_require(constants.PLUGINS_DIR .. "plenary"),
 
 	safe_require(constants.PLUGINS_DIR .. "colorscheme"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_web_devicons"),
 	safe_require(constants.PLUGINS_DIR .. "lualine"),
-	-- safe_require(constants.PLUGINS_DIR .. "nvim_tree"),
 	safe_require(constants.PLUGINS_DIR .. "autopairs"),
 	safe_require(constants.PLUGINS_DIR .. "smartcolumn"),
 	safe_require(constants.PLUGINS_DIR .. "indent_blankline"),
@@ -34,8 +32,6 @@ lazy_pacman.setup({
 	safe_require(constants.PLUGINS_DIR .. "emmet"),
 	safe_require(constants.PLUGINS_DIR .. "easy_align"),
 	safe_require(constants.PLUGINS_DIR .. "nvim_surround"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_surround"),
-
 	safe_require(constants.PLUGINS_DIR .. "fugitive"),
 	safe_require(constants.PLUGINS_DIR .. "git_conflict"),
 	safe_require(constants.PLUGINS_DIR .. "fzf"),
