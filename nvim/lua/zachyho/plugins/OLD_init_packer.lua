@@ -147,7 +147,7 @@ packer.startup({
 		-- Nerdcommenter: Commenting shortcuts
 		use(safe_require(constants.PLUGINS_DIR .. "nerdcommenter"))
 
-		use({ "kyazdani42/nvim-web-devicons" })
+		use(safe_require(constants.PLUGINS_DIR .. "nvim_web_devicons"))
 
 		-- Lualine
 		use(safe_require(constants.PLUGINS_DIR .. "lualine"))
