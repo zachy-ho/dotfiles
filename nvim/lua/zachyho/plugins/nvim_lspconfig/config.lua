@@ -3,7 +3,7 @@ if not lspconfig then
 	return
 end
 
-local handlers = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.handlers")
+local handlers = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.handlers")
 
 local common_on_attach = {}
 local common_capabilities = {}
@@ -15,12 +15,12 @@ if handlers then
 end
 
 -- Set up null-ls
-local null_ls = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls.config")
+local null_ls = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.null_ls.config")
 if null_ls then
 	null_ls.setup(common_on_attach)
 end
 
-local server_configs = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
+local server_configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
 if not server_configs then
 	return
 end

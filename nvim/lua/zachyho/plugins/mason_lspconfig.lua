@@ -8,7 +8,7 @@ return {
 			return
 		end
 
-		local server_configs = safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
+		local server_configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
 		local ensure_installed = {}
 		if server_configs then
 			ensure_installed = table_utils.get_keys(server_configs)

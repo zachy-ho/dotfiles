@@ -1,7 +1,7 @@
 local harpoon = {
 	"ThePrimeagen/harpoon",
 	config = function()
-		local keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
+		local keymaps = safe_require(local_paths.PLUGINS_DIR .. "harpoon.keymaps")
 		if keymaps then
 			map(
 				"n",

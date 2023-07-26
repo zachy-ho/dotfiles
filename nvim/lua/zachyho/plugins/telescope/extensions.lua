@@ -8,7 +8,7 @@ return function(extensions)
 	if table_utils.has_item(extensions, "harpoon") then
 		if safe_require("harpoon") then
 			telescope.load_extension("harpoon")
-			local harpoon_keymaps = safe_require(constants.PLUGINS_DIR .. "harpoon.keymaps")
+			local harpoon_keymaps = safe_require(local_paths.PLUGINS_DIR .. "harpoon.keymaps")
 			if harpoon_keymaps then
 				map(
 					"n",

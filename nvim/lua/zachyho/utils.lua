@@ -85,11 +85,10 @@ _G.preconditions = {
 }
 
 ----- Constants -----
-_G.constants = {
+_G.local_paths = {
 	-- Directory of zachyho's custom plugin config files
 	PLUGINS_DIR = "zachyho.plugins.",
 	WORK_PLUGINS_DIR = "canva.plugins.",
-	COLORSCHEME = nil,
 }
 
 ----- Table helpers -----

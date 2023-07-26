@@ -17,48 +17,52 @@ if not lazy_pacman then
 	return
 end
 
-lazy_pacman.setup({
-	safe_require(constants.PLUGINS_DIR .. "plenary"),
+local function require_plugin(path)
+	return safe_require(local_paths.PLUGINS_DIR .. path)
+end
 
-	safe_require(constants.PLUGINS_DIR .. "colorscheme"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_web_devicons"),
-	safe_require(constants.PLUGINS_DIR .. "lualine"),
-	safe_require(constants.PLUGINS_DIR .. "autopairs"),
-	safe_require(constants.PLUGINS_DIR .. "smartcolumn"),
-	safe_require(constants.PLUGINS_DIR .. "indent_blankline"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_spider"),
-	safe_require(constants.PLUGINS_DIR .. "nerdcommenter"),
-	safe_require(constants.PLUGINS_DIR .. "markdown_preview"),
-	safe_require(constants.PLUGINS_DIR .. "prettier"),
-	safe_require(constants.PLUGINS_DIR .. "emmet"),
-	safe_require(constants.PLUGINS_DIR .. "easy_align"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_surround"),
-	safe_require(constants.PLUGINS_DIR .. "fugitive"),
-	safe_require(constants.PLUGINS_DIR .. "git_conflict"),
-	safe_require(constants.PLUGINS_DIR .. "fzf"),
-	safe_require(constants.PLUGINS_DIR .. "vim_grepper"),
+lazy_pacman.setup({
+	require_plugin("plenary"),
+
+	require_plugin("colorscheme"),
+	require_plugin("nvim_web_devicons"),
+	require_plugin("lualine"),
+	require_plugin("autopairs"),
+	require_plugin("smartcolumn"),
+	require_plugin("indent_blankline"),
+	require_plugin("nvim_spider"),
+	require_plugin("nerdcommenter"),
+	require_plugin("markdown_preview"),
+	require_plugin("prettier"),
+	require_plugin("emmet"),
+	require_plugin("easy_align"),
+	require_plugin("nvim_surround"),
+	require_plugin("fugitive"),
+	require_plugin("git_conflict"),
+	require_plugin("fzf_lua"),
+	require_plugin("vim_grepper"),
 
 	----- These MUST come before nvim-lspconfig! -----
-	safe_require(constants.PLUGINS_DIR .. "mason"),
-	safe_require(constants.PLUGINS_DIR .. "mason_lspconfig"),
-	safe_require(constants.PLUGINS_DIR .. "typescript"),
-	safe_require(constants.PLUGINS_DIR .. "cmp_nvim_lsp"),
-	safe_require(constants.PLUGINS_DIR .. "lspkind_nvim"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.null_ls"),
+	require_plugin("mason"),
+	require_plugin("mason_lspconfig"),
+	require_plugin("typescript"),
+	require_plugin("cmp_nvim_lsp"),
+	require_plugin("lspkind_nvim"),
+	require_plugin("nvim_lspconfig.null_ls"),
 
-	safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig"),
-	safe_require(constants.PLUGINS_DIR .. "telescope"),
-	safe_require(constants.PLUGINS_DIR .. "telescope_fzf_native"),
-	safe_require(constants.PLUGINS_DIR .. "harpoon"),
+	require_plugin("nvim_lspconfig"),
+	require_plugin("telescope"),
+	require_plugin("telescope_fzf_native"),
+	require_plugin("harpoon"),
 
-	safe_require(constants.PLUGINS_DIR .. "vsnip.vim_vsnip"),
-	safe_require(constants.PLUGINS_DIR .. "vsnip.cmp_vsnip"),
-	safe_require(constants.PLUGINS_DIR .. "vsnip.vim_vsnip_integ"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_cmp"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_cmp.sources"),
+	require_plugin("vsnip.vim_vsnip"),
+	require_plugin("vsnip.cmp_vsnip"),
+	require_plugin("vsnip.vim_vsnip_integ"),
+	require_plugin("nvim_cmp"),
+	require_plugin("nvim_cmp.sources"),
 
-	safe_require(constants.PLUGINS_DIR .. "nvim_treesitter"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_treesitter_context"),
+	require_plugin("nvim_treesitter"),
+	require_plugin("nvim_treesitter_context"),
 
-	safe_require(constants.PLUGINS_DIR .. "vim_kitty"),
+	require_plugin("vim_kitty"),
 })

@@ -37,7 +37,7 @@ return {
 			},
 		})
 
-		local keymaps = safe_require(constants.PLUGINS_DIR .. "telescope.keymaps")
+		local keymaps = safe_require(local_paths.PLUGINS_DIR .. "telescope.keymaps")
 		if keymaps then
 			local as_table = preconditions.check_exists(keymaps.as_table)
 			map("n", as_table.telescope, ":Telescope<CR>")
@@ -53,7 +53,7 @@ return {
 		end
 
 		-- IMPORTANT: has to come AFTER telescope.setup
-		local load_extensions = safe_require(constants.PLUGINS_DIR .. "telescope.extensions")
+		local load_extensions = safe_require(local_paths.PLUGINS_DIR .. "telescope.extensions")
 		if load_extensions then
 			load_extensions({ "harpoon", "fzf" })
 		end

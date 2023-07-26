@@ -12,7 +12,6 @@ return {
 
 	-- -- Set up config above before setting colorscheme
 	-- vim.cmd([[colorscheme tokyonight-moon]])
-	-- constants.COLORSCHEME = 'tokyonight'
 	-- end,
 	-- },
 	-- {
@@ -23,7 +22,6 @@ return {
 	-- vim.g.rose_pine_variant = "moon"
 	-- -- Set
 	-- vim.cmd("colorscheme rose-pine")
-	-- constants.COLORSCHEME = "rose-pine"
 	-- end,
 	-- },
 	{
@@ -44,7 +42,6 @@ return {
                 colorscheme gruvbox-material
 
             ]])
-			constants.COLORSCHEME = "gruvbox-material"
 		end,
 	},
 	-- {

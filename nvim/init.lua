@@ -10,7 +10,7 @@ require("zachyho.general_keymaps")
 -- Disable built-ins
 require("zachyho.disables")
 
-require(constants.PLUGINS_DIR)
+require(local_paths.PLUGINS_DIR)
 
 -- Canva (work) stuff
 quiet_safe_require("canva.keymaps")

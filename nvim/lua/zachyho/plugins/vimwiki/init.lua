@@ -29,7 +29,7 @@ return {
 		map("n", "<leader>wn", "<Plug>VimwikiNextLink")
 
 		-- Boilerplate for templating diary notes
-		safe_require(constants.PLUGINS_DIR .. "vimwiki.boilerplate")
+		safe_require(local_paths.PLUGINS_DIR .. "vimwiki.boilerplate")
 	end,
 	config = function()
 		-- Open diary files from my non-zettel wiki to use as my daily notes

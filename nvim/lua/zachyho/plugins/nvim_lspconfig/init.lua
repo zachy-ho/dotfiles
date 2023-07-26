@@ -11,6 +11,6 @@ return {
 		"onsails/lspkind-nvim",
 	},
 	config = function()
-		safe_require(constants.PLUGINS_DIR .. "nvim_lspconfig.config")
+		safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.config")
 	end,
 }
