@@ -8,5 +8,5 @@ return {
 		end
 		surround.setup()
 	end,
-	event = "BufReadPost",
+	-- event = "BufReadPost",
 }

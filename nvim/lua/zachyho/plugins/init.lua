@@ -59,7 +59,6 @@ lazy_pacman.setup({
 
 	safe_require(constants.PLUGINS_DIR .. "nvim_treesitter"),
 	safe_require(constants.PLUGINS_DIR .. "nvim_treesitter_context"),
-	safe_require(constants.PLUGINS_DIR .. "nvim_treesitter.nvim_ts_rainbow"),
 
 	safe_require(constants.PLUGINS_DIR .. "vim_kitty"),
 })

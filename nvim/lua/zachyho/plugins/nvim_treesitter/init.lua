@@ -75,13 +75,7 @@ return {
 			},
 		}
 
-		local rainbow_colors = safe_require(constants.PLUGINS_DIR .. "nvim_treesitter.nvim_ts_rainbow")
-		if rainbow_colors then
-			treesitter.rainbow = {
-				enable = true,
-			}
-		end
 		require("nvim-treesitter.configs").setup(treesitter)
 	end,
-	event = "BufReadPre",
+	-- event = "BufReadPre",
 }

@@ -161,12 +161,6 @@ packer.startup({
 		-- Treesitter
 		use(safe_require(constants.PLUGINS_DIR .. "nvim_treesitter_context"))
 
-		-- Treesitter rainbow brackets
-		local rainbow = safe_require(constants.PLUGINS_DIR .. "nvim_treesitter.nvim_ts_rainbow")
-		if rainbow then
-			use(rainbow.plugin)
-		end
-
 		-- Markdown-preview
 		use(safe_require(constants.PLUGINS_DIR .. "markdown_preview"))
 
