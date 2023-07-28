@@ -55,13 +55,15 @@ fi
 export NIX_HOME=$HOME/.nix-profile
 # Path
 # export PATH=/user/local/bin:$HOME/bin:/Users/zachyho/Development/clang+llvm-6.0.0-x86_64-apple-darwin/bin:$JAVA_HOME/bin:$PATH
-export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$NIX_HOME/bin:$PATH
+# export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$NIX_HOME/bin:$PATH
+# export PATH=/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$NIX_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
 export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to NVIM Home
 export NVIM_HOME=$HOME/.config/dotfiles/nvim
 # Path to vimwiki Home
 export VIMWIKI=$HOME/zachyho-codes/vimwiki
+# export BASH_PATH=/opt/homebrew/bin/bash
 # ZSH Update Frequency
 export UPDATE_ZSH_DAYS=7
 # FZF command
