@@ -40,7 +40,7 @@ lazy_pacman.setup({
 	require_plugin("fugitive"),
 	require_plugin("git_conflict"),
 	require_plugin("fzf_lua"),
-	require_plugin("vim_grepper"),
+	-- require_plugin("vim_grepper"),
 
 	----- These MUST come before nvim-lspconfig! -----
 	require_plugin("mason"),

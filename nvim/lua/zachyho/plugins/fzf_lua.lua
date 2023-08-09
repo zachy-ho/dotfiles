@@ -13,5 +13,6 @@ return {
 		map("n", "<leader>fl", ":FzfLua")
 		map("n", "<leader>ff", ":FzfLua files")
 		map("n", "<leader>lg", ":FzfLua live_grep")
+		map("n", "<leader>gw", ":FzfLua grep_cword")
 	end,
 }
