@@ -5,12 +5,12 @@ alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 
 # ----- Sync dotfiles -----
 function down_sync() {
-    cd ~/projects/zachyho_wiki && git pull # wiki
+    cd ~/projects/wikis && git pull # wiki
     cd ~/.config/dotfiles && git pull # dotfiles
 }
 
 function up_sync() {
-    cd ~/projects/zachyho_wiki && git add . && git commit -m 'sync' && git push # wiki
+    cd ~/projects/wikis && git add . && git commit -m 'sync' && git push # wiki
     cd ~/.config/dotfiles && git add . && git commit -m 'sync' && git push # dotfiles
 }
 
