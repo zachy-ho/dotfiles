@@ -58,7 +58,7 @@ export NIX_HOME=$HOME/.nix-profile
 # export PATH=$HOME/opt/GNAT/2019/bin:/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$NIX_HOME/bin:$PATH
 # export PATH=/usr/local/bin:$HOME/bin:$JAVA_HOME/bin:$NIX_HOME/bin:$PATH
 # CPath for the fucking header files in Xcode
-export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
+# export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 # Path to NVIM Home
 export NVIM_HOME=$HOME/.config/dotfiles/nvim
 # Path to vimwiki Home
