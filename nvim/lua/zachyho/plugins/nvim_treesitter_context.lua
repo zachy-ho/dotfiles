@@ -7,6 +7,12 @@ return {
 			return
 		end
 
-		ts_context.setup()
+		ts_context.setup({
+			multiline_threshold = 2,
+		})
+
+		map("n", "[c", function()
+			ts_context.go_to_context()
+		end)
 	end,
 }

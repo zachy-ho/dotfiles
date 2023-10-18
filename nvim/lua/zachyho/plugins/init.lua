@@ -61,6 +61,7 @@ lazy_pacman.setup({
 	require_plugin("nvim_cmp"),
 	require_plugin("nvim_cmp.sources"),
 
+	require_plugin("nvim_tree"),
 	require_plugin("nvim_treesitter"),
 	require_plugin("nvim_treesitter_context"),
 

@@ -10,6 +10,7 @@ local server_configs = {
 	html = true,
 	jdtls = true,
 	jsonls = true,
+	kotlin_language_server = true,
 	lua_ls = {
 		settings = {
 			Lua = {

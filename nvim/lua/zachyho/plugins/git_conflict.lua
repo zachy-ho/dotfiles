@@ -13,6 +13,7 @@ return {
 				current = "DiffChange",
 			},
 		})
+		map("n", "<leader>gcl", ":GitConflictListQf<CR>")
 	end,
 	event = "VeryLazy",
 }
