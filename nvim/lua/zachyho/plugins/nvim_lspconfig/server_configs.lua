@@ -1,4 +1,4 @@
-local server_configs = {
+return {
 	bashls = true,
 	bufls = true,
 	cssls = true,
@@ -38,9 +38,7 @@ local server_configs = {
 	prismals = true,
 	pyright = true,
 	-- tailwindcss = true,
-	tsserver = true,
+	tsserver = true, -- We don't want the built-in typescript-language-server
 	vimls = true,
 	yamlls = true,
 }
-
-return server_configs

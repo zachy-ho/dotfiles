@@ -45,7 +45,8 @@ lazy_pacman.setup({
 	----- These MUST come before nvim-lspconfig! -----
 	require_plugin("mason"),
 	require_plugin("mason_lspconfig"),
-	require_plugin("typescript"),
+	-- require_plugin("typescript"),
+	require_plugin("typescript_tools"),
 	require_plugin("cmp_nvim_lsp"),
 	require_plugin("lspkind_nvim"),
 	require_plugin("nvim_lspconfig.null_ls"),

@@ -20,13 +20,13 @@ if null_ls then
 	null_ls.setup(common_on_attach)
 end
 
-local server_configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
-if not server_configs then
+local configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
+if not configs then
 	return
 end
 
 -- Setup each server
-for server, config in pairs(server_configs) do
+for server, config in pairs(configs) do
 	if not config then
 		return
 	end
@@ -40,17 +40,40 @@ for server, config in pairs(server_configs) do
 		capabilities = common_capabilities,
 	}, config)
 
-	-- Special case for typescript
 	if server == "tsserver" then
-		local typescript = safe_require("typescript")
-		if typescript then
+		-- OLD
+		-- local typescript = safe_require("typescript")
+		-- if typescript then
+		-- -- Set the root_dir in canva/canva so there's only one tsserver client initialised
+		-- if
+		-- string.find(vim.fn.getcwd(), "work/canva") ~= nil
+		-- or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
+		-- then
+		-- config = vim.tbl_deep_extend("force", {
+		-- cmd = { "typescript-language-server", "--stdio", "--log-level=4" },
+		-- init_options = {
+		-- hostInfo = "neovim",
+		-- maxTsServerMemory = 8192,
+		-- },
+		-- root_dir = lspconfig.util.root_pattern("web.bzl"),
+		-- }, config)
+		-- end
+		-- typescript.setup({
+		-- disable_commands = false,
+		-- debug = false,
+		-- server = config,
+		-- })
+		-- end
+
+		-- NEW
+		local typescript_tools = safe_require("typescript-tools")
+		if typescript_tools then
 			-- Set the root_dir in canva/canva so there's only one tsserver client initialised
 			if
 				string.find(vim.fn.getcwd(), "work/canva") ~= nil
 				or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
 			then
 				config = vim.tbl_deep_extend("force", {
-					cmd = { "typescript-language-server", "--stdio", "--log-level=4" },
 					init_options = {
 						hostInfo = "neovim",
 						maxTsServerMemory = 8192,
@@ -58,11 +81,7 @@ for server, config in pairs(server_configs) do
 					root_dir = lspconfig.util.root_pattern("web.bzl"),
 				}, config)
 			end
-			typescript.setup({
-				disable_commands = false,
-				debug = false,
-				server = config,
-			})
+			typescript_tools.setup(config)
 		end
 	else
 		lspconfig[server].setup(config)
