@@ -67,4 +67,7 @@ lazy_pacman.setup({
 	require_plugin("nvim_treesitter_context"),
 
 	require_plugin("vim_kitty"),
+
+	-- work stuff --
+	-- require_plugin("dprint_vim_plugin"),
 })
