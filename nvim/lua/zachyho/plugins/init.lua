@@ -29,7 +29,7 @@ lazy_pacman.setup({
 	require_plugin("lualine"),
 	require_plugin("autopairs"),
 	require_plugin("smartcolumn"),
-	require_plugin("indent_blankline"),
+	-- require_plugin("indent_blankline"), (it makes scrolling really laggy on some files, espcially those with long comment blocks for some reason)
 	require_plugin("nvim_spider"),
 	require_plugin("nerdcommenter"),
 	require_plugin("markdown_preview"),
@@ -45,7 +45,6 @@ lazy_pacman.setup({
 	----- These MUST come before nvim-lspconfig! -----
 	require_plugin("mason"),
 	require_plugin("mason_lspconfig"),
-	-- require_plugin("typescript"),
 	require_plugin("typescript_tools"),
 	require_plugin("cmp_nvim_lsp"),
 	require_plugin("lspkind_nvim"),
@@ -67,7 +66,4 @@ lazy_pacman.setup({
 	require_plugin("nvim_treesitter_context"),
 
 	require_plugin("vim_kitty"),
-
-	-- work stuff --
-	-- require_plugin("dprint_vim_plugin"),
 })

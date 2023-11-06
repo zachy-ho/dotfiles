@@ -116,3 +116,6 @@ alias luamake=/Users/zachyho/.language_servers/lua-language-server/3rd/luamake/l
 if [ -e /Users/zachyho/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/zachyho/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# debug
+GITSTATUS_LOG_LEVEL=DEBUG
