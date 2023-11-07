@@ -9,10 +9,17 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		require("fzf-lua").setup({})
+		require("fzf-lua").setup({
+			files = {
+				rg_opts = "--files --hidden --follow --no-ignore -g '!.git'",
+			},
+		})
 		map("n", "<leader>fl", ":FzfLua")
 		map("n", "<leader>ff", ":FzfLua files")
 		map("n", "<leader>lg", ":FzfLua live_grep")
 		map("n", "<leader>gw", ":FzfLua grep_cword")
+
+		-- Make things faster
+		map("n", "<leader>ffm", ":FzfLua files cwd=./src/pages/marketplace <CR>")
 	end,
 }
