@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 
 -- Open init.lua from anywhere
 map("n", "<leader>nrc", ":e $HOME/.config/nvim/init.lua<CR>:lcd $HOME/.config/nvim<CR>")
+map("n", "<leader>rsn", ":source $HOME/.config/nvim/init.lua<CR>")
 
 -- Save and execute current file (stolen from TJ Devries)
 map("n", "<leader><leader>x", ":call zachyho#save_and_exec()<CR>")
@@ -89,3 +90,6 @@ map("t", "<leader><Esc>", "<C-\\><C-n>")
 -- Packer
 map("n", "<leader>pkc", ":PackerCompile<CR>")
 map("n", "<leader>pks", ":PackerSync<CR>")
+
+-- Treesitter
+map("n", "<leader>it", ":InspectTree<CR>")
