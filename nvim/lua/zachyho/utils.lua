@@ -42,10 +42,8 @@ function _G.unmap(modes, lhs)
 	end
 end
 
--- A protected function to require `module`.
--- Returns `false` if failed to require `module`. Returns the return result of `require(module)`
--- otherwise.
--- Uses `pcall` under the hood
+-- Use `check(module)` instead
+---@deprecated
 function _G.safe_require(module)
 	local ok, result = pcall(require, module)
 	if not ok then
@@ -55,6 +53,18 @@ function _G.safe_require(module)
 	return result
 end
 
+-- Checks if `module` can be required.
+-- Reports an error if requiring it would throw an error.
+---@param module string
+---@return boolean
+function _G.check_module(module)
+	local ok = pcall(require, module)
+	if not ok then
+		vim.notify(string.format("Module '%s' cannot be required :(", module), vim.log.levels.ERROR)
+	end
+	return ok
+end
+
 -- TODO: Combine this and safe_require^ and update all usages
 function _G.quiet_safe_require(module)
 	local ok, result = pcall(require, module)
@@ -62,6 +72,10 @@ function _G.quiet_safe_require(module)
 		return ok
 	end
 	return result
+end
+
+function _G.P(thing)
+	print(vim.inspect(thing))
 end
 
 function _G.replaceDashWithUnderscore(s)
