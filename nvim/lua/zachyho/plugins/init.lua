@@ -66,4 +66,16 @@ lazy_pacman.setup({
 	require_plugin("nvim_treesitter_context"),
 
 	require_plugin("vim_kitty"),
+
+	-- my plugin
+	{
+		dir = "~/projects/complex.nvim",
+		config = function()
+			require("complex")
+			-- dev
+			map("n", "<leader>dl", ":lua package.loaded['complex'] = nil<CR>")
+			map("n", "<leader>cp", ":lua require'complex'.get_outermost_fn()<CR>")
+			map("n", "<leader>rt", ":PlenaryBustedFile %<CR>")
+		end,
+	},
 })

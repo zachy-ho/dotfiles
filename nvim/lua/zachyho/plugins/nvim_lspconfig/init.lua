@@ -3,8 +3,6 @@ return {
 	dependencies = {
 		-- Null-ls
 		"jose-elias-alvarez/null-ls.nvim",
-		-- Typescript add-ons
-		"jose-elias-alvarez/typescript.nvim",
 		-- Completion source for nvim-lsp. Required in LSP handlers.
 		"hrsh7th/cmp-nvim-lsp",
 		-- Lspkind: Cute logos for LSP
