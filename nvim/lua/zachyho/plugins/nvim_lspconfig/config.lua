@@ -40,32 +40,7 @@ for server, config in pairs(configs) do
 		capabilities = common_capabilities,
 	}, config)
 
-	if server == "tsserver" then
-		-- OLD
-		-- local typescript = safe_require("typescript")
-		-- if typescript then
-		-- -- Set the root_dir in canva/canva so there's only one tsserver client initialised
-		-- if
-		-- string.find(vim.fn.getcwd(), "work/canva") ~= nil
-		-- or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
-		-- then
-		-- config = vim.tbl_deep_extend("force", {
-		-- cmd = { "typescript-language-server", "--stdio", "--log-level=4" },
-		-- init_options = {
-		-- hostInfo = "neovim",
-		-- maxTsServerMemory = 8192,
-		-- },
-		-- root_dir = lspconfig.util.root_pattern("web.bzl"),
-		-- }, config)
-		-- end
-		-- typescript.setup({
-		-- disable_commands = false,
-		-- debug = false,
-		-- server = config,
-		-- })
-		-- end
-
-		-- NEW
+	if server == "tsserver" and config == "custom" then
 		local typescript_tools = safe_require("typescript-tools")
 		if typescript_tools then
 			-- Set the root_dir in canva/canva so there's only one tsserver client initialised
@@ -84,6 +59,19 @@ for server, config in pairs(configs) do
 			typescript_tools.setup(config)
 		end
 	else
-		lspconfig[server].setup(config)
+		if server == "lua_ls" then
+			lspconfig[server].setup({
+				on_init = function(client)
+					local path = client.workspace_folders[1].name
+					if not vim.loop.fs_stat(path .. "/.luarc.json") then
+						client.config.settings = vim.tbl_deep_extend("force", config, client.config.settings)
+						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+					end
+					return true
+				end,
+			})
+		else
+			lspconfig[server].setup(config)
+		end
 	end
 end
