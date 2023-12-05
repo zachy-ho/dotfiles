@@ -35,7 +35,7 @@ return {
 	prismals = true,
 	pyright = true,
 	-- tailwindcss = true,
-	tsserver = "custom", -- We don't want the built-in typescript-language-server
+	tsserver = true, -- We don't want the built-in typescript-language-server
 	vimls = true,
 	yamlls = true,
 }

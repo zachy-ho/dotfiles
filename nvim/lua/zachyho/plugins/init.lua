@@ -70,6 +70,7 @@ lazy_pacman.setup({
 	-- my plugin
 	{
 		dir = "~/projects/complex.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
 			require("complex")
 			-- dev

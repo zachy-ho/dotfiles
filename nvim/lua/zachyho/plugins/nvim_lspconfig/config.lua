@@ -40,7 +40,7 @@ for server, config in pairs(configs) do
 		capabilities = common_capabilities,
 	}, config)
 
-	if server == "tsserver" and config == "custom" then
+	if server == "tsserver" then
 		local typescript_tools = safe_require("typescript-tools")
 		if typescript_tools then
 			-- Set the root_dir in canva/canva so there's only one tsserver client initialised
@@ -53,7 +53,7 @@ for server, config in pairs(configs) do
 						hostInfo = "neovim",
 						maxTsServerMemory = 8192,
 					},
-					root_dir = lspconfig.util.root_pattern("web.bzl"),
+					root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
 				}, config)
 			end
 			typescript_tools.setup(config)
@@ -64,7 +64,7 @@ for server, config in pairs(configs) do
 				on_init = function(client)
 					local path = client.workspace_folders[1].name
 					if not vim.loop.fs_stat(path .. "/.luarc.json") then
-						client.config.settings = vim.tbl_deep_extend("force", config, client.config.settings)
+						client.config.settings = vim.tbl_deep_extend("force", client.config.settings, config)
 						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
 					end
 					return true
