@@ -48,7 +48,7 @@ vim.cmd([[
 ]])
 
 -- View options
-opt.viewoptions = "cursor,folds"
+opt.viewoptions = "cursor"
 
 -- Format options
 opt.formatoptions = opt.formatoptions
