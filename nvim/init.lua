@@ -1,3 +1,7 @@
+-- Disable netrw following plugin recommendations if nvim-tree is enabled
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Utils should be first to get sourced since many other files use the functions exposed
 require("zachyho.utils")
 

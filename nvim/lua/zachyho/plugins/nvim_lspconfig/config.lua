@@ -9,7 +9,6 @@ local common_on_attach = {}
 local common_capabilities = {}
 if handlers then
 	handlers.setup()
-	-- handlers.enable_format_on_save()
 	common_on_attach = handlers.on_attach
 	common_capabilities = handlers.capabilities
 end
@@ -18,6 +17,15 @@ end
 local null_ls = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.null_ls.config")
 if null_ls then
 	null_ls.setup(common_on_attach)
+end
+
+local canva_null_ls = safe_require(local_paths.WORK_PLUGINS_DIR .. "null_ls.config")
+if canva_null_ls then
+	-- print("before")
+	-- print("before")
+	canva_null_ls.setup()
+	-- print("after")
+	-- print("after")
 end
 
 local configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")

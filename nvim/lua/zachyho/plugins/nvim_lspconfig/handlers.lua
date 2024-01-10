@@ -60,26 +60,35 @@ function M.on_attach(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-	local opts = { noremap = true, silent = true }
-	local function buf_map(lhs, rhs)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", lhs, rhs, opts)
+	local opts = { noremap = true, silent = true, buffer = 0 }
+	local function set_buf_keymap(lhs, rhs)
+		vim.keymap.set("n", lhs, rhs, opts)
 	end
 
 	-- Key-bindings
-	buf_map(",gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-	buf_map(",gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-	buf_map(",gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-	buf_map(",gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-	buf_map(",gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-	buf_map("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-	buf_map(",ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-	buf_map(",rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-	buf_map(",gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-	buf_map(",fm", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-	buf_map(",ds", "<cmd>lua vim.diagnostic.open_float()<CR>")
-	buf_map(",dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-	buf_map(",dn", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-	buf_map(",dl", [[ <cmd>lua vim.diagnostic.setloclist({open_loclist=true})<CR> <bar> :setlocal wrap<CR>]])
+	set_buf_keymap(",gD", vim.lsp.buf.declaration)
+	set_buf_keymap(",gd", vim.lsp.buf.definition)
+	set_buf_keymap(",gt", vim.lsp.buf.type_definition)
+	set_buf_keymap(",gi", vim.lsp.buf.implementation)
+	set_buf_keymap(",gh", vim.lsp.buf.signature_help)
+	set_buf_keymap("K", vim.lsp.buf.hover)
+	set_buf_keymap(",ca", vim.lsp.buf.code_action)
+	set_buf_keymap(",rn", vim.lsp.buf.rename)
+	set_buf_keymap(",gr", vim.lsp.buf.references)
+	set_buf_keymap(",fm", function()
+		vim.lsp.buf.format({
+			async = false,
+			timeout_ms = 50000,
+			name = "null-ls",
+		})
+	end)
+	set_buf_keymap(",ds", vim.diagnostic.open_float)
+	set_buf_keymap(",dp", vim.diagnostic.goto_prev)
+	set_buf_keymap(",dn", vim.diagnostic.goto_next)
+	set_buf_keymap(",dl", function()
+		vim.diagnostic.setloclist({ open_loclist = true })
+		vim.cmd([[:setlocal wrap]])
+	end)
 
 	-- Attach lsp-signature to every server
 	-- local lsp_signature = safe_require("lsp_signature")

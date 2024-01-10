@@ -1,6 +1,5 @@
 local nvim_tree = {
 	"nvim-tree/nvim-tree.lua",
-	version = "nightly", -- optional, updated every week. (see issue #1193)
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		local nvim_tree = safe_require("nvim-tree")

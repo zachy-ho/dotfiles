@@ -67,7 +67,6 @@ lazy_pacman.setup({
 
 	require_plugin("vim_kitty"),
 
-	require_plugin("canva_dprint"),
 	-- my plugin
 	{
 		dir = "~/projects/complex.nvim",
