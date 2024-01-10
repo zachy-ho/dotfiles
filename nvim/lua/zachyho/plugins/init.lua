@@ -29,7 +29,6 @@ lazy_pacman.setup({
 	require_plugin("lualine"),
 	require_plugin("autopairs"),
 	require_plugin("smartcolumn"),
-	-- require_plugin("indent_blankline"), (it makes scrolling really laggy on some files, espcially those with long comment blocks for some reason)
 	require_plugin("nvim_spider"),
 	require_plugin("nerdcommenter"),
 	require_plugin("markdown_preview"),
@@ -45,6 +44,7 @@ lazy_pacman.setup({
 	----- These MUST come before nvim-lspconfig! -----
 	require_plugin("mason"),
 	require_plugin("mason_lspconfig"),
+	require_plugin("neodev"),
 	require_plugin("typescript_tools"),
 	require_plugin("cmp_nvim_lsp"),
 	require_plugin("lspkind_nvim"),
@@ -67,6 +67,7 @@ lazy_pacman.setup({
 
 	require_plugin("vim_kitty"),
 
+	require_plugin("canva_dprint"),
 	-- my plugin
 	{
 		dir = "~/projects/complex.nvim",
@@ -75,7 +76,7 @@ lazy_pacman.setup({
 			require("complex")
 			-- dev
 			map("n", "<leader>dl", ":lua package.loaded['complex'] = nil<CR>")
-			map("n", "<leader>cp", ":lua require'complex'.get_outermost_fn()<CR>")
+			map("n", "<leader>cp", ":lua require'complex'.get_function_complexity()<CR>")
 			map("n", "<leader>rt", ":PlenaryBustedFile %<CR>")
 		end,
 	},
