@@ -78,7 +78,7 @@ function M.on_attach(client, bufnr)
 	set_buf_keymap(",fm", function()
 		vim.lsp.buf.format({
 			async = false,
-			timeout_ms = 50000,
+			timeout_ms = 5000,
 			name = "null-ls",
 		})
 	end)
@@ -89,17 +89,6 @@ function M.on_attach(client, bufnr)
 		vim.diagnostic.setloclist({ open_loclist = true })
 		vim.cmd([[:setlocal wrap]])
 	end)
-
-	-- Attach lsp-signature to every server
-	-- local lsp_signature = safe_require("lsp_signature")
-	-- if lsp_signature then
-	-- lsp_signature.on_attach()
-	-- end
-
-	-- Let null-ls do all formatting
-	if client.name ~= "null-ls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
 end
 
 local capabilities = nil

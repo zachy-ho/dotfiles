@@ -21,11 +21,7 @@ end
 
 local canva_null_ls = safe_require(local_paths.WORK_PLUGINS_DIR .. "null_ls.config")
 if canva_null_ls then
-	-- print("before")
-	-- print("before")
 	canva_null_ls.setup()
-	-- print("after")
-	-- print("after")
 end
 
 local configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
