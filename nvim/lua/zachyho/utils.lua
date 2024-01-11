@@ -42,8 +42,6 @@ function _G.unmap(modes, lhs)
 	end
 end
 
--- Use `check(module)` instead
----@deprecated
 function _G.safe_require(module)
 	local ok, result = pcall(require, module)
 	if not ok then
