@@ -15,23 +15,23 @@ M.setup = function(on_attach)
 		on_attach = function(client, bufnr)
 			-- common_on_attach
 			on_attach(client, bufnr)
-			-- if client.supports_method("textDocument/formatting") then
-			-- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			-- vim.api.nvim_create_autocmd("BufWritePre", {
-			-- group = augroup,
-			-- buffer = bufnr,
-			-- callback = function()
-			-- vim.lsp.buf.format({
-			-- filter = function(client)
-			-- if vim.bo.filetype == "lua" then
-			-- return client.name == "null-ls"
-			-- end
-			-- end,
-			-- bufnr = bufnr,
-			-- })
-			-- end,
-			-- })
-			-- end
+			if client.supports_method("textDocument/formatting") then
+				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.format({
+							filter = function(client)
+								if vim.bo.filetype == "lua" then
+									return client.name == "null-ls"
+								end
+							end,
+							bufnr = bufnr,
+						})
+					end,
+				})
+			end
 		end,
 		sources = {
 			diagnostics.eslint_d.with({
