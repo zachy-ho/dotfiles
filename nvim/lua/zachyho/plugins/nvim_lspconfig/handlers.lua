@@ -100,26 +100,26 @@ if cmp_nvim_lsp then
 end
 M.capabilities = capabilities
 
-function M.enable_format_on_save()
-	vim.cmd([[
-        augroup format_on_save
-            au!
-            au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 5000)
-        augroup end
-    ]])
-end
+-- function M.enable_format_on_save()
+-- vim.cmd([[
+-- augroup format_on_save
+-- au!
+-- au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 5000)
+-- augroup end
+-- ]])
+-- end
 
-function M.toggle_format_on_save()
-	if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
-		M.enable_format_on_save()
-		vim.notify("Enabled format on save")
-	else
-		vim.cmd("au! format_on_save")
-		vim.notify("Disabled format on save")
-	end
-end
+-- function M.toggle_format_on_save()
+-- if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
+-- M.enable_format_on_save()
+-- vim.notify("Enabled format on save")
+-- else
+-- vim.cmd("au! format_on_save")
+-- vim.notify("Disabled format on save")
+-- end
+-- end
 
--- TODO fix this bugged command
-vim.cmd([[command! LspToggleAutoFormat execute 'lua require("modules.config.lsp.handlers").toggle_format_on_save()']])
+-- -- TODO fix this bugged command
+-- vim.cmd([[command! LspToggleAutoFormat execute 'lua require("modules.config.lsp.handlers").toggle_format_on_save()']])
 
 return M
