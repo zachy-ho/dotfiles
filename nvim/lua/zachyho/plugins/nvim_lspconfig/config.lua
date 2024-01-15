@@ -1,104 +1,80 @@
-local lspconfig = safe_require("lspconfig")
-if not lspconfig then
-	return
+local setup_lsp_handlers = function()
+	local signs = {
+		{ name = "DiagnosticSignError", text = "🫠" },
+		{ name = "DiagnosticSignWarn", text = "😑" },
+		{ name = "DiagnosticSignHint", text = "🤔" },
+		{ name = "DiagnosticSignInfo", text = "🤓" },
+		{ name = "DiagnosticUnnecessary" },
+	}
+
+	for _, sign in ipairs(signs) do
+		vim.fn.sign_define(sign.name, { text = sign.text, linehl = sign.linehl, numhl = "" })
+	end
+
+	local border = {
+		{ "╭", "FloatBorder" },
+		{ "─", "FloatBorder" },
+		{ "╮", "FloatBorder" },
+		{ "│", "FloatBorder" },
+		{ "╯", "FloatBorder" },
+		{ "─", "FloatBorder" },
+		{ "╰", "FloatBorder" },
+		{ "│", "FloatBorder" },
+	}
+
+	vim.diagnostic.config({
+		virtual_text = true,
+		signs = {
+			active = signs,
+		},
+		update_in_insert = true,
+		underline = true,
+		severity_sort = true,
+		float = {
+			focusable = true,
+			style = "minimal",
+			border = border,
+			source = "always",
+			header = "",
+			prefix = "",
+		},
+	})
+
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+		border = border,
+	})
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+		border = border,
+	})
+
+	-- LspKind
+	local lspkind = safe_require("lspkind")
+	if lspkind then
+		lspkind.init()
+	end
 end
 
-local handlers = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.handlers")
+local M = {}
 
-local common_on_attach = {}
-local common_capabilities = {}
-if handlers then
-	handlers.setup()
-	common_on_attach = handlers.on_attach
-	common_capabilities = handlers.capabilities
-end
-
-local configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
-if not configs then
-	return
-end
-
--- Setup each server
-for server, config in pairs(configs) do
-	if not config then
+M.setup = function()
+	local lspconfig = safe_require("lspconfig")
+	if not lspconfig then
 		return
 	end
 
-	local setup_server = (function()
-		if server == "tsserver" then
-			local typescript_tools = safe_require("typescript-tools")
-			assert(typescript_tools)
-			return typescript_tools.setup
-		end
+	setup_lsp_handlers()
 
-		if server == "null_ls" then
-			local null_ls = safe_require("null-ls")
-			assert(null_ls)
-			return null_ls.setup
-		end
-
-		return lspconfig[server].setup
-	end)()
-
-	local parsed_config = (function()
-		if server == "tsserver" then
-			local typescript_tools = safe_require("typescript-tools")
-			if typescript_tools then
-				-- Set the root_dir in canva/canva so there's only one tsserver client initialised
-				if
-					string.find(vim.fn.getcwd(), "work/canva") ~= nil
-					or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
-				then
-					return {
-						on_attach = common_on_attach,
-						capabilities = common_capabilities,
-						init_options = {
-							hostInfo = "neovim",
-							maxTsServerMemory = 8192,
-						},
-						root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
-					}
-				end
+	local server_configs_factory = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_config_factory")
+	if server_configs_factory then
+		local server_configs = server_configs_factory.create()
+		for _, config in pairs(server_configs) do
+			local server = config.get_server()
+			local c = config.get_config()
+			if server then
+				server.setup(c)
 			end
-
-			return {
-				on_attach = common_on_attach,
-				capabilities = common_capabilities,
-			}
 		end
-
-		if server == "lua_ls" then
-			return {
-				on_init = function(client)
-					local path = client.workspace_folders[1].name
-					if not vim.loop.fs_stat(path .. "/.luarc.json") then
-						client.config.settings.on_attach = common_on_attach
-						client.config.settings.capabilities = common_capabilities
-						client.config.settings.Lua = config.Lua
-						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-					end
-					return true
-				end,
-			}
-		end
-		if type(config) == "table" then
-			return config
-		end
-
-		if type(config) == "boolean" then
-			return {
-				on_attach = common_on_attach,
-				capabilities = common_capabilities,
-			}
-		end
-
-		-- It's null-lsp
-		assert(server == "null_ls")
-		return config(common_on_attach)
-	end)()
-
-	local ok, result = pcall(setup_server, parsed_config)
-	if not ok then
-		P(result)
 	end
 end
+
+return M
