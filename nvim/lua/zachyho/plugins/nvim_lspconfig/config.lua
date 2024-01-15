@@ -13,17 +13,6 @@ if handlers then
 	common_capabilities = handlers.capabilities
 end
 
--- Set up null-ls
-local null_ls = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.null_ls.config")
-if null_ls then
-	null_ls.setup(common_on_attach)
-end
-
-local canva_null_ls = safe_require(local_paths.WORK_PLUGINS_DIR .. "null_ls.config")
-if canva_null_ls then
-	canva_null_ls.setup()
-end
-
 local configs = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_configs")
 if not configs then
 	return
@@ -35,47 +24,81 @@ for server, config in pairs(configs) do
 		return
 	end
 
-	if type(config) ~= "table" then
-		config = {}
-	end
-
-	config = vim.tbl_deep_extend("force", {
-		on_attach = common_on_attach,
-		capabilities = common_capabilities,
-	}, config)
-
-	if server == "tsserver" then
-		local typescript_tools = safe_require("typescript-tools")
-		if typescript_tools then
-			-- Set the root_dir in canva/canva so there's only one tsserver client initialised
-			if
-				string.find(vim.fn.getcwd(), "work/canva") ~= nil
-				or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
-			then
-				config = vim.tbl_deep_extend("force", {
-					init_options = {
-						hostInfo = "neovim",
-						maxTsServerMemory = 8192,
-					},
-					root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
-				}, config)
-			end
-			typescript_tools.setup(config)
+	local setup_server = (function()
+		if server == "tsserver" then
+			local typescript_tools = safe_require("typescript-tools")
+			assert(typescript_tools)
+			return typescript_tools.setup
 		end
-	else
+
+		if server == "null_ls" then
+			local null_ls = safe_require("null-ls")
+			assert(null_ls)
+			return null_ls.setup
+		end
+
+		return lspconfig[server].setup
+	end)()
+
+	local parsed_config = (function()
+		if server == "tsserver" then
+			local typescript_tools = safe_require("typescript-tools")
+			if typescript_tools then
+				-- Set the root_dir in canva/canva so there's only one tsserver client initialised
+				if
+					string.find(vim.fn.getcwd(), "work/canva") ~= nil
+					or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
+				then
+					return {
+						on_attach = common_on_attach,
+						capabilities = common_capabilities,
+						init_options = {
+							hostInfo = "neovim",
+							maxTsServerMemory = 8192,
+						},
+						root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
+					}
+				end
+			end
+
+			return {
+				on_attach = common_on_attach,
+				capabilities = common_capabilities,
+			}
+		end
+
 		if server == "lua_ls" then
-			lspconfig[server].setup({
+			return {
 				on_init = function(client)
 					local path = client.workspace_folders[1].name
 					if not vim.loop.fs_stat(path .. "/.luarc.json") then
-						client.config.settings = vim.tbl_deep_extend("force", client.config.settings, config)
+						client.config.settings.on_attach = common_on_attach
+						client.config.settings.capabilities = common_capabilities
+						client.config.settings.Lua = config.Lua
 						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
 					end
 					return true
 				end,
-			})
-		else
-			lspconfig[server].setup(config)
+			}
 		end
+		if type(config) == "table" then
+			return config
+		end
+
+		if type(config) == "boolean" then
+			return {
+				on_attach = common_on_attach,
+				capabilities = common_capabilities,
+			}
+		end
+
+		-- It's null-lsp
+		assert(server == "null_ls")
+		return config(common_on_attach)
+	end)()
+
+	local ok, result = pcall(setup_server, parsed_config)
+	if not ok then
+		P(result)
 	end
 end
