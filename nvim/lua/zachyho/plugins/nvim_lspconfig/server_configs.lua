@@ -74,121 +74,124 @@ local custom_server_config_factories = {
 	null_ls = function(on_attach)
 		local null_ls = safe_require("null-ls")
 		if not null_ls then
-			return nil
+			return
 		end
-		local get_server = function()
-			return null_ls
-		end
-		local get_config = function()
-			local formatting = null_ls.builtins.formatting
-			local diagnostics = null_ls.builtins.diagnostics
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-			return {
-				debug = true,
-				on_attach = function(client, bufnr)
-					on_attach(client, bufnr)
-					if client.supports_method("textDocument/formatting") then
-						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							group = augroup,
-							buffer = bufnr,
-							callback = function()
-								vim.lsp.buf.format({
-									filter = function(_)
-										return vim.bo.filetype == "lua"
-									end,
-									bufnr = bufnr,
-								})
-							end,
-						})
-					end
-				end,
-				sources = {
-					diagnostics.eslint_d.with({
-						prefer_local = "node_modules/.bin",
-					}),
-					-- formatting.prettierd,
-					formatting.stylua,
-				},
-			}
-		end
+		local formatting = null_ls.builtins.formatting
+		local diagnostics = null_ls.builtins.diagnostics
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		local config = {
+			debug = true,
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format({
+								filter = function(_)
+									return vim.bo.filetype == "lua"
+								end,
+								bufnr = bufnr,
+							})
+						end,
+					})
+				end
+			end,
+			sources = {
+				diagnostics.eslint_d.with({
+					prefer_local = "node_modules/.bin",
+				}),
+				-- formatting.prettierd,
+				formatting.stylua,
+			},
+		}
 		return {
-			get_server = get_server,
-			get_config = get_config,
+			server = null_ls,
+			config = config,
 		}
 	end,
 	lua_ls = function(default_config)
+		local server = get_default_language_server("lua_ls")
+		if not server then
+			return
+		end
 		return {
-			get_server = function()
-				return get_default_language_server("lua_ls")
-			end,
-			get_config = function()
-				return {
-					on_init = function(client)
-						local path = client.workspace_folders[1].name
-						if not vim.loop.fs_stat(path .. "/.luarc.json") then
-							client.config.settings.on_attach = default_config.on_attach
-							client.config.settings.capabilities = default_config.capabilities
-							client.config.settings.Lua = {
-								runtime = {
-									-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-									version = "LuaJIT",
-									builtin = "enable",
+			server = server,
+			config = {
+				on_init = function(client)
+					local path = client.workspace_folders[1].name
+					if not vim.loop.fs_stat(path .. "/.luarc.json") then
+						client.config.settings.on_attach = default_config.on_attach
+						client.config.settings.capabilities = default_config.capabilities
+						client.config.settings.Lua = {
+							runtime = {
+								-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+								version = "LuaJIT",
+								builtin = "enable",
+							},
+							diagnostics = {
+								-- Get the language server to recognize the `vim` global
+								globals = { "vim" },
+							},
+							workspace = {
+								-- Make the server aware of Neovim runtime files
+								library = {
+									vim.env.VIMRUNTIME,
 								},
-								diagnostics = {
-									-- Get the language server to recognize the `vim` global
-									globals = { "vim" },
-								},
-								workspace = {
-									-- Make the server aware of Neovim runtime files
-									library = {
-										vim.env.VIMRUNTIME,
-									},
-									-- https://github.com/neovim/nvim-lspconfig/issues/1700#issuecomment-1033127328
-									checkThirdParty = false,
-								},
-							}
-							client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-						end
-						return true
-					end,
-				}
-			end,
+								-- https://github.com/neovim/nvim-lspconfig/issues/1700#issuecomment-1033127328
+								checkThirdParty = false,
+							},
+						}
+						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+					end
+					return true
+				end,
+			},
 		}
 	end,
 	typescript_tools = function(default_config)
-		return {
-			get_server = function()
-				local typescript_tools = safe_require("typescript-tools")
-				if typescript_tools then
-					return typescript_tools
-				end
-			end,
-			get_config = function()
-				local config = default_config
-				local lspconfig = safe_require("lspconfig")
-				if lspconfig then
-					-- Set the root_dir in canva/canva so there's only one tsserver client initialised
-					if
-						string.find(vim.fn.getcwd(), "work/canva") ~= nil
-						or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
-					then
-						config = vim.tbl_extend("force", config, {
-							init_options = {
-								hostInfo = "neovim",
-								maxTsServerMemory = 8192,
-							},
-							root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
-						})
-					end
-				end
+		local typescript_tools = safe_require("typescript-tools")
+		if not typescript_tools then
+			return
+		end
 
-				return config
-			end,
+		local config = default_config
+		local lspconfig = safe_require("lspconfig")
+		if lspconfig then
+			-- Set the root_dir in canva/canva so there's only one tsserver client initialised
+			if
+				string.find(vim.fn.getcwd(), "work/canva") ~= nil
+				or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
+			then
+				config = vim.tbl_extend("force", config, {
+					init_options = {
+						hostInfo = "neovim",
+						maxTsServerMemory = 8192,
+					},
+					root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
+				})
+			end
+		end
+		return {
+			server = typescript_tools,
+			config = config,
 		}
 	end,
 }
+
+-- Handles error messagings
+local setup_server = function(name, server, config)
+	local ok, res = pcall(server.setup, config)
+	if not ok then
+		error({
+			msg = "Server setup call for " .. name .. " failed",
+			failure = res,
+		})
+	end
+end
 
 local M = {}
 
@@ -203,16 +206,7 @@ M.create_server_setup = function()
 	for _, name in ipairs(default_server_names) do
 		server_configs[name] = function()
 			local server = get_default_language_server(name)
-			if not server then
-				error({ msg = "Default server for " .. name .. " not found" })
-			end
-			local ok, res = pcall(server.setup, default_config)
-			if not ok then
-				error({
-					msg = "Server setup call for " .. name .. " failed",
-					failure = res,
-				})
-			end
+			setup_server(name, server, default_config)
 		end
 	end
 
@@ -225,20 +219,11 @@ M.create_server_setup = function()
 			module = create(default_config.on_attach)
 		end
 
-		if module ~= nil then -- nil check
-			local server = module.get_server()
-			local config = module.get_config()
+		if module ~= nil then
+			local server = module.server
+			local config = module.config
 			server_configs[name] = function()
-				if not server then
-					error({ msg = "Something went wrong when getting the server for " .. name })
-				end
-				local ok, res = pcall(server.setup, config)
-				if not ok then
-					error({
-						msg = "Server setup call for " .. name .. " failed",
-						failure = res,
-					})
-				end
+				setup_server(name, server, config)
 			end
 		end
 	end

@@ -59,8 +59,11 @@ local M = {}
 M.setup = function()
 	setup_lsp_handlers()
 	local modules = require("zachyho.plugins.nvim_lspconfig.server_configs").create_server_setup()
-	for _, setup in pairs(modules) do
-		setup()
+	for server, setup in pairs(modules) do
+		local ok, res = pcall(setup)
+		if not ok then
+			P({ msg = "Something went wrong when setting up " .. server, error = res })
+		end
 	end
 end
 
