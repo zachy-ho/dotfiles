@@ -57,23 +57,10 @@ end
 local M = {}
 
 M.setup = function()
-	local lspconfig = safe_require("lspconfig")
-	if not lspconfig then
-		return
-	end
-
 	setup_lsp_handlers()
-
-	local server_configs_factory = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.server_config_factory")
-	if server_configs_factory then
-		local server_configs = server_configs_factory.create()
-		for _, config in pairs(server_configs) do
-			local server = config.get_server()
-			local c = config.get_config()
-			if server then
-				server.setup(c)
-			end
-		end
+	local modules = require("zachyho.plugins.nvim_lspconfig.server_configs").create_server_setup()
+	for _, setup in pairs(modules) do
+		setup()
 	end
 end
 
