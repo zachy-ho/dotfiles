@@ -11,8 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local enable_setup_v2 = true
-
 local prepare_plugin_specs = function()
 	---@type table List of Lua module names in the plugin directory, to be set up in order.
 	local plugins = {
@@ -72,57 +70,8 @@ local prepare_plugin_specs = function()
 			table.insert(specs, spec)
 		end
 	end
-	return specs
-end
-
-if enable_setup_v2 then
-	local specs = prepare_plugin_specs()
-	require("lazy").setup(specs)
-else
-	require("lazy").setup({
-		safe_require("zachyho.plugins.plenary"),
-		safe_require("zachyho.plugins.colorscheme"),
-		safe_require("zachyho.plugins.nvim_web_devicons"),
-		safe_require("zachyho.plugins.lualine"),
-		safe_require("zachyho.plugins.autopairs"),
-		safe_require("zachyho.plugins.smartcolumn"),
-		safe_require("zachyho.plugins.nvim_spider"),
-		safe_require("zachyho.plugins.nerdcommenter"),
-		safe_require("zachyho.plugins.markdown_preview"),
-		safe_require("zachyho.plugins.prettier"),
-		safe_require("zachyho.plugins.emmet"),
-		safe_require("zachyho.plugins.easy_align"),
-		safe_require("zachyho.plugins.nvim_surround"),
-		safe_require("zachyho.plugins.fugitive"),
-		safe_require("zachyho.plugins.git_conflict"),
-		safe_require("zachyho.plugins.fzf_lua"),
-
-		----- These MUST come before nvim-lspconfig! -----
-		safe_require("zachyho.plugins.mason"),
-		safe_require("zachyho.plugins.mason_lspconfig"),
-		safe_require("zachyho.plugins.neodev"),
-		safe_require("zachyho.plugins.typescript_tools"),
-		safe_require("zachyho.plugins.cmp_nvim_lsp"),
-		safe_require("zachyho.plugins.lspkind_nvim"),
-		safe_require("zachyho.plugins.nvim_lspconfig.null_ls"),
-
-		safe_require("zachyho.plugins.nvim_lspconfig"),
-		safe_require("zachyho.plugins.telescope"),
-		safe_require("zachyho.plugins.telescope_fzf_native"),
-		safe_require("zachyho.plugins.harpoon"),
-
-		safe_require("zachyho.plugins.vsnip.vim_vsnip"),
-		safe_require("zachyho.plugins.vsnip.cmp_vsnip"),
-		safe_require("zachyho.plugins.vsnip.vim_vsnip_integ"),
-		safe_require("zachyho.plugins.nvim_cmp"),
-		safe_require("zachyho.plugins.nvim_cmp.sources"),
-
-		safe_require("zachyho.plugins.nvim_tree"),
-		safe_require("zachyho.plugins.nvim_treesitter"),
-		safe_require("zachyho.plugins.nvim_treesitter_context"),
-
-		safe_require("zachyho.plugins.vim_kitty"),
-
+	table.insert(
+		specs,
 		-- my local complex.nvim plugin
 		{
 			dir = "~/projects/complex.nvim",
@@ -134,6 +83,10 @@ else
 				map("n", "<leader>cp", ":lua require'complex'.get_function_complexity()<CR>")
 				map("n", "<leader>rt", ":PlenaryBustedFile %<CR>")
 			end,
-		},
-	})
+		}
+	)
+	return specs
 end
+
+local specs = prepare_plugin_specs()
+require("lazy").setup(specs)
