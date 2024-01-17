@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		-- Null-ls
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		-- Completion source for nvim-lsp. Required in LSP handlers.
 		"hrsh7th/cmp-nvim-lsp",
 		-- Lspkind: Cute logos for LSP
