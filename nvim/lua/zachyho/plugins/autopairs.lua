@@ -3,13 +3,7 @@ return {
 	dependencies = "nvim-cmp",
 	config = function()
 		-- Look HERE if having trouble with <CR> with nvim-cmp
-		local autopairs = safe_require("nvim-autopairs")
-		local Rule = safe_require("nvim-autopairs.rule")
-		local cond = safe_require("nvim-autopairs.conds")
-
-		if not autopairs then
-			return
-		end
+		local autopairs = require("nvim-autopairs")
 
 		autopairs.setup({
 			enable_check_bracket_line = false,
@@ -28,9 +22,8 @@ return {
 			},
 		})
 
-		if not (Rule and cond) then
-			return
-		end
+		local Rule = require("nvim-autopairs.rule")
+		local cond = require("nvim-autopairs.conds")
 
 		autopairs.add_rules({
 			-- Adding spaces between parentheses
@@ -72,11 +65,8 @@ return {
 		})
 
 		-- Insert '(' after selecting function or method item with nvim-cmp
-		local cmp_autopairs = safe_require("nvim-autopairs.completion.cmp")
-		local cmp = safe_require("cmp")
-		if not (cmp and cmp_autopairs) then
-			return
-		end
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		local cmp = require("cmp")
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 	end,
 }

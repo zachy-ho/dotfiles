@@ -54,10 +54,7 @@ local colorschemes = {
 		"monsonjeremy/onedark.nvim",
 		branch = "treesitter",
 		config = function()
-			local onedark = safe_require("onedark")
-			if onedark then
-				onedark.setup()
-			end
+			require("onedark").setup()
 		end,
 	},
 }

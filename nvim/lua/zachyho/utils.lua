@@ -45,23 +45,11 @@ end
 function _G.safe_require(module)
 	local ok, result = pcall(require, module)
 	if not ok then
-		P("Error requiring: " .. module)
-		P(result)
+		print("Error requiring: " .. module)
+		print(result)
 		return ok
 	end
 	return result
-end
-
--- Checks if `module` can be required.
--- Reports an error if requiring it would throw an error.
----@param module string
----@return boolean
-function _G.check_module(module)
-	local ok = pcall(require, module)
-	if not ok then
-		vim.notify(string.format("Module '%s' cannot be required :(", module), vim.log.levels.ERROR)
-	end
-	return ok
 end
 
 -- TODO: Combine this and safe_require^ and update all usages

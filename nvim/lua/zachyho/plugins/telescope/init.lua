@@ -5,11 +5,8 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	config = function()
-		local telescope = safe_require("telescope")
-		local actions = safe_require("telescope.actions")
-		if not (telescope and actions) then
-			return
-		end
+		local telescope = require("telescope")
+		local actions = require("telescope.actions")
 
 		telescope.setup({
 			defaults = {
@@ -37,23 +34,21 @@ return {
 			},
 		})
 
-		local keymaps = safe_require(local_paths.PLUGINS_DIR .. "telescope.keymaps")
+		local keymaps = require("zachyho.plugins.telescope.keymaps")
 		if keymaps then
 			local as_table = preconditions.check_exists(keymaps.as_table)
 			map("n", as_table.telescope, ":Telescope<CR>")
 
-			local builtin = safe_require("telescope.builtin")
-			if builtin then
-				map("n", as_table.find_files, builtin.find_files)
-				map("n", as_table.live_grep, builtin.live_grep)
-				map("n", as_table.buffers, builtin.buffers)
-				map("n", as_table.command_history, builtin.command_history)
-				map("n", as_table.keymaps, builtin.keymaps)
-			end
+			local builtin = require("telescope.builtin")
+			map("n", as_table.find_files, builtin.find_files)
+			map("n", as_table.live_grep, builtin.live_grep)
+			map("n", as_table.buffers, builtin.buffers)
+			map("n", as_table.command_history, builtin.command_history)
+			map("n", as_table.keymaps, builtin.keymaps)
 		end
 
 		-- IMPORTANT: has to come AFTER telescope.setup
-		local load_extensions = safe_require(local_paths.PLUGINS_DIR .. "telescope.extensions")
+		local load_extensions = require("zachyho.plugins.telescope.extensions")
 		if load_extensions then
 			load_extensions({ "harpoon", "fzf" })
 		end

@@ -15,15 +15,8 @@ return {
             let g:vsnip_filetypes.typescriptreact = ['typescript', 'javascript']
             let g:vsnip_filetypes.typescript = ['javascript']
         ]])
-		local cmp = safe_require("cmp")
-		if not cmp then
-			return
-		end
-
-		local lspkind = safe_require("lspkind")
-		if not lspkind then
-			return
-		end
+		local cmp = require("cmp")
+		local lspkind = require("lspkind")
 
 		vim.o.completeopt = "menu,menuone,noselect"
 

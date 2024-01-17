@@ -9,9 +9,6 @@ return {
 		"onsails/lspkind-nvim",
 	},
 	config = function()
-		local lsp = safe_require(local_paths.PLUGINS_DIR .. "nvim_lspconfig.config")
-		if lsp then
-			lsp.setup()
-		end
+		require("zachyho.plugins.nvim_lspconfig.config").setup()
 	end,
 }

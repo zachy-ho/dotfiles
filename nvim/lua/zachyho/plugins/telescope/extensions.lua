@@ -1,15 +1,10 @@
 -- Load extensions that make use of Telescope
 return function(extensions)
-	local telescope = safe_require("telescope")
-	if not telescope then
-		return
-	end
+	local telescope = require("telescope")
 
 	if table_utils.has_item(extensions, "harpoon") then
-		if safe_require("harpoon") then
-			telescope.load_extension("harpoon")
-			map("n", "<leader>ht", ":Telescope harpoon marks<CR>")
-		end
+		telescope.load_extension("harpoon")
+		map("n", "<leader>ht", ":Telescope harpoon marks<CR>")
 	end
 
 	if table_utils.has_item(extensions, "fzf") then

@@ -2,11 +2,7 @@ return {
 	"kylechui/nvim-surround",
 	version = "*",
 	config = function()
-		local surround = safe_require("nvim-surround")
-		if not surround then
-			return
-		end
-		surround.setup()
+		require("nvim-surround").setup()
 	end,
 	-- event = "BufReadPost",
 }

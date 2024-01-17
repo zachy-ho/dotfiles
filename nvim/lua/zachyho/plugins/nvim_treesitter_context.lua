@@ -2,10 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter-context",
 	dependencies = "nvim-treesitter/nvim-treesitter",
 	config = function()
-		local ts_context = safe_require("treesitter-context")
-		if not ts_context then
-			return
-		end
+		local ts_context = require("treesitter-context")
 
 		ts_context.setup({
 			multiline_threshold = 2,
