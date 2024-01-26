@@ -76,6 +76,16 @@ alias repo_link='git remote get-url origin | sed "s/.git$//"' #| sed -n ‘s_.*:
 alias branch_name='git branch --show-current'
 alias pr_link='echo $(repo_link)/compare/master...$(branch_name)'
 alias publish='git push -u origin $(branch_name) && open $(pr_link)'
+alias gco_f='checkout_fuzzy'
+
+# Thanks Octo
+function checkout_fuzzy() {
+    if [[ -z $1 ]]; then
+        git checkout $(git for-each-ref refs/heads/ --format='%(refname:short)' | fzf --height 40% --reverse --border)
+    else
+        git checkout $(git for-each-ref refs/heads/ --format='%(refname:short)' | fzf --height 40% --reverse --border -q "${1}")
+    fi
+}
 
 function cleanup_git_branches() {
     git remote prune origin && git branch -v | awk '$3 == "[gone]" { print $1 }' | xargs git branch -D
