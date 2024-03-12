@@ -37,6 +37,7 @@ local prepare_plugin_specs = function()
         "typescript_tools",
         "cmp_nvim_lsp",
         "lspkind_nvim",
+        "nvim_lspconfig.null_ls",
         "nvim_lspconfig",
 
         "telescope",
