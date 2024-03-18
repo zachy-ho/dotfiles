@@ -32,11 +32,7 @@ for function in ~/.config/zsh/functions/.*; do
 done
 
 # ---------- Theme ----------
-if [[ $(uname -m) == 'arm64' ]]; then
-    source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-else
-    source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-fi
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # ---------- Var Exports ----------
 # Language
