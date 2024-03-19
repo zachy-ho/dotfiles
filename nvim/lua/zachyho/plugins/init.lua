@@ -51,7 +51,7 @@ local prepare_plugin_specs = function()
 		"nvim_treesitter",
 		"nvim_treesitter_context",
 		"vim_kitty",
-		"sg",
+		"sourcegraph",
 	}
 
 	local spec_initialisers = {}
