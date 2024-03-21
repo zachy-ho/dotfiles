@@ -77,6 +77,7 @@ alias branch_name='git branch --show-current'
 alias pr_link='echo $(repo_link)/compare/master...$(branch_name)'
 alias publish='git push -u origin $(branch_name) && open $(pr_link)'
 alias gco_f='checkout_fuzzy'
+alias gblame_smart='git blame -w -C -C -C'
 
 # Thanks Octo
 function checkout_fuzzy() {
