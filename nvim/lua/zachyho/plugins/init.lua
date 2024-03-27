@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local prepare_plugin_specs = function()
-	---@type table List of Lua module names in the plugin directory, to be set up in order.
+	---@type table List of Lua module names in the plugin directory, will be set up in order.
 	local plugins = {
 		"plenary",
 		"colorscheme",
@@ -29,6 +29,7 @@ local prepare_plugin_specs = function()
 		"nvim_surround",
 		"fugitive",
 		"git_conflict",
+		"gitsigns",
 		"fzf_lua",
 
 		----- This block MUST come before nvim-lspconfig! -----
