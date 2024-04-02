@@ -14,25 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 local create_plugin_specs = function()
 	---@type table List of Lua module names in the plugin directory, will be set up in order.
 	local plugin_filenames = {
+		----- Plugins depended on by a few other plugins -----
 		"plenary",
-		"colorscheme",
 		"nvim_web_devicons",
-		"lualine",
-		"autopairs",
-		"smartcolumn",
-		"nvim_spider",
-		"nerdcommenter",
-		"markdown_preview",
-		"prettier",
-		"emmet",
-		"easy_align",
-		"nvim_surround",
-		"fugitive",
-		"git_conflict",
-		"gitsigns",
-		"fzf_lua",
-
-		----- This block MUST come before nvim-lspconfig! -----
+		----- Start: This block MUST come before nvim-lspconfig! -----
 		"mason",
 		"mason_lspconfig",
 		"neodev",
@@ -40,8 +25,7 @@ local create_plugin_specs = function()
 		"cmp_nvim_lsp",
 		"lspkind_nvim",
 		"nvim_lspconfig.null_ls",
-		----- This block MUST come before nvim-lspconfig! -----
-
+		----- End: This block MUST come before nvim-lspconfig! -----
 		"nvim_lspconfig",
 		"telescope",
 		"telescope_fzf_native",
@@ -51,9 +35,30 @@ local create_plugin_specs = function()
 		"nvim_tree",
 		"nvim_treesitter",
 		"nvim_treesitter_context",
+
+		----- helpful stuff -----
+		"colorscheme",
+		"lualine",
+		"autopairs",
+		"nvim_spider",
+		"nerdcommenter", -- TODO update to comment.nvim
+		"prettier",
+		"nvim_surround",
+		"fugitive",
+		"git_conflict",
+		"gitsigns",
+		"fzf_lua",
 		"vim_kitty",
 		"sourcegraph",
-		"pepe",
+
+		----- low priority -----
+		"easy_align",
+		"markdown_preview",
+		"smartcolumn",
+		"emmet",
+
+		----- custom plugin -----
+		"complex",
 	}
 
 	local specs = {}
@@ -65,21 +70,6 @@ local create_plugin_specs = function()
 		end
 	end
 
-	table.insert(
-		specs,
-		-- my local complex.nvim plugin
-		{
-			dir = "~/projects/complex.nvim",
-			dependencies = { "nvim-treesitter/nvim-treesitter" },
-			config = function()
-				require("complex")
-				-- dev
-				map("n", "<leader>dl", ":lua package.loaded['complex'] = nil<CR>")
-				map("n", "<leader>cp", ":lua require'complex'.get_function_complexity()<CR>")
-				map("n", "<leader>rt", ":PlenaryBustedFile %<CR>")
-			end,
-		}
-	)
 	return specs
 end
 
