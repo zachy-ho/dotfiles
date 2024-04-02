@@ -11,9 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local prepare_plugin_specs = function()
+local create_plugin_specs = function()
 	---@type table List of Lua module names in the plugin directory, will be set up in order.
-	local plugins = {
+	local plugin_filenames = {
 		"plenary",
 		"colorscheme",
 		"nvim_web_devicons",
@@ -53,20 +53,13 @@ local prepare_plugin_specs = function()
 		"nvim_treesitter_context",
 		"vim_kitty",
 		"sourcegraph",
+		"pepe",
 	}
 
-	local spec_initialisers = {}
-	for i, filename in ipairs(plugins) do
-		local path = "zachyho.plugins." .. filename
-		spec_initialisers[i] = function()
-			local res = safe_require(path)
-			return res or nil
-		end
-	end
-
 	local specs = {}
-	for _, init in ipairs(spec_initialisers) do
-		local spec = init()
+	for _, filename in ipairs(plugin_filenames) do
+		local path = "zachyho.plugins." .. filename
+		local spec = safe_require(path)
 		if spec then
 			table.insert(specs, spec)
 		end
@@ -90,4 +83,4 @@ local prepare_plugin_specs = function()
 	return specs
 end
 
-require("lazy").setup(prepare_plugin_specs())
+require("lazy").setup(create_plugin_specs())
