@@ -16,6 +16,7 @@ local create_plugin_specs = function()
 	local plugin_filenames = {
 		----- Plugins depended on by a few other plugins -----
 		"plenary",
+
 		"nvim_web_devicons",
 		----- Start: This block MUST come before nvim-lspconfig! -----
 		"mason",
@@ -41,7 +42,8 @@ local create_plugin_specs = function()
 		"lualine",
 		"autopairs",
 		"nvim_spider",
-		"nerdcommenter", -- TODO update to comment.nvim
+		-- "nerdcommenter", -- TODO update to comment.nvim
+		"comment",
 		"prettier",
 		"nvim_surround",
 		"fugitive",
@@ -50,6 +52,7 @@ local create_plugin_specs = function()
 		"fzf_lua",
 		"vim_kitty",
 		"sourcegraph",
+		"trouble",
 
 		----- low priority -----
 		"easy_align",
