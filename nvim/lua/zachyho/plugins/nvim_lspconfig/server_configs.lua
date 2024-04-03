@@ -30,7 +30,7 @@ local default_on_attach = function(_, bufnr)
 		vim.lsp.buf.format({
 			async = false,
 			timeout_ms = 5000,
-			name = "null-ls",
+			name = "null-ls", -- formatting with null-ls doesn't work man
 		})
 	end)
 	set_buf_keymap(",ds", vim.diagnostic.open_float)
@@ -72,6 +72,10 @@ local custom_config_factories = {
 		local null_ls = require("null-ls")
 		local formatting = null_ls.builtins.formatting
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		local helpers = safe_require("null-ls.helpers")
+		if not helpers then
+			return
+		end
 		local config = {
 			debug = true,
 			on_attach = function(client, bufnr)
@@ -95,6 +99,17 @@ local custom_config_factories = {
 			sources = {
 				require("none-ls.diagnostics.eslint_d"),
 				formatting.stylua,
+				-- this canva format doesn't freaking work and idk why
+				{
+					name = "canva_format",
+					method = null_ls.methods.FORMATTING,
+					filetypes = { "typescript", "typescriptreact" },
+					generator = helpers.formatter_factory({
+						command = "dprint",
+						args = { "fmt", "--stdin", "$FILENAME" },
+						to_stdin = true,
+					}),
+				},
 				-- formatting.prettierd,
 			},
 		}

@@ -42,7 +42,6 @@ local create_plugin_specs = function()
 		"lualine",
 		"autopairs",
 		"nvim_spider",
-		-- "nerdcommenter", -- TODO update to comment.nvim
 		"comment",
 		"prettier",
 		"nvim_surround",
@@ -61,6 +60,7 @@ local create_plugin_specs = function()
 		"emmet",
 
 		----- custom plugin -----
+		"canva_dprint",
 		"complex",
 	}
 
