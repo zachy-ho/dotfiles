@@ -72,8 +72,8 @@ map("n", "<leader>x", ": wincmd x<CR>", { silent = true })
 -- map("n", "N", "Nzz", { noremap = false })
 
 -- Vim tabs
-map("n", "<leader>tc", ":tabclose ")
-map("n", "<leader>ts", ":tab split<CR>")
+-- map("n", "<leader>tc", ":tabclose ")
+-- map("n", "<leader>ts", ":tab split<CR>")
 
 map("n", "<leader>=-", ":vertical resize -15<CR>")
 map("n", "<leader>==", ":vertical resize +15<CR>")
