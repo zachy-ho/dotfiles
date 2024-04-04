@@ -90,6 +90,12 @@ local ls_spec_factories = {
 			config = default_config,
 		}
 	end,
+	eslint = function()
+		return {
+			server = require("lspconfig").eslint,
+			config = default_config,
+		}
+	end,
 	graphql = function()
 		return {
 			server = require("lspconfig").graphql,
@@ -176,7 +182,7 @@ local ls_spec_factories = {
 					end
 				end,
 				sources = {
-					require("none-ls.diagnostics.eslint_d"),
+					-- require("none-ls.diagnostics.eslint_d"),
 					formatting.stylua,
 					-- this canva format doesn't freaking work and idk why
 					{

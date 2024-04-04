@@ -37,16 +37,17 @@ return {
 		map("n", "<leader>te", ":Telescope<CR>")
 
 		local builtin = require("telescope.builtin")
-		map("n", "<leader>tff", builtin.find_files)
+		map("n", "<leader>tfa", builtin.find_files)
 		map("n", "<leader>tfi", ":Telescope find_files cwd=")
-		map("n", "<leader>tlg", builtin.live_grep)
+		map("n", "<leader>tga", builtin.live_grep)
+		map("n", "<leader>tgi", ":Telescope live_grep cwd=")
 		map("n", "<leader>tb", builtin.buffers)
 		map("n", "<leader>tch", builtin.command_history)
 		map("n", "<leader>tk", builtin.keymaps)
 		-- lsp ones
 		map("n", "<leader>tfr", builtin.lsp_references)
 		map("n", "<leader>tgd", builtin.lsp_definitions)
-		map("n", "<leader>tgi", builtin.lsp_implementations)
+		-- map("n", "<leader>tgi", builtin.lsp_implementations)
 
 		-- IMPORTANT: has to come AFTER telescope.setup
 		local load_extensions = require("zachyho.plugins.telescope.extensions")
