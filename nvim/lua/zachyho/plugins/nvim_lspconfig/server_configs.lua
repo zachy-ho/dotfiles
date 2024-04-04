@@ -30,7 +30,7 @@ local default_on_attach = function(_, bufnr)
 		vim.lsp.buf.format({
 			async = false,
 			timeout_ms = 5000,
-			name = "null-ls",
+			name = "null-ls", -- formatting with null-ls doesn't work man
 		})
 	end)
 	set_buf_keymap(",ds", vim.diagnostic.open_float)
@@ -42,71 +42,168 @@ local default_on_attach = function(_, bufnr)
 	end)
 end
 
----@param server string An option from the list of default language servers (https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls)
----@return table | nil language_server
-local get_default_language_server = function(server)
-	return require("lspconfig")[server]
-end
-
-local default_server_names = {
-	"bashls",
-	"bufls",
-	"cssls",
-	"cssmodules_ls",
-	"dockerls",
-	"emmet_ls",
-	"graphql",
-	"html",
-	"jdtls",
-	"jsonls",
-	"kotlin_language_server",
-	"prismals",
-	"pyright",
-	"vimls",
-	"yamlls",
+local default_config = {
+	on_attach = default_on_attach,
+	capabilities = setup_default_capabilities(),
 }
-
----@type table<string, fun(config: any): table | nil>
-local custom_config_factories = {
-	null_ls = function(on_attach)
+---@type table<string, fun(): table>
+local ls_spec_factories = {
+	bashls = function()
+		return {
+			server = require("lspconfig").bashls,
+			config = default_config,
+		}
+	end,
+	bufls = function()
+		return {
+			server = require("lspconfig").bufls,
+			config = default_config,
+		}
+	end,
+	cssls = function()
+		return {
+			server = require("lspconfig").cssls,
+			config = default_config,
+		}
+	end,
+	cssmodules_ls = function()
+		return {
+			server = require("lspconfig").cssmodules_ls,
+			config = default_config,
+		}
+	end,
+	dockerls = function()
+		return {
+			server = require("lspconfig").dockerls,
+			config = default_config,
+		}
+	end,
+	dprint = function()
+		return {
+			server = require("lspconfig").dprint,
+			config = default_config,
+		}
+	end,
+	emmet_ls = function()
+		return {
+			server = require("lspconfig").emmet_ls,
+			config = default_config,
+		}
+	end,
+	eslint = function()
+		return {
+			server = require("lspconfig").eslint,
+			config = default_config,
+		}
+	end,
+	graphql = function()
+		return {
+			server = require("lspconfig").graphql,
+			config = default_config,
+		}
+	end,
+	html = function()
+		return {
+			server = require("lspconfig").html,
+			config = default_config,
+		}
+	end,
+	jdtls = function()
+		return {
+			server = require("lspconfig").jdtls,
+			config = default_config,
+		}
+	end,
+	jsonls = function()
+		return {
+			server = require("lspconfig").jsonls,
+			config = default_config,
+		}
+	end,
+	kotlin_language_server = function()
+		return {
+			server = require("lspconfig").kotlin_language_server,
+			config = default_config,
+		}
+	end,
+	prismals = function()
+		return {
+			server = require("lspconfig").prismals,
+			config = default_config,
+		}
+	end,
+	pyright = function()
+		return {
+			server = require("lspconfig").pyright,
+			config = default_config,
+		}
+	end,
+	vimls = function()
+		return {
+			server = require("lspconfig").vimls,
+			config = default_config,
+		}
+	end,
+	yamlls = function()
+		return {
+			server = require("lspconfig").yamlls,
+			config = default_config,
+		}
+	end,
+	-- customs
+	null_ls = function()
 		local null_ls = require("null-ls")
 		local formatting = null_ls.builtins.formatting
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-		local config = {
-			debug = true,
-			on_attach = function(client, bufnr)
-				on_attach(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.format({
-								filter = function(client)
-									return client.name == "null-ls" and vim.bo.filetype == "lua"
-								end,
-								bufnr = bufnr,
-							})
-						end,
-					})
-				end
-			end,
-			sources = {
-				require("none-ls.diagnostics.eslint_d"),
-				formatting.stylua,
-				-- formatting.prettierd,
-			},
-		}
+		local helpers = safe_require("null-ls.helpers")
+		if not helpers then
+			error({ msg = "null-ls.helpers could not be required" })
+		end
 		return {
 			server = null_ls,
-			config = config,
+			config = {
+				debug = true,
+				on_attach = function(client, bufnr)
+					default_on_attach(client, bufnr)
+					if client.supports_method("textDocument/formatting") then
+						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							group = augroup,
+							buffer = bufnr,
+							callback = function()
+								vim.lsp.buf.format({
+									filter = function(client)
+										return client.name == "null-ls" and vim.bo.filetype == "lua"
+									end,
+									bufnr = bufnr,
+								})
+							end,
+						})
+					end
+				end,
+				sources = {
+					-- require("none-ls.diagnostics.eslint_d"),
+					formatting.stylua,
+					-- this canva format doesn't freaking work and idk why
+					{
+						name = "canva_format",
+						method = null_ls.methods.FORMATTING,
+						filetypes = { "typescript", "typescriptreact" },
+						generator = helpers.formatter_factory({
+							command = "dprint",
+							args = { "fmt", "--stdin", "$FILENAME" },
+							to_stdin = true,
+						}),
+					},
+					-- formatting.prettierd,
+				},
+			},
 		}
 	end,
-	lua_ls = function(default_config)
-		local server = get_default_language_server("lua_ls")
+	lua_ls = function()
+		local server = require("lspconfig").lua_ls
 		if not server then
-			return
+			error({ msg = "lua_ls server config not found" })
 		end
 		return {
 			server = server,
@@ -142,7 +239,7 @@ local custom_config_factories = {
 			},
 		}
 	end,
-	typescript_tools = function(default_config)
+	typescript_tools = function()
 		local config = default_config
 		local lspconfig = safe_require("lspconfig")
 		if lspconfig then
@@ -167,69 +264,36 @@ local custom_config_factories = {
 	end,
 }
 
-local setup_server = function(name, server, config)
-	local ok, res = pcall(server.setup, config)
-	if not ok then
-		error({
-			msg = "Server setup call for " .. name .. " failed",
-			failure = res,
-		})
-	end
-end
-
--- Creates an initialiser function for each server defined in `default_server_names` and `custom_server_config_factories`.
--- The initialiser:
--- 1. Identifies the server to use
--- 2. Creates the configuration for the server to set up with
--- 3. Run server.setup(config)
-local create_server_initialisers = function()
-	local default_config = {
-		on_attach = default_on_attach,
-		capabilities = setup_default_capabilities(),
-	}
-	-- set up - identify the server, set up the config
-	-- set up the defaults
-	local initialisers = {}
-	for _, name in ipairs(default_server_names) do
-		initialisers[name] = function()
-			local server = get_default_language_server(name)
-			if not server then
-				error({ msg = string.format("Language server for %s is not found", name) })
-			end
-			setup_server(name, server, default_config)
+---@type fun(name: string, spec: table): fun()
+local create_ls_initialiser = function(name, spec)
+	return function()
+		local ok, res = pcall(spec.server.setup, spec.config)
+		if not ok then
+			error({
+				msg = "Error setting up language server " .. name,
+				error = res,
+			})
 		end
 	end
-	-- set up the customs
-	for name, create in pairs(custom_config_factories) do
-		initialisers[name] = function()
-			local module
-			if name == "typescript_tools" or name == "lua_ls" then
-				module = create(default_config)
-			end
-			if name == "null_ls" then
-				module = create(default_config.on_attach)
-			end
-			if not module then
-				error({ msg = string.format("Language server for %s is not found", name) })
-			end
-			local server = module.server
-			local config = module.config
-			setup_server(name, server, config)
-		end
-	end
-	return initialisers
 end
 
 local M = {}
 
--- Creates initialisers for each LSP and runs each sequentially.
--- Handles errors thrown by the initialisers
+-- Creates initialisers for each language server and runs each sequentially.
+-- Handles and reports errors thrown by server initialisations.
+-- Failures creating specs or initialising servers are self-contained (i.e. other servers will still initialise if one fails)
 M.setup = function()
-	-- setup the initialisers (this is static and shouldn't throw anything)
-	local lsp_initialisers = create_server_initialisers()
-	-- for each initialiser
-	for name, init in pairs(lsp_initialisers) do
-		-- -> run the initialiser - create then setup (errors can be thrown and caught here)
+	local ls_initialisers = {}
+	for name, create in pairs(ls_spec_factories) do
+		local create_ok, spec = pcall(create)
+		if not create_ok then
+			P({ msg = "Something went wrong creating language server spec for " .. name, error = spec })
+		else
+			ls_initialisers[name] = create_ls_initialiser(name, spec)
+		end
+	end
+
+	for name, init in pairs(ls_initialisers) do
 		local ok, res = pcall(init)
 		if not ok then
 			P({ msg = "Something went wrong initialising " .. name, error = res })

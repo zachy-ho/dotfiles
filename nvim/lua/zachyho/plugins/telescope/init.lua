@@ -34,18 +34,20 @@ return {
 			},
 		})
 
-		local keymaps = require("zachyho.plugins.telescope.keymaps")
-		if keymaps then
-			local as_table = preconditions.check_exists(keymaps.as_table)
-			map("n", as_table.telescope, ":Telescope<CR>")
+		map("n", "<leader>te", ":Telescope<CR>")
 
-			local builtin = require("telescope.builtin")
-			map("n", as_table.find_files, builtin.find_files)
-			map("n", as_table.live_grep, builtin.live_grep)
-			map("n", as_table.buffers, builtin.buffers)
-			map("n", as_table.command_history, builtin.command_history)
-			map("n", as_table.keymaps, builtin.keymaps)
-		end
+		local builtin = require("telescope.builtin")
+		map("n", "<leader>tfa", builtin.find_files)
+		map("n", "<leader>tfi", ":Telescope find_files cwd=")
+		map("n", "<leader>tga", builtin.live_grep)
+		map("n", "<leader>tgi", ":Telescope live_grep cwd=")
+		map("n", "<leader>tb", builtin.buffers)
+		map("n", "<leader>tch", builtin.command_history)
+		map("n", "<leader>tk", builtin.keymaps)
+		-- lsp ones
+		map("n", "<leader>tfr", builtin.lsp_references)
+		map("n", "<leader>tgd", builtin.lsp_definitions)
+		-- map("n", "<leader>tgi", builtin.lsp_implementations)
 
 		-- IMPORTANT: has to come AFTER telescope.setup
 		local load_extensions = require("zachyho.plugins.telescope.extensions")
