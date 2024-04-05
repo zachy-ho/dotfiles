@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local is_work_laptop = function()
-	return vim.fn.isdirectory("~/work/canva")
+	return vim.fn.isdirectory(os.getenv("HOME") .. "/work/canva/") == 1
 end
 
 local create_plugin_specs = function()
