@@ -46,7 +46,7 @@ local create_plugin_specs = function()
 		"prettier",
 		"nvim_surround",
 		"fugitive",
-		"git_conflict",
+		-- "git_conflict",
 		"gitsigns",
 		"fzf_lua",
 		"vim_kitty",

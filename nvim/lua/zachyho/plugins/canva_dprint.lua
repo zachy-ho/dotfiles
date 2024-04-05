@@ -1,5 +1,5 @@
 return {
-	"Canva/dprint-vim-plugin",
+	url = "org-2562356@github.com:Canva/dprint-vim-plugin.git",
 	config = function()
 		map("n", "<leader>dp", function()
 			local file_path = vim.fn.expand("%:p")
