@@ -2,23 +2,6 @@ local map_key = vim.keymap.set
 local unmap_key = vim.keymap.del
 
 ----- Global functions -----
--- Checks if a file or directory exists in the path
-function _G.exists(file)
-	local ok, err, code = os.rename(file, file)
-	if not ok then
-		if code == 13 then
-			-- Permission denied, but it exists
-			return true
-		end
-	end
-	return ok, err
-end
-
-function _G.is_dir(path)
-	local huh = exists(path .. "/")
-	return huh
-end
-
 -- Create a new keymap mapping `lhs` to `rhs`, under the specified `modes` and `opts`.
 -- `opts` by default would be {}
 function _G.map(modes, lhs, rhs, opts)
@@ -109,6 +92,7 @@ _G.table_utils = {
 		return values
 	end,
 	-- Should only be called with list-like tables
+	---@type fun(list1: table, list2: table): table
 	combine_lists = function(list1, list2)
 		local result = {}
 		vim.list_extend(result, list1)
@@ -129,5 +113,13 @@ _G.table_utils = {
 			count = count + 1
 		end
 		return count
+	end,
+	---@type fun(list: table<any>): table<any>
+	shallow_copy_list = function(list)
+		local copy = {}
+		for i, val in ipairs(list) do
+			copy[i] = val
+		end
+		return copy
 	end,
 }

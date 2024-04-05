@@ -11,9 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local is_work_laptop = function()
+	return vim.fn.isdirectory("~/work/canva")
+end
+
 local create_plugin_specs = function()
 	---@type table List of Lua module names in the plugin directory, will be set up in order.
-	local plugin_filenames = {
+	local common_plugin_filenames = {
 		----- Plugins depended on by a few other plugins -----
 		"plenary",
 
@@ -60,9 +64,19 @@ local create_plugin_specs = function()
 		"emmet",
 
 		----- custom plugin -----
-		"canva_dprint",
 		"complex",
 	}
+
+	local work_plugin_filenames = {
+		"canva_dprint",
+	}
+
+	local plugin_filenames
+	if is_work_laptop() then
+		plugin_filenames = table_utils.combine_lists(common_plugin_filenames, work_plugin_filenames)
+	else
+		plugin_filenames = common_plugin_filenames
+	end
 
 	local specs = {}
 	for _, filename in ipairs(plugin_filenames) do
