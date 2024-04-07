@@ -195,7 +195,7 @@ local ls_spec_factories = {
 							to_stdin = true,
 						}),
 					},
-					-- formatting.prettierd,
+					formatting.prettierd,
 				},
 			},
 		}
