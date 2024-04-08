@@ -209,32 +209,25 @@ local ls_spec_factories = {
 			server = server,
 			config = {
 				on_init = function(client)
-					local path = client.workspace_folders[1].name
-					if not vim.loop.fs_stat(path .. "/.luarc.json") then
-						client.config.settings.on_attach = default_config.on_attach
-						client.config.settings.capabilities = default_config.capabilities
-						client.config.settings.Lua = {
-							runtime = {
-								-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-								version = "LuaJIT",
-								builtin = "enable",
-							},
-							diagnostics = {
-								-- Get the language server to recognize the `vim` global
-								globals = { "vim" },
-							},
-							workspace = {
-								-- Make the server aware of Neovim runtime files
-								library = {
-									vim.env.VIMRUNTIME,
-								},
-								-- https://github.com/neovim/nvim-lspconfig/issues/1700#issuecomment-1033127328
-								checkThirdParty = false,
-							},
-						}
-						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-					end
-					return true
+					-- 		local path = client.workspace_folders[1].name
+					-- 		if not vim.loop.fs_stat(path .. "/.luarc.json") then
+					-- 			client.config.settings.on_attach = default_config.on_attach
+					-- 			client.config.settings.capabilities = default_config.capabilities
+					client.config.settings.Lua = {
+						runtime = {
+							-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+							version = "LuaJIT",
+						},
+						workspace = {
+							-- Make the server aware of Neovim runtime files
+							library = vim.api.nvim_get_runtime_file("", true),
+							-- https://github.com/neovim/nvim-lspconfig/issues/1700#issuecomment-1033127328
+							checkThirdParty = false,
+						},
+					}
+					-- 			client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+					-- 		end
+					-- 		return true
 				end,
 			},
 		}
