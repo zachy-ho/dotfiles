@@ -1,4 +1,22 @@
--- return telescope_config
+--[[
+Handles cases:
+- when there is only one selection (pressing enter on a selection without anything else selected)
+- when there is more than one selection (pressing enter after selecting multiple entries)
+]]
+local handle_selection = function(prompt_bufnr)
+	local actions = require("telescope.actions")
+	local action_state = require("telescope.actions.state")
+	local current_picker = action_state.get_current_picker(prompt_bufnr)
+	local has_multi_selection = (next(current_picker:get_multi_selection()) ~= nil)
+
+	if has_multi_selection then
+		actions.smart_send_to_qflist(prompt_bufnr)
+		actions.open_qflist(prompt_bufnr)
+	else
+		actions.file_edit(prompt_bufnr)
+	end
+end
+
 return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
@@ -13,10 +31,10 @@ return {
 				layout_strategy = "vertical",
 				mappings = {
 					i = {
-						["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+						["<CR>"] = handle_selection,
 					},
 					n = {
-						["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+						["<CR>"] = handle_selection,
 					},
 				},
 			},
