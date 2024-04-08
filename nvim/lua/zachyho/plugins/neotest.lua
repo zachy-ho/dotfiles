@@ -11,7 +11,7 @@ return {
 			adapters = {
 				require("neotest-jest")({
 					-- TODO construct different setups depending on work vs. personal projects
-					jestCommand = "yarn test",
+					jestCommand = "yarn test --",
 					jestConfigFile = "jest.config.js",
 					env = { CI = true },
 					cwd = function(_)

@@ -59,6 +59,7 @@ return {
 		map("n", "<leader>tfi", ":Telescope find_files cwd=")
 		map("n", "<leader>tga", builtin.live_grep)
 		map("n", "<leader>tgi", ":Telescope live_grep cwd=")
+		map("n", "<leader>tgw", ":Telescope grep_string cwd=")
 		map("n", "<leader>tb", builtin.buffers)
 		map("n", "<leader>tch", builtin.command_history)
 		map("n", "<leader>tk", builtin.keymaps)
