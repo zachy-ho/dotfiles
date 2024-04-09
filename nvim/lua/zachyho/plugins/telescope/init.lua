@@ -49,6 +49,9 @@ return {
 						},
 					},
 				},
+				find_files = {
+					follow = true,
+				},
 			},
 		})
 
