@@ -83,7 +83,7 @@ local create_plugin_specs = function()
 	local specs = {}
 	for _, filename in ipairs(plugin_filenames) do
 		local path = "zachyho.plugins." .. filename
-		local spec = safe_require(path)
+		local spec = require(path)
 		if spec then
 			table.insert(specs, spec)
 		end
