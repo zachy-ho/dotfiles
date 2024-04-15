@@ -56,8 +56,9 @@ local create_plugin_specs = function()
 		"vim_kitty",
 		"sourcegraph",
 		"trouble",
+		"jester",
+		"nvim_dap_ui",
 		-- "neotest",
-		-- "nvim_dap_ui",
 
 		----- low priority -----
 		"easy_align",
