@@ -116,3 +116,6 @@ if [ -e /Users/zachyho/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/zachyh
 # debug
 GITSTATUS_LOG_LEVEL=DEBUG
 [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+
+# License Vault URL for activation of Jetbrains products at Canva
+export JETBRAINS_LICENSE_SERVER=https://canva.fls.jetbrains.com/
