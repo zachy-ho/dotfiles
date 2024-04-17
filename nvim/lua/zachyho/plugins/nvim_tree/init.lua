@@ -3,6 +3,8 @@ local nvim_tree = {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		require("nvim-tree").setup({
+			disable_netrw = false,
+			hijack_netrw = true,
 			view = {
 				width = 40,
 				side = "right",

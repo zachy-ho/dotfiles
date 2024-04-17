@@ -57,7 +57,7 @@ local create_plugin_specs = function()
 		"sourcegraph",
 		"trouble",
 		"jester",
-		"nvim_dap_ui",
+		-- "nvim_dap_ui",
 		-- "neotest",
 
 		----- low priority -----

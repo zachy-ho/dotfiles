@@ -237,18 +237,18 @@ local ls_spec_factories = {
 		local lspconfig = safe_require("lspconfig")
 		if lspconfig then
 			-- Set the root_dir in canva/canva so there's only one tsserver client initialised
-			if
-				string.find(vim.fn.getcwd(), "work/canva") ~= nil
-				or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
-			then
-				config = vim.tbl_extend("force", config, {
-					init_options = {
-						hostInfo = "neovim",
-						maxTsServerMemory = 8192,
-					},
-					root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
-				})
-			end
+			-- if
+			-- 	string.find(vim.fn.getcwd(), "work/canva") ~= nil
+			-- 	or string.find(vim.fn.getcwd(), "work/canva2") ~= nil
+			-- then
+			config = vim.tbl_extend("force", config, {
+				init_options = {
+					hostInfo = "neovim",
+					maxTsServerMemory = 24576,
+				},
+				root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
+			})
+			-- end
 		end
 		return {
 			server = require("typescript-tools"),
