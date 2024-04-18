@@ -246,7 +246,9 @@ local ls_spec_factories = {
 					hostInfo = "neovim",
 					maxTsServerMemory = 24576,
 				},
-				root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
+				-- root_dir = lspconfig.util.root_pattern("shell.nix", "package.json"),
+				root_dir = lspconfig.util.find_node_modules_ancestor,
+				single_file_support = false,
 			})
 			-- end
 		end
