@@ -17,29 +17,22 @@ local default_on_attach = function(_, bufnr)
 	end
 
 	-- Key-bindings
-	set_buf_keymap(",gD", vim.lsp.buf.declaration)
-	set_buf_keymap(",gd", vim.lsp.buf.definition)
-	set_buf_keymap(",gt", vim.lsp.buf.type_definition)
-	set_buf_keymap(",gi", vim.lsp.buf.implementation)
-	set_buf_keymap(",gh", vim.lsp.buf.signature_help)
+	-- set_buf_keymap("<leader>gd", vim.lsp.buf.definition) -- Use Trouble.nvim
+	set_buf_keymap("<leader>gt", vim.lsp.buf.type_definition)
+	set_buf_keymap("<leader>gi", vim.lsp.buf.implementation)
 	set_buf_keymap("K", vim.lsp.buf.hover)
-	set_buf_keymap(",ca", vim.lsp.buf.code_action)
-	set_buf_keymap(",rn", vim.lsp.buf.rename)
-	set_buf_keymap(",gr", vim.lsp.buf.references)
-	set_buf_keymap(",fm", function()
+	set_buf_keymap("<leader>ca", vim.lsp.buf.code_action)
+	set_buf_keymap("<leader>rn", vim.lsp.buf.rename)
+	-- set_buf_keymap("<leader>fr", vim.lsp.buf.references) -- Use Trouble.nvim
+	set_buf_keymap("<leader>fm", function()
 		vim.lsp.buf.format({
 			async = false,
 			timeout_ms = 5000,
 			name = "null-ls", -- formatting with null-ls doesn't work man
 		})
 	end)
-	set_buf_keymap(",ds", vim.diagnostic.open_float)
-	set_buf_keymap(",dp", vim.diagnostic.goto_prev)
-	set_buf_keymap(",dn", vim.diagnostic.goto_next)
-	set_buf_keymap(",dl", function()
-		vim.diagnostic.setloclist({ open_loclist = true })
-		vim.cmd([[:setlocal wrap]])
-	end)
+	set_buf_keymap("[d", vim.diagnostic.goto_prev)
+	set_buf_keymap("]d", vim.diagnostic.goto_next)
 end
 
 local default_config = {

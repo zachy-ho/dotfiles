@@ -3,6 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		map("n", "<leader>tt", ":TroubleToggle ")
-		-- can add more keymaps if needed in the future, like finding references
+		map("n", "<leader>gd", ":TroubleToggle lsp_definitions<CR>")
+		map("n", "<leader>fr", ":TroubleToggle lsp_references<CR>")
 	end,
 }
