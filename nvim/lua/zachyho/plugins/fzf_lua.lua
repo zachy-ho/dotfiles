@@ -18,8 +18,5 @@ return {
 		map("n", "<leader>ff", ":FzfLua files")
 		map("n", "<leader>lg", ":FzfLua live_grep")
 		map("n", "<leader>gw", ":FzfLua grep_cword")
-
-		-- Make things faster
-		map("n", "<leader>ffm", ":FzfLua files cwd=./src/pages/marketplace <CR>")
 	end,
 }

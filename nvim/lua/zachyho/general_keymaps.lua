@@ -19,15 +19,15 @@ map({ "n", "i" }, "<Right>", "<Nop>")
 map({ "n", "v" }, "<leader>y", '"*y')
 
 -- Netrw
-map({ "n" }, "<leader>fe", ":Explore<Cr>")
+map("n", "<leader>fe", ":Explore<Cr>")
 
 -- In visual mode, delete the highlighted part out of existence (into the _ register) and paste,
 -- effectively keeping the pasted segment for the next paste if needed.
 map("x", "<leader>p", '"_dP')
 
 -- Search and replace
-map({ "n" }, "<leader>srl", ":s///g<c-b><right><right>")
-map({ "n" }, "<leader>sra", ":%s///g<c-b><right><right><right>")
+map("n", "<leader>srl", ":s///g<c-b><right><right>")
+map("n", "<leader>sra", ":%s///g<c-b><right><right><right>")
 
 -- Quickfix and location lists (use ',' as secondary leader key for these items)
 map("n", "<leader>ll", ":lwindow<CR>")
@@ -58,3 +58,6 @@ map("n", "<leader>-=", ":resize +5<CR>")
 
 -- Terminal mode
 map("t", "<leader><Esc>", "<C-\\><C-n>")
+
+-- Clear hlsearch on pressing Esc
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")

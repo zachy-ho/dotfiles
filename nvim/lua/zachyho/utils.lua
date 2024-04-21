@@ -1,4 +1,3 @@
-local map_key = vim.keymap.set
 local unmap_key = vim.keymap.del
 
 ----- Global functions -----
@@ -11,7 +10,7 @@ function _G.map(modes, lhs, rhs, opts)
 		modes = { modes }
 	end
 	for _, mode in ipairs(modes) do
-		map_key(mode, lhs, rhs, opts)
+		vim.keymap.set(mode, lhs, rhs, opts)
 	end
 end
 
