@@ -67,7 +67,7 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 -- vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
--- opt.undofile = true
+opt.undofile = true
 
 -- Lazy redraw and update time
 opt.lazyredraw = true
