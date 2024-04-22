@@ -9,6 +9,7 @@ vim.g.mapleader = " "
 local opt = vim.opt
 -- Tabs, indents, wraps
 opt.autoindent = true
+opt.wrap = false
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.smartindent = true

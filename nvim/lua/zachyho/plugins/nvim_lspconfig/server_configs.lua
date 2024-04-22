@@ -17,7 +17,7 @@ local default_on_attach = function(_, bufnr)
 	end
 
 	-- Key-bindings
-	-- set_buf_keymap("<leader>gd", vim.lsp.buf.definition) -- Use Trouble.nvim
+	set_buf_keymap("<leader>gd", vim.lsp.buf.definition)
 	set_buf_keymap("<leader>gt", vim.lsp.buf.type_definition)
 	set_buf_keymap("<leader>gi", vim.lsp.buf.implementation)
 	set_buf_keymap("K", vim.lsp.buf.hover)
