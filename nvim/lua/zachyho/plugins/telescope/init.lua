@@ -50,6 +50,7 @@ return {
 					},
 				},
 				find_files = {
+					hidden = true,
 					follow = true,
 				},
 			},
