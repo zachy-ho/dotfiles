@@ -21,6 +21,7 @@ local default_on_attach = function(_, bufnr)
 	set_buf_keymap("<leader>gt", vim.lsp.buf.type_definition)
 	set_buf_keymap("<leader>gi", vim.lsp.buf.implementation)
 	set_buf_keymap("K", vim.lsp.buf.hover)
+	set_buf_keymap("<leader>sh", vim.lsp.buf.signature_help)
 	set_buf_keymap("<leader>ca", vim.lsp.buf.code_action)
 	set_buf_keymap("<leader>rn", vim.lsp.buf.rename)
 	-- set_buf_keymap("<leader>fr", vim.lsp.buf.references) -- Use Trouble.nvim

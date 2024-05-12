@@ -6,7 +6,7 @@ local nvim_tree = {
 			disable_netrw = false,
 			hijack_netrw = true,
 			view = {
-				width = 40,
+				width = 80,
 				side = "right",
 			},
 			renderer = {
