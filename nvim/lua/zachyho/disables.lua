@@ -1,8 +1,8 @@
 local disabled_built_ins = {
 	-- see :h nvim-tree-netrw
 	-- Disabling netrw because it interferes with nvim-tree
-	"netrw",
-	"netrwPlugin",
+	-- "netrw",
+	-- "netrwPlugin",
 	-- "netrwSettings",
 	-- "netrwFileHandlers",
 	"gzip",

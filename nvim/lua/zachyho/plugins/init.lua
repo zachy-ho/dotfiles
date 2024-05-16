@@ -38,6 +38,7 @@ local create_plugin_specs = function()
 		"vsnip",
 		"nvim_cmp",
 		"nvim_tree",
+		"oil",
 		"nvim_treesitter",
 		"nvim_treesitter_context",
 

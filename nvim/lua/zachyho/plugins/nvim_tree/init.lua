@@ -1,4 +1,4 @@
-local nvim_tree = {
+return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
@@ -6,7 +6,7 @@ local nvim_tree = {
 			disable_netrw = false,
 			hijack_netrw = true,
 			view = {
-				width = 80,
+				width = 60,
 				side = "right",
 			},
 			renderer = {
@@ -30,4 +30,3 @@ local nvim_tree = {
 		{ "<leader>nf", ":NvimTreeFocus<CR>", desc = "focus tree" },
 	},
 }
-return nvim_tree

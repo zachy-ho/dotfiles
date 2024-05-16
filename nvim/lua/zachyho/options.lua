@@ -38,6 +38,7 @@ opt.mouse = ""
 
 -- Folds
 opt.foldmethod = "expr"
+opt.foldenable = false
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- View options
