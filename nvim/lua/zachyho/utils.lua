@@ -1,6 +1,18 @@
 local unmap_key = vim.keymap.del
 
 ----- Global functions -----
+-- Check if a file or directory exists in this path
+function _G.exists(file)
+	local ok, err, code = os.rename(file, file)
+	if not ok then
+		if code == 13 then
+			-- Permission denied, but it exists
+			return true
+		end
+	end
+	return ok, err
+end
+
 -- Create a new keymap mapping `lhs` to `rhs`, under the specified `modes` and `opts`.
 -- `opts` by default would be {}
 function _G.map(modes, lhs, rhs, opts)

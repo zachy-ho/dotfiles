@@ -7,6 +7,9 @@ require("zachyho.options")
 -- General key bindings
 require("zachyho.general_keymaps")
 
+-- Key bindings for my wikis
+require("zachyho.wiki_keymaps")
+
 -- Disable built-ins
 require("zachyho.disables")
 

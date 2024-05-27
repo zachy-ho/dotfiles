@@ -119,3 +119,11 @@ GITSTATUS_LOG_LEVEL=DEBUG
 
 # License Vault URL for activation of Jetbrains products at Canva
 export JETBRAINS_LICENSE_SERVER=https://canva.fls.jetbrains.com/
+# CoderEnv
+# DO NOT EDIT: Added by Coder CLI installer (https://coder.canva-internal.com/install.sh)
+[ -e "/Users/zachyho/.coder.sh" ] && . "/Users/zachyho/.coder.sh"
+# EndCoderEnv
+# CoderEnv
+# DO NOT EDIT: Added by Coder CLI installer (https://coder.canva-internal.com/install.sh)
+[ -e "/Users/zachyho/.coder.sh" ] && . "/Users/zachyho/.coder.sh"
+# EndCoderEnv

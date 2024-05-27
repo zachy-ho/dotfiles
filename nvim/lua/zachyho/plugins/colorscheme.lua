@@ -22,7 +22,7 @@ local colorschemes = {
 	kanagawa = {
 		"rebelot/kanagawa.nvim",
 		config = function()
-			vim.cmd("colorscheme kanagawa")
+			require("kanagawa").load("wave")
 		end,
 	},
 	tokyonight = {
@@ -68,4 +68,4 @@ local colorschemes = {
 	},
 }
 
-return colorschemes["catppuccin"]
+return colorschemes["kanagawa"]
