@@ -7,7 +7,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "kanagawa",
+				theme = "nord",
 			},
 			sections = {
 				lualine_a = { "mode" },
