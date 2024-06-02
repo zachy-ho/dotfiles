@@ -1,4 +1,4 @@
-local harpoon = {
+return {
 	"ThePrimeagen/harpoon",
 	config = function()
 		map("n", "<leader>hp", ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
@@ -11,5 +11,3 @@ local harpoon = {
 		map("n", "<leader>h6", ':lua require("harpoon.ui").nav_file(6)<CR>')
 	end,
 }
-
-return harpoon
