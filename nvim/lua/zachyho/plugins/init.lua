@@ -18,9 +18,6 @@ end
 local create_plugin_specs = function()
 	---@type table List of Lua module names in the plugin directory, will be set up in order.
 	local common_plugin_filenames = {
-		----- Plugins depended on by a few other plugins -----
-		"plenary",
-
 		"nvim_web_devicons",
 		----- Start: This block MUST come before nvim-lspconfig! -----
 		"mason",
