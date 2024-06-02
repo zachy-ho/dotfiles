@@ -1,5 +1,3 @@
-local unmap_key = vim.keymap.del
-
 ----- Global functions -----
 -- Check if a file or directory exists in this path
 function _G.exists(file)
@@ -32,7 +30,7 @@ function _G.unmap(modes, lhs)
 		modes = { modes }
 	end
 	for _, mode in ipairs(modes) do
-		unmap_key(mode, lhs)
+		vim.keymap.del(mode, lhs)
 	end
 end
 

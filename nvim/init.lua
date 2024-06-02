@@ -1,4 +1,4 @@
--- Utils should be first to get sourced since many other files use the functions exposed
+-- Source utils first because many other files use the global functions exposed
 require("zachyho.utils")
 
 -- Global options and settings
