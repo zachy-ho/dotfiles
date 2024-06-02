@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local is_work_laptop = function()
+local has_work_dir = function()
 	return vim.fn.isdirectory(os.getenv("HOME") .. "/work/canva/") == 1
 end
 
@@ -24,7 +24,6 @@ local create_plugin_specs = function()
 		"mason_lspconfig",
 		"neodev",
 		"typescript_tools",
-		"nvim_lspconfig.null_ls",
 		----- End: This block MUST come before nvim-lspconfig! -----
 		"nvim_lspconfig",
 		"telescope",
@@ -48,7 +47,6 @@ local create_plugin_specs = function()
 		-- "git_conflict",
 		"gitsigns",
 		"fzf_lua",
-		"vim_kitty",
 		"sourcegraph",
 		"trouble",
 		"jester",
@@ -56,6 +54,7 @@ local create_plugin_specs = function()
 		-- "neotest",
 
 		----- low priority -----
+		"vim_kitty",
 		"easy_align",
 		"markdown_preview",
 		"smartcolumn",
@@ -65,13 +64,11 @@ local create_plugin_specs = function()
 		"complex",
 	}
 
-	local work_plugin_filenames = {
-		"canva_dprint",
-	}
-
 	local plugin_filenames
-	if is_work_laptop() then
-		plugin_filenames = table_utils.combine_lists(common_plugin_filenames, work_plugin_filenames)
+	if has_work_dir() then
+		plugin_filenames = table_utils.combine_lists(common_plugin_filenames, {
+			"canva_dprint",
+		})
 	else
 		plugin_filenames = common_plugin_filenames
 	end
