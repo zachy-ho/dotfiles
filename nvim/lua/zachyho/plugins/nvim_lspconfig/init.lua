@@ -9,6 +9,8 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		-- Lspkind: Cute logos for LSP
 		"onsails/lspkind-nvim",
+		-- Typescript tools
+		"pmizio/typescript-tools.nvim",
 	},
 	config = function()
 		require("zachyho.plugins.nvim_lspconfig.config").setup()
