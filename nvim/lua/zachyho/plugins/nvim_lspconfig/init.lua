@@ -1,6 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"nvim-lua/plenary.nvim",
 		-- Null-ls
 		"nvimtools/none-ls.nvim",
 		"nvimtools/none-ls-extras.nvim",
