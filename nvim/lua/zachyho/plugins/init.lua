@@ -57,7 +57,6 @@ local create_plugin_specs = function()
 		"easy_align",
 		"markdown_preview",
 		"smartcolumn",
-		"emmet",
 
 		----- custom plugin -----
 		"complex",

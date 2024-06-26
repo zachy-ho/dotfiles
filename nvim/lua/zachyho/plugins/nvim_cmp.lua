@@ -23,13 +23,18 @@ return {
 
 			cmp.setup({
 				mapping = cmp.mapping.preset.insert({
-					["<C-d>"] = cmp.mapping.scroll_docs(-4),
-					["<C-u>"] = cmp.mapping.scroll_docs(4),
-					["<C-y>"] = cmp.mapping.confirm({ select = false }),
+					["<C-u>"] = cmp.mapping.scroll_docs(-4),
+					["<C-d>"] = cmp.mapping.scroll_docs(4),
+					["<C-Space>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
-					{ name = "luasnip" },
-					{ name = "nvim_lsp" },
+					{
+						name = "nvim_lsp",
+						-- Remove snippets from completion sources because I don't use them and they're annoying me
+						entry_filter = function(entry, ctx)
+							return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+						end,
+					},
 					{ name = "nvim_lua" },
 					{ name = "path" },
 					{ name = "buffer" },
