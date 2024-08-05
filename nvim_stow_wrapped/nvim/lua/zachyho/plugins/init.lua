@@ -43,23 +43,19 @@ local create_plugin_specs = function()
 		"prettier",
 		"nvim_surround",
 		"fugitive",
-		-- "git_conflict",
 		"gitsigns",
 		"fzf_lua",
 		"sourcegraph",
 		"trouble",
 		"jester",
-		-- "nvim_dap_ui",
-		-- "neotest",
 
 		----- low priority -----
 		"vim_kitty",
-		-- "easy_align",
 		"markdown_preview",
 		"smartcolumn",
 
 		----- custom plugin -----
-		"complex",
+		-- "complex",
 	}
 
 	local plugin_filenames
