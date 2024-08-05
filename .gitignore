@@ -2,8 +2,5 @@
 .ideavimrc
 **/.zcompdump*
 zsh/.zsh_history
-nvim/.netrwhist
-nvim/undo
-
-nvim/lua/canva/*
-zsh/.canvathingsrc
+**/nvim/.netrwhist
+**/nvim/undo
