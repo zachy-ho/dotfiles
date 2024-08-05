@@ -18,6 +18,7 @@ alias dsync='down_sync'
 alias usync='up_sync'
 
 # ----- Navigation -----
+alias rm='safe-rm'
 alias clr='clear'
 alias ..='cd ..'
 alias ...='cd ../..'

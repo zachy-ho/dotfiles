@@ -54,7 +54,7 @@ local create_plugin_specs = function()
 
 		----- low priority -----
 		"vim_kitty",
-		"easy_align",
+		-- "easy_align",
 		"markdown_preview",
 		"smartcolumn",
 
