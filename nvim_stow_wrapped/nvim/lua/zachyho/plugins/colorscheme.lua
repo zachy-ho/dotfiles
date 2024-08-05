@@ -15,7 +15,6 @@ local colorschemes = {
                 let g:gruvbox_material_enable_italic=1
 
                 colorscheme gruvbox-material
-
             ]])
 		end,
 	},
@@ -53,12 +52,12 @@ local colorschemes = {
 		branch = "treesitter",
 		config = function()
 			require("onedark").setup()
+			vim.cmd([[colorscheme onedark]])
 		end,
 	},
 	catppuccin = {
 		"catppuccin/nvim",
 		name = "catppuccin",
-		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
 				flavour = "macchiato",
@@ -66,6 +65,26 @@ local colorschemes = {
 			vim.cmd([[colorscheme catppuccin]])
 		end,
 	},
+	evergarden = {
+		"comfysage/evergarden",
+		config = function()
+			require("evergarden").setup({
+				transparent_background = false,
+				contrast_dark = "medium", -- 'hard'|'medium'|'soft'
+				override_terminal = true,
+				style = {
+					tabline = { reverse = true, color = "green" },
+					search = { reverse = false, inc_reverse = true },
+					types = { italic = true },
+					keyword = { italic = true },
+					comment = { italic = false },
+					sign = { highlight = false },
+				},
+				overrides = {},
+			})
+			vim.cmd([[colorscheme evergarden]])
+		end,
+	},
 }
 
-return colorschemes["tokyonight"]
+return colorschemes["evergarden"]
