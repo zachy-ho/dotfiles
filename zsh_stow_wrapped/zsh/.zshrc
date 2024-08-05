@@ -127,3 +127,6 @@ export JETBRAINS_LICENSE_SERVER=https://canva.fls.jetbrains.com/
 # DO NOT EDIT: Added by Coder CLI installer (https://coder.canva-internal.com/install.sh)
 [ -e "/Users/zachyho/.coder.sh" ] && . "/Users/zachyho/.coder.sh"
 # EndCoderEnv
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
