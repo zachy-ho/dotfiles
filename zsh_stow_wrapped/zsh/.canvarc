@@ -1,0 +1,13 @@
+alias canva='cd ~/work/canva'
+alias canva2='cd ~/work/canva2'
+
+function setup_work_tabs() {
+    kitten @ launch --type=tab ---tab-title canva --cwd ~/work/canva
+    kitten @ launch --type=tab ---tab-title term --cwd ~/work/canva
+    kitten @ launch --type=tab ---tab-title canva2 --cwd ~/work/canva2
+    kitten @ launch --type=tab ---tab-title canva2 --cwd ~/work/canva2
+}
+
+alias lfg='setup_work_tabs'
+alias rpro='cd ~/work/canva && ./bin/regen_protos.sh'
+alias rproa='cd ~/work/canva && ./analytics_event_client/bin/regen_analytics_protos.sh'

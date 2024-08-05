@@ -6,12 +6,12 @@ alias zs='source $HOME/.config/dotfiles/zsh/.zshrc'
 # ----- Sync dotfiles -----
 function down_sync() {
     cd ~/projects/wikis && git pull # wiki
-    cd ~/.config/dotfiles && git pull # dotfiles
+    cd ~/.dotfiles && git pull # dotfiles
 }
 
 function up_sync() {
     cd ~/projects/wikis && git add . && git commit -m 'sync' && git push # wiki
-    cd ~/.config/dotfiles && git add . && git commit -m 'sync' && git push # dotfiles
+    cd ~/.dotfiles && git add . && git commit -m 'sync' && git push # dotfiles
 }
 
 alias dsync='down_sync'
@@ -23,11 +23,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias dot='cd $HOME/.config/dotfiles'
+alias dot='cd $HOME/.dotfiles'
 alias nrc='cd $HOME/.config/nvim && v lua/zachyho/plugins/init.lua'
 alias krc='cd $HOME/.config/kitty && v kitty.conf'
 alias zrc='cd $HOME/.config/zsh && v .zshrc'
-alias pj='cd $HOME/projects'
 # ----- Navigation end -----
 
 # ----- nvim -----

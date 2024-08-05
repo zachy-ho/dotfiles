@@ -26,6 +26,10 @@ else
     source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
 
+zstyle ':completion:*:*:git:*' script ~/.config/zsh/git-completion/.git-completion.bash
+# fpath=(~/.config/zsh $fpath)
+autoload -U compinit && compinit
+
 # ---------- My custom functions ----------
 for function in ~/.config/zsh/functions/.*; do
     source $function
@@ -93,7 +97,7 @@ eval "$(direnv hook $SHELL)"
 alias luamake=/Users/zachyho/.language_servers/lua-language-server/3rd/luamake/luamake
 
 # ---------- Work things ----------
-[ -f $HOME/.config/zsh/.canvathingsrc ] && source $HOME/.config/zsh/.canvathingsrc
+[ -f $HOME/.config/zsh/.canvarc ] && source $HOME/.config/zsh/.canvarc
 
 # ---------- Graveyard start ----------
 # NVM (Not used anymore. Now using fnm for node version management)

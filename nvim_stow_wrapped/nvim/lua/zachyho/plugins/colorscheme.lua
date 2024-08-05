@@ -68,4 +68,4 @@ local colorschemes = {
 	},
 }
 
-return colorschemes["kanagawa"]
+return colorschemes["tokyonight"]
