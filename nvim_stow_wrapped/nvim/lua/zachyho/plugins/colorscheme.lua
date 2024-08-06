@@ -65,26 +65,19 @@ local colorschemes = {
 			vim.cmd([[colorscheme catppuccin]])
 		end,
 	},
-	evergarden = {
-		"comfysage/evergarden",
+	everforest = {
+		"sainnhe/everforest",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("evergarden").setup({
-				transparent_background = false,
-				contrast_dark = "medium", -- 'hard'|'medium'|'soft'
-				override_terminal = true,
-				style = {
-					tabline = { reverse = true, color = "green" },
-					search = { reverse = false, inc_reverse = true },
-					types = { italic = true },
-					keyword = { italic = true },
-					comment = { italic = false },
-					sign = { highlight = false },
-				},
-				overrides = {},
-			})
-			vim.cmd([[colorscheme evergarden]])
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.everforest_enable_italic = true
+			vim.g.everforest_better_performance = 1
+			vim.g.everforest_background = "medium"
+			vim.cmd.colorscheme("everforest")
 		end,
 	},
 }
 
-return colorschemes["evergarden"]
+return colorschemes["everforest"]
