@@ -22,7 +22,7 @@ local create_plugin_specs = function()
 		----- Start: This block MUST come before nvim-lspconfig! -----
 		"mason",
 		"mason_lspconfig",
-		"neodev",
+		"lazydev",
 		----- End: This block MUST come before nvim-lspconfig! -----
 		"nvim_lspconfig",
 		"telescope",

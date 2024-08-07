@@ -36,6 +36,7 @@ return {
 						end,
 					},
 					{ name = "nvim_lua" },
+					{ name = "lazydev", group_index = 0 },
 					{ name = "path" },
 					{ name = "buffer" },
 				}),
